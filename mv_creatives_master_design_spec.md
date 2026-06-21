@@ -1,4 +1,4 @@
-# MV Creatives Platform — Unified Master Specification & Creative Direction Reset v2.1
+# MV Creatives Platform — Unified Master Specification & Creative Direction Reset v2.2
 
 This specification details the revised visual direction, art direction, and interactive philosophies for the **MV Creatives** digital platform. It serves as the master design blueprint, establishing a premium, cinematic digital experience.
 
@@ -6,7 +6,7 @@ This specification details the revised visual direction, art direction, and inte
 
 ## 1. Visual Direction: Architectural Luxury, Editorial Precision, & Cinematic Technology
 
-The visual identity of MV Creatives moves away from standard corporate templates to position the firm as a **Premium Product Studio, Product Innovation Lab, and Digital Experience Partner**. 
+The visual identity of MV Creatives positions the firm as a **Premium Product Studio, Product Innovation Lab, and Digital Experience Partner**. 
 
 ```
        [ THE VISUAL SPECTRUM ]
@@ -56,7 +56,7 @@ The homepage operates as a choreographed vertical scroll, shifting the mood and 
 ```mermaid
 graph TD
     Hero[1. HERO: Deep Void / Hook] -->|Fade down| Trust[2. TRUST: Dynamic Pulse]
-    Trust -->|Color Invert| Cap[3. CAPABILITIES: Tactile Blueprint]
+    Trust -->|Color Invert| Cap[3. CAPABILITIES: Interactive Explorer]
     Cap -->|Color Invert| Work[4. FEATURED WORK: Editorial Showroom]
     Work -->|Pin & Slide| Matrix[5. WHY MV: Strategic Apex]
     Matrix -->|Scroll transition| Test[6. TESTIMONIALS: Print Spread]
@@ -65,16 +65,22 @@ graph TD
 
 ### 3.1 Hero (Deep Void & Cinematic Hook)
 *   **Atmosphere:** A full-bleed, desaturated local background video loop of ambient fluid dynamics (liquid chrome / glass refractions) playing silently in the background.
-*   **Composition:** A massive, left-aligned Display headline ("WE ARCHITECT DIGITAL OUTCOMES") masked and revealed via scroll-driven clip-paths.
+*   **Hero Headline:** **"DIGITAL PRODUCTS BUILT FOR THE UNCOMPROMISING."** Set in massive Satoshi Display, uppercase, with tight tracking. A memorable product-studio statement that rejects consultancy-oriented phrasing.
+*   **Composition:** Headline is masked and revealed via scroll-driven clip-paths.
 *   **Details:** A ticking, monospaced client timezone clock using `JetBrains Mono` next to a single primary CTA button (`Start a Project`) surrounded by a soft indigo glow.
 
-### 3.2 Trust Strip (The Dynamic Pulse)
-*   **Atmosphere:** A continuous, fast-scrolling horizontal text ticker.
-*   **Composition:** Partner names rendered as hollow monospaced outlines. Hovering over a name pauses the marquee, fills the text with solid Indigo, and reveals a brief outcome statistic (e.g., `[ 180% INCREASE ]`).
+### 3.2 Trust Strip (Outcomes-First Integration)
+*   **Trust Strategy:** Lead with measurable results and business outcomes *before* client names. 
+*   **Composition:** A continuous, fast-scrolling horizontal text ticker.
+*   **Content:** Large bold statistics form the anchor of the ticker (e.g., `+220% REVENUE GROWTH // NORTHLIGHT` and `40% OPERATIONAL REDUCTION // CAREFLOW`). Text is rendered in hollow outlines. Hovering over an outcome solidifies it in Indigo and pauses the marquee.
 
-### 3.3 Capabilities (The Tactile Blueprint)
-*   **Atmosphere:** Clean transition to Chalk White (`#FAFAFC`). The sitemap is presented as a physical grid of thin blueprint cards.
-*   **Composition:** Hovering over a card slides the background into a soft, desaturated preview image of a wireframe structure, displaying monospaced labels of the technologies used.
+### 3.3 Capabilities (The Interactive Capability Explorer)
+*   **Philosophy:** We reject standard cards. We create an **Interactive Capability Explorer** where the visual environment changes dynamically based on the selected service capability (Design & Branding, Websites & Ecommerce, Software & SaaS, AI & Enterprise Solutions).
+*   **Composition:**
+    *   Left Column: A clean, vertical index of the 4 service categories.
+    *   Right Column: An interactive viewport that shifts contrast and presentation style instantly as a category is selected. 
+        *   Selecting *Websites & Ecommerce* transitions the viewport to Chalk White (`#FAFAFC`) with minimal, high-end editorial product grids.
+        *   Selecting *AI & Enterprise Solutions* transitions the viewport to Ebonite Dark (`#0E0E12`) with precise mathematical gridlines, performance telemetry counters, and vector neural schemas.
 
 ### 3.4 Featured Work (The Editorial Showroom)
 *   **Atmosphere:** Asymmetric magazine layout. Case study cards run on alternating column lines (e.g., Column 1 pins while Column 2 scrolls twice as fast).
@@ -82,7 +88,7 @@ graph TD
 
 ### 3.5 Why MV Creatives (The Strategic Apex)
 *   **Atmosphere:** Return to deep obsidian. An interactive canvas displays a quiet 3D particle constellation.
-*   **Composition:** Moving the cursor pulls the particles into a sharp, structured coordinate point—representing strategic focus and engineering alignment.
+*   **Composition:** Designed as a subtle, architectural drawing space. Avoids sci-fi, crypto, or futuristic glow webs. Particles act as blueprint vertices (points along geometric lines). Moving the cursor pulls vertices together to form structured product frames (e.g., a wireframe grid).
 
 ### 3.6 Testimonials (Humanized Resonance)
 *   **Atmosphere:** An editorial spread. High-quality grayscale portraits of partners paired with large, italicized client quotes. 
@@ -101,8 +107,11 @@ The portfolio page is treated as an interactive directory rather than a passive 
 *   **Editorial vs. Tech View Toggle:** A monospaced toggle button at the top of the page:
     *   *Editorial Mode:* Asymmetric full-bleed showcase cards with large text overlays.
     *   *Tech Mode:* A dense, fast-loading monospaced directory layout. Lists projects by Client, Stack, Year, and Metric Outcome (optimized for enterprise technical buyers).
-*   **Hover Reels:** Hovering over any project cover card plays a silent, looping cinematic video showing the product's actual interface and interactions (instead of static mockups).
-*   **Technical Headers:** Every project card has a monospaced metadata header (e.g., `[ CLIENT: NORTHLIGHT // STACK: NEXTJS, RUST // IMPACT: +220% ]`) framing the main image.
+*   **Controlled Video Reels:** **Portfolio video reels do not autoplay.**
+    *   *Default State:* High-resolution static image preview.
+    *   *Desktop Interaction:* Plays the video reel smoothly on cursor hover.
+    *   *Mobile Interaction:* Plays the video reel on tap (touch event).
+*   **Technical Headers:** Every project card has a monospaced metadata header (e.g., `[ IMPACT: +220% // CLIENT: NORTHLIGHT // STACK: NEXTJS ]`) framing the main image, reinforcing outcomes first.
 
 ---
 
