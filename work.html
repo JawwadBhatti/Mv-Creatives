@@ -31,7 +31,6 @@
       color: var(--text-primary-dark);
     }
     
-    /* Masonry grid items transitions */
     .portfolio-grid-item {
       transition: opacity 250ms ease, transform 250ms ease;
     }
@@ -44,7 +43,7 @@
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
       
-      <nav class="site-nav" id="desktop-nav">
+      <nav class="site-nav" id="desktop-nav" aria-label="Main navigation menu">
         <ul>
           <li><a href="./index.html" id="nav-home">Home</a></li>
           <li><a href="./services.html" id="nav-services">Services</a></li>
@@ -58,8 +57,8 @@
         <a href="./contact.html?path=start-project" class="btn-primary" id="header-cta-btn">Start a Project</a>
       </div>
       
-      <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="nav-toggle-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <button class="mobile-nav-toggle" aria-label="Toggle main navigation menu" aria-expanded="false" aria-controls="mobile-menu-drawer" id="nav-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
         </svg>
       </button>
@@ -67,7 +66,7 @@
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer" id="mobile-menu-drawer">
+  <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <ul>
       <li><a href="./index.html" id="mob-nav-home">Home</a></li>
       <li><a href="./services.html" id="mob-nav-services">Services</a></li>
@@ -80,7 +79,7 @@
 
   <main>
 
-    <!-- Section 01: Hero (Conviction Zone) -->
+    <!-- Section 01: Hero -->
     <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 60vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark);" id="work-hero">
       <div class="container grid-12" style="align-items: center; width: 100%;">
         <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
@@ -95,74 +94,140 @@
 
     <!-- Section 02: Sticky Filter Bar -->
     <div style="position: sticky; top: 72px; z-index: 50; border-bottom: 1px solid var(--border-dark); padding: 16px 0; background-color: var(--bg-dark-anchor);" id="sticky-filter-bar">
-      <div class="container" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center;">
-        <button class="filter-pill active" data-filter="all" id="pill-all">All</button>
-        <button class="filter-pill" data-filter="design" id="pill-design">Design & Branding</button>
-        <button class="filter-pill" data-filter="web" id="pill-web">Websites & Ecommerce</button>
-        <button class="filter-pill" data-filter="software" id="pill-software">Software & SaaS</button>
-        <button class="filter-pill" data-filter="ai" id="pill-ai">AI & Enterprise Solutions</button>
+      <div class="container" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center;" role="tablist" aria-label="Portfolio Category Filter">
+        <button class="filter-pill active" data-filter="all" id="pill-all" role="tab" aria-selected="true">All</button>
+        <button class="filter-pill" data-filter="design" id="pill-design" role="tab" aria-selected="false">Design & Branding</button>
+        <button class="filter-pill" data-filter="web" id="pill-web" role="tab" aria-selected="false">Websites & Ecommerce</button>
+        <button class="filter-pill" data-filter="software" id="pill-software" role="tab" aria-selected="false">Software & SaaS</button>
+        <button class="filter-pill" data-filter="ai" id="pill-ai" role="tab" aria-selected="false">AI & Enterprise Solutions</button>
       </div>
     </div>
 
-    <!-- Section 03: Asymmetric Portfolio Masonry Grid -->
+    <!-- Section 03: Expanded Portfolio Masonry Grid -->
     <section class="section-padding-major theme-anchor-dark" id="portfolio-masonry">
       <div class="container">
         
         <!-- Grid wrapper -->
-        <div class="grid-12" style="gap: 48px 24px;" id="masonry-grid">
+        <div class="grid-12" style="gap: 60px 24px;" id="masonry-grid">
           
-          <!-- Project 1: Northlight (Web) -->
+          <!-- Card 1: Northlight Redesign (Web) -->
           <div class="portfolio-grid-item portfolio-card" data-category="web" style="grid-column: 2 / span 5; display: block;" id="northlight">
-            <div style="width: 100%; height: 480px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
-              <img src="./portfolio_northlight_1782055685953.png" alt="Northlight Fintech Redesign" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-              <div>
-                <span class="eyebrow-label" style="font-size: 11px;">Northlight</span>
-                <h3 class="h3-text" style="margin-top: 4px; font-size: 22px;">Platform Redesign</h3>
-                <p class="body-small" style="color: var(--text-secondary); margin-top: 8px;">FinTech • Series B Redesign</p>
+            <a href="./contact.html?path=start-project" style="display: block;">
+              <div style="width: 100%; height: 480px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
+                <img src="./portfolio_northlight_1782055685953.png" alt="Northlight Fintech Redesign Mockup" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
               </div>
-              <div style="text-align: right;">
-                <div class="metric-text" style="font-size: 32px;">+220%</div>
-                <span class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary);">Leads</span>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <span class="eyebrow-label" style="font-size: 11px;">Northlight</span>
+                  <h3 class="h3-text" style="margin-top: 4px; font-size: 22px;">Platform Redesign</h3>
+                  <p class="body-small" style="color: var(--text-secondary); margin-top: 8px;">Websites & Ecommerce • FinTech Platform Redesign</p>
+                </div>
+                <div style="text-align: right;">
+                  <div class="metric-text" style="font-size: 32px;">+220%</div>
+                  <span class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary);">Leads</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Project 2: CareFlow (AI) -->
+          <!-- Card 2: CareFlow Assistant (AI) -->
           <div class="portfolio-grid-item portfolio-card" data-category="ai" style="grid-column: 8 / span 4; transform: translateY(60px); display: block;" id="careflow">
-            <div style="width: 100%; height: 400px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
-              <img src="./portfolio_careflow_1782055700597.png" alt="CareFlow AI Clinical Assistant" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-              <div>
-                <span class="eyebrow-label" style="font-size: 11px;">CareFlow</span>
-                <h3 class="h3-text" style="margin-top: 4px; font-size: 22px;">AI Clinical Assistant</h3>
-                <p class="body-small" style="color: var(--text-secondary); margin-top: 8px;">AI & HealthTech Automation</p>
+            <a href="./contact.html?path=start-project" style="display: block;">
+              <div style="width: 100%; height: 400px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
+                <img src="./portfolio_careflow_1782055700597.png" alt="CareFlow AI Clinical Assistant Mockup" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
               </div>
-              <div style="text-align: right;">
-                <div class="metric-text" style="font-size: 32px;">-40%</div>
-                <span class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary);">Friction</span>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <span class="eyebrow-label" style="font-size: 11px;">CareFlow</span>
+                  <h3 class="h3-text" style="margin-top: 4px; font-size: 22px;">AI Clinical Assistant</h3>
+                  <p class="body-small" style="color: var(--text-secondary); margin-top: 8px;">AI & Enterprise Solutions • HealthTech Assist System</p>
+                </div>
+                <div style="text-align: right;">
+                  <div class="metric-text" style="font-size: 32px;">-40%</div>
+                  <span class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary);">Friction</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Project 3: ApexRetail (Software) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="software" style="grid-column: 2 / span 5; margin-top: 40px; display: block;" id="apexretail">
-            <div style="width: 100%; height: 420px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
-              <img src="./case_study_mockup_1782055715116.png" alt="ApexRetail Support Redesign" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-              <div>
-                <span class="eyebrow-label" style="font-size: 11px;">ApexRetail</span>
-                <h3 class="h3-text" style="margin-top: 4px; font-size: 22px;">Support Automation</h3>
-                <p class="body-small" style="color: var(--text-secondary); margin-top: 8px;">Software & SaaS Platform</p>
+          <!-- Card 3: Northlight Design System (Design) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="design" style="grid-column: 2 / span 5; margin-top: 40px; display: block;" id="northlight-system">
+            <a href="./contact.html?path=start-project" style="display: block;">
+              <div style="width: 100%; height: 420px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
+                <img src="./design_system_components_1782073720217.png" alt="Northlight Component Design System Spec" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
               </div>
-              <div style="text-align: right;">
-                <div class="metric-text" style="font-size: 32px;">-42%</div>
-                <span class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary);">Tickets</span>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <span class="eyebrow-label" style="font-size: 11px;">Northlight</span>
+                  <h3 class="h3-text" style="margin-top: 4px; font-size: 22px;">Core Design System</h3>
+                  <p class="body-small" style="color: var(--text-secondary); margin-top: 8px;">Design & Branding • Component Library Architectures</p>
+                </div>
+                <div style="text-align: right;">
+                  <div class="metric-text" style="font-size: 32px;">2X</div>
+                  <span class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary);">Demos</span>
+                </div>
               </div>
-            </div>
+            </a>
+          </div>
+
+          <!-- Card 4: CareFlow Dashboard (Software) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="software" style="grid-column: 8 / span 4; transform: translateY(100px); display: block;" id="careflow-dashboard">
+            <a href="./contact.html?path=start-project" style="display: block;">
+              <div style="width: 100%; height: 400px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
+                <img src="./desktop_work_dark_1782074095354.png" alt="CareFlow Clinical Dashboard Layout Mockup" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <span class="eyebrow-label" style="font-size: 11px;">CareFlow</span>
+                  <h3 class="h3-text" style="margin-top: 4px; font-size: 22px;">Clinical Dashboard</h3>
+                  <p class="body-small" style="color: var(--text-secondary); margin-top: 8px;">Software & SaaS • Complex Data-rich interface</p>
+                </div>
+                <div style="text-align: right;">
+                  <div class="metric-text" style="font-size: 32px;">12-WK</div>
+                  <span class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary);">Deploy</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 5: ApexRetail Support (Software) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="software" style="grid-column: 2 / span 5; margin-top: 80px; display: block;" id="apexretail">
+            <a href="./contact.html?path=start-project" style="display: block;">
+              <div style="width: 100%; height: 440px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
+                <img src="./case_study_mockup_1782055715116.png" alt="ApexRetail Support Automation Mockup" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <span class="eyebrow-label" style="font-size: 11px;">ApexRetail</span>
+                  <h3 class="h3-text" style="margin-top: 4px; font-size: 22px;">Support Automation</h3>
+                  <p class="body-small" style="color: var(--text-secondary); margin-top: 8px;">Software & SaaS • Customer Support Interface</p>
+                </div>
+                <div style="text-align: right;">
+                  <div class="metric-text" style="font-size: 32px;">-42%</div>
+                  <span class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary);">Tickets</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 6: SafeHealth Integration (AI) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="ai" style="grid-column: 8 / span 4; transform: translateY(140px); display: block;" id="safehealth">
+            <a href="./contact.html?path=start-project" style="display: block;">
+              <div style="width: 100%; height: 420px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
+                <img src="./process_architecture_map_1782055742786.png" alt="SafeHealth Enterprise Integration System Schema" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <span class="eyebrow-label" style="font-size: 11px;">SafeHealth</span>
+                  <h3 class="h3-text" style="margin-top: 4px; font-size: 22px;">Healthcare Integration</h3>
+                  <p class="body-small" style="color: var(--text-secondary); margin-top: 8px;">AI & Enterprise Solutions • Database Automation</p>
+                </div>
+                <div style="text-align: right;">
+                  <div class="metric-text" style="font-size: 32px;">30-D</div>
+                  <span class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary);">Setup</span>
+                </div>
+              </div>
+            </a>
           </div>
           
         </div>
@@ -170,7 +235,7 @@
     </section>
 
     <!-- Adjuster padding for asymmetric elements -->
-    <div style="height: 100px;" class="theme-anchor-dark"></div>
+    <div style="height: 180px;" class="theme-anchor-dark"></div>
 
     <!-- Section 04: Cumulative Results Strip -->
     <section class="section-padding-standard theme-dark" style="border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark);" id="results-strip">
@@ -199,7 +264,7 @@
       <div class="container" style="position: relative; z-index: 10;">
         <h2 class="display-text" style="margin-bottom: 24px;">Ready for similar results?</h2>
         <p class="body-large" style="color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Start with a project brief, or a Contra contract conversation. We respond within 24 hours.
+          Start with a project brief, or a Contra contract conversation.
         </p>
         
         <div class="cta-cluster" style="justify-content: center; margin-bottom: 60px;">
@@ -208,10 +273,10 @@
         </div>
         
         <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span class="eyebrow-label" style="font-size: 11px;">Serving Clients Across US, Australia & Beyond</span>
+          <span class="eyebrow-label" style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Serving Clients Across US, Australia & Beyond • WE RESPOND WITHIN 24 HOURS</span>
           <a href="https://contra.com/mv_creatives" class="link-trust" target="_blank" style="font-size: 13px;" id="footer-trust-cta">
             <span>Hire on Contra</span>
-            <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
           </a>
         </div>
       </div>

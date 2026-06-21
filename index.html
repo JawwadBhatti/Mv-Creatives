@@ -14,7 +14,7 @@
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
       
-      <nav class="site-nav" id="desktop-nav">
+      <nav class="site-nav" id="desktop-nav" aria-label="Main navigation menu">
         <ul>
           <li><a href="./index.html" class="active" id="nav-home">Home</a></li>
           <li><a href="./services.html" id="nav-services">Services</a></li>
@@ -28,8 +28,8 @@
         <a href="./contact.html?path=start-project" class="btn-primary" id="header-cta-btn">Start a Project</a>
       </div>
       
-      <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="nav-toggle-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <button class="mobile-nav-toggle" aria-label="Toggle main navigation menu" aria-expanded="false" aria-controls="mobile-menu-drawer" id="nav-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
         </svg>
       </button>
@@ -37,7 +37,7 @@
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer" id="mobile-menu-drawer">
+  <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <ul>
       <li><a href="./index.html" class="active" id="mob-nav-home">Home</a></li>
       <li><a href="./services.html" id="mob-nav-services">Services</a></li>
@@ -56,7 +56,7 @@
         <div style="grid-column: 1 / span 7; z-index: 10;" class="reveal-on-scroll">
           <p class="eyebrow-label" style="margin-bottom: 16px;">Digital Product Studio</p>
           <h1 class="display-text" style="margin-bottom: 24px; color: var(--text-primary-dark);">
-            The distance between a good idea and a product people love is design intelligence.
+            The distance between a good idea and a product people love is design intelligence. We close that distance.
           </h1>
           <p class="body-large" style="color: var(--text-secondary); margin-bottom: 40px; max-width: 620px;">
             We architect digital products, brand systems, and AI-powered experiences for organizations that refuse to compromise.
@@ -66,7 +66,7 @@
             <a href="./work.html" class="btn-secondary" id="hero-secondary-cta">View Our Work</a>
             <a href="https://contra.com/mv_creatives" class="link-trust" target="_blank" id="hero-trust-cta">
               <span>Hire on Contra</span>
-              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
             </a>
           </div>
         </div>
@@ -113,47 +113,54 @@
         <div style="margin-bottom: 80px;" class="reveal-on-scroll">
           <h2 class="h2-text text-col-limit" style="margin-bottom: 24px; color: var(--text-primary-light);">Capabilities that move business forward</h2>
           <p class="body-large text-col-limit" style="color: var(--text-muted);">
-            We don't add AI to our process. We think AI-first, then design for humans. The result is digital interfaces that are faster to build, easier to use, and smarter over time.
+            We don't add AI to our process. We think AI-first, then design for humans. The result is products that are faster to build, easier to use, and smarter over time.
           </p>
         </div>
 
         <div class="grid-12">
           <!-- Card 1 -->
-          <div class="elevation-1 reveal-on-scroll" style="grid-column: 2 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid transparent; transition: all var(--transition-default);" onmouseenter="this.style.borderColor='var(--accent-primary)'; this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--box-shadow-2)';" onmouseleave="this.style.borderColor='transparent'; this.style.transform='none';">
+          <div class="elevation-1" style="grid-column: 2 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid transparent; transition: all var(--transition-default);" onmouseenter="this.style.borderColor='var(--accent-primary)'; this.style.transform='translateY(-4px)';" onmouseleave="this.style.borderColor='transparent'; this.style.transform='none';">
             <span class="eyebrow-label" style="color: var(--accent-primary);">01 / Branding</span>
             <h3 class="h3-text" style="color: var(--text-primary-light); margin: 16px 0 12px 0;">Design & Branding</h3>
             <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
-              Identity systems, brand strategy, visual guidelines, UI/UX research, and digital assets.
+              Identity systems, brand strategy, visual guidelines, UI/UX research.
             </p>
-            <a href="./services.html" class="link-trust" style="color: var(--accent-primary);">Learn More</a>
+            <a href="./contact.html?path=start-project" class="link-trust" style="color: var(--accent-primary);">Start a Project</a>
           </div>
           <!-- Card 2 -->
           <div class="elevation-1 reveal-on-scroll stagger-1" style="grid-column: 7 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid transparent; transition: all var(--transition-default);" onmouseenter="this.style.borderColor='var(--accent-primary)'; this.style.transform='translateY(-4px)';" onmouseleave="this.style.borderColor='transparent'; this.style.transform='none';">
             <span class="eyebrow-label" style="color: var(--accent-primary);">02 / Engineering</span>
             <h3 class="h3-text" style="color: var(--text-primary-light); margin: 16px 0 12px 0;">Websites & Ecommerce</h3>
             <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
-              Custom corporate builds, optimization, headless CMS deployment, and performance architecture.
+              Custom builds, platform optimization, headless CMS, performance tuning.
             </p>
-            <a href="./services.html" class="link-trust" style="color: var(--accent-primary);">Learn More</a>
+            <a href="./contact.html?path=start-project" class="link-trust" style="color: var(--accent-primary);">Start a Project</a>
           </div>
           <!-- Card 3 -->
           <div class="elevation-1 reveal-on-scroll" style="grid-column: 2 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid transparent; transition: all var(--transition-default); margin-top: 24px;" onmouseenter="this.style.borderColor='var(--accent-primary)'; this.style.transform='translateY(-4px)';" onmouseleave="this.style.borderColor='transparent'; this.style.transform='none';">
             <span class="eyebrow-label" style="color: var(--accent-primary);">03 / Products</span>
             <h3 class="h3-text" style="color: var(--text-primary-light); margin: 16px 0 12px 0;">Software & SaaS</h3>
             <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
-              Complex SaaS product designs, component-level systems design, and web interfaces.
+              Product design, component-level design systems, frontend engineering.
             </p>
-            <a href="./services.html" class="link-trust" style="color: var(--accent-primary);">Learn More</a>
+            <a href="./contact.html?path=start-project" class="link-trust" style="color: var(--accent-primary);">Start a Project</a>
           </div>
           <!-- Card 4 -->
           <div class="elevation-1 reveal-on-scroll stagger-1" style="grid-column: 7 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid transparent; transition: all var(--transition-default); margin-top: 24px;" onmouseenter="this.style.borderColor='var(--accent-primary)'; this.style.transform='translateY(-4px)';" onmouseleave="this.style.borderColor='transparent'; this.style.transform='none';">
             <span class="eyebrow-label" style="color: var(--accent-primary);">04 / Intelligence</span>
             <h3 class="h3-text" style="color: var(--text-primary-light); margin: 16px 0 12px 0;">AI & Enterprise Solutions</h3>
             <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
-              AI-native assistant interfaces, database automation, and bespoke intelligent integrations.
+              AI-native interfaces, database automation, intelligent integrations.
             </p>
-            <a href="./services.html" class="link-trust" style="color: var(--accent-primary);">Learn More</a>
+            <a href="./contact.html?path=start-project" class="link-trust" style="color: var(--accent-primary);">Start a Project</a>
           </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;" class="reveal-on-scroll">
+          <a href="https://contra.com/mv_creatives" class="link-trust" target="_blank" style="font-size: 15px;">
+            <span>Hire on Contra</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -355,6 +362,7 @@
                 "Users were dropping out at step three because account limits were unclear. We repositioned thresholds and added active helper states."
               </p>
             </div>
+            <a href="./work.html" class="btn-secondary" style="margin-top: 24px;" id="case-highlight-cta">View Our Work</a>
           </div>
           <div style="grid-column: 9 / span 3; text-align: center;" class="reveal-on-scroll stagger-2">
             <div style="font-size: 120px; font-weight: 700; font-family: var(--font-display); color: var(--accent-primary); line-height: 1.0;">+220%</div>
@@ -419,7 +427,7 @@
       <div class="container" style="position: relative; z-index: 10;">
         <h2 class="display-text" style="margin-bottom: 24px;">Let's make your possible, actual.</h2>
         <p class="body-large" style="color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Start with a project brief, or a Contra contract conversation. We respond within 24 hours.
+          Start with a project brief, or a Contra contract conversation.
         </p>
         
         <div class="cta-cluster" style="justify-content: center; margin-bottom: 60px;">
@@ -428,10 +436,10 @@
         </div>
         
         <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span class="eyebrow-label" style="font-size: 11px;">Serving Clients Across US, Australia & Beyond</span>
+          <span class="eyebrow-label" style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Serving Clients Across US, Australia & Beyond • WE RESPOND WITHIN 24 HOURS</span>
           <a href="https://contra.com/mv_creatives" class="link-trust" target="_blank" style="font-size: 13px;" id="footer-trust-cta">
             <span>Hire on Contra</span>
-            <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
           </a>
         </div>
       </div>

@@ -127,3 +127,28 @@ Below is the cross-reference mapping that highlights how visual definitions from
 *   **Cursor Hidden Behavior:** Custom cursor follower tracking relies on a desktop viewport hover state (`min-width: 1024px`). Touchscreen and mobile viewports fall back gracefully to native mobile tap cursors.
 *   **Grid Row Expansion:** The CSS Grid height auto transition (`grid-template-rows: 0fr -> 1fr`) requires an internal child with `overflow: hidden`. Setting paddings directly on the expandable container will cause layout jumps; spacing must be kept on the internal inner wrapper.
 *   **FLIP Reordering offsets:** The JS reordering of masonry items in the work page uses standard fade transitions. It does not perform full 2D position shifts on viewport changes unless a complete page reload or reflow is executed.
+
+---
+
+## 7. Deployment Instructions
+
+Since this project consists of raw Vanilla HTML, CSS, and JS files, it can be deployed for free instantly on static hosting platforms.
+
+### Option A: GitHub Pages
+1. Go to your repository **Settings** tab on GitHub.
+2. Select **Pages** from the left-hand sidebar menu.
+3. Under **Build and deployment**, select **Deploy from a branch**.
+4. Set the branch source to `main` and folder to `/ (root)`.
+5. Click **Save**. Within 1–2 minutes, your website will be live at `https://<your-username>.github.io/Mv-Creatives/`.
+
+### Option B: Netlify (Drag & Drop)
+1. Go to [https://app.netlify.com/drop](https://app.netlify.com/drop).
+2. Drag and drop the complete local folder (`MV Creatives/` root folder) directly into the upload box.
+3. Netlify will instantly build and generate a live URL for your website.
+
+### Option C: Vercel (CLI or Import)
+1. Go to [https://vercel.com/new](https://vercel.com/new).
+2. Connect your GitHub account and import the `JawwadBhatti/Mv-Creatives` repository.
+3. Set the **Framework Preset** to `Other` (Vanilla HTML).
+4. Click **Deploy**. Vercel will launch your site and set up automatic redeployments on every git push.
+

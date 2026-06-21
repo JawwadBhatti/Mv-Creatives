@@ -56,7 +56,7 @@
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
       
-      <nav class="site-nav" id="desktop-nav">
+      <nav class="site-nav" id="desktop-nav" aria-label="Main navigation menu">
         <ul>
           <li><a href="./index.html" id="nav-home">Home</a></li>
           <li><a href="./services.html" id="nav-services">Services</a></li>
@@ -70,8 +70,8 @@
         <a href="./contact.html?path=start-project" class="btn-primary" id="header-cta-btn">Start a Project</a>
       </div>
       
-      <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="nav-toggle-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <button class="mobile-nav-toggle" aria-label="Toggle main navigation menu" aria-expanded="false" aria-controls="mobile-menu-drawer" id="nav-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
         </svg>
       </button>
@@ -79,7 +79,7 @@
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer" id="mobile-menu-drawer">
+  <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <ul>
       <li><a href="./index.html" id="mob-nav-home">Home</a></li>
       <li><a href="./services.html" id="mob-nav-services">Services</a></li>
@@ -108,15 +108,15 @@
     <!-- Section 02: Multi-Path Tab Selector -->
     <section style="background-color: var(--bg-hero); padding: 60px 0 20px 0;" id="tabs-section">
       <div class="container grid-12">
-        <button class="tab-btn active" data-path="start-project" style="grid-column: 2 / span 3;" id="tab-start-project">
+        <button class="tab-btn active" data-path="start-project" style="grid-column: 2 / span 3;" id="tab-start-project" aria-expanded="true">
           <span class="tab-btn-title">Start a Project</span>
           <span class="tab-btn-desc">Fill our smart qualification form for review</span>
         </button>
-        <button class="tab-btn" data-path="view-work" style="grid-column: 5 / span 3;" id="tab-view-work">
+        <button class="tab-btn" data-path="view-work" style="grid-column: 5 / span 3;" id="tab-view-work" aria-expanded="false">
           <span class="tab-btn-title">View Our Work</span>
           <span class="tab-btn-desc">Browse through case studies before submitting</span>
         </button>
-        <button class="tab-btn" data-path="hire-contra" style="grid-column: 8 / span 3;" id="tab-hire-contra">
+        <button class="tab-btn" data-path="hire-contra" style="grid-column: 8 / span 3;" id="tab-hire-contra" aria-expanded="false">
           <span class="tab-btn-title">Hire on Contra</span>
           <span class="tab-btn-desc">Initiate immediate freelance contract scopes</span>
         </button>
@@ -132,20 +132,20 @@
           <div class="form-wrapper">
             <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 40px;">Tell us about your project</h3>
             
-            <form id="qualification-form">
+            <form id="qualification-form" aria-label="Project qualification questionnaire">
               
               <div class="form-group">
                 <input type="text" id="form-name" class="form-input" required>
                 <label for="form-name" class="form-label">Full Name *</label>
                 <div class="focus-line"></div>
-                <div class="error-message">This field is required.</div>
+                <div class="error-message" id="error-name">This field is required.</div>
               </div>
 
               <div class="form-group">
                 <input type="email" id="form-email" class="form-input" required>
                 <label for="form-email" class="form-label">Email Address *</label>
                 <div class="focus-line"></div>
-                <div class="error-message">Please enter a valid email address.</div>
+                <div class="error-message" id="error-email">Please enter a valid email address.</div>
               </div>
 
               <div class="form-group">
@@ -156,7 +156,7 @@
 
               <div class="form-group">
                 <select id="form-project-type" class="form-input" required style="padding-right: 30px;">
-                  <option value="" disabled selected></option>
+                  <option value="" disabled selected aria-hidden="true"></option>
                   <option value="design-branding">Design & Branding</option>
                   <option value="websites-ecommerce">Websites & Ecommerce</option>
                   <option value="software-saas">Software & SaaS</option>
@@ -164,24 +164,24 @@
                 </select>
                 <label for="form-project-type" class="form-label">Project Type *</label>
                 <div class="focus-line"></div>
-                <div class="error-message">Please select a project type.</div>
+                <div class="error-message" id="error-project-type">Please select a project type.</div>
               </div>
 
               <div class="form-group">
                 <textarea id="form-brief" class="form-input" rows="3" required style="resize: none;"></textarea>
                 <label for="form-brief" class="form-label">Project Brief *</label>
                 <div class="focus-line"></div>
-                <div class="error-message">Please describe your project requirements.</div>
+                <div class="error-message" id="error-brief">Please describe your project requirements.</div>
               </div>
 
-              <button type="submit" class="btn-primary" style="margin-top: 20px;" id="form-submit-btn">Send Inquiry</button>
+              <button type="submit" class="btn-primary" style="margin-top: 20px;" id="form-submit-btn">Start a Project</button>
             </form>
           </div>
 
           <!-- Form Success State -->
-          <div class="success-wrapper" style="display: none; opacity: 0; transition: opacity 400ms ease; padding: 60px 40px; text-align: center; border: 1px solid var(--border-light); border-radius: 8px; background-color: var(--surface-light-card);">
+          <div class="success-wrapper" tabindex="-1" style="display: none; opacity: 0; transition: opacity 400ms ease; padding: 60px 40px; text-align: center; border: 1px solid var(--border-light); border-radius: 8px; background-color: var(--surface-light-card);">
             <div style="width: 60px; height: 60px; border-radius: 50%; background-color: var(--accent-primary); color: #FFF; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
             </div>
             <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 12px;">Inquiry Sent Successfully</h3>
             <p class="body-regular" style="color: var(--text-muted);">
@@ -205,8 +205,8 @@
               For rapid contract setup and escrow-backed milestone agreements, you can book us directly on Contra.
             </p>
             <a href="https://contra.com/mv_creatives" target="_blank" class="link-trust" style="color: var(--accent-primary);">
-              <span>Go to Contra Profile</span>
-              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+              <span>Hire on Contra</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
             </a>
           </div>
 

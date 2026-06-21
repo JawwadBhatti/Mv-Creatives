@@ -14,7 +14,7 @@
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
       
-      <nav class="site-nav" id="desktop-nav">
+      <nav class="site-nav" id="desktop-nav" aria-label="Main navigation menu">
         <ul>
           <li><a href="./index.html" id="nav-home">Home</a></li>
           <li><a href="./services.html" class="active" id="nav-services">Services</a></li>
@@ -28,8 +28,8 @@
         <a href="./contact.html?path=start-project" class="btn-primary" id="header-cta-btn">Start a Project</a>
       </div>
       
-      <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="nav-toggle-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <button class="mobile-nav-toggle" aria-label="Toggle main navigation menu" aria-expanded="false" aria-controls="mobile-menu-drawer" id="nav-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
         </svg>
       </button>
@@ -37,7 +37,7 @@
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer" id="mobile-menu-drawer">
+  <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <ul>
       <li><a href="./index.html" id="mob-nav-home">Home</a></li>
       <li><a href="./services.html" class="active" id="mob-nav-services">Services</a></li>
@@ -50,7 +50,7 @@
 
   <main>
 
-    <!-- Section 01: Hero (Conviction Zone) -->
+    <!-- Section 01: Hero -->
     <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 80vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark);" id="services-hero">
       <div class="container grid-12" style="align-items: center; width: 100%;">
         <div style="grid-column: 2 / span 7;" class="reveal-on-scroll">
@@ -62,7 +62,7 @@
         </div>
         <div style="grid-column: 9 / span 3; opacity: 0.25;" class="reveal-on-scroll stagger-2">
           <!-- Geometric Nodes Illustration representation -->
-          <svg viewBox="0 0 100 100" style="width: 100%; height: auto; stroke: var(--accent-primary); stroke-width: 0.5; fill: none;">
+          <svg viewBox="0 0 100 100" style="width: 100%; height: auto; stroke: var(--accent-primary); stroke-width: 0.5; fill: none;" aria-hidden="true">
             <circle cx="20" cy="20" r="2" fill="var(--accent-primary)" />
             <circle cx="80" cy="20" r="2" fill="var(--accent-primary)" />
             <circle cx="50" cy="50" r="3" fill="var(--accent-primary)" />
@@ -89,39 +89,39 @@
 
         <div class="grid-12">
           <!-- Group 1 -->
-          <div class="elevation-1 style-card-capabilities" style="grid-column: 2 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid var(--accent-primary); transition: transform var(--transition-default);" onmouseenter="this.style.transform='translateY(-4px)';" onmouseleave="this.style.transform='none';">
+          <div class="elevation-1" style="grid-column: 2 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid var(--accent-primary); transition: transform var(--transition-default);" onmouseenter="this.style.transform='translateY(-4px)';" onmouseleave="this.style.transform='none';">
             <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 16px;">Design & Branding</h3>
             <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
               Visual guidelines, digital assets, logo systems, and thorough user research designed to position your product as an industry leader.
             </p>
-            <span class="mono-text" style="font-size: 12px; color: var(--accent-primary);">EYEBALLS • RECOGNITION</span>
+            <a href="./contact.html?path=start-project" class="link-trust" style="color: var(--accent-primary);">Start a Project</a>
           </div>
 
           <!-- Group 2 -->
-          <div class="elevation-1 style-card-capabilities" style="grid-column: 7 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid var(--accent-primary); transition: transform var(--transition-default);" onmouseenter="this.style.transform='translateY(-4px)';" onmouseleave="this.style.transform='none';">
+          <div class="elevation-1" style="grid-column: 7 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid var(--accent-primary); transition: transform var(--transition-default);" onmouseenter="this.style.transform='translateY(-4px)';" onmouseleave="this.style.transform='none';">
             <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 16px;">Websites & Ecommerce</h3>
             <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
               Custom commercial builds optimized for speed, performance architecture, SEO foundations, and clean content management systems.
             </p>
-            <span class="mono-text" style="font-size: 12px; color: var(--accent-primary);">SPEED • CONVERSION</span>
+            <a href="./contact.html?path=start-project" class="link-trust" style="color: var(--accent-primary);">Start a Project</a>
           </div>
 
           <!-- Group 3 -->
-          <div class="elevation-1 style-card-capabilities" style="grid-column: 2 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid var(--accent-primary); transition: transform var(--transition-default); margin-top: 24px;" onmouseenter="this.style.transform='translateY(-4px)';" onmouseleave="this.style.transform='none';">
+          <div class="elevation-1" style="grid-column: 2 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid var(--accent-primary); transition: transform var(--transition-default); margin-top: 24px;" onmouseenter="this.style.transform='translateY(-4px)';" onmouseleave="this.style.transform='none';">
             <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 16px;">Software & SaaS</h3>
             <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
               Complex SaaS layout flows, component library design systems, web dashboards, and frontend UI templates built for user retention.
             </p>
-            <span class="mono-text" style="font-size: 12px; color: var(--accent-primary);">RETENTION • RETROFIT</span>
+            <a href="./contact.html?path=start-project" class="link-trust" style="color: var(--accent-primary);">Start a Project</a>
           </div>
 
           <!-- Group 4 -->
-          <div class="elevation-1 style-card-capabilities" style="grid-column: 7 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid var(--accent-primary); transition: transform var(--transition-default); margin-top: 24px;" onmouseenter="this.style.transform='translateY(-4px)';" onmouseleave="this.style.transform='none';">
+          <div class="elevation-1" style="grid-column: 7 / span 5; background-color: var(--surface-light-card); padding: 48px; border-radius: 8px; border-left: 3px solid var(--accent-primary); transition: transform var(--transition-default); margin-top: 24px;" onmouseenter="this.style.transform='translateY(-4px)';" onmouseleave="this.style.transform='none';">
             <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 16px;">AI & Enterprise Solutions</h3>
             <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
               AI assistants, prompt engineering, database automation interfaces, and custom enterprise tools that slash operations friction.
             </p>
-            <span class="mono-text" style="font-size: 12px; color: var(--accent-primary);">VELOCITY • AUTOMATION</span>
+            <a href="./contact.html?path=start-project" class="link-trust" style="color: var(--accent-primary);">Start a Project</a>
           </div>
         </div>
       </div>
@@ -138,10 +138,10 @@
         <div style="max-width: 1000px; margin: 0 auto;" class="reveal-on-scroll">
           <!-- Accordion Item 1 -->
           <div class="accordion-item active">
-            <div class="accordion-header">
+            <div class="accordion-header" aria-expanded="true" role="button">
               <h4 class="h4-text accordion-title" style="color: var(--text-primary-light);">Design & Branding System</h4>
               <div class="accordion-indicator" style="color: var(--text-secondary);">
-                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
               </div>
             </div>
             <div class="accordion-content">
@@ -160,7 +160,7 @@
                   </div>
                   <div style="grid-column: 9 / span 4;">
                     <h5 style="color: var(--text-primary-light); font-size: 14px; margin-bottom: 8px;">Real-World Case</h5>
-                    <p class="body-small" style="color: var(--text-muted);">See this applied in the <a href="./work.html#northlight" style="color: var(--accent-primary); font-weight: 600;">Northlight case study</a>.</p>
+                    <p class="body-small" style="color: var(--text-muted);">See this applied: <a href="./work.html#northlight" style="color: var(--accent-primary); font-weight: 600;">View Our Work</a>.</p>
                   </div>
                 </div>
               </div>
@@ -169,10 +169,10 @@
 
           <!-- Accordion Item 2 -->
           <div class="accordion-item">
-            <div class="accordion-header">
+            <div class="accordion-header" aria-expanded="false" role="button">
               <h4 class="h4-text accordion-title" style="color: var(--text-primary-light);">Websites & Ecommerce Architectures</h4>
               <div class="accordion-indicator" style="color: var(--text-secondary);">
-                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
               </div>
             </div>
             <div class="accordion-content">
@@ -191,7 +191,7 @@
                   </div>
                   <div style="grid-column: 9 / span 4;">
                     <h5 style="color: var(--text-primary-light); font-size: 14px; margin-bottom: 8px;">Real-World Case</h5>
-                    <p class="body-small" style="color: var(--text-muted);">See this applied in the <a href="./work.html#apexretail" style="color: var(--accent-primary); font-weight: 600;">ApexRetail integration</a>.</p>
+                    <p class="body-small" style="color: var(--text-muted);">See this applied: <a href="./work.html#apexretail" style="color: var(--accent-primary); font-weight: 600;">View Our Work</a>.</p>
                   </div>
                 </div>
               </div>
@@ -200,10 +200,10 @@
 
           <!-- Accordion Item 3 -->
           <div class="accordion-item">
-            <div class="accordion-header">
+            <div class="accordion-header" aria-expanded="false" role="button">
               <h4 class="h4-text accordion-title" style="color: var(--text-primary-light);">SaaS & Product Component Systems</h4>
               <div class="accordion-indicator" style="color: var(--text-secondary);">
-                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
               </div>
             </div>
             <div class="accordion-content">
@@ -222,7 +222,7 @@
                   </div>
                   <div style="grid-column: 9 / span 4;">
                     <h5 style="color: var(--text-primary-light); font-size: 14px; margin-bottom: 8px;">Real-World Case</h5>
-                    <p class="body-small" style="color: var(--text-muted);">See this applied in the <a href="./work.html#careflow" style="color: var(--accent-primary); font-weight: 600;">CareFlow Platform design</a>.</p>
+                    <p class="body-small" style="color: var(--text-muted);">See this applied: <a href="./work.html#careflow" style="color: var(--accent-primary); font-weight: 600;">View Our Work</a>.</p>
                   </div>
                 </div>
               </div>
@@ -231,10 +231,10 @@
 
           <!-- Accordion Item 4 -->
           <div class="accordion-item">
-            <div class="accordion-header">
+            <div class="accordion-header" aria-expanded="false" role="button">
               <h4 class="h4-text accordion-title" style="color: var(--text-primary-light);">AI Automation & Enterprise Workflows</h4>
               <div class="accordion-indicator" style="color: var(--text-secondary);">
-                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
               </div>
             </div>
             <div class="accordion-content">
@@ -253,7 +253,7 @@
                   </div>
                   <div style="grid-column: 9 / span 4;">
                     <h5 style="color: var(--text-primary-light); font-size: 14px; margin-bottom: 8px;">Real-World Case</h5>
-                    <p class="body-small" style="color: var(--text-muted);">See this applied in the <a href="./work.html#careflow" style="color: var(--accent-primary); font-weight: 600;">CareFlow AI Assistant</a>.</p>
+                    <p class="body-small" style="color: var(--text-muted);">See this applied: <a href="./work.html#careflow" style="color: var(--accent-primary); font-weight: 600;">View Our Work</a>.</p>
                   </div>
                 </div>
               </div>
@@ -319,10 +319,10 @@
         <div style="max-width: 800px; margin: 0 auto;" class="reveal-on-scroll">
           <!-- FAQ 1 -->
           <div class="accordion-item">
-            <div class="accordion-header">
+            <div class="accordion-header" aria-expanded="false" role="button">
               <h4 class="h5-text accordion-title">How do you charge for projects?</h4>
               <div class="accordion-indicator">
-                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
               </div>
             </div>
             <div class="accordion-content">
@@ -336,10 +336,10 @@
 
           <!-- FAQ 2 -->
           <div class="accordion-item">
-            <div class="accordion-header">
+            <div class="accordion-header" aria-expanded="false" role="button">
               <h4 class="h5-text accordion-title">What is your design process with AI?</h4>
               <div class="accordion-indicator">
-                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
               </div>
             </div>
             <div class="accordion-content">
@@ -353,10 +353,10 @@
 
           <!-- FAQ 3 -->
           <div class="accordion-item">
-            <div class="accordion-header">
+            <div class="accordion-header" aria-expanded="false" role="button">
               <h4 class="h5-text accordion-title">Do you do coding/engineering?</h4>
               <div class="accordion-indicator">
-                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
               </div>
             </div>
             <div class="accordion-content">
@@ -376,7 +376,7 @@
       <div class="container" style="position: relative; z-index: 10;">
         <h2 class="display-text" style="margin-bottom: 24px;">Let's make your possible, actual.</h2>
         <p class="body-large" style="color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Start with a project brief, or a Contra contract conversation. We respond within 24 hours.
+          Start with a project brief, or a Contra contract conversation.
         </p>
         
         <div class="cta-cluster" style="justify-content: center; margin-bottom: 60px;">
@@ -385,10 +385,10 @@
         </div>
         
         <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span class="eyebrow-label" style="font-size: 11px;">Serving Clients Across US, Australia & Beyond</span>
+          <span class="eyebrow-label" style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Serving Clients Across US, Australia & Beyond • WE RESPOND WITHIN 24 HOURS</span>
           <a href="https://contra.com/mv_creatives" class="link-trust" target="_blank" style="font-size: 13px;" id="footer-trust-cta">
             <span>Hire on Contra</span>
-            <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
           </a>
         </div>
       </div>
