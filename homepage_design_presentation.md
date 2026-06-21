@@ -2,11 +2,31 @@
 
 *Presented by the Design Director*
 
-This document defines the high-fidelity visual design decisions, spatial systems, and interactive choreography for the new **MV Creatives** homepage. We have discarded the standard SaaS template conventions in favor of a cinematic, editorial-grade product innovation aesthetic.
+This presentation details the final visual screen design decisions and high-fidelity mockups for the new **MV Creatives** homepage. We have completed the final design refinement pass, focusing entirely on visual identity, atmospheric depth, and user interaction.
 
 ---
 
-## Section-by-Section Screen Design Decisions
+## 1. High-Fidelity UI Mockup Showcase
+
+Use the slides below to review the final design variations and layouts:
+
+````carousel
+![Hero Version A — Headline: "DIGITAL PRODUCTS BUILT FOR THE UNCOMPROMISING", complete CTA stack, desaturated liquid chrome background](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/hero_mockup_a_1782078991052.png)
+<!-- slide -->
+![Hero Version B — Headline: "WE DESIGN WHAT COMES NEXT", complete CTA stack, ebonite grey backdrop, desaturated macro glass prism shadows](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/hero_mockup_b_1782079004311.png)
+<!-- slide -->
+![Hero Version C — Headline: "IDEAS ARE CHEAP. EXECUTION IS DESIGN.", complete CTA stack, desaturated sketches and technical gridlines](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/hero_mockup_c_1782079019776.png)
+<!-- slide -->
+![Interactive Capability Explorer — Left vertical service index, right capability viewport showing wireframes and design notes](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/capability_explorer_1782079032848.png)
+<!-- slide -->
+![Featured Work Editorial Gallery — Asymmetric layout, technical metadata, outcomes-first alignment](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/featured_work_mockup_1782079046056.png)
+<!-- slide -->
+![Final CTA Section — Pulses indigo gradient glow behind centered typography, complete CTA options](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/final_cta_mockup_1782079057924.png)
+````
+
+---
+
+## 2. Refined Section-by-Section Screen Design Decisions
 
 ### 1. Hero Section (Deep Void / Hook)
 
@@ -15,10 +35,16 @@ This document defines the high-fidelity visual design decisions, spatial systems
 *   **Layout:** Left-aligned asymmetrical block layout. Display headline is set at `120px` sizing with a `-0.03em` tracking offset, occupying the upper two-thirds of the viewport.
 *   **Framing Lines:** A thin `1px` carbon vertical line (`#1C1C24`) separates Column 6 and Column 7, dividing the headline area from the action items.
 
-#### B. Art Direction
+#### B. Art Direction (3 Headline Variations)
 *   **Background:** Deep Obsidian Black (`#060608`) with a subtle, low-opacity indigo radial gradient glowing behind Column 11.
-*   **Typography:** Satoshi Display (Heavy, 900) set in uppercase for the headline: **"DIGITAL PRODUCTS BUILT FOR THE UNCOMPROMISING."** Technical timezone readout set in JetBrains Mono (`12px`, `#8888A4`).
-*   **Primary CTA Button:** Clean rectangle, no rounded corners. Grounded in Electric Indigo (`#5C6CFA`) text with a fine `1px` border of the same color, transitioning to a solid fill on hover.
+*   **Typography:** Satoshi Display (Heavy, 900) set in uppercase. The three variations are:
+    1.  **Version A:** `"DIGITAL PRODUCTS BUILT FOR THE UNCOMPROMISING."` (Project studio statement)
+    2.  **Version B:** `"WE DESIGN WHAT COMES NEXT."` (Future-looking engineering hook)
+    3.  **Version C:** `"IDEAS ARE CHEAP. EXECUTION IS DESIGN."` (Creative leadership statement)
+*   **Complete CTA Stack:** Stacked horizontally or vertically:
+    1.  *Primary CTA:* `Start a Project` (Electric Indigo `#5C6CFA` background fill).
+    2.  *Secondary CTA:* `View Our Work` (Ghost outline button).
+    3.  *Trust CTA:* `Hire on Contra` (Clean monospaced text link stacked below).
 
 #### C. Video Direction
 *   **Asset:** `hero_ambient_refraction.webm` (1.8MB local loop).
@@ -37,7 +63,7 @@ This document defines the high-fidelity visual design decisions, spatial systems
 
 ---
 
-### 2. Outcomes-First Trust Strip
+### 2. Outcomes-First Trust Strip (Expanded)
 
 #### A. Visual Composition
 *   **Grid System:** Full-bleed horizontal band (`120px` height) crossing the 12-column grid.
@@ -45,7 +71,10 @@ This document defines the high-fidelity visual design decisions, spatial systems
 
 #### B. Art Direction
 *   **Background:** Deep Obsidian Black (`#060608`) bordered top and bottom by `1px solid #1C1C24` lines.
-*   **Typography:** Display elements set in JetBrains Mono (`48px`). The business outcome metrics are rendered as hollow text outlines (`-webkit-text-stroke: 1px #8888A4`) to prioritize light typographic weight, while the client name is set in solid ebonite text.
+*   **Typography:** Display elements set in JetBrains Mono (`48px`). The text combines business outcomes, delivery speed, product categories, and client achievements:
+    *   `[ +220% REVENUE // 12-WEEK SHIPPED // FINTECH PLATFORM // NORTHLIGHT ]`
+    *   `[ -40% OPERATIONAL TIME // 16-WEEK RUNTIME // CLINICAL SUITE // CAREFLOW ]`
+*   **Text Weights:** Outlined text marquee (`-webkit-text-stroke: 1px #8888A4`) to prioritize light typographic weight, with solid highlights on hover.
 
 #### C. Video Direction
 *   **Asset:** No video elements used. Purely typographic and motion-led to give visual pacing contrast.
@@ -55,7 +84,7 @@ This document defines the high-fidelity visual design decisions, spatial systems
 *   **Scroll Sync:** Scrolling down speeds up the marquee slightly in the scroll direction, creating a physical sense of momentum.
 
 #### E. Interaction Design
-*   **Hover Interaction:** Placing the cursor over a specific metric (e.g., `+220% REVENUE`) pauses the ticker marquee. The text outlines fill with solid Indigo (`#5C6CFA`) while showing a subtle glowing shadow behind the numbers.
+*   **Hover Interaction:** Placing the cursor over a specific metric pauses the ticker marquee. The text outlines fill with solid Indigo (`#5C6CFA`) while showing a subtle glowing shadow behind the numbers.
 
 #### F. Mobile Experience
 *   **Grid:** Fits full width. Typography scales down to `20px` JetBrains Mono. Marquee speed is reduced to `25px/sec` to prevent visual noise on small touch displays.
@@ -74,15 +103,16 @@ This document defines the high-fidelity visual design decisions, spatial systems
     *   *Software & SaaS / AI & Enterprise Solutions:* Ebonite Dark (`#0E0E12`) background with clean white typography (`#F0F0F8`).
 *   **Typography:** Capability titles set in Satoshi (Bold, `36px`). Selection numbers set in JetBrains Mono (`14px`, `#5C6CFA`).
 
-#### C. Video Direction
+#### C. Video & Atmosphere Direction
 *   **Asset:** Category-specific local video loops (e.g., `capabilities_ecommerce.webm`, `capabilities_ai.webm`).
 *   **Visual Style:** Grayscale product interactions and high-fidelity wireframe drawings in motion, playing at `opacity: 0.15` in the right viewport column.
+*   **Subtle Studio Atmosphere:** Integrated desaturated wireframe sketches, design notes, color palette blocks, and digital workshop elements layered into the background of the viewport (no team photos).
 
 #### D. Motion Direction
 *   **Transition:** Selecting a new capability triggers a split-second color inversion. The right viewport clips and slides open from left to right using a clean curtain transition (`0.4s cubic-bezier(0.16, 1, 0.3, 1)`).
 
 #### E. Interaction Design
-*   **Capability Index:** Clicking or hovering over a capability row triggers the split transition. The selected item displays a small Indigo indicator block next to its monospaced step counter (e.g., `[ 02 // WEBSITES & ECOMMERCE ]`).
+*   **Capability Index:** Clicking or hovering over a capability row triggers the split transition. The selected item displays a small Indigo indicator block next to its monospaced step counter (e.g., `[ 01 // DESIGN & BRANDING ]`).
 
 #### F. Mobile Experience
 *   **Grid:** Stacked layout. The 4 capability items act as accordions. Tapping an item expands it vertically to reveal its custom viewport preview, rather than shifting columns.
@@ -99,11 +129,11 @@ This document defines the high-fidelity visual design decisions, spatial systems
 
 #### B. Art Direction
 *   **Background:** Deep Obsidian Black (`#060608`).
-*   **Typography:** Technical headers set in JetBrains Mono (`12px`, `#8888A4`) showing outcome metrics first (e.g. `[ IMPACT: +220% // CLIENT: NORTHLIGHT // STACK: NEXTJS ]`). Project titles set in Satoshi (`32px`, `#F0F0F8`).
+*   **Typography:** Technical headers set in JetBrains Mono (`12px`, `#8888A4`) showing outcome metrics first (e.g. `[ IMPACT: +220% REVENUE // CLIENT: NORTHLIGHT // STACK: NEXTJS ]`). Project titles set in Satoshi (`32px`, `#F0F0F8`).
 
-#### C. Video Direction
+#### C. Video & Atmosphere Direction
 *   **Asset:** Dedicated case study silent video loops (`work_northlight.webm`, `work_careflow.webm`).
-*   **Default State:** Static, high-resolution desaturated thumbnail image.
+*   **Default State:** Static, high-resolution desaturated thumbnail image showing real design files and sketches.
 *   **Active State:** Triggers only on hover/tap. The video plays smoothly, transitioning the thumbnail from grayscale to rich color with an Indigo color overlay.
 
 #### D. Motion Direction
@@ -128,8 +158,9 @@ This document defines the high-fidelity visual design decisions, spatial systems
 *   **Background:** Ebonite Dark (`#0E0E12`).
 *   **Typography:** Section header in Satoshi (`48px`). Tech metrics in JetBrains Mono (`14px`, `#5C6CFA`).
 
-#### C. Video Direction
+#### C. Video & Atmosphere Direction
 *   **Asset:** No video files. Instead, a real-time, lightweight canvas drawing engine runs in the right column.
+*   **Studio References:** Displays engineering wireframe schemas, sketch lines, and mathematical design review grids.
 
 #### D. Motion Direction
 *   **Architectural Drawing:** A subtle particle canvas displaying points along geometric blueprint lines. The particles drift slowly on load, maintaining a quiet, structured grid rather than dynamic glowing webs.
@@ -152,8 +183,8 @@ This document defines the high-fidelity visual design decisions, spatial systems
 *   **Background:** Chalk White (`#FAFAFC`) with a thin carbon dividing line between photo and quote.
 *   **Typography:** Quote set in Satoshi Italic (`40px`, `#0A0A0F`), styled like a luxury print block quote. Client details set in JetBrains Mono (`12px`, `#8888A4`).
 
-#### C. Video Direction
-*   **Asset:** No video files.
+#### C. Video & Atmosphere Direction
+*   **Asset:** No video files. Includes subtle background grid patterns reminiscent of product sketches.
 
 #### D. Motion Direction
 *   **Entrance Reveal:** Quote letters fade in line-by-line as the section enters the viewport, using a smooth opacity mask transition.
@@ -175,6 +206,7 @@ This document defines the high-fidelity visual design decisions, spatial systems
 #### B. Art Direction
 *   **Background:** Deep Obsidian Black (`#060608`). A large, soft electric-indigo radial glow (`rgba(92,108,250,0.08)`) pulses slowly behind the content container.
 *   **Typography:** Headline set in Satoshi (`72px`, `#F0F0F8`): **"BUILD WHAT OTHERS SAY IS IMPOSSIBLE."** CTAs set in JetBrains Mono (`14px`).
+*   **CTA Stack:** Primary button (`Start a Project`), secondary ghost button (`View Our Work`), and trust link (`Hire on Contra`) stacked below.
 
 #### C. Video Direction
 *   **Asset:** No video files. Driven by typography and background light gradients.
@@ -201,18 +233,19 @@ HEADER:
 MV CREATIVES                 [   Home   Services   Work   Studio   ]         [Start a Project]
 ------------------------------------------------------------------------------------------
 HERO:
-DIGITAL PRODUCTS BUILT FOR THE UNCOMPROMISING.               | [JetBrains Mono Timezone]
+[Headline Variation A, B, or C]                              | [JetBrains Mono Timezone]
                                                              | [Start a Project CTA (Glow)]
+                                                             | [View Our Work]  [Hire on Contra]
 ==========================================================================================
-TRUST TICKER:
+TRUST TICKER (Expanded):
 ------------------------------------------------------------------------------------------
-<<<  +220% REVENUE // NORTHLIGHT  <<<  40% REDUCTION // CAREFLOW  <<<  +180% CONVERSION  <<<
+<<<  +220% REVENUE // 12-WK RUN // FINTECH // NORTHLIGHT  <<<  -40% TIME // 16-WK RUN  <<<
 ==========================================================================================
 CAPABILITY EXPLORER:
-[ 01 // DESIGN & BRANDING ] | Websites & Ecommerce [ Selected ]
+[ 01 // DESIGN & BRANDING ] | Design & Branding [ Selected ]
 [ 02 // WEBSITES & ECOMM ]  | ------------------------------------------------------------
 [ 03 // SOFTWARE & SAAS ]   | [ Asymmetric Editorial Grid Viewport ]
-[ 04 // AI & ENTERPRISE ]   | [ Grayscale Wireframe loop + +220% Revenue Metric Badge ]
+[ 04 // AI & ENTERPRISE ]   | [ Grayscale Wireframe sketches + design reviews ]
 ==========================================================================================
 FEATURED WORK:
 [ IMPACT: +220% // NORTHLIGHT ]           |
@@ -234,7 +267,8 @@ TESTIMONIALS:
 FINAL CTA:
                        [ Pulsing Indigo Radial Aura ]
                 BUILD WHAT OTHERS SAY IS IMPOSSIBLE.
-                     [Start a Project]   [Hire on Contra]
+                     [Start a Project]   [View Our Work]
+                               [Hire on Contra]
 ==========================================================================================
 FOOTER:
 MV CREATIVES                                                   Serving Clients Across US,
@@ -250,21 +284,21 @@ HEADER:
 MV CREATIVES                                              [ = (Menu) ]
 -------------------------------------------------------------------
 HERO:
-DIGITAL PRODUCTS BUILT FOR
-THE UNCOMPROMISING.
+[Headline Variation A, B, or C]
                                     [Start a Project CTA]
+                                    [View Our Work]  [Hire on Contra]
 ===================================================================
 TRUST TICKER:
 -------------------------------------------------------------------
-<<<  +220% REVENUE // NORTHLIGHT  <<<  40% REDUCTION // CAREFLOW  <<<
+<<<  +220% REVENUE // 12-WK // FINTECH // NORTHLIGHT  <<<
 ===================================================================
 CAPABILITY EXPLORER:
 [ 01 DESIGN ]   [ 02 WEBSITES ]   [ 03 SOFTWARE ]   [ 04 AI ]
 -------------------------------------------------------------------
 [ Expanded Viewport of Selected Capability ]
-[ Wireframe preview loop + Monospaced metrics ]
+[ Wireframe preview sketches + Monospaced metrics ]
 ===================================================================
-FEATURED WORK (Single Column Alternating):
+FEATURED WORK:
 [ IMPACT: +220% // NORTHLIGHT ]
 [ Static Preview / Play on Hover ]
 [ Project Title ]
@@ -281,7 +315,7 @@ TESTIMONIALS:
 ===================================================================
 FINAL CTA:
                 BUILD WHAT OTHERS SAY IS IMPOSSIBLE.
-                     [Start a Project]   [Hire on Contra]
+             [Start a Project]  [View Our Work]  [Hire on Contra]
 ```
 
 ### 3. Homepage Mobile Wireframe (4-Column Grid)
@@ -293,20 +327,20 @@ HEADER:
 MV CREATIVES           [ = (Menu) ]
 -----------------------------------
 HERO:
-DIGITAL PRODUCTS 
-BUILT FOR THE 
-UNCOMPROMISING.
+[Headline Variation]
 
 [Start a Project CTA]
+[View Our Work]
+[Hire on Contra]
 ===================================
 TRUST TICKER:
 <<<  +220% REVENUE // NORTHLIGHT  <<<
 ===================================
 CAPABILITY EXPLORER:
-[ 01 // DESIGN & BRANDING     + ]
-[ 02 // WEBSITES & ECOMMERCE  - ]
-  [ Desaturated ecommerce wireframe ]
-  [ +220% Revenue Metric Badge      ]
+[ 01 // DESIGN & BRANDING     - ]
+  [ Desaturated wireframe sketches ]
+  [ +180% Conversion Metric Badge  ]
+[ 02 // WEBSITES & ECOMMERCE  + ]
 [ 03 // SOFTWARE & SAAS       + ]
 [ 04 // AI & ENTERPRISE       + ]
 ===================================
@@ -332,6 +366,7 @@ BUILD WHAT OTHERS
 SAY IS IMPOSSIBLE.
 
 [Start a Project]
+[View Our Work]
 [Hire on Contra]
 ```
 
@@ -346,4 +381,4 @@ SAY IS IMPOSSIBLE.
 
 ### 2. Imagery Moodboard References
 *   **Portrait Style:** High-contrast, desaturated black-and-white portraits of people, lit with dramatic side-lighting (chiaroscuro). Backgrounds are neutral charcoal white or flat black. Emits creative confidence (inspired by *Xulfi* portraits).
-*   **Product Visuals:** Macro details of raw mechanical structures (frosted glass sheets, textured brushed steel plates, matte-finished ebonite surfaces). No generic software screens or stock laptop mockups. Emits tactile realism and product studio depth.
+*   **Product Visuals:** Macro details of raw mechanical structures (frosted glass sheets, textured brushed steel plates, matte-finished ebonite surfaces, architectural sketches, wireframe outlines, design notes). No generic software screens or stock laptop mockups. Emits tactile realism and product studio depth.
