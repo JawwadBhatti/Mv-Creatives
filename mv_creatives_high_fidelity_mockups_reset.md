@@ -6,39 +6,44 @@ This presentation showcases the final, approved high-fidelity homepage screen de
 
 ---
 
-## 1. Final Homepage Hero (Version 1)
+## 1. Final Homepage Hero (Version 1 - Approved)
 
-*   **Refinement Pass:** The liquid chrome blobs have been completely removed. The background has been updated to focus entirely on desaturated concrete walls, brushed dark ebonite steel textures, and precise geometric slits of white light casting long architectural shadows.
-*   **Composition:** Satoshi display headline, complete CTA stack (Start a Project, View Our Work, Hire on Contra), logotype, navigation links, and monospaced scroll indicators.
+*   **Composition:** Satoshi display headline, complete CTA stack (Start a Project, View Our Work, Hire on Contra), logotype, navigation links, and monospaced scroll indicators over desaturated concrete walls, brushed dark ebonite steel textures, and precise geometric slits of white light casting long architectural shadows.
 
-![Final Homepage Hero Screenshot (V1) — Architectural concrete and brushed steel base with long geometric shadow lines, Satoshi display typography, complete CTA options, and timezone telemetry.](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/hero_v1_final_1782080126131.png)
+![Final Homepage Hero Screenshot (V1) — Approved homepage hero composition.](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/hero_v1_final_1782080126131.png)
 
 ---
 
 ## 2. Outcomes-First Trust Strip
 
-*   **Expanded Strategy:** Instead of displaying isolated metrics, the horizontal marquee combines **business outcomes, delivery speed, product categories, and client achievements** in a single continuous ticker.
-*   **Composition:** Outlined monospaced text segments in JetBrains Mono. Hovering pauses the marquee and fills the active block with solid Electric Indigo (`#5C6CFA`).
+*   **Marquee Belt:** The JetBrains Mono ticker marquee cycles outcomes, delivery speed, and client achievements (e.g., `+220% REVENUE // 12-WEEK RUNTIME // FINTECH // NORTHLIGHT`). Hovering pauses the scroll and fills the outlined text with solid Electric Indigo (`#5C6CFA`).
 
 ![Outcomes-First Trust Strip Screenshot — JetBrains Mono ticker scrolling outcomes, delivery speeds, and client achievements.](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/trust_strip_screenshot_1782080141577.png)
 
 ---
 
-## 3. Interactive Capability Explorer
+## 3. Interactive Capability Explorer (The Dynamic Room System)
 
-*   **Interactive Design:** A split-screen explorer where selecting a category instantly invert-clips and transitions the visual mood.
-*   **Atmosphere:** Integrated desaturated wireframe sketches, design notes, color blocks, and technical project brief files in the background to showcase studio mechanics without using team photo galleries.
+When users select a category, the layout, typography scaling, background theme, and imagery transition to simulate entering a different room in the studio.
 
-![Interactive Capability Explorer Screenshot — Left vertical service index, right capability viewport showing wireframes, sketches, and design notes.](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/capability_explorer_screenshot_1782080154617.png)
+### Room A: Design & Branding (Chalk Editorial Archetype)
+*   **The Atmosphere:** Clean warm Chalk White (`#FAFAFC`) with dark charcoal Satoshi typography, generous print editorial margins, and desaturated physical paper textures and design reviews.
+
+![Capability Explorer Room A: Design & Branding — Chalk white editorial studio room with spacious margins and print mockup overlays.](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/capability_design_room_1782080973372.png)
+
+### Room B: AI & Enterprise Solutions (Obsidian Lab Archetype)
+*   **The Atmosphere:** Deep Obsidian Black (`#060608`) with dense, high-contrast monospace typography (JetBrains Mono), carbon coordinate borders, and desaturated performance telemetry graphs, network wireframes, and code schemas.
+
+![Capability Explorer Room B: AI & Enterprise Solutions — Obsidian black tech lab room with monospace telemetry and code schemas.](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/capability_ai_room_1782080990424.png)
 
 ---
 
-## 4. Featured Work Editorial Gallery
+## 4. Featured Work Gallery (Outcome & Product Context)
 
-*   **Asymmetric Design:** Case study cards positioned on alternating columns scrolling at different parallax speeds (`1.0x` left, `0.75x` right).
-*   **Aesthetics:** High-resolution desaturated screens displaying wireframes, design briefs, and engineering layouts, shifting to full color and playing silent reels on hover.
+*   **Visual Strategy:** Moves beyond isolated dashboard screenshots. Integrates desaturated high-fidelity device mockups (MacBook and iPhone) resting on a brushed dark steel surface with concrete shadows.
+*   **Storytelling:** Features massive display text emphasizing outcomes first (e.g., `+220% REVENUE INCREASE`) alongside client names, stacks, and delivery runtimes.
 
-![Featured Work Gallery Screenshot — Asymmetric editorial card layout, desaturated mockups, and outcomes-first technical metadata headers.](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/featured_work_screenshot_1782080167590.png)
+![Featured Work Gallery Screenshot — Asymmetric editorial layout presenting product context, device mockups, and outcomes storytelling.](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/featured_work_final_1782081007191.png)
 
 ---
 
