@@ -139,7 +139,8 @@ Since this project consists of raw Vanilla HTML, CSS, and JS files, it can be de
 2. Select **Pages** from the left-hand sidebar menu.
 3. Under **Build and deployment**, select **Deploy from a branch**.
 4. Set the branch source to `main` and folder to `/ (root)`.
-5. Click **Save**. Within 1–2 minutes, your website will be live at `https://<your-username>.github.io/Mv-Creatives/`.
+5. Click **Save**. Within 1–2 minutes, your website will be live at `https://JawwadBhatti.github.io/Mv-Creatives/`.
+
 
 ### Option B: Netlify (Drag & Drop)
 1. Go to [https://app.netlify.com/drop](https://app.netlify.com/drop).
