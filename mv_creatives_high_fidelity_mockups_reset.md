@@ -1,40 +1,24 @@
-# High-Fidelity UI Screens: Complete Homepage Presentation
+# High-Fidelity UI Screen: Final Homepage Hero
 
 *Presented by the Design Director*
 
-This presentation showcases the final, high-fidelity homepage screen designs for **MV Creatives**, visualising the visual principles of **Architectural Luxury**, **Editorial Precision**, and **Cinematic Technology**.
+This presentation showcases the final, approved high-fidelity homepage hero screen design for **MV Creatives**, visualising the visual principles of **Architectural Luxury**, **Editorial Precision**, and **Cinematic Technology**.
 
 ---
 
-## 1. High-Fidelity Responsive Viewports
+## 1. Final Homepage Hero Screenshot
 
-Use the slides below to review the responsive layouts:
-
-````carousel
-![Desktop Homepage Mockup — Featuring Satoshi display typography, outcomes-first positioning, and the headline "DIGITAL PRODUCTS BUILT FOR THE UNCOMPROMISING"](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/desktop_homepage_1782079149418.png)
-<!-- slide -->
-![Tablet Homepage Mockup — Scaled-down 4:3 aspect ratio display, hamburger navigation header, stacked layout alignment](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/tablet_homepage_1782079162727.png)
-<!-- slide -->
-![Mobile Homepage Mockup — Vertical 9:16 viewport layout, wrapped display typography, vertically stacked CTAs](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/mobile_homepage_1782079175712.png)
-````
+![Final Homepage Hero Screenshot — Art Direction 2 (Concrete/Shadows) base, Art Direction 1 (Chrome refractions) border details, and Art Direction 3 (Monospaced coordinates/blueprint lines) technical tags. Satoshi display typography and complete CTA stack.](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/homepage_hero_final_1782079865765.png)
 
 ---
 
-## 2. Interactive Sections & Components
+## 2. Structural Composition Details
 
-Use the slides below to review the core interactive layouts:
-
-````carousel
-![Capability Explorer Mockup — Split screen capability viewport showing 'Design & Branding' selected with desaturated wireframe sketches](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/capability_explorer_1782079032848.png)
-<!-- slide -->
-![Featured Work Gallery Mockup — Asymmetrical grid offset, technical metadata headers, outcomes-first project cards](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/featured_work_mockup_1782079046056.png)
-<!-- slide -->
-![Final CTA Mockup — Soft pulsing radial indigo glow behind centered typography, complete button options](C:/Users/HP/.gemini/antigravity/brain/d4657c8c-7795-4b38-a753-c17677fce007/final_cta_mockup_1782079057924.png)
-````
-
----
-
-## 3. Design Details
-
-*   **Atmosphere & Detail Integration:** Subtle sketches, wireframe guidelines, structural metrics, and coordinate reference tags are layered into the background textures of the viewports to evoke the raw creative energy of a **Product Innovation Lab**.
-*   **Video Control:** Custom video overlays start as static image previews and play local `.webm` loops exclusively on cursor hover (desktop) or touch tap (mobile) to maintain performance and control.
+*   **Header Navigation:** Left-aligned raw text logotype `MV CREATIVES` in clean geometric capitals. Centered navigation links (`Home`, `Services`, `Work`, `Studio`, `Contact`) utilizing a thin monospace style.
+*   **Display Typography:** Satoshi uppercase heavy Display headline set with tight tracking (`-0.03em`) reading: **"DIGITAL PRODUCTS BUILT FOR THE UNCOMPROMISING."**
+*   **The Conversion Stack:**
+    *   *Primary CTA:* `Start a Project` in electric indigo fill (`#5C6CFA`).
+    *   *Secondary CTA:* `View Our Work` in ghost outline.
+    *   *Trust CTA:* `Hire on Contra` in minimal monospaced link styling.
+*   **Technical Telemetry:** Subtle JetBrains Mono client timezone clocks, structural coordinate lines, and a monospaced scroll indicator anchored in the corners.
+*   **Background Video Loop:** Desaturated fluid metallic refractions layered at low opacity behind precise architectural concreto/steel light slits.
