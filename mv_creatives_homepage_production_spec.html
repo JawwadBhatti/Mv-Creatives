@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MV Creatives Visual Design Specification v1.0</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Color Palette Tokens */
+      --bg-hero: #0A0A0F;
+      --bg-light: #FAFAFA;
+      --bg-dark-anchor: #0F0F1A;
+      --surface-dark-card: #1A1A28;
+      --surface-light-card: #FFFFFF;
+      --border-dark: rgba(255, 255, 255, 0.06);
+      --border-light: #E2E2EC;
+      --text-primary-dark: #F0F0F8;
+      --text-primary-light: #0A0A0F;
+      --text-secondary: #8888A4;
+      --accent-primary: #5C6CFA;
+      --accent-hover: #7B88FF;
+      --accent-pressed: #4A5AE0;
+      --accent-glow: rgba(92, 108, 250, 0.12);
+      --gold-signal: #D4A853;
+      --text-muted: #555568;
+
+      /* Typography Font Families */
+      --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      --font-body: "Inter", system-ui, -apple-system, sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+
+      /* Shadows */
+      --shadow-lvl1: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-lvl2: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-lvl3: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+      /* Motion Easing */
+      --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-interactive: cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Reset and Core Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-hero);
+      color: var(--text-primary-dark);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      cursor: none; /* Hide default cursor for interactive custom cursor */
+    }
+
+    /* Layout structure */
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar Navigation */
+    aside {
+      width: 320px;
+      background-color: #050508;
+      border-right: 1px solid var(--border-dark);
+      padding: 40px 24px;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 10;
+    }
+
+    aside::-webkit-scrollbar {
+      width: 4px;
+    }
+    aside::-webkit-scrollbar-thumb {
+      background: var(--surface-dark-card);
+      border-radius: 2px;
+    }
+
+    .brand-mark {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-primary);
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .nav-list {
+      list-style: none;
+    }
+
+    .nav-category {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-secondary);
+      margin: 24px 0 8px 0;
+    }
+
+    .nav-item a {
+      display: block;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 200ms ease;
+    }
+
+    .nav-item a:hover {
+      color: var(--text-primary-dark);
+      background-color: var(--surface-dark-card);
+    }
+
+    .nav-item.active a {
+      color: var(--text-primary-dark);
+      background-color: var(--accent-primary);
+    }
+
+    /* Main Content Area */
+    main {
+      margin-left: 320px;
+      flex: 1;
+      padding: 80px 8%;
+      max-width: 1100px;
+    }
+
+    /* Typography inside content */
+    h1 {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: var(--text-primary-dark);
+      margin-bottom: 16px;
+    }
+
+    .meta-strip {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--text-primary-dark);
+      margin: 64px 0 24px 0;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary-dark);
+      margin: 32px 0 16px 0;
+    }
+
+    p {
+      margin-bottom: 24px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    strong {
+      color: var(--text-primary-dark);
+    }
+
+    /* Custom Github-style Alerts */
+    .alert {
+      padding: 20px;
+      border-left: 4px solid;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+
+    .alert-important {
+      background-color: rgba(92, 108, 250, 0.05);
+      border-color: var(--accent-primary);
+      color: var(--text-primary-dark);
+    }
+    
+    .alert-tip {
+      background-color: rgba(212, 168, 83, 0.05);
+      border-color: var(--gold-signal);
+      color: var(--text-primary-dark);
+    }
+    
+    .alert-caution {
+      background-color: rgba(245, 158, 11, 0.05);
+      border-color: #FBBF24;
+      color: var(--text-primary-dark);
+    }
+
+    .alert-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Color Palette Grid Visualization */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .color-card {
+      background-color: var(--surface-dark-card);
+      border-radius: 8px;
+      border: 1px solid var(--border-dark);
+      padding: 16px;
+    }
+
+    .color-swatch {
+      height: 80px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .color-info {
+      font-size: 13px;
+    }
+
+    .color-hex {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--text-primary-dark);
+      margin-top: 4px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    th {
+      background-color: rgba(255, 255, 255, 0.02);
+      color: var(--text-primary-dark);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    tr:hover td {
+      background-color: rgba(255, 255, 255, 0.01);
+    }
+
+    /* Embedded Graphics & Layout previews */
+    .graphic-container {
+      margin: 32px 0;
+      background-color: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .graphic-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .graphic-caption {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Interactive Demo Sandbox */
+    .sandbox {
+      background-color: var(--surface-dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+
+    .sandbox-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 32px;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 250ms var(--ease-premium);
+    }
+
+    .btn-primary {
+      background-color: var(--accent-primary);
+      color: var(--text-primary-dark);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(92, 108, 250, 0.25);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid var(--text-primary-dark);
+      color: var(--text-primary-dark);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* Interactive Custom Cursor follower */
+    #custom-cursor-follower {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-primary);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      opacity: 0.3;
+      transition: width 200ms var(--ease-interactive), height 200ms var(--ease-interactive), opacity 200ms var(--ease-interactive), background-color 200ms var(--ease-interactive);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    #custom-cursor-follower.hover-interactive {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(92, 108, 250, 0.15);
+      border: 1px solid var(--accent-primary);
+      opacity: 0.8;
+    }
+
+    #custom-cursor-follower.hover-card {
+      width: 56px;
+      height: 56px;
+      background-color: rgba(92, 108, 250, 0.2);
+      border: 1px solid var(--accent-primary);
+      opacity: 0.9;
+    }
+
+    #custom-cursor-follower.hover-card::after {
+      content: 'VIEW';
+      display: block;
+      color: var(--text-primary-dark);
+    }
+
+    #custom-cursor-follower.click-active {
+      width: 4px;
+      height: 4px;
+      opacity: 0.6;
+      background-color: var(--accent-primary);
+    }
+
+    /* Code Snippets */
+    pre {
+      background-color: #050508;
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      padding: 16px;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #D4A853;
+    }
+
+    /* Viewport Visual Container Rules */
+    .viewport-box {
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 32px;
+      margin: 32px 0;
+    }
+    
+    .viewport-dark {
+      background-color: var(--bg-hero);
+      color: var(--text-primary-dark);
+    }
+    
+    .viewport-light {
+      background-color: var(--bg-light);
+      color: var(--text-primary-light);
+      border-color: var(--border-light);
+    }
+    
+    .viewport-light p {
+      color: var(--text-muted);
+    }
+
+    .viewport-light h3, .viewport-light h4 {
+      color: var(--text-primary-light);
+    }
+
+    .viewport-light td {
+      border-bottom-color: var(--border-light);
+      color: var(--text-muted);
+    }
+    .viewport-light th {
+      background-color: rgba(0, 0, 0, 0.02);
+      color: var(--text-primary-light);
+      border-bottom-color: var(--border-light);
+    }
+
+    .viewport-anchor-dark {
+      background-color: var(--bg-dark-anchor);
+      color: var(--text-primary-dark);
+    }
+
+    /* Asymmetric grid simulator */
+    .spec-grid-row {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 16px;
+    }
+
+    .spec-col-6 { grid-column: span 6; }
+    .spec-col-5 { grid-column: span 5; }
+    .spec-col-7 { grid-column: span 7; }
+    .spec-col-4 { grid-column: span 4; }
+    .spec-col-8 { grid-column: span 8; }
+    
+    .card-preview-light {
+      background: var(--surface-light-card);
+      border-radius: 8px;
+      box-shadow: var(--shadow-lvl1);
+      padding: 32px;
+    }
+
+    .card-preview-dark {
+      background: var(--surface-dark-card);
+      border-radius: 8px;
+      padding: 32px;
+    }
+
+    /* Custom styles for interactive input focus */
+    .input-wrapper {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .sandbox-input:focus ~ .input-focus-line {
+      width: 100% !important;
+      left: 0 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom cursor follower node -->
+  <div id="custom-cursor-follower"></div>
+
+  <div class="container">
+    
+    <!-- Left Navigation -->
+    <aside>
+      <div class="brand-mark">MV CREATIVES</div>
+      <div class="brand-subtitle">Platform Handoff Spec</div>
+      
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-category">Design Core</li>
+          <li class="nav-item"><a href="#tokens">1. Design System Tokens</a></li>
+          <li class="nav-item"><a href="#colors">1.1 Color Tokens</a></li>
+          <li class="nav-item"><a href="#typography">1.2 Typography Stack</a></li>
+          <li class="nav-item"><a href="#layout">1.3 Grid & Spacing</a></li>
+          <li class="nav-item"><a href="#depth">1.4 Depth & Elevation</a></li>
+          
+          <li class="nav-category">Global Elements</li>
+          <li class="nav-item"><a href="#components">2. Component Library</a></li>
+          <li class="nav-item"><a href="#cursor">2.3 Custom Cursor Tracker</a></li>
+          
+          <li class="nav-category">Homepage Layouts</li>
+          <li class="nav-item"><a href="#nav">3.1 Global Header Nav</a></li>
+          <li class="nav-item"><a href="#hero">3.2 Section 01: Hero</a></li>
+          <li class="nav-item"><a href="#trust">3.3 Section 02: Trust Strip</a></li>
+          <li class="nav-item"><a href="#capabilities">3.4 Section 03: Capabilities</a></li>
+          <li class="nav-item"><a href="#work">3.5 Section 04: Featured Work</a></li>
+          <li class="nav-item"><a href="#process">3.6 Section 05: Methodology</a></li>
+          <li class="nav-item"><a href="#why">3.7 Section 06: Why MV</a></li>
+          <li class="nav-item"><a href="#case">3.8 Section 07: Case Highlight</a></li>
+          <li class="nav-item"><a href="#testimonials">3.9 Section 08: Testimonials</a></li>
+          <li class="nav-item"><a href="#finalcta">3.10 Section 09: Final CTA</a></li>
+          <li class="nav-item"><a href="#footer">3.11 Footer Section</a></li>
+
+          <li class="nav-category">Subpage Layouts</li>
+          <li class="nav-item"><a href="#services-sub">3.12 Services Subpage</a></li>
+          <li class="nav-item"><a href="#work-sub">3.13 Work Subpage</a></li>
+          <li class="nav-item"><a href="#case-framework">3.14 Case Study Framework</a></li>
+          <li class="nav-item"><a href="#studio-sub">3.15 Studio Subpage</a></li>
+          <li class="nav-item"><a href="#contact-sub">3.16 Contact Subpage</a></li>
+          <li class="nav-item"><a href="#strategy">3.17 Strategy & Funnel</a></li>
+          
+          <li class="nav-category">Performance</li>
+          <li class="nav-item"><a href="#motion">4. Motion & Easing</a></li>
+          <li class="nav-item"><a href="#engineering">5. Handoff Properties</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      
+      <section>
+        <h1>MV Creatives Visual Design Specification v1.0</h1>
+        <div class="meta-strip">
+          Digital Foundation Architecture v1.0 • Platform Handoff Spec • June 2026
+        </div>
+        
+        <div class="alert alert-important">
+          <div class="alert-title">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9-3a1 1 0 11-2 0 1 1 0 012 0zM6.5 7.75A.75.75 0 017.25 7h1a.75.75 0 01.75.75v3.25h.5a.75.75 0 010 1.5h-3a.75.75 0 010-1.5h.5V8.5h-.5a.75.75 0 01-.75-.75z"/></svg>
+            Approved Architecture Baseline
+          </div>
+          This specification defines layout components, responsive spacing, and micro-interactions for the complete V1 platform: Home, Services, Work, Studio, and Contact. Insights/Blog sections are strictly removed. The design system uses desaturated media and real project references only.
+        </div>
+      </section>
+
+      <!-- Section: Tokens -->
+      <section id="tokens">
+        <h2>1. Design System Tokens & Theme Matrix</h2>
+        <p>The design system utilizes **Direction C (Hybrid Theme)**, shifting between true-depth dark viewports for brand manifesto structures and warm, high-contrast light viewports for text-heavy capabilities, process maps, and numerical case studies.</p>
+        
+        <h3 id="colors">1.1 Color Tokens</h3>
+        <p>Borders are translucent, colors have blue and warm undertones, and pure black is avoided entirely.</p>
+        
+        <div class="color-grid">
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #0A0A0F;"></div>
+            <div class="color-info">
+              <div>--bg-hero</div>
+              <div class="color-hex">#0A0A0F</div>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #FAFAFA;"></div>
+            <div class="color-info">
+              <div>--bg-light</div>
+              <div class="color-hex">#FAFAFA</div>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #0F0F1A;"></div>
+            <div class="color-info">
+              <div>--bg-dark-anchor</div>
+              <div class="color-hex">#0F0F1A</div>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #5C6CFA;"></div>
+            <div class="color-info">
+              <div>--accent-primary</div>
+              <div class="color-hex">#5C6CFA</div>
+            </div>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Token Name</th>
+              <th>Hex Value</th>
+              <th>Context</th>
+              <th>Usage Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--bg-hero</code></td>
+              <td>#0A0A0F</td>
+              <td>Dark Viewport</td>
+              <td>Immersive dark background for hero manifesto, final CTA, and testimonials.</td>
+            </tr>
+            <tr>
+              <td><code>--bg-light</code></td>
+              <td>#FAFAFA</td>
+              <td>Light Viewport</td>
+              <td>Warm white base for capabilities, process segments, and case narrative.</td>
+            </tr>
+            <tr>
+              <td><code>--bg-dark-anchor</code></td>
+              <td>#0F0F1A</td>
+              <td>Dark Viewport</td>
+              <td>Anchor dark for asymmetric portfolio and differentiation matrix.</td>
+            </tr>
+            <tr>
+              <td><code>--surface-dark-card</code></td>
+              <td>#1A1A28</td>
+              <td>Dark Viewport</td>
+              <td>Interactive cards, raised surface blocks in dark sections.</td>
+            </tr>
+            <tr>
+              <td><code>--surface-light-card</code></td>
+              <td>#FFFFFF</td>
+              <td>Light Viewport</td>
+              <td>White surface cards with subtle shadows in capabilities and case studies.</td>
+            </tr>
+            <tr>
+              <td><code>--text-primary-dark</code></td>
+              <td>#F0F0F8</td>
+              <td>Dark Viewport</td>
+              <td>Headings, text run elements on dark backgrounds (blue undertone).</td>
+            </tr>
+            <tr>
+              <td><code>--text-primary-light</code></td>
+              <td>#0A0A0F</td>
+              <td>Light Viewport</td>
+              <td>High-contrast, readable text elements on warm white backgrounds.</td>
+            </tr>
+            <tr>
+              <td><code>--accent-primary</code></td>
+              <td>#5C6CFA</td>
+              <td>Shared Core</td>
+              <td>Brand focal Indigo for CTAs, active labels, hover rules, and markers.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section: Typography -->
+      <section id="typography">
+        <h2>1.2 Typography Stack & Scaling (Pairing A - Approved)</h2>
+        <p>The system uses <strong>Plus Jakarta Sans</strong> for geometric display headers and <strong>Inter</strong> for clean, readable body copies and UI labels.</p>
+        
+        <div class="alert alert-tip">
+          <div class="alert-title">Typographer Rule</div>
+          Text lines must never exceed 65 characters per line (approx. 700px at body size). Line height for general reading text is set strictly at 1.65–1.75 to ensure comfortable scanning.
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Scale</th>
+              <th>Font Family</th>
+              <th>Desktop (1440px)</th>
+              <th>Weight</th>
+              <th>Line Height</th>
+              <th>Letter Spacing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>display</code></td>
+              <td>Plus Jakarta Sans</td>
+              <td>96px</td>
+              <td>700</td>
+              <td>0.95</td>
+              <td>-2px</td>
+            </tr>
+            <tr>
+              <td><code>h1</code></td>
+              <td>Plus Jakarta Sans</td>
+              <td>64px</td>
+              <td>700</td>
+              <td>1.0</td>
+              <td>-1.5px</td>
+            </tr>
+            <tr>
+              <td><code>h2</code></td>
+              <td>Plus Jakarta Sans</td>
+              <td>48px</td>
+              <td>600</td>
+              <td>1.1</td>
+              <td>-1px</td>
+            </tr>
+            <tr>
+              <td><code>h3</code></td>
+              <td>Plus Jakarta Sans</td>
+              <td>32px</td>
+              <td>600</td>
+              <td>1.2</td>
+              <td>-0.5px</td>
+            </tr>
+            <tr>
+              <td><code>h6-label</code></td>
+              <td>Inter</td>
+              <td>12px</td>
+              <td>700</td>
+              <td>1.5</td>
+              <td>1.5px (ALL CAPS)</td>
+            </tr>
+            <tr>
+              <td><code>body-large</code></td>
+              <td>Inter</td>
+              <td>20px</td>
+              <td>400</td>
+              <td>1.7</td>
+              <td>0.2px</td>
+            </tr>
+            <tr>
+              <td><code>body-regular</code></td>
+              <td>Inter</td>
+              <td>16px</td>
+              <td>400</td>
+              <td>1.7</td>
+              <td>0.15px</td>
+            </tr>
+            <tr>
+              <td><code>metric</code></td>
+              <td>Plus Jakarta Sans</td>
+              <td>80px</td>
+              <td>700</td>
+              <td>1.0</td>
+              <td>-3px</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section: Layout -->
+      <section id="layout">
+        <h2>1.3 Grid, Layout, & Spacing System</h2>
+        <p>The site runs on a 12-column desktop layout (max-width: 1280px) with generous gutter padding (120px to 200px section heights) ensuring elements have spatial breathing room.</p>
+        <ul>
+          <li><strong>Desktop Breakpoint:</strong> 12 Columns, 1280px max-width, outer gutters 8-10% viewport width, inner gutters 24-32px.</li>
+          <li><strong>Tablet Breakpoint:</strong> 4 Columns, 720px max-width, outer gutters 6vw, inner gutters 24px.</li>
+          <li><strong>Mobile Breakpoint:</strong> 2 Columns, full-width screen structure, 24px side padding, inner gutters 16px.</li>
+        </ul>
+      </section>
+
+      <!-- Section: Depth -->
+      <section id="depth">
+        <h2>1.4 Depth & Elevation Tokens</h2>
+        <p>Depth is created through layered positioning and structural borders, not heavy drop shadows. No shadows are permitted in dark context sections.</p>
+        <ul>
+          <li><strong>Level 0 (Base):</strong> Flat. Used for text paragraphs, headers, and separator borders.</li>
+          <li><strong>Level 1 (Lift):</strong> <code>box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04)</code>. Applied to default light cards.</li>
+          <li><strong>Level 2 (Hover):</strong> <code>box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08)</code>. Applied to active elements.</li>
+          <li><strong>Level 4 (Glow):</strong> <code>rgba(92, 108, 250, 0.12)</code> with 400px blur. Creates ambient glow backdrops.</li>
+        </ul>
+      </section>
+
+      <!-- Section: Components -->
+      <section id="components">
+        <h2>2. Global Design System Components</h2>
+        <p>Interactive elements undergo precise geometric scale shifts upon interaction. Try hovering and clicking the components below to test the design transitions, accordion toggles, form focus behaviors, and custom cursor tracking:</p>
+        
+        <div class="sandbox">
+          <div class="sandbox-buttons" style="margin-bottom: 32px;">
+            <a href="#" class="btn btn-primary cursor-hover-interactive">Start a Project</a>
+            <a href="#" class="btn btn-secondary cursor-hover-interactive">View Our Work</a>
+            <a href="#" class="cursor-hover-interactive" style="color: var(--accent-primary); font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Hire on Contra &rarr;</a>
+          </div>
+          
+          <!-- Accordion Demo -->
+          <div class="sandbox-accordion" style="max-width: 600px; margin: 0 auto 32px auto; border-bottom: 1px solid var(--border-dark);">
+            <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-primary); margin-bottom: 12px;">Accordion (Services Deep-Dive)</h4>
+            <div class="accordion-item" style="border-top: 1px solid var(--border-dark); padding: 16px 0; cursor: pointer;">
+              <div class="accordion-header cursor-hover-interactive" style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 600; color: var(--text-primary-dark);">Product Design Systems</span>
+                <span class="accordion-arrow" style="transition: transform 300ms ease; color: var(--accent-primary); font-weight: bold;">&darr;</span>
+              </div>
+              <div class="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 350ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease; opacity: 0; margin-top: 0;">
+                <p style="margin-top: 12px; margin-bottom: 0; font-size: 14px; color: var(--text-secondary);">Enterprise-grade UI components, tokenized design systems, and comprehensive style governance rules built using Plus Jakarta Sans and Inter tokens. Links to Northlight Case Study.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Input Form Demo -->
+          <div class="sandbox-form" style="max-width: 600px; margin: 0 auto;">
+            <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-primary); margin-bottom: 12px;">Form Input (Real-time Focus Glow)</h4>
+            <div class="input-wrapper">
+              <label style="display: block; font-size: 10px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Project Brief</label>
+              <textarea class="sandbox-input cursor-hover-interactive" placeholder="Describe your product objectives..." style="width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border-dark); padding: 8px 0; color: var(--text-primary-dark); font-family: var(--font-body); font-size: 15px; resize: none; outline: none; transition: border-bottom-color 200ms ease;"></textarea>
+              <div class="input-focus-line" style="position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--accent-primary); transition: width 300ms var(--ease-premium), left 300ms var(--ease-premium);"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="cursor">2.3 Custom Cursor Tracker (Desktop)</h3>
+        <p>Default cursor is hidden. A custom 8px indigo follower tracks coordinates smoothly. When hovering over buttons, nav links, or interactive elements, it expands into a 40px targeting ring. In the portfolio section, it expands to 56px with a text label inside.</p>
+      </section>
+
+      <!-- Section: Page specifications -->
+      <section>
+        <h2>3. Responsive Visual Architecture (Section by Section)</h2>
+        
+        <!-- Header -->
+        <div id="nav" class="viewport-box viewport-dark">
+          <h3>3.1 Global Header & Navigation</h3>
+          <p><strong>Layout:</strong> Fixed top. Logo on Columns 1-2. Nav links on Columns 7-10. Primary CTA button on Columns 11-12.</p>
+          <p><strong>Logo Brand:</strong> Text-only `"MV CREATIVES"` set in <code>Plus Jakarta Sans 24px/700</code>, color `#F0F0F8`. No graphic icon is used.</p>
+          <p><strong>Nav Links:</strong> Strictly "Home", "Services", "Work", "Studio", "Contact". (Insights/Blog is completely omitted for V1).</p>
+          <p><strong>Primary CTA:</strong> "Start a Project".</p>
+        </div>
+
+        <!-- Section 01 -->
+        <div id="hero" class="viewport-box viewport-dark">
+          <h3>3.2 Section 01: Hero (The Conviction Zone)</h3>
+          <p><strong>Grid:</strong> 12 columns. Text block spans Columns 2-8, vertically centered. Abstract 3D glass asset spans Columns 9-12, bleeding right.</p>
+          
+          <div class="graphic-container">
+            <img src="./hero_abstract_3d_1782055669692.png" alt="Hero Abstract 3D Glass Sculpture">
+            <div class="graphic-caption">Abstract 3D architectural glass sculpture with internal light refraction</div>
+          </div>
+          
+          <p><strong>Headline:</strong> "The distance between a good idea and a product people love is design intelligence. We close that distance." (Display typography, 96px, warm white).</p>
+          <p><strong>CTAs:</strong> Primary "Start a Project" (accent fill), Secondary "View Our Work" (ghost outline), and Trust Link "Hire on Contra" (text link).</p>
+        </div>
+
+        <!-- Section 02 -->
+        <div id="trust" class="viewport-box viewport-dark">
+          <h3>3.3 Section 02: Trust Signals (The Credibility Zone)</h3>
+          <p><strong>Layout:</strong> 4 client logos (Northlight, SafeHealth, ApexRetail, CareFlow) spread evenly on Columns 2-11. 3 metrics positioned on Columns 2-11 in a 3-column sub-grid.</p>
+          <p><strong>Metrics:</strong> Massive 80px typography numbers representing real outcomes: Qualified Leads (+220%), Form Friction (-40%), and Support Tickets (-42%).</p>
+        </div>
+
+        <!-- Section 03 -->
+        <div id="capabilities" class="viewport-box viewport-light">
+          <h3>3.4 Section 03: Capabilities (The Authority Zone - Part 1)</h3>
+          <p><strong>Layout:</strong> Transitions to light mode (#FAFAFA) for high readability. Card grid occupies Columns 2-11 in a 2x2 layout representing the four capability pillars. Cards shift up 4px and reveal an Indigo left border on hover.</p>
+          
+          <div class="spec-grid-row">
+            <div class="spec-col-6 card-preview-light cursor-hover-interactive" style="margin-bottom: 20px;">
+              <span style="color: var(--accent-primary); font-size: 24px;">✦</span>
+              <h4 style="margin: 12px 0 8px 0; font-size: 18px;">Design & Branding</h4>
+              <p style="font-size: 13px; margin: 0;">Identity systems, brand strategy, visual guidelines, UI/UX research.</p>
+            </div>
+            <div class="spec-col-6 card-preview-light cursor-hover-interactive" style="margin-bottom: 20px;">
+              <span style="color: var(--accent-primary); font-size: 24px;">✦</span>
+              <h4 style="margin: 12px 0 8px 0; font-size: 18px;">Websites & Ecommerce</h4>
+              <p style="font-size: 13px; margin: 0;">Custom builds, platform optimization, headless CMS, performance tuning.</p>
+            </div>
+          </div>
+          <div class="spec-grid-row">
+            <div class="spec-col-6 card-preview-light cursor-hover-interactive">
+              <span style="color: var(--accent-primary); font-size: 24px;">✦</span>
+              <h4 style="margin: 12px 0 8px 0; font-size: 18px;">Software & SaaS</h4>
+              <p style="font-size: 13px; margin: 0;">Product design, component design systems, frontend engineering.</p>
+            </div>
+            <div class="spec-col-6 card-preview-light cursor-hover-interactive">
+              <span style="color: var(--accent-primary); font-size: 24px;">✦</span>
+              <h4 style="margin: 12px 0 8px 0; font-size: 18px;">AI & Enterprise Solutions</h4>
+              <p style="font-size: 13px; margin: 0;">AI-native interfaces, database automation, intelligent integrations.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 04 -->
+        <div id="work" class="viewport-box viewport-anchor-dark">
+          <h3>3.5 Section 04: Featured Work (The Desire Zone - Part 1)</h3>
+          <p><strong>Layout:</strong> Asymmetric diagonal tension. Large Card spans Columns 2-7 (height: 500px). Medium Card spans Columns 8-12 (height: 420px, pushed 80px lower). Hover scales images to 1.05 with a custom cursor view-ring. Utilizes real projects only (Northlight Platform, CareFlow Clinical Assistant).</p>
+          
+          <div class="spec-grid-row">
+            <div class="spec-col-6 graphic-container cursor-hover-card">
+              <img src="./portfolio_northlight_1782055685953.png" alt="Northlight Fintech Redesign">
+              <div class="graphic-caption">Northlight Fintech Platform mockup</div>
+            </div>
+            <div class="spec-col-6 graphic-container cursor-hover-card" style="margin-top: 40px;">
+              <img src="./portfolio_careflow_1782055700597.png" alt="CareFlow AI medical network">
+              <div class="graphic-caption">CareFlow Medical Node Visualization</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 05 -->
+        <div id="process" class="viewport-box viewport-light">
+          <h3>3.6 Section 05: Process (The Authority Zone - Part 2)</h3>
+          <p><strong>Layout:</strong> Horizontal timeline. 4 segments (Discover, Architect, Build, Evolve) spaced evenly on Columns 2-12. Connecting line runs behind segment numbers, scaling from 0 to 100% width on scroll.</p>
+          
+          <div class="graphic-container">
+            <img src="./process_architecture_map_1782055742786.png" alt="Process system architecture diagram">
+            <div class="graphic-caption">MV Creatives Handoff System Architecture map</div>
+          </div>
+        </div>
+
+        <!-- Section 06 -->
+        <div id="why" class="viewport-box viewport-anchor-dark">
+          <h3>3.7 Section 06: Why MV Creatives (The Authority Zone - Part 3)</h3>
+          <p><strong>Layout:</strong> Headline spans Columns 2-10 (64px, line-height 1.0). Differentiator items stack on a 2x2 grid. Centered competitive matrix below shows MV positioned at the apex quadrant with an indigo glowing dot.</p>
+        </div>
+
+        <!-- Section 07 -->
+        <div id="case" class="viewport-box viewport-light">
+          <h3>3.8 Section 07: Case Study Highlight (The Desire Zone - Part 2)</h3>
+          <p><strong>Layout:</strong> Left Column (Columns 2-7) hosts real Northlight fintech case narrative with an highlighted strategic insight card. Right Column (Columns 8-12) hosts the massive 220% qualified leads metric and supporting data blocks.</p>
+          
+          <div class="graphic-container">
+            <img src="./case_study_mockup_1782055715116.png" alt="Investor Dashboard Redesign">
+            <div class="graphic-caption">Redesigned fintech dashboard mockup showing investment performance charts</div>
+          </div>
+        </div>
+
+        <!-- Section 08 -->
+        <div id="testimonials" class="viewport-box viewport-dark">
+          <h3>3.9 Section 08: Testimonials (The Human Proof)</h3>
+          <p><strong>Layout:</strong> Featured quote spans Columns 2-10 (Sarah Chen, Northlight). Absolute positioned large background quotation mark. Secondary testimonial cards stack in Columns 2-6 (Marcus Vance, SafeHealth) and 7-11 (Elena Rostova, ApexRetail). Portraits fade from grayscale to color on hover.</p>
+          
+          <div class="graphic-container" style="max-width: 150px;">
+            <img src="./sarah_chen_portrait_1782055729555.png" alt="Sarah Chen Portrait" style="border-radius: 50%;">
+            <div class="graphic-caption">Sarah Chen, VP of Product</div>
+          </div>
+        </div>
+
+        <!-- Section 09 -->
+        <div id="finalcta" class="viewport-box viewport-dark">
+          <h3>3.10 Section 09: Final CTA (The Conversion Zone)</h3>
+          <p><strong>Layout:</strong> Text copy aligned on Columns 2-10. CTA buttons positioned horizontally below text. Spacing: 200px top, 160px bottom padding. Large ambient indigo glow pulses behind the CTA cluster.</p>
+          <p><strong>CTAs:</strong> Primary "Start a Project", Secondary "View Our Work".</p>
+          <p><strong>Global Presence:</strong> "Serving Clients Across US, Australia & Beyond" (h5 size, secondary text color) + "Hire on Contra" trust link.</p>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer" class="viewport-box viewport-dark">
+          <h3>3.11 Footer Section</h3>
+          <p><strong>Layout:</strong> Top Row: Logotype "MV CREATIVES" (Columns 2-4, text-only), Tagline (Columns 5-8), Nav Links (Columns 9-12). Bottom Row: Social links (left), legal copyright (right). Nav Links strictly match Header links.</p>
+        </div>
+
+        <!-- Subpage Services -->
+        <div id="services-sub" class="viewport-box viewport-light">
+          <h3>3.12 Services Subpage Layout & Accordions</h3>
+          <p><strong>Layout Rhythm:</strong> Alternates between light `#FAFAFA` and dark anchor `#0F0F1A` viewports.</p>
+          <p><strong>Deep-Dives Accordion:</strong> Accordion items representing Design & Branding, Websites & Ecommerce, Software & SaaS, and AI & Enterprise Solutions. Items transition height from 0 to auto (`grid-template-rows: 1fr`) in `450ms` upon click. Right-aligned arrow rotates `180deg`. Content shows descriptions, 3-column feature tags, and real project linkings (e.g., links to Northlight case study). Only one card expanded at a time.</p>
+          
+          <div class="graphic-container">
+            <img src="./desktop_services_light_1782074078858.png" alt="Services Subpage Mockup Layout">
+            <div class="graphic-caption">Services subpage mockup visualizing capability accordions and pricing structures</div>
+          </div>
+          
+          <p><strong>Investment Signals:</strong> 3-tier horizontal cards: Project-Based starting at $25K, Retainer Partnership starting at $15K/month, and Custom Enterprise strategic advisory. CTA is "Start a Project".</p>
+        </div>
+
+        <!-- Subpage Work -->
+        <div id="work-sub" class="viewport-box viewport-dark">
+          <h3>3.13 Work Subpage Layout & Masonry Grid</h3>
+          <p><strong>Filter Bar:</strong> Sticky horizontal row of category pills (All, Design & Branding, Websites & Ecommerce, Software & SaaS, AI & Enterprise Solutions). Active pills use brand Indigo `#5C6CFA` fill. Filtering grid elements utilizes a FLIP reorder transition (fade-out in `200ms`, recalculate positions, fade-in in `400ms`).</p>
+          
+          <div class="graphic-container">
+            <img src="./desktop_work_dark_1782074095354.png" alt="Work Subpage Mockup Layout">
+            <div class="graphic-caption">Work subpage mockup showing sticky category filters and asymmetric project grids</div>
+          </div>
+          
+          <p><strong>Portfolio Grid:</strong> Desktop 3-column asymmetric masonry layout. Includes real projects only (Northlight, CareFlow, ApexRetail). Image hovering changes custom cursor to target ring with `VIEW` text.</p>
+        </div>
+
+        <!-- Case Study Framework -->
+        <div id="case-framework" class="viewport-box viewport-light">
+          <h3>3.14 Case Study Framework</h3>
+          <p><strong>Structure:</strong> 7-Beat narrative storytelling: Hook Cover image &rarr; Challenge Context (client quote) &rarr; Strategic Insight (highlighted `#EEF0FF` card with left indigo border) &rarr; Engineering/Design Process (horizontal scrollable artifacts snap-gallery) &rarr; Final Redesigned Solution (full-width desaturated MacBook mockups) &rarr; Quantified Business Impact &rarr; CTA Invitation (linking to "Start a Project").</p>
+        </div>
+
+        <!-- Subpage Studio -->
+        <div id="studio-sub" class="viewport-box viewport-dark">
+          <h3>3.15 Studio Subpage & Leadership Team Grid</h3>
+          <p><strong>Team Grid Structure:</strong> Asymmetric editorial photo grid. Featured leader profile occupies Columns 2-6 (large photo, grayscale) with biography on Columns 7-12. Supporting leaders stack below, focusing strictly on leadership team members.</p>
+          
+          <div class="graphic-container">
+            <img src="./desktop_studio_dark_1782074108830.png" alt="Studio Subpage Mockup Layout">
+            <div class="graphic-caption">Studio subpage mockup demonstrating leadership profiles and credentials</div>
+          </div>
+          
+          <p><strong>Hover Interaction:</strong> Hovering a leader card scales the portrait (`1.05`) and transitions it from desaturated grayscale to full color over `400ms` with an indigo outline glow.</p>
+        </div>
+
+        <!-- Subpage Contact -->
+        <div id="contact-sub" class="viewport-box viewport-light">
+          <h3>3.16 Contact Page & Multi-Path Smart Form</h3>
+          <p><strong>Multi-Path Tabs:</strong> 3 selection cards at top (Start a Project, View Our Work, Hire on Contra). Clicking a card expansions height to reveal its details or redirect path.</p>
+          
+          <div class="graphic-container">
+            <img src="./desktop_contact_light_1782074125251.png" alt="Contact Subpage Mockup Layout">
+            <div class="graphic-caption">Contact subpage mockup illustrating selector cards and smart inquiry form</div>
+          </div>
+          
+          <p><strong>Smart Qualification Form:</strong> 5 input fields maximum (Name, Email, Company, Project Type dropdown, Project Brief text). Project Type dropdown lists our exact service categories. Focus draws an Indigo bottom border. Real-time validation shows a warnings error border (`2px #F59E0B`). Success fades form out (`300ms`) and shows success overlay (`400ms`). Side panel links to Contra.</p>
+        </div>
+
+        <!-- Strategy -->
+        <div id="strategy" class="viewport-box viewport-dark">
+          <h3>3.17 Cross-Page Conversion Strategy & Funnel</h3>
+          <p><strong>Funnel Path:</strong> User lands on Home &rarr; navigates to Work portfolio &rarr; reads Case Study &rarr; checks Services deep-dives &rarr; verifies Studio leadership trust &rarr; completes Contact qualification form.</p>
+          <p><strong>Performance Target:</strong> Time-to-Interactive (TTI) must sit below 3s on 4G. Cumulative Layout Shift (CLS) = 0.0.</p>
+        </div>
+      </section>
+
+      <!-- Section: Motion -->
+      <section id="motion">
+        <h2>4. Motion & Easing Curves</h2>
+        <p>Animations operate under hardware-accelerated restrictions: only <code>transform</code> and <code>opacity</code> can animate. Layout properties (width, padding, margin) must remain static.</p>
+        <ul>
+          <li><strong>Standard Reveal:</strong> translateY(20px &rarr; 0), opacity 0 &rarr; 1, duration 600ms, easing <code>cubic-bezier(0.16, 1, 0.3, 1)</code>.</li>
+          <li><strong>Button hover scale:</strong> scale(1.0 &rarr; 1.02), duration 250ms, easing <code>cubic-bezier(0.25, 1, 0.5, 1)</code>.</li>
+          <li><strong>Odometer count:</strong> spring animation logic, duration 800ms.</li>
+        </ul>
+      </section>
+
+      <!-- Section: Handoff -->
+      <section id="engineering">
+        <h2>5. Production Engineering Handoff Parameters</h2>
+        <p>CSS Custom Variables for typography stacks and layout guidelines:</p>
+        <pre><code>:root {
+  --bg-hero: #0A0A0F;
+  --bg-light: #FAFAFA;
+  --bg-dark-anchor: #0F0F1A;
+  --accent-primary: #5C6CFA;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}</code></pre>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Interactive Custom Cursor follower Script -->
+  <script>
+    const follower = document.getElementById('custom-cursor-follower');
+    
+    // Follow mouse coordinates
+    document.addEventListener('mousemove', (e) => {
+      follower.style.left = e.clientX + 'px';
+      follower.style.top = e.clientY + 'px';
+    });
+
+    // Detect click press states
+    document.addEventListener('mousedown', () => {
+      follower.classList.add('click-active');
+    });
+
+    document.addEventListener('mouseup', () => {
+      follower.classList.remove('click-active');
+    });
+
+    // Detect link hovers
+    const interactiveElements = document.querySelectorAll('.cursor-hover-interactive, a, button, th, td');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        follower.classList.add('hover-interactive');
+      });
+      el.addEventListener('mouseleave', () => {
+        follower.classList.remove('hover-interactive');
+      });
+    });
+
+    // Detect card hovers
+    const cardElements = document.querySelectorAll('.cursor-hover-card, .graphic-container');
+    cardElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        follower.classList.add('hover-card');
+      });
+      el.addEventListener('mouseleave', () => {
+        follower.classList.remove('hover-card');
+      });
+    });
+
+    // Quick Navigation item highlight on scroll
+    const navItems = document.querySelectorAll('.nav-item');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section, .viewport-box');
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 150;
+        if (pageYOffset >= top) {
+          current = sec.getAttribute('id');
+        }
+      });
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        const link = item.querySelector('a').getAttribute('href').substring(1);
+        if (link === current) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Accordion Toggle Logic
+    const accordionItem = document.querySelector('.accordion-item');
+    const accordionArrow = document.querySelector('.accordion-arrow');
+    const accordionContent = document.querySelector('.accordion-content');
+    
+    accordionItem.addEventListener('click', () => {
+      const isOpen = accordionContent.style.maxHeight !== '0px' && accordionContent.style.maxHeight !== '';
+      if (isOpen) {
+        accordionContent.style.maxHeight = '0px';
+        accordionContent.style.opacity = '0';
+        accordionArrow.style.transform = 'rotate(0deg)';
+      } else {
+        accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+        accordionContent.style.opacity = '1';
+        accordionArrow.style.transform = 'rotate(180deg)';
+      }
+    });
+  </script>
+</body>
+</html>

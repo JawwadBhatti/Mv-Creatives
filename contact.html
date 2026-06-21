@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — MV Creatives | Start a Project or Contra Contract</title>
+  <meta name="description" content="Reach out to initiate a product redesign, schedule a platform consultation, or route contracts via Contra. Responses within 24 hours.">
+  <link rel="stylesheet" href="./index.css">
+  <style>
+    /* Specific Contact selector tabs */
+    .tab-btn {
+      background-color: var(--surface-dark-card);
+      border: 1px solid var(--border-dark);
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      transition: all var(--transition-default);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .tab-btn.active {
+      border-color: var(--accent-primary);
+      color: var(--text-primary-dark);
+      box-shadow: 0 0 25px rgba(92,108,250,0.15);
+    }
+    
+    .tab-btn:hover:not(.active) {
+      border-color: rgba(255,255,255,0.15);
+      color: var(--text-primary-dark);
+    }
+    
+    .tab-btn-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+    }
+    
+    .tab-btn-desc {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body class="theme-dark">
+
+  <!-- Global Navigation Header -->
+  <header class="site-header scrolled" id="main-header" style="background-color: rgba(10, 10, 15, 0.96);">
+    <div class="container header-container">
+      <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
+      
+      <nav class="site-nav" id="desktop-nav">
+        <ul>
+          <li><a href="./index.html" id="nav-home">Home</a></li>
+          <li><a href="./services.html" id="nav-services">Services</a></li>
+          <li><a href="./work.html" id="nav-work">Work</a></li>
+          <li><a href="./studio.html" id="nav-studio">Studio</a></li>
+          <li><a href="./contact.html" class="active" id="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-cta">
+        <a href="./contact.html?path=start-project" class="btn-primary" id="header-cta-btn">Start a Project</a>
+      </div>
+      
+      <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="nav-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-menu-drawer">
+    <ul>
+      <li><a href="./index.html" id="mob-nav-home">Home</a></li>
+      <li><a href="./services.html" id="mob-nav-services">Services</a></li>
+      <li><a href="./work.html" id="mob-nav-work">Work</a></li>
+      <li><a href="./studio.html" id="mob-nav-studio">Studio</a></li>
+      <li><a href="./contact.html" class="active" id="mob-nav-contact">Contact</a></li>
+    </ul>
+    <a href="./contact.html?path=start-project" class="btn-primary" style="text-align: center;" id="mob-cta-btn">Start a Project</a>
+  </div>
+
+  <main>
+
+    <!-- Section 01: Hero -->
+    <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 50vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark);" id="contact-hero">
+      <div class="container grid-12" style="align-items: center; width: 100%;">
+        <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
+          <span class="eyebrow-label">Conversion Hub</span>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark);">Let us make your possible, actual</h1>
+          <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
+            Select your path to initiate a product redesign or coordinate contract agreements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 02: Multi-Path Tab Selector -->
+    <section style="background-color: var(--bg-hero); padding: 60px 0 20px 0;" id="tabs-section">
+      <div class="container grid-12">
+        <button class="tab-btn active" data-path="start-project" style="grid-column: 2 / span 3;" id="tab-start-project">
+          <span class="tab-btn-title">Start a Project</span>
+          <span class="tab-btn-desc">Fill our smart qualification form for review</span>
+        </button>
+        <button class="tab-btn" data-path="view-work" style="grid-column: 5 / span 3;" id="tab-view-work">
+          <span class="tab-btn-title">View Our Work</span>
+          <span class="tab-btn-desc">Browse through case studies before submitting</span>
+        </button>
+        <button class="tab-btn" data-path="hire-contra" style="grid-column: 8 / span 3;" id="tab-hire-contra">
+          <span class="tab-btn-title">Hire on Contra</span>
+          <span class="tab-btn-desc">Initiate immediate freelance contract scopes</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Section 03: Smart Form & Details -->
+    <section class="section-padding-standard theme-light" id="conversion-form-block">
+      <div class="container grid-12" style="align-items: flex-start;">
+        
+        <!-- Tab Content Path 1: Smart Form -->
+        <div style="grid-column: 2 / span 6; display: block;" class="form-block">
+          <div class="form-wrapper">
+            <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 40px;">Tell us about your project</h3>
+            
+            <form id="qualification-form">
+              
+              <div class="form-group">
+                <input type="text" id="form-name" class="form-input" required>
+                <label for="form-name" class="form-label">Full Name *</label>
+                <div class="focus-line"></div>
+                <div class="error-message">This field is required.</div>
+              </div>
+
+              <div class="form-group">
+                <input type="email" id="form-email" class="form-input" required>
+                <label for="form-email" class="form-label">Email Address *</label>
+                <div class="focus-line"></div>
+                <div class="error-message">Please enter a valid email address.</div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" id="form-company" class="form-input">
+                <label for="form-company" class="form-label">Company Name (Optional)</label>
+                <div class="focus-line"></div>
+              </div>
+
+              <div class="form-group">
+                <select id="form-project-type" class="form-input" required style="padding-right: 30px;">
+                  <option value="" disabled selected></option>
+                  <option value="design-branding">Design & Branding</option>
+                  <option value="websites-ecommerce">Websites & Ecommerce</option>
+                  <option value="software-saas">Software & SaaS</option>
+                  <option value="ai-enterprise">AI & Enterprise Solutions</option>
+                </select>
+                <label for="form-project-type" class="form-label">Project Type *</label>
+                <div class="focus-line"></div>
+                <div class="error-message">Please select a project type.</div>
+              </div>
+
+              <div class="form-group">
+                <textarea id="form-brief" class="form-input" rows="3" required style="resize: none;"></textarea>
+                <label for="form-brief" class="form-label">Project Brief *</label>
+                <div class="focus-line"></div>
+                <div class="error-message">Please describe your project requirements.</div>
+              </div>
+
+              <button type="submit" class="btn-primary" style="margin-top: 20px;" id="form-submit-btn">Send Inquiry</button>
+            </form>
+          </div>
+
+          <!-- Form Success State -->
+          <div class="success-wrapper" style="display: none; opacity: 0; transition: opacity 400ms ease; padding: 60px 40px; text-align: center; border: 1px solid var(--border-light); border-radius: 8px; background-color: var(--surface-light-card);">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background-color: var(--accent-primary); color: #FFF; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 12px;">Inquiry Sent Successfully</h3>
+            <p class="body-regular" style="color: var(--text-muted);">
+              Thank you. Our design engineers will review your project brief and get back to you within 24 hours.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab Content Path 2 & 3: Direct Redirect Screen -->
+        <div style="grid-column: 2 / span 6; display: none; text-align: center; padding: 80px 40px; border: 1px solid var(--border-light); border-radius: 8px; background-color: var(--surface-light-card);" class="redirect-block">
+          <h3 class="h3-text redirect-title" style="color: var(--text-primary-light); margin-bottom: 32px;">Browse our latest client projects</h3>
+          <a href="#" class="btn-primary redirect-btn" id="redirect-cta-button">View Our Work</a>
+        </div>
+
+        <!-- Right Side: Trust Info -->
+        <div style="grid-column: 9 / span 3; border-left: 1px solid var(--border-light); padding-left: 40px;" class="reveal-on-scroll stagger-2">
+          <div style="margin-bottom: 40px;">
+            <span class="eyebrow-label" style="color: var(--text-secondary); font-size: 11px;">Alternate Option</span>
+            <h4 class="h5-text" style="color: var(--text-primary-light); margin: 12px 0 8px 0;">Hire on Contra</h4>
+            <p class="body-small" style="color: var(--text-muted); margin-bottom: 16px;">
+              For rapid contract setup and escrow-backed milestone agreements, you can book us directly on Contra.
+            </p>
+            <a href="https://contra.com/mv_creatives" target="_blank" class="link-trust" style="color: var(--accent-primary);">
+              <span>Go to Contra Profile</span>
+              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+            </a>
+          </div>
+
+          <div>
+            <span class="eyebrow-label" style="color: var(--text-secondary); font-size: 11px;">Response SLA</span>
+            <h4 class="h5-text" style="color: var(--text-primary-light); margin: 12px 0 8px 0;">24-Hour Guarantee</h4>
+            <p class="body-small" style="color: var(--text-muted);">
+              All platform qualification inquiries receive an engineer response within 24 business hours.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer theme-dark">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="./index.html" class="logotype">MV CREATIVES</a>
+          <p class="body-small" style="color: var(--text-secondary); margin-top: 16px;">
+            A digital product studio building brand systems, web interfaces, and AI automation for high-growth firms.
+          </p>
+        </div>
+        
+        <div class="footer-navs">
+          <div class="footer-nav-col">
+            <h6>Studio</h6>
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./services.html">Services</a></li>
+              <li><a href="./work.html">Work</a></li>
+              <li><a href="./studio.html">Studio</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h6>Partnerships</h6>
+            <ul>
+              <li><a href="https://contra.com/mv_creatives" target="_blank">Hire on Contra</a></li>
+              <li><a href="./contact.html?path=start-project">Start a Project</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 MV Creatives. All rights reserved. Design Intelligence.</p>
+        <div class="social-links">
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+          <a href="https://twitter.com" target="_blank">Twitter / X</a>
+          <a href="https://contra.com/mv_creatives" target="_blank">Contra</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./index.js"></script>
+</body>
+</html>

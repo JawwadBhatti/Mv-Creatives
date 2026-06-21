@@ -1,0 +1,17 @@
+# System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary files and log files
+*.log
+*.tmp
+*.bak
+
+# Caches and local tool configs
+.gemini/
+.agents/
+.agents
+.vscode/
+.idea/
