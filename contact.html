@@ -97,7 +97,11 @@
       <div class="container grid-12" style="align-items: center; width: 100%;">
         <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
           <span class="eyebrow-label">Conversion Hub</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark);">Let us make your possible, actual</h1>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark); font-family: var(--font-display);">
+            <span class="reveal-line"><span class="reveal-inner">DIGITAL PRODUCTS</span></span>
+            <span class="reveal-line"><span class="reveal-inner">BUILT FOR THE</span></span>
+            <span class="reveal-line"><span class="reveal-inner">UNCOMPROMISING.</span></span>
+          </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
             Select your path to initiate a product redesign or coordinate contract agreements.
           </p>
@@ -130,51 +134,88 @@
         <!-- Tab Content Path 1: Smart Form -->
         <div style="grid-column: 2 / span 6; display: block;" class="form-block">
           <div class="form-wrapper">
-            <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 40px;">Tell us about your project</h3>
             
             <form id="qualification-form" aria-label="Project qualification questionnaire">
               
-              <div class="form-group">
-                <input type="text" id="form-name" class="form-input" required>
-                <label for="form-name" class="form-label">Full Name *</label>
-                <div class="focus-line"></div>
-                <div class="error-message" id="error-name">This field is required.</div>
+              <!-- Step 1: Getting Acquainted -->
+              <div class="conversational-step active" data-step="0">
+                <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 40px;">First, let's get acquainted.</h3>
+                
+                <div class="form-group">
+                  <input type="text" id="form-name" class="form-input" required>
+                  <label for="form-name" class="form-label">Full Name *</label>
+                  <div class="focus-line"></div>
+                  <div class="error-message" id="error-name">Please enter your name so we can address you.</div>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" id="form-email" class="form-input" required>
+                  <label for="form-email" class="form-label">Email Address *</label>
+                  <div class="focus-line"></div>
+                  <div class="error-message" id="error-email">Please enter a valid email address so we can reply.</div>
+                </div>
+
+                <div class="step-navigation">
+                  <div style="flex-grow: 1;"></div>
+                  <button type="button" class="step-nav-btn step-nav-next">Next Step</button>
+                </div>
               </div>
 
-              <div class="form-group">
-                <input type="email" id="form-email" class="form-input" required>
-                <label for="form-email" class="form-label">Email Address *</label>
-                <div class="focus-line"></div>
-                <div class="error-message" id="error-email">Please enter a valid email address.</div>
+              <!-- Step 2: What are we building together? -->
+              <div class="conversational-step" data-step="1">
+                <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 40px;">What are we building together?</h3>
+                
+                <div class="form-group">
+                  <!-- Hidden select which is mapped by JavaScript -->
+                  <select id="form-project-type" class="form-input" required style="display: none;">
+                    <option value="" disabled selected aria-hidden="true"></option>
+                    <option value="design-branding">Design & Branding</option>
+                    <option value="websites-ecommerce">Websites & Ecommerce</option>
+                    <option value="software-saas">Software & SaaS</option>
+                    <option value="ai-enterprise">AI & Enterprise Solutions</option>
+                  </select>
+                  
+                  <div class="intake-pills" role="radiogroup" aria-label="Select capability vertical">
+                    <button type="button" class="intake-pill" data-value="design-branding">[ 01 // DESIGN & BRANDING ]</button>
+                    <button type="button" class="intake-pill" data-value="websites-ecommerce">[ 02 // WEBSITES & ECOMMERCE ]</button>
+                    <button type="button" class="intake-pill" data-value="software-saas">[ 03 // SOFTWARE & SAAS ]</button>
+                    <button type="button" class="intake-pill" data-value="ai-enterprise">[ 04 // AI & ENTERPRISE ]</button>
+                  </div>
+                  
+                  <div class="error-message" id="error-project-type" style="margin-top: 16px;">Please select one of our capabilities.</div>
+                </div>
+
+                <div class="form-group" style="margin-top: 40px;">
+                  <input type="text" id="form-company" class="form-input">
+                  <label for="form-company" class="form-label">Company Name (Optional)</label>
+                  <div class="focus-line"></div>
+                </div>
+
+                <div class="step-navigation">
+                  <button type="button" class="step-nav-btn step-nav-prev">Back</button>
+                  <button type="button" class="step-nav-btn step-nav-next">Next Step</button>
+                </div>
               </div>
 
-              <div class="form-group">
-                <input type="text" id="form-company" class="form-input">
-                <label for="form-company" class="form-label">Company Name (Optional)</label>
-                <div class="focus-line"></div>
+              <!-- Step 3: Tell us where you're headed -->
+              <div class="conversational-step" data-step="2">
+                <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 40px;">Tell us where you’re headed.</h3>
+                
+                <div class="form-group">
+                  <textarea id="form-brief" class="form-input" rows="4" required style="resize: none;"></textarea>
+                  <label for="form-brief" class="form-label">Project Brief *</label>
+                  <div class="focus-line"></div>
+                  <div class="error-message" id="error-brief">Please write a brief summary of your requirements.</div>
+                </div>
+
+                <div class="step-navigation">
+                  <button type="button" class="step-nav-btn step-nav-prev">Back</button>
+                  <button type="button" class="step-nav-btn step-nav-next" style="background-color: var(--accent-primary);">Start a Project</button>
+                </div>
               </div>
 
-              <div class="form-group">
-                <select id="form-project-type" class="form-input" required style="padding-right: 30px;">
-                  <option value="" disabled selected aria-hidden="true"></option>
-                  <option value="design-branding">Design & Branding</option>
-                  <option value="websites-ecommerce">Websites & Ecommerce</option>
-                  <option value="software-saas">Software & SaaS</option>
-                  <option value="ai-enterprise">AI & Enterprise Solutions</option>
-                </select>
-                <label for="form-project-type" class="form-label">Project Type *</label>
-                <div class="focus-line"></div>
-                <div class="error-message" id="error-project-type">Please select a project type.</div>
-              </div>
-
-              <div class="form-group">
-                <textarea id="form-brief" class="form-input" rows="3" required style="resize: none;"></textarea>
-                <label for="form-brief" class="form-label">Project Brief *</label>
-                <div class="focus-line"></div>
-                <div class="error-message" id="error-brief">Please describe your project requirements.</div>
-              </div>
-
-              <button type="submit" class="btn-primary" style="margin-top: 20px;" id="form-submit-btn">Start a Project</button>
+              <!-- Hidden actual submit button for JS submission -->
+              <button type="submit" id="form-submit-btn" style="display: none;"></button>
             </form>
           </div>
 

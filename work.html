@@ -84,7 +84,11 @@
       <div class="container grid-12" style="align-items: center; width: 100%;">
         <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
           <span class="eyebrow-label">Case Archive</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark);">What possible looks like</h1>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark); font-family: var(--font-display);">
+            <span class="reveal-line"><span class="reveal-inner">DIGITAL PRODUCTS</span></span>
+            <span class="reveal-line"><span class="reveal-inner">BUILT FOR THE</span></span>
+            <span class="reveal-line"><span class="reveal-inner">UNCOMPROMISING.</span></span>
+          </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
             Every project starts with a real business challenge and ends with a measurable, quantified outcome.
           </p>
@@ -105,14 +109,17 @@
 
     <!-- Section 03: Expanded Portfolio Masonry Grid -->
     <section class="section-padding-major theme-anchor-dark" id="portfolio-masonry">
-      <div class="container">
-        
+        <!-- View Toggle Bar -->
+        <div class="toggle-bar-container">
+          <button class="btn-toggle-view" aria-label="Toggle technical directory view">Technical Directory</button>
+        </div>
+
         <!-- Grid wrapper -->
-        <div class="grid-12" style="gap: 60px 24px;" id="masonry-grid">
+        <div class="grid-12 work-grid-view" style="gap: 60px 24px;" id="masonry-grid">
           
           <!-- Card 1: Northlight Redesign (Web) -->
           <div class="portfolio-grid-item portfolio-card" data-category="web" style="grid-column: 2 / span 5; display: block;" id="northlight">
-            <a href="./contact.html?path=start-project" style="display: block;">
+            <a href="./case-study.html" style="display: block;">
               <div style="width: 100%; height: 480px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
                 <img src="./portfolio_northlight_1782055685953.png" alt="Northlight Fintech Redesign Mockup" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
               </div>

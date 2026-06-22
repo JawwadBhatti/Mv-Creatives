@@ -74,7 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Disable custom cursor physics on touch screens
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   if (!isTouchDevice) {
+    document.documentElement.classList.add('no-touch');
     animateCursor();
+  } else {
+    document.documentElement.classList.add('touch');
+    cursor.style.display = 'none';
   }
 
   // Hover animations on standard interactive nodes
@@ -319,4 +323,306 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  /* --------------------------------------------------------------------------
+     INTERACTION PROTOTYPE SCRIPT ADDITIONS
+     -------------------------------------------------------------------------- */
+
+  // A. Magnetic CTA System
+  if (!isTouchDevice) {
+    const magneticBtns = document.querySelectorAll('.btn-primary, .btn-secondary');
+    magneticBtns.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - (rect.width / 2);
+        const y = e.clientY - rect.top - (rect.height / 2);
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.02)`;
+        btn.style.boxShadow = `0 10px 30px rgba(92,108,250,0.25)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0px, 0px) scale(1)';
+        btn.style.boxShadow = '';
+      });
+    });
+  }
+
+  // B. Interactive Capability Explorer Switching
+  const explorerMenuBtns = document.querySelectorAll('.capability-menu-item');
+  const explorerViews = document.querySelectorAll('.capability-view');
+  const explorerContainer = document.querySelector('.capability-explorer');
+
+  if (explorerMenuBtns.length > 0 && explorerViews.length > 0 && explorerContainer) {
+    explorerMenuBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Toggle Active Menu Button
+        explorerMenuBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Toggle Active View
+        const activeId = btn.getAttribute('data-target');
+        explorerViews.forEach(view => {
+          view.classList.remove('active');
+          if (view.id === activeId) {
+            view.classList.add('active');
+          }
+        });
+
+        // Swap visual room environments based on selected capability
+        const roomType = btn.getAttribute('data-room');
+        explorerContainer.className = 'capability-explorer'; // Reset
+        const parentSection = document.getElementById('capabilities-section');
+        if (roomType === 'light') {
+          explorerContainer.classList.add('theme-light-room');
+          if (parentSection) {
+            parentSection.classList.remove('theme-dark');
+            parentSection.classList.add('theme-light');
+          }
+        } else {
+          explorerContainer.classList.add('theme-dark-room');
+          if (parentSection) {
+            parentSection.classList.remove('theme-light');
+            parentSection.classList.add('theme-dark');
+          }
+        }
+      });
+    });
+  }
+
+  // C. Editorial ↔ Technical Directory Toggle
+  const toggleViewBtn = document.querySelector('.btn-toggle-view');
+  const masonryGrid = document.getElementById('masonry-grid');
+
+  if (toggleViewBtn && masonryGrid) {
+    toggleViewBtn.addEventListener('click', () => {
+      const isTechView = masonryGrid.classList.contains('tech-directory-view');
+      if (isTechView) {
+        masonryGrid.classList.remove('tech-directory-view');
+        toggleViewBtn.textContent = "Technical Directory";
+      } else {
+        masonryGrid.classList.add('tech-directory-view');
+        toggleViewBtn.textContent = "Editorial Grid";
+      }
+    });
+  }
+
+  // D. Case Study Horizontal Pinned Scroll
+  const scrollSection = document.querySelector('.horizontal-scroll-section');
+  const scrollContainer = document.querySelector('.horizontal-scroll-container');
+  const scrollSlides = document.querySelector('.horizontal-scroll-slides');
+
+  if (scrollSection && scrollContainer && scrollSlides) {
+    window.addEventListener('scroll', () => {
+      if (window.innerWidth < 1024) {
+        scrollSlides.style.transform = 'none';
+        return;
+      }
+      const sectionTop = scrollContainer.offsetTop;
+      const sectionHeight = scrollContainer.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      if (scrollY >= sectionTop && scrollY <= (sectionTop + sectionHeight - windowHeight)) {
+        const scrolledPercentage = (scrollY - sectionTop) / (sectionHeight - windowHeight);
+        const maxTranslate = scrollSlides.scrollWidth - window.innerWidth;
+        scrollSlides.style.transform = `translate3d(-${scrolledPercentage * maxTranslate}px, 0px, 0px)`;
+      }
+    });
+  }
+
+  // E. Studio Particle Constellation Canvas
+  const canvas = document.getElementById('constellation-canvas');
+  if (canvas) {
+    const isMobileCanvas = window.innerWidth < 768 || isTouchDevice;
+    if (isMobileCanvas) {
+      canvas.style.display = 'none';
+    } else {
+      const ctx = canvas.getContext('2d');
+      let points = [];
+      const maxPoints = 60;
+      let mouse = { x: null, y: null, active: false };
+
+      // Resize handler
+      function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      // Initial points distribution
+      for (let i = 0; i < maxPoints; i++) {
+        points.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: (Math.random() - 0.5) * 0.8,
+          originX: null,
+          originY: null
+        });
+      }
+
+      // Event listeners
+      const parentSection = canvas.closest('section') || document.body;
+      parentSection.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+        mouse.active = true;
+      });
+      parentSection.addEventListener('mouseleave', () => {
+        mouse.active = false;
+      });
+
+      function drawConstellation() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw grid blueprint background lines
+        ctx.strokeStyle = 'rgba(92, 108, 250, 0.03)';
+        ctx.lineWidth = 1;
+        const gridSize = 40;
+        for (let x = 0; x < canvas.width; x += gridSize) {
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, canvas.height);
+          ctx.stroke();
+        }
+        for (let y = 0; y < canvas.height; y += gridSize) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(canvas.width, y);
+          ctx.stroke();
+        }
+
+        // Draw points & lines
+        ctx.fillStyle = 'rgba(92,108,250,0.5)';
+        ctx.strokeStyle = 'rgba(92, 108, 250, 0.15)';
+        
+        points.forEach(p => {
+          // Handle particle movement
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Boundary bounce
+          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+          // Pull to mouse cursor (Architectural alignment)
+          if (mouse.active) {
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 180) {
+              p.x += dx * 0.02; // Attract
+              p.y += dy * 0.02;
+            }
+          }
+
+          // Draw particle
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Connect particles within proximity
+          points.forEach(other => {
+            if (p === other) return;
+            const dx = p.x - other.x;
+            const dy = p.y - other.y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 100) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(other.x, other.y);
+              ctx.stroke();
+            }
+          });
+        });
+        requestAnimationFrame(drawConstellation);
+      }
+      drawConstellation();
+    }
+  }
+
+  // F. Conversational Contact Qualification Form Flow
+  const steps = document.querySelectorAll('.conversational-step');
+  const prevBtns = document.querySelectorAll('.step-nav-prev');
+  const nextBtns = document.querySelectorAll('.step-nav-next');
+  let currentStepIndex = 0;
+
+  if (steps.length > 0) {
+    function showStep(index) {
+      steps.forEach((step, i) => {
+        step.classList.remove('active');
+        if (i === index) {
+          step.classList.add('active');
+          const input = step.querySelector('input, select, textarea');
+          if (input) input.focus();
+        }
+      });
+      currentStepIndex = index;
+    }
+    
+    // Initialize first step
+    showStep(0);
+
+    nextBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const currentStep = steps[currentStepIndex];
+        const inputsInStep = currentStep.querySelectorAll('input[required], select[required], textarea[required]');
+        
+        let stepValid = true;
+        inputsInStep.forEach(input => {
+          if (input.value.trim() === '') {
+            stepValid = false;
+            const group = input.closest('.form-group');
+            if (group) group.classList.add('has-error');
+          }
+        });
+
+        if (stepValid && currentStepIndex < steps.length - 1) {
+          showStep(currentStepIndex + 1);
+        } else if (stepValid && currentStepIndex === steps.length - 1) {
+          // Submit final form
+          const form = document.getElementById('qualification-form');
+          if (form) {
+            // Trigger actual submit handler
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) submitBtn.click();
+          }
+        }
+      });
+    });
+
+    prevBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentStepIndex > 0) {
+          showStep(currentStepIndex - 1);
+        }
+      });
+    });
+
+    // Intake Pill toggles
+    const intakePills = document.querySelectorAll('.intake-pill');
+    const selectEl = document.getElementById('form-project-type');
+    
+    if (intakePills.length > 0 && selectEl) {
+      intakePills.forEach(pill => {
+        pill.addEventListener('click', (e) => {
+          e.preventDefault();
+          intakePills.forEach(p => p.classList.remove('selected'));
+          pill.classList.add('selected');
+          
+          const val = pill.getAttribute('data-value');
+          selectEl.value = val;
+          
+          // Clear error highlighting
+          const group = selectEl.closest('.form-group');
+          if (group) group.classList.remove('has-error');
+        });
+      });
+    }
+  }
+
 });
+
