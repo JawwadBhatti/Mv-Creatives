@@ -29,14 +29,28 @@ In accordance with your feedback and instructions, the following design system r
 
 ---
 
-## 2. Updated Deliverables in Workspace
+## 2. Updated Deliverables
 
-The revised specification and prompt files have been synchronized with your workspace at [c:\Users\HP\Desktop\MV Creatives](file:///c:/Users/HP/Desktop/MV%20Creatives):
+*   [index.html](file:///c:/Users/HP/Desktop/MV%20Creatives/index.html) (Headline alignment, final CTA subhead text updates)
+*   [index.css](file:///c:/Users/HP/Desktop/MV%20Creatives/index.css) (Scroll video opacity & grayscale filter tuning, image desaturation, card overlays, mobile overrides)
+*   [index.js](file:///c:/Users/HP/Desktop/MV%20Creatives/index.js) (Fainter coordinate particles, restricted connections, hover video hooks)
+*   [services.html](file:///c:/Users/HP/Desktop/MV%20Creatives/services.html) (Final CTA subhead text updates)
+*   [work.html](file:///c:/Users/HP/Desktop/MV%20Creatives/work.html) (Final CTA subhead text updates)
+*   [studio.html](file:///c:/Users/HP/Desktop/MV%20Creatives/studio.html) (Final CTA subhead text updates)
+*   [case-study.html](file:///c:/Users/HP/Desktop/MV%20Creatives/case-study.html) (Final CTA subhead text updates)
 
-*   **Prompt Package File:** [mv_creatives_homepage_chatgpt_prompt.md](file:///c:/Users/HP/Desktop/MV%20Creatives/specs/mv_creatives_homepage_chatgpt_prompt.md) serves as a single copy-pasteable prompt for ChatGPT or other LLMs to generate clean production code.
-*   **Production Specification Sheet:** [mv_creatives_homepage_production_spec.md](file:///c:/Users/HP/Desktop/MV%20Creatives/specs/mv_creatives_homepage_production_spec.md) details tokens, type scales, section grids, and transitions.
-*   **Mockup Showcase Gallery:** [mv_creatives_high_fidelity_mockups.md](file:///c:/Users/HP/Desktop/MV%20Creatives/specs/mv_creatives_high_fidelity_mockups.md) compiles responsive desktop/tablet/mobile mockup layouts and breakdowns.
-*   **Styled Specification Dashboard:** [mv_creatives_homepage_production_spec.html](file:///c:/Users/HP/Desktop/MV%20Creatives/mv_creatives_homepage_production_spec.html) is a styled web spec featuring live custom cursor followers, expandable service accordions, and focus input glows in the sandbox.
+---
+
+## 4. Visual Cleanup Pass & Design Tuning
+
+To refine the visual balance, we performed a thorough design polish across all pages:
+*   **Headline Alignment:** Confirmed that the homepage H1 display headline is precisely `"DIGITAL PRODUCTS BUILT FOR THE UNCOMPROMISING."` and matches across the design hierarchy.
+*   **CTA Subheadline Consistency:** Updated the subheadline under the final CTA on all 5 pages (`index.html`, `services.html`, `work.html`, `studio.html`, `case-study.html`) to `"Start with a project brief. We’ll review it and respond within 24 hours."`
+*   **Default Image Desaturation:** Implemented styling in `index.css` to render all homepage images (Hero 3D sculpture, process maps, case study mockups, and client portraits) in grayscale with reduced contrast and brightness by default. This prevents images from competing with typographic layouts.
+*   **Consistent Image Overlays:** Configured an absolute dark overlay (`rgba(10, 10, 15, 0.45)`) on top of Featured Work card previews. On hover, this overlay gently eases to `rgba(10, 10, 15, 0.25)` to allow controlled visual reveal.
+*   **Controlled Hover Reveals:** Configured the Featured Work cards (both static images and hover-playing video reels) to display a desaturated grayscale `40%` color balance with `0.9` contrast on hover to avoid noisy, saturated color pops.
+*   **Background Video & Overlay Balancing:** Lowered background video opacity to `0.16` and applied a grayscale filter. Set the backdrop overlay opacity to `0.55` to keep text highly legible while preserving architectural shadow atmosphere.
+*   **Faint Coordinates System:** Tuned the coordinate particles loop in `index.js` to lower density (`24000` pixels per particle), reduce size (`0.3px` to `1.3px`), shrink connection proximity to `60px`, and set maximum alpha to `0.12`. No coordinates text labels are rendered, keeping coordinates extremely subtle.
 
 ---
 

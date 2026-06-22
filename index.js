@@ -783,17 +783,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
       particles = [];
-      const density = 14000; // pixels per particle
+      const density = 24000; // lower density for fewer particles
       const count = Math.floor((particlesCanvas.width * particlesCanvas.height) / density);
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * particlesCanvas.width,
           y: Math.random() * particlesCanvas.height,
-          vx: (Math.random() - 0.5) * 0.15, // extremely slow architectural drift
-          vy: (Math.random() - 0.5) * 0.15,
-          size: Math.random() * 1.5 + 0.5,
-          opacity: Math.random() * 0.4 + 0.1,
-          type: Math.random() > 0.4 ? 'crosshair' : 'node' // crosshairs or node points
+          vx: (Math.random() - 0.5) * 0.12, // extremely slow drift
+          vy: (Math.random() - 0.5) * 0.12,
+          size: Math.random() * 1.0 + 0.3,
+          opacity: Math.random() * 0.12 + 0.04, // very faint, subtle opacity
+          type: Math.random() > 0.4 ? 'crosshair' : 'node'
         });
       }
     }
@@ -813,9 +813,9 @@ document.addEventListener('DOMContentLoaded', () => {
       pCtx.clearRect(0, 0, particlesCanvas.width, particlesCanvas.height);
       
       // Draw grid blueprint background line accents (ultra-faint structural layout lines)
-      pCtx.strokeStyle = 'rgba(92, 108, 250, 0.015)';
+      pCtx.strokeStyle = 'rgba(92, 108, 250, 0.01)';
       pCtx.lineWidth = 0.5;
-      const gap = 80;
+      const gap = 100;
       for (let x = 0; x < particlesCanvas.width; x += gap) {
         pCtx.beginPath();
         pCtx.moveTo(x, 0);
@@ -844,16 +844,16 @@ document.addEventListener('DOMContentLoaded', () => {
           const dx = pMouse.x - p.x;
           const dy = pMouse.y - p.y;
           const dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 160) {
-            p.x += dx * 0.008; // slow magnetic alignment pull
-            p.y += dy * 0.008;
+          if (dist < 140) {
+            p.x += dx * 0.005; // slow magnetic alignment pull
+            p.y += dy * 0.005;
 
             // Draw thin structural coordinate projection lines to mouse
             pCtx.beginPath();
-            pCtx.setLineDash([2, 5]); // dashed blueprint lines
+            pCtx.setLineDash([2, 6]); // dashed blueprint lines
             pCtx.moveTo(p.x, p.y);
             pCtx.lineTo(pMouse.x, pMouse.y);
-            pCtx.strokeStyle = `rgba(92, 108, 250, ${(1 - dist/160) * 0.12})`;
+            pCtx.strokeStyle = `rgba(92, 108, 250, ${(1 - dist/140) * 0.04})`; // very faint lines
             pCtx.stroke();
             pCtx.setLineDash([]);
           }
@@ -867,29 +867,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (p.type === 'crosshair') {
           // Draw thin crosshairs (+)
           pCtx.beginPath();
-          pCtx.moveTo(p.x - 4, p.y);
-          pCtx.lineTo(p.x + 4, p.y);
-          pCtx.moveTo(p.x, p.y - 4);
-          pCtx.lineTo(p.x, p.y + 4);
+          pCtx.moveTo(p.x - 3, p.y);
+          pCtx.lineTo(p.x + 3, p.y);
+          pCtx.moveTo(p.x, p.y - 3);
+          pCtx.lineTo(p.x, p.y + 3);
           pCtx.stroke();
         } else {
-          // Draw blueprint nodes (small tiny square/circle with empty core)
+          // Draw blueprint nodes (small tiny circle)
           pCtx.beginPath();
           pCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           pCtx.fill();
         }
 
-        // Connect nearby nodes within 90px with thin structural lines
+        // Connect nearby nodes within 60px with thin structural lines
         for (let j = idx + 1; j < particles.length; j++) {
           const other = particles[j];
           const dx = p.x - other.x;
           const dy = p.y - other.y;
           const dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 90) {
+          if (dist < 60) {
             pCtx.beginPath();
             pCtx.moveTo(p.x, p.y);
             pCtx.lineTo(other.x, other.y);
-            pCtx.strokeStyle = `rgba(92, 108, 250, ${(1 - dist/90) * 0.05})`;
+            pCtx.strokeStyle = `rgba(92, 108, 250, ${(1 - dist/60) * 0.02})`;
             pCtx.lineWidth = 0.5;
             pCtx.stroke();
           }

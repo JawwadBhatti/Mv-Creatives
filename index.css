@@ -1249,7 +1249,8 @@ footer.site-footer {
   pointer-events: none;
 }
 
-#scroll-video-container canvas {
+#scroll-video-container canvas,
+#scroll-video-container video {
   position: absolute;
   top: 0;
   left: 0;
@@ -1257,12 +1258,14 @@ footer.site-footer {
   height: 100%;
   object-fit: cover;
   display: block;
+  opacity: 0.16; /* Opacity between 0.12 and 0.22 only */
+  filter: grayscale(100%) contrast(0.85); /* Avoid color casts that conflict with Indigo system */
 }
 
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10, 10, 15, 0.4) 0%, rgba(10, 10, 15, 0.85) 100%);
+  background: rgba(10, 10, 15, 0.55); /* Dark overlay between 0.45 and 0.65 */
   z-index: 1;
   pointer-events: none;
 }
@@ -1304,19 +1307,53 @@ footer.site-footer {
 
 /* Grayscale state to color reveal for portfolio card on hover */
 .card-media-container img.card-static-img {
-  filter: grayscale(100%) contrast(1.1);
+  filter: grayscale(100%) contrast(0.8) brightness(0.7); /* Grayscale, low contrast default */
   transition: transform 0.6s var(--ease-entrance), filter 0.6s var(--ease-entrance);
 }
 
 .card-media-container:hover img.card-static-img {
-  filter: grayscale(0%) contrast(1.0);
-  transform: scale(1.03);
+  filter: grayscale(40%) contrast(0.9) brightness(0.95); /* Controlled color reveal only, no aggressive saturation */
+  transform: scale(1.02);
 }
 
 /* Video hover overlays */
 .card-hover-video {
+  filter: grayscale(40%) contrast(0.9) brightness(0.95); /* Controlled color reveal only, no aggressive saturation */
   transition: opacity 0.5s var(--ease-entrance);
 }
+
+/* Consistent card overlays */
+.card-media-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.45); /* Consistent dark overlay */
+  pointer-events: none;
+  transition: background 0.6s var(--ease-entrance);
+  z-index: 2; /* Put overlay on top of image and video */
+}
+
+.card-media-container:hover::after {
+  background: rgba(10, 10, 15, 0.25); /* Slight reveal on hover */
+}
+
+/* 13. Homepage Image Balancing Cleanup */
+#hero-art-image {
+  filter: grayscale(100%) contrast(0.8) brightness(0.65) drop-shadow(0 0 50px rgba(92,108,250,0.12)) !important;
+}
+
+#process-section img {
+  filter: grayscale(100%) contrast(0.75) brightness(0.65) !important;
+}
+
+#case-study-highlight-section img {
+  filter: grayscale(100%) contrast(0.8) brightness(0.7) !important;
+}
+
+#testimonials-section img {
+  filter: grayscale(100%) contrast(0.75) brightness(0.7) !important;
+}
+
 
 /* 12. Mobile Graceful Degradation Overrides */
 @media (max-width: 1023px) {
