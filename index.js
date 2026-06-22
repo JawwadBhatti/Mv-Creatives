@@ -890,7 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       }
-    }, { threshold: 0.35 });
+    }, { threshold: 0.05 });
 
     counters.forEach((counter) => observer.observe(counter));
   })();

@@ -45,6 +45,12 @@
     .leader-info {
       padding: 24px;
     }
+    
+    @media (max-width: 1023px) {
+      .leader-card {
+        grid-column: 1 / -1 !important;
+      }
+    }
   </style>
 </head>
 <body class="theme-dark">
@@ -91,52 +97,33 @@
   <main>
 
     <!-- Section 01: Hero -->
-    <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 80vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark);" id="studio-hero">
-      <canvas id="constellation-canvas"></canvas>
+    <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 60vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark);" id="studio-hero">
       <div class="container grid-12" style="align-items: center; width: 100%;">
         <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
           <span class="eyebrow-label">About the Studio</span>
           <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark); font-family: var(--font-display);">
-            <span class="reveal-line"><span class="reveal-inner">DIGITAL PRODUCTS</span></span>
-            <span class="reveal-line"><span class="reveal-inner">BUILT FOR THE</span></span>
-            <span class="reveal-line"><span class="reveal-inner">UNCOMPROMISING.</span></span>
+            <span class="reveal-line"><span class="reveal-inner">A PARTNER FOR</span></span>
+            <span class="reveal-line"><span class="reveal-inner">THE AMBITIOUS.</span></span>
           </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
-            A team of designers, engineers, and strategists who believe AI and design are not separate disciplines.
+            We operate at the intersection of structural design intelligence and high-performance product execution.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Section 02: Philosophy & Core Values -->
-    <section class="section-padding-major theme-light" id="philosophy">
-      <div class="container grid-12" style="align-items: center;">
-        <div style="grid-column: 2 / span 6;" class="reveal-on-scroll">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">Our Creed</span>
-          <h2 class="h2-text" style="color: var(--text-primary-light); margin: 12px 0 24px 0;">Design Intelligence</h2>
-          <p class="body-large" style="color: var(--text-muted); margin-bottom: 32px;">
-            Aesthetics are only half the battle. True product intelligence is when structural layouts increase user actions, lower friction, and build business valuation.
-          </p>
-          <p class="body-regular" style="color: var(--text-muted);">
-            We merge design logic with backend engineering. By mapping data properties directly to interface states, we build apps that load in under three seconds and retain active users.
-          </p>
-        </div>
-        <div style="grid-column: 9 / span 3;" class="reveal-on-scroll stagger-2">
-          <div style="border-left: 2px solid var(--accent-primary); padding-left: 24px;">
-            <div class="mono-text" style="font-size: 13px; color: var(--accent-primary); margin-bottom: 8px;">THE OUTCOME METRIC</div>
-            <h3 class="h2-text" style="color: var(--text-primary-light); margin-bottom: 8px;">12 Wk</h3>
-            <p class="body-small" style="color: var(--text-muted);">Average platform redesign deployment window from brief to launch.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 03: Differentiators grid -->
-    <section class="section-padding-major theme-anchor-dark" id="studio-why-us">
+    <!-- Section 02: Core Philosophy -->
+    <section class="section-padding-major theme-anchor-dark" id="philosophy-section" style="border-bottom: 1px solid var(--border-dark);">
       <div class="container">
-        <div style="margin-bottom: 80px;" class="reveal-on-scroll">
-          <span class="eyebrow-label">Our Operations</span>
-          <h2 class="h2-text" style="margin-top: 12px;">Methodical Excellence</h2>
+        <div class="grid-12" style="margin-bottom: 80px; align-items: flex-start;">
+          <div style="grid-column: 2 / span 6;" class="reveal-on-scroll">
+            <h2 class="h2-text" style="color: var(--text-primary-dark); font-family: var(--font-display);">Our design is technical. Our tech is design-led.</h2>
+          </div>
+          <div style="grid-column: 9 / span 3;" class="reveal-on-scroll stagger-2">
+            <p class="body-regular" style="color: var(--text-secondary);">
+              We don't separate creative direction from software engineering. We believe premium interfaces are built by engineering teams who care about micro-typography, and design teams who understand database schemas.
+            </p>
+          </div>
         </div>
 
         <div class="grid-12">
@@ -164,13 +151,13 @@
           <h2 class="h2-text" style="margin-top: 12px;">Our Leadership</h2>
         </div>
 
-        <!-- Asymmetric Grid -->
+        <!-- Centered Leader Grid -->
         <div class="grid-12" style="gap: 40px 24px;">
           
           <!-- Featured Leader -->
-          <div style="grid-column: 2 / span 5;" class="reveal-on-scroll leader-card">
-            <div class="leader-image-wrapper">
-              <img src="./sarah_chen_portrait_1782055729555.png" alt="Sarah Chen, VP of Product" class="leader-photo">
+          <div style="grid-column: 4 / span 6; margin: 0 auto; width: 100%; z-index: 10;" class="reveal-on-scroll leader-card">
+            <div class="leader-image-wrapper" style="height: 420px;">
+              <img src="./sarah_chen_portrait_1782055729555.png" alt="Sarah Chen, Partner" class="leader-photo">
             </div>
             <div class="leader-info">
               <span class="eyebrow-label" style="color: var(--accent-primary); font-size: 10px;">Partner</span>
@@ -179,33 +166,6 @@
                 Leads product architecture and brand positioning. Formerly VP of Product at Northlight.
               </p>
             </div>
-          </div>
-
-          <!-- Secondary Leaders -->
-          <div style="grid-column: 8 / span 4; display: flex; flex-direction: column; gap: 24px; transform: translateY(40px);" class="reveal-on-scroll stagger-2">
-            
-            <div class="leader-card" style="padding: 24px; display: flex; gap: 20px; align-items: center;">
-              <div style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-primary); flex-shrink: 0;">
-                <img src="./marcus_vance_portrait.png" alt="Marcus Vance Portrait" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.15); transition: filter var(--transition-fast);" onmouseenter="this.style.filter='grayscale(0.05)';" onmouseleave="this.style.filter='grayscale(0.15)';">
-              </div>
-              <div>
-                <h4 class="h5-text" style="margin-bottom: 4px;">Marcus Vance</h4>
-                <p class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary); margin-bottom: 4px;">Engineering Director</p>
-                <p class="body-small" style="color: var(--text-secondary); font-size: 12px;">Formerly CTO at SafeHealth. AI-native interface builder.</p>
-              </div>
-            </div>
-
-            <div class="leader-card" style="padding: 24px; display: flex; gap: 20px; align-items: center;">
-              <div style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-primary); flex-shrink: 0;">
-                <img src="./elena_rostova_portrait.png" alt="Elena Rostova Portrait" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.15); transition: filter var(--transition-fast);" onmouseenter="this.style.filter='grayscale(0.05)';" onmouseleave="this.style.filter='grayscale(0.15)';">
-              </div>
-              <div>
-                <h4 class="h5-text" style="margin-bottom: 4px;">Elena Rostova</h4>
-                <p class="eyebrow-label" style="font-size: 9px; color: var(--text-secondary); margin-bottom: 4px;">Design Director</p>
-                <p class="body-small" style="color: var(--text-secondary); font-size: 12px;">Formerly COO at ApexRetail. Master of component library grids.</p>
-              </div>
-            </div>
-
           </div>
 
         </div>

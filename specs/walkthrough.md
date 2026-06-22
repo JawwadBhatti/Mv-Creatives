@@ -1,62 +1,48 @@
-# Walkthrough — Architectural Atmosphere & Product Visuals Restoration
+# Walkthrough — Production Quality & Consistency Pass
 
-We have completed a comprehensive visual audit and restored the approved creative art direction across the MV Creatives platform.
-
----
-
-## 1. Restoring the Architectural Atmosphere
-
-### Core Theme Color Configurations
-- **Global Theme Classes:** Resolved a structural styling bug by explicitly defining theme states in `index.css`:
-  ```css
-  .theme-light {
-    background-color: var(--bg-light) !important;
-    color: var(--text-primary-light) !important;
-  }
-  .theme-dark {
-    background-color: var(--bg-hero) !important;
-    color: var(--text-primary-dark) !important;
-  }
-  .theme-anchor-dark {
-    background-color: var(--bg-dark-anchor) !important;
-    color: var(--text-primary-dark) !important;
-  }
-  ```
-- **DYNAMIC Contrast Shift:** Adding these classes restores the **WOW Moment contrast transition** on scroll: sections now alternate cleanly between deep Obsidian Black (`#0A0A0F`), warm anti-glare Chalk White (`#FAFAFA`), and brushed Ebonite Gray (`#0F0F1A`), curing the "empty black void" template feeling.
+We have resolved all critical production consistency and visual quality issues across the MV Creatives platform.
 
 ---
 
-## 2. Product-Focused Visuals & Interactive Explorer
+## 1. Homepage Sculpture Cleanups
+- Removed all remaining hero sculpture/static image references from the homepage code.
+- Deleted the obsolete static art asset `hero_abstract_3d_1782055669692.png` and other unused graphics from the repository to prevent production clutter.
 
-### Capability Explorer Visual Rooms
-- **Split-Column Grid:** Redesigned the capability viewport views into responsive two-column grid layouts (`.capability-view-grid`):
-  - **Left column:** Displays typographic titles, service descriptors, and monospaced technical file details.
-  - **Right column:** Displays high-fidelity visual product mockups in place of the generic empty dashed outline boxes.
-- **Visual Mockups Embedded:**
-  - **01 // Design & Branding:** Displays `capability_design_room.png` (grayscaled sketches/layout specs).
-  - **02 // Websites & Ecommerce:** Displays `design_system_components_1782073720217.png` (component specs sheet).
-  - **03 // Software & SaaS:** Displays `desktop_work_dark_1782074095354.png` (software architecture mockup).
-  - **04 // AI & Enterprise Solutions:** Displays `capability_ai_room.png` (data flow specs).
-- **Responsive Treatment:** Grayscale images transition from **30% default desaturation** to **5% grayscale** and scale up (`1.02x`) on hover, feeling responsive and alive.
+## 2. Unified Final CTA Copy
+- Checked and verified that the final call-to-action (CTA) copy is unified across **every page** (Homepage, Services, Work, Studio, Case Study):
+  > "Start with a project brief. We’ll review it and respond within 24 hours."
+
+## 3. Work Archive Category Correction
+- Moved **"Northlight Platform Redesign"** from Websites & Ecommerce to **Software & SaaS** in `work.html` (`data-category="software"`).
+- Updated its subheadline to display the correct category text: `"Software & SaaS • FinTech Platform Redesign"`.
+
+## 4. Studio Page Leadership Grid Cleanup
+- Removed the two unapproved leader profiles (Marcus Vance and Elena Rostova) from the leadership grid in `studio.html`.
+- Centered the remaining real partner profile (Sarah Chen) using a standard 6-column span layout (`grid-column: 4 / span 6;`) on desktop.
+- Added responsive overrides to the internal style sheet to ensure the leader card automatically scales to full width on tablet and mobile viewports.
+
+## 5. Case Study & Work Page Metric Fallbacks
+- Resolved the metric counter issue by setting default static outcomes as fallbacks directly in the HTML markup. If the scroll observer/animation fails to load, it will immediately display the target values instead of remaining stuck at `0%`:
+  - **Case Study:** Initial fallback value set to `+220%` (Qualified Lead Lift).
+  - **Work Cards:** Default metrics updated for all cards (`+220%`, `-40%`, `2X`, `12-WK`, `-42%`, `30-D`).
+  - **Cumulative results strip:** Corrected default values to `+220%`, `-40%`, `-42%`, `12 WK`.
+
+## 6. Contact Page Header Copy
+- Improved the introductory paragraph copy on `contact.html`:
+  > "Tell us where you’re headed. We’ll review your project and respond within 24 hours."
 
 ---
 
-## 3. Premium Case-Study Storytelling & Motion
-
-### Case Study Hero Overhaul
-- **Project Background Video:** Embedded the Northlight product screencast (`videos/northlight-hover.mp4`) as a silent, looping cover video playing at `0.22` opacity behind the text to establish high-fidelity immersion:
-  ```html
-  <video autoplay muted loop playsinline src="./videos/northlight-hover.mp4" style="position: absolute; inset: 0; ... opacity: 0.22; filter: grayscale(0.8); z-index: 0;"></video>
-  ```
-- **Outcome-First Title:** Changed the generic homepage title on `case-study.html` to the approved, metrics-driven title: **`+220% QUALIFIED LEADS`**.
-- **Localized Linear Fades:** Blended the video under a dark vertical gradient to prevent typographic readability drops.
-
-### Storyteller Scroll Velocity
-- **Pacing Control:** Changed the scroll lock container height of `case-study-scroller` to **`450vh`** inline in `case-study.html`. This slows down scroll scrubbing, allowing users to absorb design iterations and process details sequentially without slides flying past too rapidly.
+## 7. Changed Files List
+- [index.html](file:///c:/Users/HP/Desktop/MV%20Creatives/index.html) — Updated counter fallback metrics.
+- [index.js](file:///c:/Users/HP/Desktop/MV%20Creatives/index.js) — Tuned IntersectionObserver threshold for mobile viewport counts.
+- [case-study.html](file:///c:/Users/HP/Desktop/MV%20Creatives/case-study.html) — Changed Qualified Lead Lift fallback to `+220%`.
+- [contact.html](file:///c:/Users/HP/Desktop/MV%20Creatives/contact.html) — Updated introductory header copy.
+- [studio.html](file:///c:/Users/HP/Desktop/MV%20Creatives/studio.html) — Removed fake team profiles, centered Sarah Chen, and made it responsive.
+- [work.html](file:///c:/Users/HP/Desktop/MV%20Creatives/work.html) — Moved Northlight category to Software & SaaS, updated category text, and set static counter fallbacks.
 
 ---
 
-## 4. Verification & Deployment Status
-- Local testing verified: no layout bugs, correct contrast swaps, and smooth horizontal scrolling.
-- Changes successfully committed and pushed to GitHub main branch.
-- **Live URL:** [https://jawwadbhatti.github.io/Mv-Creatives/](https://jawwadbhatti.github.io/Mv-Creatives/)
+## 8. Live Site URL
+The site is deployed and live at:
+[https://jawwadbhatti.github.io/Mv-Creatives/](https://jawwadbhatti.github.io/Mv-Creatives/)
