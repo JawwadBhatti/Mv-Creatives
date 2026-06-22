@@ -75,11 +75,14 @@
   <main>
 
     <!-- Section 01: Hero Cover (Beat 1: The Hook) -->
-    <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 85vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark);" id="case-study-hero">
-      <div class="container grid-12" style="align-items: center; width: 100%;">
+    <!-- Section 01: Hero Cover (Beat 1: The Hook) -->
+    <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 85vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); position: relative; overflow: hidden;" id="case-study-hero">
+      <video autoplay muted loop playsinline src="./videos/northlight-hover.mp4" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.22; filter: grayscale(0.8) contrast(1.0); z-index: 0;"></video>
+      <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,15,0.7), rgba(10,10,15,0.92)); z-index: 1;"></div>
+      <div class="container grid-12" style="align-items: center; width: 100%; position: relative; z-index: 10;">
         <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
           <span class="eyebrow-label" style="color: var(--accent-primary);">FINTECH • SERIES B • $45M RAISED</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark); font-family: var(--font-display);">DIGITAL PRODUCTS BUILT FOR THE UNCOMPROMISING.</h1>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark); font-family: var(--font-display);">+220% QUALIFIED LEADS</h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
             Northlight FinTech: Mapping onboarding threshold layouts to scale qualified client acquisitions by +220%.
           </p>
@@ -89,7 +92,7 @@
 
     <!-- Section 02: Pinned Horizontal Scrolling Storytelling (Beats 2, 3, 4, 5, 6) -->
     <section class="horizontal-scroll-section" id="case-study-scroller">
-      <div class="horizontal-scroll-container">
+      <div class="horizontal-scroll-container" style="height: 450vh;">
         <div class="horizontal-scroll-sticky">
           <!-- Width set to 500vw for 5 slides -->
           <div class="horizontal-scroll-slides" style="width: 500vw;">
