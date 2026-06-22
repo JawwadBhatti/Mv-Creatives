@@ -875,11 +875,11 @@ footer.site-footer {
 }
 .ticker-wrap::before {
   left: 0;
-  background: linear-gradient(to right, var(--bg-hero) 0%, rgba(10, 10, 15, 0) 100%);
+  background: linear-gradient(to right, rgba(10, 10, 15, 0.5) 0%, rgba(10, 10, 15, 0) 100%);
 }
 .ticker-wrap::after {
   right: 0;
-  background: linear-gradient(to left, var(--bg-hero) 0%, rgba(10, 10, 15, 0) 100%);
+  background: linear-gradient(to left, rgba(10, 10, 15, 0.5) 0%, rgba(10, 10, 15, 0) 100%);
 }
 .ticker-content {
   display: inline-block;
@@ -2030,12 +2030,25 @@ footer.site-footer {
   z-index: 2;
 }
 
-#capabilities-section,
 #process-section,
 #case-study-highlight-section {
   position: relative;
   z-index: 3;
   background-color: var(--bg-light) !important;
+}
+
+#capabilities-section {
+  position: relative;
+  z-index: 3;
+  transition: background-color 0.8s var(--ease-entrance), color 0.8s var(--ease-entrance);
+}
+
+#capabilities-section.theme-light {
+  background-color: var(--bg-light) !important;
+}
+
+#capabilities-section.theme-dark {
+  background-color: var(--bg-hero) !important;
 }
 
 
