@@ -42,34 +42,7 @@
       gap: 60px 24px;
     }
 
-    /* Modern visual-first cards */
-    .work-visual-box {
-      width: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border-light);
-      position: relative;
-      transition: transform var(--transition-default), border-color var(--transition-default);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .work-visual-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(15%) contrast(0.95) brightness(0.9);
-      transition: filter var(--transition-default), transform var(--transition-default);
-    }
-    .work-visual-box video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity var(--transition-default);
-    }
+    /* Modern visual-first cards styling */
     .work-card-text {
       margin-top: 16px;
       display: flex;
@@ -86,6 +59,7 @@
     .work-card-text .title-block h3 {
       font-size: 22px;
       margin-top: 4px;
+      font-weight: 700;
     }
     .work-card-text .title-block p {
       font-size: 13px;
@@ -99,47 +73,48 @@
       transition: color var(--transition-fast), transform var(--transition-fast);
     }
 
-    /* Hover states */
-    .portfolio-card:hover .work-visual-box {
-      transform: translateY(-6px);
-      border-color: var(--accent-primary);
-    }
-    .portfolio-card:hover .work-visual-box img {
-      filter: grayscale(0%) contrast(1) brightness(1);
-      transform: scale(1.02);
-    }
-    .portfolio-card:hover .work-visual-box video {
-      opacity: 1;
-    }
+    /* Hover states for cards */
     .portfolio-card:hover .link-arrow {
       color: var(--accent-hover);
       transform: translateX(4px);
     }
+    .portfolio-card:hover .browser-content video {
+      opacity: 1 !important;
+    }
 
-    /* Dynamic procedural graphic overlay inside visual box */
-    .procedural-graphic {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 30px;
-      background: radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.15) 0%, rgba(5, 5, 5, 0) 60%);
-      z-index: 1;
+    /* Archive-specific layout grid */
+    #archive-grid {
+      display: grid !important;
+      grid-template-columns: repeat(12, 1fr) !important;
+      gap: 40px 24px !important;
     }
-    .procedural-graphic .monogram {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 32px;
-      color: rgba(255,255,255,0.8);
-      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    #archive-grid .portfolio-grid-item {
+      grid-column: span 4 !important;
+      margin-top: 0 !important;
+      display: block;
     }
-    .procedural-graphic .meta {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--text-muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    #archive-grid .browser-frame,
+    #archive-grid .work-visual-box {
+      height: 300px !important;
+    }
+
+    @media (max-width: 1023px) {
+      #archive-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 32px 24px !important;
+      }
+      #archive-grid .portfolio-grid-item {
+        grid-column: span 1 !important;
+      }
+    }
+    @media (max-width: 767px) {
+      #archive-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px 0 !important;
+      }
+      #archive-grid .portfolio-grid-item {
+        grid-column: span 1 !important;
+      }
     }
   </style>
 </head>
@@ -219,17 +194,27 @@
     <section class="section-padding" style="background-color: var(--bg-primary);" id="portfolio-masonry">
       <div class="container">
         
-        <div class="work-grid-view" id="masonry-grid">
+        <!-- SECTION 01: Featured Work -->
+        <div style="margin-bottom: 60px;">
+          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 01 // FEATURED WORK ]</span>
+          <h2 style="font-size: clamp(32px, 5vw, 56px); margin-top: 16px; text-transform: uppercase;">Featured Work</h2>
+        </div>
+        
+        <div class="work-grid-view" id="featured-grid" style="margin-bottom: 120px;">
           
           <!-- Card 1: Kinetic Data (SaaS) - FEATURED -->
           <div class="portfolio-grid-item portfolio-card" data-category="saas" style="grid-column: 1 / span 7; display: block;" id="kinetic-data">
             <a href="https://www.kineticdata.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 480px;">
-                <img src="./screenshot_kinetic_data.png" alt="Kinetic Data SaaS System design preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">KD</div>
-                  <div class="meta">[ SYSTEM INTERFACE ]</div>
+              <div class="browser-frame" style="height: 480px;">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">kineticdata.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_kinetic_data.png" alt="Kinetic Data SaaS System design preview">
+                  <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
                 </div>
               </div>
               <div class="work-card-text">
@@ -243,15 +228,19 @@
             </a>
           </div>
 
-          <!-- Card 2: Relish (Healthcare) -->
+          <!-- Card 2: Relish (Healthcare) - FEATURED -->
           <div class="portfolio-grid-item portfolio-card" data-category="healthcare" style="grid-column: 8 / span 5; margin-top: 80px; display: block;" id="relish">
             <a href="https://www.hellorelish.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 400px;">
-                <img src="./screenshot_relish.png" alt="Relish Medical Portal interface design preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">RL</div>
-                  <div class="meta">[ PATIENT PORTAL ]</div>
+              <div class="browser-frame" style="height: 400px;">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">hellorelish.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_relish.png" alt="Relish Medical Portal interface design preview">
+                  <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
                 </div>
               </div>
               <div class="work-card-text">
@@ -265,37 +254,71 @@
             </a>
           </div>
 
-          <!-- Card 3: Herbal Goodness (Ecommerce) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="ecommerce" style="grid-column: 1 / span 5; display: block;" id="herbal-goodness">
-            <a href="https://www.herbalgoodnessco.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 420px;">
-                <img src="./screenshot_herbal_goodness.png" alt="Herbal Goodness e-commerce layout design preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">HG</div>
-                  <div class="meta">[ STORE ARCHITECTURE ]</div>
+          <!-- Card 3: Ground Zero (Real Estate) - FEATURED -->
+          <div class="portfolio-grid-item portfolio-card" data-category="real-estate" style="grid-column: 1 / span 5; display: block;" id="ground-zero">
+            <a href="https://groundzerooc.com" target="_blank" style="display: block;">
+              <div class="browser-frame" style="height: 440px;">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">groundzerooc.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_ground_zero.png" alt="Ground Zero brand interface preview">
+                  <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
                 </div>
               </div>
               <div class="work-card-text">
                 <div class="title-block">
-                  <span>Ecommerce</span>
-                  <h3>Herbal Goodness</h3>
-                  <p>Product discovery pathways & high-conversion checkout layouts.</p>
+                  <span>Real Estate</span>
+                  <h3>Ground Zero</h3>
+                  <p>Premium real estate brand styling & listing interactive map viewports.</p>
                 </div>
                 <div class="link-arrow">→</div>
               </div>
             </a>
           </div>
 
-          <!-- Card 4: Tiber Health (Healthcare) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="healthcare" style="grid-column: 6 / span 7; margin-top: -60px; display: block;" id="tiber-health">
+          <!-- Card 4: Star Marina (Software) - FEATURED -->
+          <div class="portfolio-grid-item portfolio-card" data-category="software" style="grid-column: 6 / span 7; margin-top: -40px; display: block;" id="star-marina">
+            <a href="https://star-marina.com" target="_blank" style="display: block;">
+              <div class="browser-frame" style="height: 460px;">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">star-marina.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_star_marina.png" alt="Star Marina booking system design preview">
+                  <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Marine & Software</span>
+                  <h3>Star Marina</h3>
+                  <p>Berth booking platforms & maritime logistics fleet interfaces.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 5: Tiber Health (Healthcare) - FEATURED -->
+          <div class="portfolio-grid-item portfolio-card" data-category="healthcare" style="grid-column: 1 / span 7; display: block;" id="tiber-health">
             <a href="https://www.tiberhealth.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 460px;">
-                <img src="./screenshot_tiber_health.png" alt="Tiber Health platform schema preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">TH</div>
-                  <div class="meta">[ CLINICAL TELEMETRY ]</div>
+              <div class="browser-frame" style="height: 480px;">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">tiberhealth.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_tiber_health.png" alt="Tiber Health platform schema preview">
+                  <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
                 </div>
               </div>
               <div class="work-card-text">
@@ -309,10 +332,98 @@
             </a>
           </div>
 
-          <!-- Card 5: Focus App (SaaS) - EDITORIAL CARD -->
-          <div class="portfolio-grid-item portfolio-card" data-category="saas" style="grid-column: 1 / span 6; display: block;" id="focus-app">
+          <!-- Card 6: Herbal Goodness (Ecommerce) - FEATURED -->
+          <div class="portfolio-grid-item portfolio-card" data-category="ecommerce" style="grid-column: 8 / span 5; margin-top: 80px; display: block;" id="herbal-goodness">
+            <a href="https://www.herbalgoodnessco.com" target="_blank" style="display: block;">
+              <div class="browser-frame" style="height: 420px;">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">herbalgoodnessco.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_herbal_goodness.png" alt="Herbal Goodness e-commerce layout design preview">
+                  <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Ecommerce</span>
+                  <h3>Herbal Goodness</h3>
+                  <p>Product discovery pathways & high-conversion checkout layouts.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 7: The IV Company (Healthcare) - FEATURED -->
+          <div class="portfolio-grid-item portfolio-card" data-category="healthcare" style="grid-column: 1 / span 5; display: block;" id="the-iv-company">
+            <a href="https://theiv.co" target="_blank" style="display: block;">
+              <div class="browser-frame" style="height: 440px;">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">theiv.co</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_the_iv_company.png" alt="The IV Company interface design preview">
+                  <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Healthcare</span>
+                  <h3>The IV Company</h3>
+                  <p>Infusion therapy scheduling & client wellness tracking apps.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 8: Wabi Baby (Ecommerce) - FEATURED -->
+          <div class="portfolio-grid-item portfolio-card" data-category="ecommerce" style="grid-column: 6 / span 7; margin-top: -40px; display: block;" id="wabi-baby">
+            <a href="https://www.wabibaby.com" target="_blank" style="display: block;">
+              <div class="browser-frame" style="height: 460px;">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">wabibaby.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_wabi_baby.png" alt="Wabi Baby retail shop layout design preview">
+                  <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Ecommerce</span>
+                  <h3>Wabi Baby</h3>
+                  <p>D2C infant retail product catalogs & responsive shop layout designs.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- SECTION 02: Project Archive -->
+        <div class="archive-title-container" style="margin-top: 120px; margin-bottom: 60px; border-top: 1px solid var(--border-light); padding-top: 80px;">
+          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 02 // PROJECT ARCHIVE ]</span>
+          <h2 style="font-size: clamp(32px, 4vw, 48px); margin-top: 16px; text-transform: uppercase;">Project Archive</h2>
+        </div>
+
+        <div class="work-grid-view" id="archive-grid">
+          
+          <!-- Card 9: Focus App (SaaS) - EDITORIAL CARD -->
+          <div class="portfolio-grid-item portfolio-card" data-category="saas" id="focus-app">
             <a href="https://www.figma.com/design/Mw6CO5cJ4etj5NvW5v5fps/Focus-App---Client-view-" target="_blank" style="display: block;">
-              <div class="work-visual-box editorial-fallback-box" style="height: 380px;">
+              <div class="work-visual-box editorial-fallback-box">
                 <div class="editorial-meta">[ PRODUCTIVITY SAAS ]</div>
                 <div class="editorial-monogram">FA</div>
               </div>
@@ -327,10 +438,10 @@
             </a>
           </div>
 
-          <!-- Card 6: Lynk Quiz (Software) - EDITORIAL CARD -->
-          <div class="portfolio-grid-item portfolio-card" data-category="software" style="grid-column: 7 / span 6; margin-top: 60px; display: block;" id="lynk-quiz">
+          <!-- Card 10: Lynk Quiz (Software) - EDITORIAL CARD -->
+          <div class="portfolio-grid-item portfolio-card" data-category="software" id="lynk-quiz">
             <a href="https://www.figma.com/design/uu5pcTCbdRhbTUiM8Sl39j/lynk-Start-Quiz--FF" target="_blank" style="display: block;">
-              <div class="work-visual-box editorial-fallback-box" style="height: 380px;">
+              <div class="work-visual-box editorial-fallback-box">
                 <div class="editorial-meta">[ INTERACTIVE SOFTWARE ]</div>
                 <div class="editorial-monogram">LQ</div>
               </div>
@@ -345,10 +456,10 @@
             </a>
           </div>
 
-          <!-- Card 7: Vera Grov (Healthcare) - EDITORIAL CARD -->
-          <div class="portfolio-grid-item portfolio-card" data-category="healthcare" style="grid-column: 1 / span 5; display: block;" id="vera-grov">
+          <!-- Card 11: Vera Grov (Healthcare) - EDITORIAL CARD -->
+          <div class="portfolio-grid-item portfolio-card" data-category="healthcare" id="vera-grov">
             <a href="https://www.figma.com/design/yBr5sB2T8lfTVaJwXci4DI/Vera-Grov-FF" target="_blank" style="display: block;">
-              <div class="work-visual-box editorial-fallback-box" style="height: 400px;">
+              <div class="work-visual-box editorial-fallback-box">
                 <div class="editorial-meta">[ CLINICAL EHR ]</div>
                 <div class="editorial-monogram">VG</div>
               </div>
@@ -363,230 +474,10 @@
             </a>
           </div>
 
-          <!-- Card 8: The IV Company (Healthcare) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="healthcare" style="grid-column: 6 / span 7; margin-top: -40px; display: block;" id="the-iv-company">
-            <a href="https://theiv.co" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 440px;">
-                <img src="./screenshot_the_iv_company.png" alt="The IV Company interface design preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">IV</div>
-                  <div class="meta">[ HEALING PLATFORM ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Healthcare</span>
-                  <h3>The IV Company</h3>
-                  <p>Infusion therapy scheduling & client wellness tracking apps.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 9: Ground Zero (Real Estate) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="real-estate" style="grid-column: 1 / span 7; display: block;" id="ground-zero">
-            <a href="https://groundzerooc.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 450px;">
-                <img src="./screenshot_ground_zero.png" alt="Ground Zero brand interface preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">GZ</div>
-                  <div class="meta">[ REAL ESTATE IDENTITY ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Real Estate</span>
-                  <h3>Ground Zero</h3>
-                  <p>Premium real estate brand styling & listing interactive map viewports.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 10: Lender Search (Real Estate) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="real-estate" style="grid-column: 8 / span 5; margin-top: 80px; display: block;" id="lender-search">
-            <a href="https://lendersearch.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 380px;">
-                <img src="./screenshot_lender_search.png" alt="Lender Search broker interface preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">LS</div>
-                  <div class="meta">[ MORTGAGE CALCULATOR ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Real Estate</span>
-                  <h3>Lender Search</h3>
-                  <p>Mortgage lending broker pathways & dynamic qualification engines.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 11: Wabi Baby (Ecommerce) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="ecommerce" style="grid-column: 1 / span 5; display: block;" id="wabi-baby">
-            <a href="https://www.wabibaby.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 400px;">
-                <img src="./screenshot_wabi_baby.png" alt="Wabi Baby retail shop layout design preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">WB</div>
-                  <div class="meta">[ RETAIL DESIGN ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Ecommerce</span>
-                  <h3>Wabi Baby</h3>
-                  <p>D2C infant retail product catalogs & responsive shop layout designs.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 12: DADU Construction (Construction) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="construction" style="grid-column: 6 / span 7; margin-top: -60px; display: block;" id="dadu-construction">
-            <a href="https://seattledadu.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 440px;">
-                <img src="./screenshot_dadu_construction.png" alt="DADU Construction portal dashboard design preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">DA</div>
-                  <div class="meta">[ PROJECT PROGRESS ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Construction</span>
-                  <h3>DADU Construction</h3>
-                  <p>Construction progress portals, project schedules, and client dashboards.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 13: Monolith Construction (Construction) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="construction" style="grid-column: 1 / span 6; display: block;" id="monolith-construction">
-            <a href="https://www.monolithconstruction.com.ph" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 380px;">
-                <img src="./screenshot_monolith_construction.png" alt="Monolith Construction viewer dashboard design preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">MC</div>
-                  <div class="meta">[ CIVIL BLUEPRINTS ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Construction</span>
-                  <h3>Monolith Construction</h3>
-                  <p>Enterprise construction blueprints viewer & spatial material directories.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 14: John Murphy (Marketing) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="marketing" style="grid-column: 7 / span 6; margin-top: 60px; display: block;" id="john-murphy">
-            <a href="https://www.johnmurphydesign.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 380px;">
-                <img src="./screenshot_john_murphy.png" alt="John Murphy brand style interface design preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">JM</div>
-                  <div class="meta">[ BRAND STRATEGY ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Marketing</span>
-                  <h3>John Murphy</h3>
-                  <p>Personal brand design identity, editorial type kits, and typography systems.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 15: Digital Marauders (Marketing) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="marketing" style="grid-column: 1 / span 5; display: block;" id="digital-marauders">
-            <a href="https://www.digitalmarauders.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 400px;">
-                <img src="./screenshot_digital_marauders.png" alt="Digital Marauders brand interface design preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">DM</div>
-                  <div class="meta">[ CREATIVE CAMPAIGN ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Marketing</span>
-                  <h3>Digital Marauders</h3>
-                  <p>Creative campaign assets, marketing visual styles, and packaging concepts.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 16: AMU Agency (Marketing) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="marketing" style="grid-column: 6 / span 7; margin-top: -40px; display: block;" id="amu-agency">
-            <a href="https://amu.agency" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 440px;">
-                <img src="./screenshot_amu_agency.png" alt="AMU Agency design interface preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">AM</div>
-                  <div class="meta">[ AGENCY WORDMARK ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Marketing</span>
-                  <h3>AMU Agency</h3>
-                  <p>Branding agency logotype treatments, layout assets, and style guides.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 17: BAMI (Marketing) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="marketing" style="grid-column: 1 / span 7; display: block;" id="bami">
-            <a href="https://bami-i.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 450px;">
-                <img src="./screenshot_bami.png" alt="Bami corporate design asset preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">BM</div>
-                  <div class="meta">[ IDENTITY ASSETS ]</div>
-                </div>
-              </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Marketing</span>
-                  <h3>BAMI</h3>
-                  <p>Corporate event identity books, brochures, and digital asset templates.</p>
-                </div>
-                <div class="link-arrow">→</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 18: Nextpoint Courts (Sports) - EDITORIAL CARD -->
-          <div class="portfolio-grid-item portfolio-card" data-category="sports" style="grid-column: 8 / span 4; margin-top: 80px; display: block;" id="nextpoint-courts">
+          <!-- Card 12: Nextpoint Courts (Sports) - EDITORIAL CARD -->
+          <div class="portfolio-grid-item portfolio-card" data-category="sports" id="nextpoint-courts">
             <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" style="display: block;">
-              <div class="work-visual-box editorial-fallback-box" style="height: 380px;">
+              <div class="work-visual-box editorial-fallback-box">
                 <div class="editorial-meta">[ ATHLETICS SCHEDULING ]</div>
                 <div class="editorial-monogram">NC</div>
               </div>
@@ -601,22 +492,182 @@
             </a>
           </div>
 
-          <!-- Card 19: Star Marina (Software) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="software" style="grid-column: 1 / span 5; display: block;" id="star-marina">
-            <a href="https://star-marina.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 400px;">
-                <img src="./screenshot_star_marina.png" alt="Star Marina booking system design preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">SM</div>
-                  <div class="meta">[ MARINE SYSTEM ]</div>
+          <!-- Card 13: Lender Search (Real Estate) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="real-estate" id="lender-search">
+            <a href="https://lendersearch.com" target="_blank" style="display: block;">
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">lendersearch.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_lender_search.png" alt="Lender Search broker interface preview">
+                  <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
                 </div>
               </div>
               <div class="work-card-text">
                 <div class="title-block">
-                  <span>Marine & Software</span>
-                  <h3>Star Marina</h3>
-                  <p>Berth booking platforms & maritime logistics fleet interfaces.</p>
+                  <span>Real Estate</span>
+                  <h3>Lender Search</h3>
+                  <p>Mortgage lending broker pathways & dynamic qualification engines.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 14: DADU Construction (Construction) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="construction" id="dadu-construction">
+            <a href="https://seattledadu.com" target="_blank" style="display: block;">
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">seattledadu.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_dadu_construction.png" alt="DADU Construction portal dashboard design preview">
+                  <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Construction</span>
+                  <h3>DADU Construction</h3>
+                  <p>Construction progress portals, project schedules, and client dashboards.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 15: Monolith Construction (Construction) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="construction" id="monolith-construction">
+            <a href="https://www.monolithconstruction.com.ph" target="_blank" style="display: block;">
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">monolithconstruction.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_monolith_construction.png" alt="Monolith Construction viewer dashboard design preview">
+                  <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Construction</span>
+                  <h3>Monolith Construction</h3>
+                  <p>Enterprise construction blueprints viewer & spatial material directories.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 16: John Murphy (Marketing) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="marketing" id="john-murphy">
+            <a href="https://www.johnmurphydesign.com" target="_blank" style="display: block;">
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">johnmurphydesign.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_john_murphy.png" alt="John Murphy brand style interface design preview">
+                  <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Marketing</span>
+                  <h3>John Murphy</h3>
+                  <p>Personal brand design identity, editorial type kits, and typography systems.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 17: Digital Marauders (Marketing) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="marketing" id="digital-marauders">
+            <a href="https://www.digitalmarauders.com" target="_blank" style="display: block;">
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">digitalmarauders.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_digital_marauders.png" alt="Digital Marauders brand interface design preview">
+                  <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Marketing</span>
+                  <h3>Digital Marauders</h3>
+                  <p>Creative campaign assets, marketing visual styles, and packaging concepts.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 18: AMU Agency (Marketing) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="marketing" id="amu-agency">
+            <a href="https://amu.agency" target="_blank" style="display: block;">
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">amu.agency</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_amu_agency.png" alt="AMU Agency design interface preview">
+                  <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Marketing</span>
+                  <h3>AMU Agency</h3>
+                  <p>Branding agency logotype treatments, layout assets, and style guides.</p>
+                </div>
+                <div class="link-arrow">→</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 19: BAMI (Marketing) -->
+          <div class="portfolio-grid-item portfolio-card" data-category="marketing" id="bami">
+            <a href="https://bami-i.com" target="_blank" style="display: block;">
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">bami-i.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_bami.png" alt="Bami corporate design asset preview">
+                  <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                </div>
+              </div>
+              <div class="work-card-text">
+                <div class="title-block">
+                  <span>Marketing</span>
+                  <h3>BAMI</h3>
+                  <p>Corporate event identity books, brochures, and digital asset templates.</p>
                 </div>
                 <div class="link-arrow">→</div>
               </div>
@@ -624,14 +675,18 @@
           </div>
 
           <!-- Card 20: YSI (Non Profit) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="non-profit" style="grid-column: 6 / span 7; margin-top: -60px; display: block;" id="ysi">
+          <div class="portfolio-grid-item portfolio-card" data-category="non-profit" id="ysi">
             <a href="https://www.youngsocialinnovators.ie" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 440px;">
-                <img src="./screenshot_ysi.png" alt="YSI donations web interface design preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">YS</div>
-                  <div class="meta">[ COMMUNITY OUTREACH ]</div>
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">youngsocialinnovators.ie</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_ysi.png" alt="YSI donations web interface design preview">
+                  <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
                 </div>
               </div>
               <div class="work-card-text">
@@ -646,14 +701,18 @@
           </div>
 
           <!-- Card 21: Alan Margolin (Software) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="software" style="grid-column: 1 / span 6; display: block;" id="alan-margolin">
+          <div class="portfolio-grid-item portfolio-card" data-category="software" id="alan-margolin">
             <a href="http://www.amaa-eng.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 380px;">
-                <img src="./screenshot_alan_margolin.png" alt="Alan Margolin structural system dashboard design preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">AM</div>
-                  <div class="meta">[ CIVIL ENGINEERING UI ]</div>
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">amaa-eng.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_alan_margolin.png" alt="Alan Margolin structural system dashboard design preview">
+                  <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
                 </div>
               </div>
               <div class="work-card-text">
@@ -668,14 +727,18 @@
           </div>
 
           <!-- Card 22: Esports Boost (Software) -->
-          <div class="portfolio-grid-item portfolio-card" data-category="software" style="grid-column: 7 / span 6; margin-top: 60px; display: block;" id="esports-boost">
+          <div class="portfolio-grid-item portfolio-card" data-category="software" id="esports-boost">
             <a href="https://esportsboost.com" target="_blank" style="display: block;">
-              <div class="work-visual-box" style="height: 380px;">
-                <img src="./screenshot_esports_boost.png" alt="Esports Boost matchmaking bracket design preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                <div class="procedural-graphic">
-                  <div class="monogram">EB</div>
-                  <div class="meta">[ GAMING TOURNAMENTS ]</div>
+              <div class="browser-frame">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                  <div class="browser-address">esportsboost.com</div>
+                </div>
+                <div class="browser-content" style="height: calc(100% - 28px);">
+                  <img src="./screenshot_esports_boost.png" alt="Esports Boost matchmaking bracket design preview">
+                  <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
                 </div>
               </div>
               <div class="work-card-text">

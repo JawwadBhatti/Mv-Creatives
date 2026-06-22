@@ -372,4 +372,78 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   })();
+
+  // ==========================================================================
+  // 11. HORIZONTAL STORYTELLING SCROLLER (CASE STUDY)
+  // ==========================================================================
+  (function initHorizontalScroll() {
+    const scroller = document.getElementById('case-study-scroller');
+    if (!scroller) return;
+
+    const sticky = scroller.querySelector('.horizontal-scroll-sticky');
+    const slidesContainer = scroller.querySelector('.horizontal-scroll-slides');
+    if (!sticky || !slidesContainer) return;
+
+    function handleScroll() {
+      const rect = scroller.getBoundingClientRect();
+      const scrollHeight = scroller.scrollHeight;
+      const stickyHeight = sticky.clientHeight;
+      const totalScrollable = scrollHeight - stickyHeight;
+
+      if (rect.top <= 0 && rect.bottom >= stickyHeight) {
+        const progress = -rect.top / totalScrollable; // 0 to 1
+        const maxTranslate = slidesContainer.scrollWidth - window.innerWidth;
+        const translateX = progress * maxTranslate;
+        slidesContainer.style.transform = `translate3d(-${translateX}px, 0, 0)`;
+      } else if (rect.top > 0) {
+        slidesContainer.style.transform = `translate3d(0, 0, 0)`;
+      } else if (rect.bottom < stickyHeight) {
+        const maxTranslate = slidesContainer.scrollWidth - window.innerWidth;
+        slidesContainer.style.transform = `translate3d(-${maxTranslate}px, 0, 0)`;
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    handleScroll();
+  })();
+
+  // ==========================================================================
+  // 12. HERO MOUSE DEPTH PARALLAX
+  // ==========================================================================
+  (function initHeroMouseDepth() {
+    const hero = document.getElementById('hero-section');
+    if (!hero) return;
+
+    const content = hero.querySelector('.hero-content');
+    const overlay = hero.querySelector('.hero-overlay');
+    if (!content) return;
+
+    document.addEventListener('mousemove', (e) => {
+      const x = (window.innerWidth / 2 - e.clientX) / 60;
+      const y = (window.innerHeight / 2 - e.clientY) / 60;
+
+      content.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      if (overlay) {
+        overlay.style.transform = `translate3d(${-x * 0.4}px, ${-y * 0.4}px, 0)`;
+      }
+    });
+  })();
+
+  // ==========================================================================
+  // 13. PREMIUM LOADING CURTAIN
+  // ==========================================================================
+  (function initLoadingCurtain() {
+    const curtain = document.createElement('div');
+    curtain.className = 'loading-curtain';
+    curtain.innerHTML = '<div class="loading-logo">MV CREATIVES</div>';
+    document.body.appendChild(curtain);
+
+    setTimeout(() => {
+      curtain.classList.add('loaded');
+      setTimeout(() => {
+        curtain.remove();
+      }, 800);
+    }, 1400);
+  })();
 });
