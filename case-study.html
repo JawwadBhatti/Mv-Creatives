@@ -7,26 +7,129 @@
   <meta name="description" content="Detailed design analysis of the Kinetic Data SaaS system overhaul: engineering a modular design system optimized for data-dense dashboard viewports.">
   <link rel="stylesheet" href="./index.css">
   <style>
-    /* Section specific layout adjustments */
-    .blueprint-box {
-      border: 1px dashed var(--accent-primary);
-      background: rgba(79, 70, 229, 0.02);
-      border-radius: 6px;
-      padding: 32px;
-      text-align: center;
+    /* Specific Case Study Layout Config */
+    .case-study-hero {
       position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #050508;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .case-study-hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      filter: grayscale(20%) contrast(1.1);
+      z-index: 0;
+    }
+    .case-study-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(5, 5, 5, 0.7) 0%, rgba(5, 5, 5, 0.98) 80%);
+      z-index: 1;
     }
     
-    .comparison-grid {
+    .case-study-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+    .overview-meta-item {
+      margin-bottom: 24px;
+    }
+    .overview-meta-item span.label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .overview-meta-item span.value {
+      font-size: 16px;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .editorial-section {
+      margin-bottom: 120px;
+    }
+    .editorial-section h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+    }
+    .editorial-section p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin-bottom: 24px;
+    }
+    .editorial-section p.sub-detail {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+    
+    .visual-system-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 40px;
+      align-items: center;
       margin-top: 40px;
     }
     
+    .next-project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all var(--transition-default);
+      overflow: hidden;
+      position: relative;
+    }
+    .next-project-card:hover {
+      border-color: var(--accent-primary);
+      box-shadow: 0 20px 50px rgba(79, 70, 229, 0.15);
+    }
+    .next-project-card h3 {
+      font-size: 32px;
+      margin-top: 8px;
+    }
+    .next-project-card:hover h3 {
+      color: var(--accent-hover);
+    }
+    
     @media (max-width: 767px) {
-      .comparison-grid {
+      .overview-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .visual-system-grid {
+        grid-template-columns: 1fr;
+      }
+      .next-project-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        padding: 32px;
       }
     }
   </style>
@@ -72,222 +175,167 @@
 
   <main>
 
-    <!-- Section 01: Hero Cover (Beat 1: The Hook) -->
-    <section class="section-padding theme-dark" style="min-height: 80vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); position: relative; overflow: hidden; background-color: #08080f;" id="case-study-hero">
-      <video autoplay muted loop playsinline src="./videos/kinetic-hover.mp4" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.45; filter: grayscale(15%) contrast(1.0); z-index: 0;"></video>
-      <div style="position: absolute; inset: 0; background: radial-gradient(circle at 20% 50%, rgba(5, 5, 5, 0.6) 0%, rgba(5, 5, 5, 0.95) 75%); z-index: 1;"></div>
+    <!-- 01 Hero Cover -->
+    <section class="case-study-hero">
+      <img class="case-study-hero__bg" src="./screenshot_kinetic_data.png" alt="Kinetic Data Dashboard Background">
+      <div class="case-study-hero__overlay"></div>
       
-      <div class="container grid-12" style="align-items: center; width: 100%; position: relative; z-index: 10;">
-        <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
+      <div class="container" style="position: relative; z-index: 2; width: 100%;">
+        <div style="max-width: 800px;">
           <span class="eyebrow-label" style="color: var(--accent-primary);">SAAS • SYSTEM ENGINEERING • COMPONENT DESIGN</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase;">
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 1.05;">
             Kinetic Data
           </h1>
-          <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
-            Engineering a modular design system optimized for data-dense dashboard viewports to solve hierarchy confusion.
+          <p class="body-large" style="color: var(--text-secondary); max-width: 650px; font-size: 20px; line-height: 1.6;">
+            Engineering a modular design system optimized for data-dense dashboard viewports to solve visual hierarchy confusion.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Section 02: Pinned Horizontal Scrolling Storytelling (Beats 2, 3, 4, 5, 6) -->
-    <section class="horizontal-scroll-section" id="case-study-scroller">
-      <div class="horizontal-scroll-container" style="height: 450vh;">
-        <div class="horizontal-scroll-sticky">
-          <!-- Width set to 500vw for 5 slides -->
-          <div class="horizontal-scroll-slides" style="width: 500vw;">
-            
-            <!-- Slide 1: Beat 2 - The Context & Problem -->
-            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-primary);">
-              <div class="container grid-12" style="align-items: center;">
-                <div style="grid-column: 1 / span 6;">
-                  <span class="eyebrow-label" style="color: var(--accent-primary);">01 / The Context & Problem</span>
-                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Typographic Chaos</h2>
-                  <p class="body-large" style="color: var(--text-secondary); margin-bottom: 20px;">
-                    Users working with Kinetic Data dashboards were struggling with layout scanning because dense data charts, tabular metrics, and form parameters lacked structural hierarchy.
-                  </p>
-                  <p class="body-regular" style="color: var(--text-muted);">
-                    Data-dense viewport layouts suffer high cognitive fatigue when labels, numerical outcomes, and borders share ad-hoc weight variables.
-                  </p>
-                </div>
-                <div style="grid-column: 8 / span 5;">
-                  <div style="border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden; background-color: var(--bg-card);">
-                    <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Interface Overview" style="width: 100%; height: auto; display: block; filter: grayscale(15%) contrast(0.95) brightness(0.9);">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2: Beat 3 - The Insight -->
-            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-secondary);">
-              <div class="container grid-12" style="align-items: center;">
-                <div style="grid-column: 1 / span 6; border-left: 3px solid var(--accent-primary); padding-left: 24px;">
-                  <span class="eyebrow-label" style="color: var(--accent-primary);">02 / The Strategic Unlock</span>
-                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Grid Architecture First</h2>
-                  <p class="body-large" style="color: var(--text-secondary); margin-bottom: 20px;">
-                    Instead of applying aesthetic overlays on top of broken alignment, we stripped the viewport down to basic typography and sizing tokens.
-                  </p>
-                  <p class="body-regular" style="color: var(--text-muted);">
-                    By enforcing a rigid 8px grid alignment and establishing desaturated border rules, we created scannable columns that anchor user attention.
-                  </p>
-                </div>
-                <div style="grid-column: 8 / span 5;">
-                  <div class="blueprint-box" style="border-color: var(--border-dark); background: #0e0e16;">
-                    <span class="mono-text" style="font-size: 13px; color: var(--accent-primary); display: block; margin-bottom: 12px;">[ STRUCTURAL DESIGN SYSTEM GRID ]</span>
-                    <div style="height: 100px; border: 1px solid var(--border-light); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--text-muted);">8PX SPACING SCALE MATRIX</div>
-                    <span class="mono-text" style="font-size: 11px; color: var(--text-muted);">UNIFIED VIEWPORT COMPATIBILITY</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3: Beat 4 - The Approach & Architecture -->
-            <div class="horizontal-scroll-slide theme-dark" style="background-color: #0b0b14;">
-              <div class="container grid-12" style="align-items: center;">
-                <div style="grid-column: 1 / span 6;">
-                  <span class="eyebrow-label" style="color: var(--accent-primary);">03 / The Approach</span>
-                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Component Specifications</h2>
-                  <p class="body-large" style="color: var(--text-secondary); margin-bottom: 20px;">
-                    We mapped active UI helper modules linked directly to database fields.
-                  </p>
-                  <p class="body-regular" style="color: var(--text-muted);">
-                    Every input form component was optimized with clear focus borders and subtle indigo glowing variables to validate field states in real-time, reducing intake fatigue.
-                  </p>
-                </div>
-                <div style="grid-column: 8 / span 5;">
-                  <div class="blueprint-box">
-                    <span class="mono-text" style="font-size: 13px; color: var(--accent-primary); display: block; margin-bottom: 12px;">[ COMPONENT LIBRARY: KINETIC_UI.JSON ]</span>
-                    <div style="height: 120px; border: 1px dashed var(--border-dark); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--text-secondary); background: var(--bg-primary);">MODULAR COMPONENT STATE LIBRARY</div>
-                    <span class="mono-text" style="font-size: 10px; color: var(--text-secondary);">ACCESSIBILITY TESTING OK</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 4: Beat 5 - The Solution in Action -->
-            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-primary);">
-              <div class="container grid-12" style="align-items: center;">
-                <div style="grid-column: 1 / span 6;">
-                  <span class="eyebrow-label" style="color: var(--accent-primary);">04 / The Solution</span>
-                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Glossy Obsidian Layout</h2>
-                  <p class="body-large" style="color: var(--text-secondary); margin-bottom: 20px;">
-                    A dark, desaturated theme highlighting essential chart categories with Electric Indigo accents.
-                  </p>
-                  <p class="body-regular" style="color: var(--text-muted);">
-                    Visual metrics expand smoothly on hover to render precise database variables, replacing chaotic legacy dashboards with an interface that feels premium and responsive.
-                  </p>
-                </div>
-                <div style="grid-column: 8 / span 5;">
-                  <div style="border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden; background-color: var(--bg-card);">
-                    <img src="./design_system_components_1782073720217.png" alt="Kinetic Data Design System spec sheet" style="width: 100%; height: auto; display: block; filter: grayscale(15%) contrast(0.95) brightness(0.95);">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 5: Beat 6 - The Outcome -->
-            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-secondary);">
-              <div class="container grid-12" style="align-items: center;">
-                <div style="grid-column: 1 / span 6;">
-                  <span class="eyebrow-label" style="color: var(--accent-primary);">05 / The Outcome</span>
-                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Quantified Outcome</h2>
-                  <p class="body-large" style="color: var(--text-secondary); margin-bottom: 24px;">
-                    By structuring typographic scales and isolating control grids, we delivered a unified dashboard interface that reduced scanning errors and improved user retention.
-                  </p>
-
-                </div>
-                <div style="grid-column: 9 / span 3; text-align: center;">
-                  <div class="metric-text" style="font-size: 100px; line-height: 1.0; color: var(--text-primary); font-family: var(--font-display); font-weight: 800;">[TBD]</div>
-                  <span class="eyebrow-label" style="color: var(--text-secondary); margin-top: 8px;">User Task Velocity Lift</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 03: Before & After Validation (Beat 6: Continued) -->
-    <section class="section-padding theme-dark" style="border-top: 1px solid var(--border-light); background-color: var(--bg-primary);" id="before-after-validation">
-      <div class="container">
-        <div style="margin-bottom: 60px;" class="reveal-on-scroll">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">Validation</span>
-          <h2 class="h2-text" style="margin-top: 12px; font-size: clamp(32px, 4vw, 48px);">Interface Overhaul Comparison</h2>
-        </div>
+    <!-- Content Sections Wrapper -->
+    <section class="section-padding" style="background: var(--bg-primary);">
+      <div class="case-study-container">
         
-        <div class="comparison-grid reveal-on-scroll">
-          <div style="border: 1px solid var(--border-light); border-radius: 8px; padding: 40px; background-color: var(--bg-card);">
-            <span class="mono-text" style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 20px;">[ BEFORE / LEGACY INTERFACE ]</span>
-            <h4 class="h4-text" style="margin-bottom: 16px;">Vague Typographic Hierarchy</h4>
-            <p class="body-regular" style="color: var(--text-secondary); margin-bottom: 24px; font-size: 14px;">
-              Legacy data columns had unstructured label hierarchies and complex styling cards, leading to user scanning errors and configuration mistakes.
-            </p>
-            <div style="background-color: #0b0b14; border: 1px solid var(--border-light); height: 180px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">AD-HOC STYLES - CONFUSED METRICS</div>
-          </div>
-          
-          <div style="border: 1px solid var(--accent-primary); border-radius: 8px; padding: 40px; background-color: var(--bg-card); box-shadow: 0 0 25px var(--accent-glow);">
-            <span class="mono-text" style="font-size: 12px; color: var(--accent-primary); display: block; margin-bottom: 20px;">[ AFTER / MV REDESIGN ]</span>
-            <h4 class="h4-text" style="margin-bottom: 16px;">Rigid Grid Systems</h4>
-            <p class="body-regular" style="color: var(--text-secondary); margin-bottom: 24px; font-size: 14px;">
-              Overhauled layout coordinates with clear font-weights, responsive tabular listings, and desaturated border coordinates for fast visual navigation.
-            </p>
-            <div style="background-color: #0b0b14; height: 180px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); border: 1px dashed var(--accent-primary);">Procedural Layout Verified</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 04: Related Projects (Beat 7: The Invitation) -->
-    <section class="section-padding" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-light);" id="related-case-studies">
-      <div class="container">
-        <div style="margin-bottom: 60px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px;" class="reveal-on-scroll">
+        <!-- 02 Project Overview -->
+        <div class="overview-grid">
           <div>
-            <span class="eyebrow-label">Project Archive</span>
-            <h2 class="h2-text" style="margin-top: 12px; font-size: clamp(32px, 4vw, 48px);">Other Cases</h2>
+            <span class="eyebrow-label" style="color: var(--accent-primary);">[ 01 // OVERVIEW ]</span>
+            <h2 style="font-size: 24px; margin-top: 12px; margin-bottom: 20px; text-transform: uppercase;">The Engagement</h2>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--text-secondary);">
+              Kinetic Data required a scalable, component-based design system to clean up their dashboard applications. The existing dashboards were slow to develop and confusing for enterprise customers to navigate due to inconsistent spacing, text weight, and interactive states.
+            </p>
           </div>
-          <a href="./work.html" class="btn-secondary">Explore All Work</a>
-        </div>
-
-        <div class="grid-12">
-          <!-- Related Card 1: Relish -->
-          <div style="grid-column: 1 / span 6;" class="reveal-on-scroll portfolio-card">
-            <a href="./work.html#relish" style="display: block;">
-              <div style="width: 100%; height: 350px; border-radius: 6px; overflow: hidden; background-color: var(--bg-card); margin-bottom: 24px; border: 1px solid var(--border-light);">
-                <img src="./screenshot_relish.png" alt="Relish Healthcare Portal" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.03)';" onmouseleave="this.style.transform='none';">
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                <div>
-                  <p class="eyebrow-label" style="font-size: 11px; color: var(--accent-primary);">Healthcare</p>
-                  <h3 class="h4-text" style="margin-top: 4px; font-size: 20px;">Relish Portal</h3>
-                </div>
-                <div class="metric-text" style="font-size: 24px; font-weight: 700; font-family: var(--font-mono);">[TBD]</div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Related Card 2: Tiber Health -->
-          <div style="grid-column: 7 / span 6;" class="reveal-on-scroll stagger-2 portfolio-card">
-            <a href="./work.html#tiber-health" style="display: block;">
-              <div style="width: 100%; height: 350px; border-radius: 6px; overflow: hidden; background-color: var(--bg-card); margin-bottom: 24px; border: 1px solid var(--border-light);">
-                <img src="./screenshot_tiber_health.png" alt="Tiber Health Platform" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.03)';" onmouseleave="this.style.transform='none';">
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                <div>
-                  <p class="eyebrow-label" style="font-size: 11px; color: var(--accent-primary);">Healthcare</p>
-                  <h3 class="h4-text" style="margin-top: 4px; font-size: 20px;">Tiber Health Platform</h3>
-                </div>
-                <div class="metric-text" style="font-size: 24px; font-weight: 700; font-family: var(--font-mono);">[TBD]</div>
-              </div>
-            </a>
+          <div style="border-left: 1px solid var(--border-light); padding-left: 40px;">
+            <div class="overview-meta-item">
+              <span class="label">Client</span>
+              <span class="value">Kinetic Data</span>
+            </div>
+            <div class="overview-meta-item">
+              <span class="label">Industry</span>
+              <span class="value">SaaS & Enterprise Software</span>
+            </div>
+            <div class="overview-meta-item">
+              <span class="label">Services</span>
+              <span class="value">UI/UX Design, Design Systems, Frontend Code Spec</span>
+            </div>
           </div>
         </div>
+
+        <!-- 03 Design Challenge -->
+        <div class="editorial-section">
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 02 // CHALLENGE ]</span>
+          <h2>The Hierarchy Trap</h2>
+          <p>
+            Enterprise dashboards fail when they try to highlight everything at once. Users working with Kinetic Data dashboards were struggling with layout scanning because dense metrics, complex tabular data, and input parameters lacked clear visual anchors.
+          </p>
+          <p class="sub-detail">
+            Data-dense viewport layouts suffer high cognitive fatigue when labels, numerical outcomes, and borders share ad-hoc weight variables without a standardized spacing grid.
+          </p>
+        </div>
+
+        <!-- 04 Visual System -->
+        <div class="editorial-section">
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 03 // VISUAL SYSTEM ]</span>
+          <h2>Standardized Grid Tokens</h2>
+          <p>
+            We stripped the viewport coordinates down to basic typography and sizing variables, establishing a rigid 8px layout spacing matrix and a curated dark obsidian palette highlighted by glossy indigo accents.
+          </p>
+          
+          <div class="visual-system-grid">
+            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
+              <span class="eyebrow-label" style="font-size: 11px;">[ TYPOGRAPHY SCALE ]</span>
+              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px;">Plus Jakarta Sans</h4>
+              <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
+                Used for primary display categories and headers to project a confident, modern visual style. Secondary text relies on Inter for high readability.
+              </p>
+            </div>
+            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
+              <span class="eyebrow-label" style="font-size: 11px;">[ ACCENT MATRIX ]</span>
+              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; color: var(--accent-hover);">Electric Indigo (#4F46E5)</h4>
+              <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
+                Leveraged only for active focus states, navigation highlights, and core interactive CTA anchors to guide user attention.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 Screens / Mockups -->
+        <div class="editorial-section">
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 04 // SCREENS & INTERFACES ]</span>
+          <h2>The Redesigned Viewports</h2>
+          <p>
+            Every dashboard element was rebuilt from modular components, using smooth layout boundaries to separate active parameters from tabular database results.
+          </p>
+          
+          <div class="mockup-container" style="background: linear-gradient(135deg, #0a061c 0%, #171138 100%); padding: 80px 24px; margin-top: 40px;">
+            <div class="layered-composition" style="min-height: 380px;">
+              <div class="browser-frame" style="width: 80%; transform: translateX(-20px);">
+                <div class="browser-header">
+                  <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                  <div class="browser-address">app.kineticdata.com/analytics</div>
+                </div>
+                <div class="browser-content" style="height: 300px;">
+                  <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Dashboard redesign view" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+              </div>
+              <div class="phone-mockup pos-bottom-right" style="transform: translateY(-20px);">
+                <div class="phone-speaker"></div>
+                <div class="phone-screen">
+                  <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Mobile view">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 Process -->
+        <div class="editorial-section">
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 05 // THE PROCESS ]</span>
+          <h2>Modular Implementation</h2>
+          <p>
+            Our partnership focused on design-to-code integrity. Rather than simply delivering static design cards, we modeled active states, focus glows, and layouts inside code.
+          </p>
+          
+          <div class="grid-12" style="gap: 24px; margin-top: 40px;">
+            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: 8px;">
+              <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">01 / AUDIT</span>
+              <h4 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Spacing Mapping</h4>
+              <p style="font-size: 13px; margin: 0;">We isolated ad-hoc styling overrides and mapped them to global spacing constants.</p>
+            </div>
+            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: 8px;">
+              <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">02 / DEFINE</span>
+              <h4 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Token Matrix</h4>
+              <p style="font-size: 13px; margin: 0;">We built global typography scales, interactive focus boundaries, and border radius variables.</p>
+            </div>
+            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: 8px;">
+              <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">03 / DEPLOY</span>
+              <h4 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Component Specs</h4>
+              <p style="font-size: 13px; margin: 0;">We verified responsive styling configurations across multiple viewport widths.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 07 Next Project CTA -->
+        <div style="margin-top: 100px;">
+          <span class="eyebrow-label" style="color: var(--text-muted);">[ UP NEXT ]</span>
+          
+          <a href="./work.html#relish" class="next-project-card" style="margin-top: 16px;">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">Healthcare Portal</span>
+              <h3>Relish Healthcare</h3>
+              <p style="font-size: 15px; margin: 8px 0 0 0; color: var(--text-secondary);">Patient intake flows and portal optimization.</p>
+            </div>
+            <span style="font-size: 32px; font-family: var(--font-mono); color: var(--accent-primary);">Next Project →</span>
+          </a>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- Section 05: Video-Backed Final CTA / Footer -->
+  <!-- Section: Video-Backed Final CTA / Footer -->
   <section class="final-video-cta" id="final-cta">
     <video class="final-video-cta__bg" autoplay loop muted playsinline preload="auto" src="./videos/cta-bg.mp4"></video>
     <div class="final-video-cta__fade final-video-cta__fade--top"></div>
@@ -299,17 +347,29 @@
 
       <div class="final-video-cta__actions">
         <a href="./contact.html" class="btn btn-primary">Start a Project</a>
-        <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="link-trust liquid-glass">Hire on Contra →</a>
+        <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="btn btn-secondary" style="border: 1px solid rgba(255,255,255,0.1); padding: 14px 28px; border-radius: 6px;">Hire on Contra →</a>
       </div>
 
       <footer class="final-footer">
-        <p>© 2026 MV Creatives. All rights reserved.</p>
-        <nav>
+        <div class="footer-brand">
+          <span class="logo">MV CREATIVES</span>
+          <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+        </div>
+        <div class="footer-nav">
+          <span class="footer-title">Navigation</span>
           <a href="./index.html">Home</a>
           <a href="./work.html">Work</a>
           <a href="./studio.html">Studio</a>
           <a href="./contact.html">Contact</a>
-        </nav>
+        </div>
+        <div class="footer-links">
+          <span class="footer-title">Channels</span>
+          <a href="https://calendly.com/mahamvohracontra/30min" target="_blank">Book Calendly Call</a>
+          <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank">Hire on Contra</a>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 MV Creatives. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   </section>

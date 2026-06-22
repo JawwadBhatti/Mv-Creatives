@@ -22,7 +22,6 @@
       }
     }
 
-    /* Brief Builder Wrapper */
     .brief-builder-container {
       background-color: var(--bg-card);
       border: 1px solid var(--border-light);
@@ -39,9 +38,14 @@
 
     .brief-step {
       display: none;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1), transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .brief-step.active {
       display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .brief-step h3 {
@@ -64,7 +68,6 @@
       padding-top: 24px;
     }
 
-    /* Form specific styles */
     .range-slider-container {
       margin-top: 32px;
       position: relative;
@@ -85,7 +88,6 @@
       font-family: var(--font-mono);
     }
 
-    /* Direct channels block */
     .direct-channels-box {
       background-color: #0b0b14;
       border: 1px solid var(--border-light);
@@ -192,7 +194,7 @@
               <!-- Step 1: Project Type -->
               <div class="brief-step active" data-step="1">
                 <span class="eyebrow-label">[ Step 1 of 5 ]</span>
-                <h3 style="margin-top: 12px;">What are we building together?</h3>
+                <h3 style="margin-top: 12px;">Project Type</h3>
                 <p>Select the primary capability your project aligns with.</p>
                 
                 <div class="chip-group">
@@ -206,7 +208,7 @@
               <!-- Step 2: Budget Range -->
               <div class="brief-step" data-step="2">
                 <span class="eyebrow-label">[ Step 2 of 5 ]</span>
-                <h3 style="margin-top: 12px;">What is your target budget?</h3>
+                <h3 style="margin-top: 12px;">Budget Range</h3>
                 <p>Slide to define your investment range for milestone deliverables.</p>
                 
                 <div class="range-slider-container">
@@ -225,7 +227,7 @@
               <!-- Step 3: Timeline -->
               <div class="brief-step" data-step="3">
                 <span class="eyebrow-label">[ Step 3 of 5 ]</span>
-                <h3 style="margin-top: 12px;">What is your target timeline?</h3>
+                <h3 style="margin-top: 12px;">Timeline</h3>
                 <p>Select when you'd like the project phase to launch.</p>
                 
                 <div class="chip-group">
@@ -235,19 +237,19 @@
                 </div>
               </div>
 
-              <!-- Step 4: Goals description -->
+              <!-- Step 4: Brief description -->
               <div class="brief-step" data-step="4">
                 <span class="eyebrow-label">[ Step 4 of 5 ]</span>
-                <h3 style="margin-top: 12px;">What are the project goals?</h3>
+                <h3 style="margin-top: 12px;">Brief</h3>
                 <p>Briefly describe the key outcomes you want to achieve.</p>
                 
                 <textarea id="builder-goals-text" class="text-area-brief" placeholder="E.g. We want to design a new SaaS portal to reduce client intake dropoff..."></textarea>
               </div>
 
-              <!-- Step 5: Review & Submit -->
+              <!-- Step 5: Book Discovery Call -->
               <div class="brief-step" data-step="5">
                 <span class="eyebrow-label">[ Step 5 of 5 ]</span>
-                <h3 style="margin-top: 12px;">Review & Book Slot</h3>
+                <h3 style="margin-top: 12px;">Book Discovery Call</h3>
                 <p>We've compiled your project brief parameters. Clicking submit will redirect you to Calendly to lock in your Discovery consultation.</p>
                 
                 <div style="background-color: #0b0b14; border: 1px solid var(--border-light); padding: 24px; border-radius: 6px; font-family: var(--font-mono); font-size: 13px;">
@@ -304,15 +306,27 @@
 
   </main>
 
-  <!-- Global Footer -->
-  <footer class="final-footer container" style="margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--border-light);">
-    <p>© 2026 MV Creatives. All rights reserved.</p>
-    <nav>
+  <!-- Stable Unified Footer -->
+  <footer class="final-footer">
+    <div class="footer-brand">
+      <span class="logo">MV CREATIVES</span>
+      <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+    </div>
+    <div class="footer-nav">
+      <span class="footer-title">Navigation</span>
       <a href="./index.html">Home</a>
       <a href="./work.html">Work</a>
       <a href="./studio.html">Studio</a>
       <a href="./contact.html">Contact</a>
-    </nav>
+    </div>
+    <div class="footer-links">
+      <span class="footer-title">Channels</span>
+      <a href="https://calendly.com/mahamvohracontra/30min" target="_blank">Book Calendly Call</a>
+      <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank">Hire on Contra</a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 MV Creatives. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="./index.js"></script>

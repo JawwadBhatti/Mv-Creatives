@@ -7,7 +7,7 @@
   <meta name="description" content="Explore real creative and product design work by MV Creatives across SaaS, Healthcare, Ecommerce, Real Estate, Construction, Marketing, and Software.">
   <link rel="stylesheet" href="./index.css">
   <style>
-    /* Specific Work filter pill states */
+    /* Specific Work Page card and layout config */
     .filter-pill {
       background-color: transparent;
       border: 1px solid var(--border-dark);
@@ -34,15 +34,7 @@
     .portfolio-grid-item {
       transition: opacity 300ms ease, transform 300ms ease;
     }
-
-    /* Asymmetric Bloomix Grid styling */
-    .work-grid-view {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 60px 24px;
-    }
-
-    /* Modern visual-first cards styling */
+    
     .work-card-text {
       margin-top: 16px;
       display: flex;
@@ -73,16 +65,11 @@
       transition: color var(--transition-fast), transform var(--transition-fast);
     }
 
-    /* Hover states for cards */
     .portfolio-card:hover .link-arrow {
       color: var(--accent-hover);
       transform: translateX(4px);
     }
-    .portfolio-card:hover .browser-content video {
-      opacity: 1 !important;
-    }
 
-    /* Archive-specific layout grid */
     #archive-grid {
       display: grid !important;
       grid-template-columns: repeat(12, 1fr) !important;
@@ -190,7 +177,7 @@
       </div>
     </div>
 
-    <!-- Section 03: Bloomix Portfolio Grid -->
+    <!-- Section 03: Stacked Portfolio Cards (Featured) & Archive Grid -->
     <section class="section-padding" style="background-color: var(--bg-primary);" id="portfolio-masonry">
       <div class="container">
         
@@ -200,236 +187,260 @@
           <h2 style="font-size: clamp(32px, 5vw, 56px); margin-top: 16px; text-transform: uppercase;">Featured Work</h2>
         </div>
         
-        <div class="work-grid-view" id="featured-grid" style="margin-bottom: 120px;">
+        <div class="stacked-cards-container" id="featured-grid" style="margin-bottom: 120px;">
           
-          <!-- Card 1: Kinetic Data (SaaS) - FEATURED -->
-          <div class="portfolio-grid-item portfolio-card" data-category="saas" style="grid-column: 1 / span 7; display: block;" id="kinetic-data">
-            <a href="https://www.kineticdata.com" target="_blank" style="display: block;">
-              <div class="mockup-container" style="background: linear-gradient(135deg, #0a061c 0%, #171138 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_kinetic_data.png" alt="Kinetic Data SaaS System design preview">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                    </div>
+          <!-- Card 1: Kinetic Data (SaaS) -->
+          <div class="stacked-card portfolio-grid-item" data-category="saas" id="kinetic-data">
+            <div class="stacked-card-visual" style="background: linear-gradient(135deg, #0a061c 0%, #171138 100%);">
+              <div class="layered-composition">
+                <div class="browser-frame" style="width: 75%; transform: translateX(-20px);">
+                  <div class="browser-header">
+                    <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="browser-address">app.kineticdata.com</div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="browser-content">
+                    <img src="./screenshot_kinetic_data.png" alt="Kinetic Data SaaS System design">
+                  </div>
+                </div>
+                <div class="phone-mockup pos-bottom-right" style="transform: translateY(-10px);">
+                  <div class="phone-speaker"></div>
+                  <div class="phone-screen">
+                    <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Mobile">
                   </div>
                 </div>
               </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>SaaS & Software</span>
-                  <h3>Kinetic Data</h3>
-                  <p>Design system architecture & high-performance data-dense dashboards.</p>
-                </div>
-                <div class="link-arrow">→</div>
+            </div>
+            <div class="stacked-card-info">
+              <div>
+                <span class="category-label">SaaS & Software</span>
+                <h3 class="card-title">Kinetic Data</h3>
+                <p class="card-desc">Design system architecture & high-performance data-dense dashboards.</p>
               </div>
-            </a>
+              <a href="https://www.kineticdata.com" target="_blank" class="view-project-link">View Project →</a>
+            </div>
           </div>
 
-          <!-- Card 2: Relish (Healthcare) - FEATURED -->
-          <div class="portfolio-grid-item portfolio-card" data-category="healthcare" style="grid-column: 8 / span 5; margin-top: 80px; display: block;" id="relish">
-            <a href="https://www.hellorelish.com" target="_blank" style="display: block;">
-              <div class="mockup-container" style="background: linear-gradient(135deg, #071917 0%, #102e2a 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_relish.png" alt="Relish Medical Portal interface design preview">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                    </div>
+          <!-- Card 2: Relish (Healthcare) -->
+          <div class="stacked-card portfolio-grid-item" data-category="healthcare" id="relish">
+            <div class="stacked-card-visual" style="background: linear-gradient(135deg, #071917 0%, #102e2a 100%);">
+              <div class="layered-composition">
+                <div class="browser-frame" style="width: 75%; transform: translateX(20px);">
+                  <div class="browser-header">
+                    <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="browser-address">hellorelish.com</div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="browser-content">
+                    <img src="./screenshot_relish.png" alt="Relish Medical Portal UI Design">
+                  </div>
+                </div>
+                <div class="phone-mockup pos-bottom-left" style="transform: translateY(-10px);">
+                  <div class="phone-speaker"></div>
+                  <div class="phone-screen">
+                    <img src="./screenshot_relish.png" alt="Relish Mobile">
                   </div>
                 </div>
               </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Healthcare</span>
-                  <h3>Relish</h3>
-                  <p>Patient intake flow optimization & medical portal interface design.</p>
-                </div>
-                <div class="link-arrow">→</div>
+            </div>
+            <div class="stacked-card-info">
+              <div>
+                <span class="category-label">Healthcare</span>
+                <h3 class="card-title">Relish</h3>
+                <p class="card-desc">Patient intake flow optimization & medical portal interface design.</p>
               </div>
-            </a>
+              <a href="https://www.hellorelish.com" target="_blank" class="view-project-link">View Project →</a>
+            </div>
           </div>
 
-          <!-- Card 3: Ground Zero (Real Estate) - FEATURED -->
-          <div class="portfolio-grid-item portfolio-card" data-category="real-estate" style="grid-column: 1 / span 5; display: block;" id="ground-zero">
-            <a href="https://groundzerooc.com" target="_blank" style="display: block;">
-              <div class="mockup-container" style="background: linear-gradient(135deg, #1b170c 0%, #302b1c 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_ground_zero.png" alt="Ground Zero brand interface preview">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                    </div>
+          <!-- Card 3: Ground Zero (Real Estate) -->
+          <div class="stacked-card portfolio-grid-item" data-category="real-estate" id="ground-zero">
+            <div class="stacked-card-visual" style="background: linear-gradient(135deg, #1b170c 0%, #302b1c 100%);">
+              <div class="layered-composition">
+                <div class="browser-frame" style="width: 75%; transform: translateX(-20px);">
+                  <div class="browser-header">
+                    <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="browser-address">groundzerooc.com</div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="browser-content">
+                    <img src="./screenshot_ground_zero.png" alt="Ground Zero Platform Design">
+                  </div>
+                </div>
+                <div class="phone-mockup pos-bottom-right" style="transform: translateY(-10px);">
+                  <div class="phone-speaker"></div>
+                  <div class="phone-screen">
+                    <img src="./screenshot_ground_zero.png" alt="Ground Zero Mobile">
                   </div>
                 </div>
               </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Real Estate</span>
-                  <h3>Ground Zero</h3>
-                  <p>Premium real estate brand styling & listing interactive map viewports.</p>
-                </div>
-                <div class="link-arrow">→</div>
+            </div>
+            <div class="stacked-card-info">
+              <div>
+                <span class="category-label">Real Estate</span>
+                <h3 class="card-title">Ground Zero</h3>
+                <p class="card-desc">Premium real estate brand styling & listing interactive map viewports.</p>
               </div>
-            </a>
+              <a href="https://groundzerooc.com" target="_blank" class="view-project-link">View Project →</a>
+            </div>
           </div>
 
-          <!-- Card 4: Star Marina (Software) - FEATURED -->
-          <div class="portfolio-grid-item portfolio-card" data-category="software" style="grid-column: 6 / span 7; margin-top: -40px; display: block;" id="star-marina">
-            <a href="https://star-marina.com" target="_blank" style="display: block;">
-              <div class="mockup-container" style="background: linear-gradient(135deg, #091221 0%, #152640 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_star_marina.png" alt="Star Marina booking system design preview">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                    </div>
+          <!-- Card 4: Star Marina (Software) -->
+          <div class="stacked-card portfolio-grid-item" data-category="software" id="star-marina">
+            <div class="stacked-card-visual" style="background: linear-gradient(135deg, #091221 0%, #152640 100%);">
+              <div class="layered-composition">
+                <div class="browser-frame" style="width: 75%; transform: translateX(20px);">
+                  <div class="browser-header">
+                    <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="browser-address">star-marina.com</div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="browser-content">
+                    <img src="./screenshot_star_marina.png" alt="Star Marina booking system design">
+                  </div>
+                </div>
+                <div class="phone-mockup pos-bottom-left" style="transform: translateY(-10px);">
+                  <div class="phone-speaker"></div>
+                  <div class="phone-screen">
+                    <img src="./screenshot_star_marina.png" alt="Star Marina Mobile">
                   </div>
                 </div>
               </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Marine & Software</span>
-                  <h3>Star Marina</h3>
-                  <p>Berth booking platforms & maritime logistics fleet interfaces.</p>
-                </div>
-                <div class="link-arrow">→</div>
+            </div>
+            <div class="stacked-card-info">
+              <div>
+                <span class="category-label">Marine & Software</span>
+                <h3 class="card-title">Star Marina</h3>
+                <p class="card-desc">Berth booking platforms & maritime logistics fleet interfaces.</p>
               </div>
-            </a>
+              <a href="https://star-marina.com" target="_blank" class="view-project-link">View Project →</a>
+            </div>
           </div>
 
-          <!-- Card 5: Tiber Health (Healthcare) - FEATURED -->
-          <div class="portfolio-grid-item portfolio-card" data-category="healthcare" style="grid-column: 1 / span 7; display: block;" id="tiber-health">
-            <a href="https://www.tiberhealth.com" target="_blank" style="display: block;">
-              <div class="mockup-container" style="background: linear-gradient(135deg, #180921 0%, #2f183d 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_tiber_health.png" alt="Tiber Health platform schema preview">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                    </div>
+          <!-- Card 5: Tiber Health (Healthcare) -->
+          <div class="stacked-card portfolio-grid-item" data-category="healthcare" id="tiber-health">
+            <div class="stacked-card-visual" style="background: linear-gradient(135deg, #180921 0%, #2f183d 100%);">
+              <div class="layered-composition">
+                <div class="browser-frame" style="width: 75%; transform: translateX(-20px);">
+                  <div class="browser-header">
+                    <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="browser-address">tiberhealth.com</div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="browser-content">
+                    <img src="./screenshot_tiber_health.png" alt="Tiber Health platform schema">
+                  </div>
+                </div>
+                <div class="phone-mockup pos-bottom-right" style="transform: translateY(-10px);">
+                  <div class="phone-speaker"></div>
+                  <div class="phone-screen">
+                    <img src="./screenshot_tiber_health.png" alt="Tiber Health Mobile">
                   </div>
                 </div>
               </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Healthcare & Enterprise</span>
-                  <h3>Tiber Health</h3>
-                  <p>Telemetry data analytics visual frameworks & physician viewports.</p>
-                </div>
-                <div class="link-arrow">→</div>
+            </div>
+            <div class="stacked-card-info">
+              <div>
+                <span class="category-label">Healthcare & Enterprise</span>
+                <h3 class="card-title">Tiber Health</h3>
+                <p class="card-desc">Telemetry data analytics visual frameworks & physician viewports.</p>
               </div>
-            </a>
+              <a href="https://www.tiberhealth.com" target="_blank" class="view-project-link">View Project →</a>
+            </div>
           </div>
 
-          <!-- Card 6: Herbal Goodness (Ecommerce) - FEATURED -->
-          <div class="portfolio-grid-item portfolio-card" data-category="ecommerce" style="grid-column: 8 / span 5; margin-top: 80px; display: block;" id="herbal-goodness">
-            <a href="https://www.herbalgoodnessco.com" target="_blank" style="display: block;">
-              <div class="mockup-container" style="background: linear-gradient(135deg, #0b1c09 0%, #173815 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_herbal_goodness.png" alt="Herbal Goodness e-commerce layout design preview">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                    </div>
+          <!-- Card 6: Herbal Goodness (Ecommerce) -->
+          <div class="stacked-card portfolio-grid-item" data-category="ecommerce" id="herbal-goodness">
+            <div class="stacked-card-visual" style="background: linear-gradient(135deg, #0b1c09 0%, #173815 100%);">
+              <div class="layered-composition">
+                <div class="browser-frame" style="width: 75%; transform: translateX(20px);">
+                  <div class="browser-header">
+                    <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="browser-address">herbalgoodnessco.com</div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="browser-content">
+                    <img src="./screenshot_herbal_goodness.png" alt="Herbal Goodness e-commerce layout">
+                  </div>
+                </div>
+                <div class="phone-mockup pos-bottom-left" style="transform: translateY(-10px);">
+                  <div class="phone-speaker"></div>
+                  <div class="phone-screen">
+                    <img src="./screenshot_herbal_goodness.png" alt="Herbal Goodness Mobile">
                   </div>
                 </div>
               </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Ecommerce</span>
-                  <h3>Herbal Goodness</h3>
-                  <p>Product discovery pathways & high-conversion checkout layouts.</p>
-                </div>
-                <div class="link-arrow">→</div>
+            </div>
+            <div class="stacked-card-info">
+              <div>
+                <span class="category-label">Ecommerce</span>
+                <h3 class="card-title">Herbal Goodness</h3>
+                <p class="card-desc">Product discovery pathways & high-conversion checkout layouts.</p>
               </div>
-            </a>
+              <a href="https://www.herbalgoodnessco.com" target="_blank" class="view-project-link">View Project →</a>
+            </div>
           </div>
 
-          <!-- Card 7: The IV Company (Healthcare) - FEATURED -->
-          <div class="portfolio-grid-item portfolio-card" data-category="healthcare" style="grid-column: 1 / span 5; display: block;" id="the-iv-company">
-            <a href="https://theiv.co" target="_blank" style="display: block;">
-              <div class="mockup-container" style="background: linear-gradient(135deg, #091a21 0%, #123340 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_the_iv_company.png" alt="The IV Company interface design preview">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
-                    </div>
+          <!-- Card 7: The IV Company (Healthcare) -->
+          <div class="stacked-card portfolio-grid-item" data-category="healthcare" id="the-iv-company">
+            <div class="stacked-card-visual" style="background: linear-gradient(135deg, #091a21 0%, #123340 100%);">
+              <div class="layered-composition">
+                <div class="browser-frame" style="width: 75%; transform: translateX(-20px);">
+                  <div class="browser-header">
+                    <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="browser-address">theiv.co</div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="browser-content">
+                    <img src="./screenshot_the_iv_company.png" alt="The IV Company interface design">
+                  </div>
+                </div>
+                <div class="phone-mockup pos-bottom-right" style="transform: translateY(-10px);">
+                  <div class="phone-speaker"></div>
+                  <div class="phone-screen">
+                    <img src="./screenshot_the_iv_company.png" alt="The IV Company Mobile">
                   </div>
                 </div>
               </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Healthcare</span>
-                  <h3>The IV Company</h3>
-                  <p>Infusion therapy scheduling & client wellness tracking apps.</p>
-                </div>
-                <div class="link-arrow">→</div>
+            </div>
+            <div class="stacked-card-info">
+              <div>
+                <span class="category-label">Healthcare</span>
+                <h3 class="card-title">The IV Company</h3>
+                <p class="card-desc">Infusion therapy scheduling & client wellness tracking apps.</p>
               </div>
-            </a>
+              <a href="https://theiv.co" target="_blank" class="view-project-link">View Project →</a>
+            </div>
           </div>
 
-          <!-- Card 8: Wabi Baby (Ecommerce) - FEATURED -->
-          <div class="portfolio-grid-item portfolio-card" data-category="ecommerce" style="grid-column: 6 / span 7; margin-top: -40px; display: block;" id="wabi-baby">
-            <a href="https://www.wabibaby.com" target="_blank" style="display: block;">
-              <div class="mockup-container" style="background: linear-gradient(135deg, #1c0914 0%, #3d1b32 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_wabi_baby.png" alt="Wabi Baby retail shop layout design preview">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                    </div>
+          <!-- Card 8: Wabi Baby (Ecommerce) -->
+          <div class="stacked-card portfolio-grid-item" data-category="ecommerce" id="wabi-baby">
+            <div class="stacked-card-visual" style="background: linear-gradient(135deg, #1c0914 0%, #3d1b32 100%);">
+              <div class="layered-composition">
+                <div class="browser-frame" style="width: 75%; transform: translateX(20px);">
+                  <div class="browser-header">
+                    <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="browser-address">wabibaby.com</div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="browser-content">
+                    <img src="./screenshot_wabi_baby.png" alt="Wabi Baby retail shop layout">
+                  </div>
+                </div>
+                <div class="phone-mockup pos-bottom-left" style="transform: translateY(-10px);">
+                  <div class="phone-speaker"></div>
+                  <div class="phone-screen">
+                    <img src="./screenshot_wabi_baby.png" alt="Wabi Baby Mobile">
                   </div>
                 </div>
               </div>
-              <div class="work-card-text">
-                <div class="title-block">
-                  <span>Ecommerce</span>
-                  <h3>Wabi Baby</h3>
-                  <p>D2C infant retail product catalogs & responsive shop layout designs.</p>
-                </div>
-                <div class="link-arrow">→</div>
+            </div>
+            <div class="stacked-card-info">
+              <div>
+                <span class="category-label">Ecommerce</span>
+                <h3 class="card-title">Wabi Baby</h3>
+                <p class="card-desc">D2C infant retail product catalogs & responsive shop layout designs.</p>
               </div>
-            </a>
+              <a href="https://www.wabibaby.com" target="_blank" class="view-project-link">View Project →</a>
+            </div>
           </div>
 
         </div>
 
         <!-- SECTION 02: Project Archive -->
-        <div class="archive-title-container" style="margin-top: 120px; margin-bottom: 60px; border-top: 1px solid var(--border-light); padding-top: 80px;">
+        <div class="archive-title-container">
           <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 02 // PROJECT ARCHIVE ]</span>
           <h2 style="font-size: clamp(32px, 4vw, 48px); margin-top: 16px; text-transform: uppercase;">Project Archive</h2>
         </div>
@@ -516,8 +527,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_lender_search.png" alt="Lender Search broker interface preview">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_lender_search.png" alt="Lender Search broker interface">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -544,8 +554,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_dadu_construction.png" alt="DADU Construction portal dashboard design preview">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_dadu_construction.png" alt="DADU Construction portal dashboard design">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -572,8 +581,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_monolith_construction.png" alt="Monolith Construction viewer dashboard design preview">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_monolith_construction.png" alt="Monolith Construction viewer dashboard design">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -600,8 +608,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_john_murphy.png" alt="John Murphy brand style interface design preview">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_john_murphy.png" alt="John Murphy brand style interface design">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -628,8 +635,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_digital_marauders.png" alt="Digital Marauders brand interface design preview">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_digital_marauders.png" alt="Digital Marauders brand interface design">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -656,8 +662,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_amu_agency.png" alt="AMU Agency design interface preview">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_amu_agency.png" alt="AMU Agency design interface">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -684,8 +689,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_bami.png" alt="Bami corporate design asset preview">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_bami.png" alt="Bami corporate design asset">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -712,8 +716,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_ysi.png" alt="YSI donations web interface design preview">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_ysi.png" alt="YSI donations web interface design">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -740,8 +743,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_alan_margolin.png" alt="Alan Margolin structural system dashboard design preview">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_alan_margolin.png" alt="Alan Margolin structural system dashboard design">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -768,8 +770,7 @@
                   <div class="macbook-screen">
                     <div class="macbook-webcam"></div>
                     <div class="macbook-viewport">
-                      <img src="./screenshot_esports_boost.png" alt="Esports Boost matchmaking bracket design preview">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                      <img src="./screenshot_esports_boost.png" alt="Esports Boost matchmaking bracket design">
                     </div>
                   </div>
                   <div class="macbook-base">
@@ -809,17 +810,29 @@
 
       <div class="final-video-cta__actions">
         <a href="./contact.html" class="btn btn-primary">Start a Project</a>
-        <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="link-trust liquid-glass">Hire on Contra →</a>
+        <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="btn btn-secondary" style="border: 1px solid rgba(255,255,255,0.1); padding: 14px 28px; border-radius: 6px;">Hire on Contra →</a>
       </div>
 
       <footer class="final-footer">
-        <p>© 2026 MV Creatives. All rights reserved.</p>
-        <nav>
+        <div class="footer-brand">
+          <span class="logo">MV CREATIVES</span>
+          <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+        </div>
+        <div class="footer-nav">
+          <span class="footer-title">Navigation</span>
           <a href="./index.html">Home</a>
           <a href="./work.html">Work</a>
           <a href="./studio.html">Studio</a>
           <a href="./contact.html">Contact</a>
-        </nav>
+        </div>
+        <div class="footer-links">
+          <span class="footer-title">Channels</span>
+          <a href="https://calendly.com/mahamvohracontra/30min" target="_blank">Book Calendly Call</a>
+          <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank">Hire on Contra</a>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 MV Creatives. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   </section>

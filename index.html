@@ -6,116 +6,24 @@
   <title>MV Creatives — Premium UI/UX & Digital Product Design Studio</title>
   <meta name="description" content="MV Creatives designs websites, product interfaces, and brand systems for modern businesses across healthcare, SaaS, ecommerce, real estate, and digital brands.">
   <link rel="stylesheet" href="./index.css">
-  <style>
-    /* Showroom section styles inspired by Bloomix portfolio */
-    .showroom-wrapper {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: border-color var(--transition-fast), transform var(--transition-fast);
-    }
-    .showroom-card:hover .showroom-wrapper {
-      border-color: var(--accent-primary);
-      transform: translateY(-4px);
-    }
-    .showroom-visual {
-      height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      transition: transform var(--transition-default);
-    }
-    .showroom-visual .monogram {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 72px;
-      color: rgba(255, 255, 255, 0.08);
-      letter-spacing: -0.05em;
-    }
-    .showroom-info {
-      padding: 48px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .showroom-info span.category {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--accent-primary);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .showroom-info h3 {
-      font-size: clamp(24px, 3vw, 32px);
-      margin-top: 8px;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-    .showroom-info p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-    .showroom-info span.view-link {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--accent-primary);
-      font-weight: 700;
-      transition: transform var(--transition-fast);
-    }
-    .showroom-card:hover span.view-link {
-      transform: translateX(4px);
-    }
-
-    /* Editorial card styles to replace stock mockups */
-    .editorial-card-content {
-      position: relative;
-      z-index: 10;
-    }
-    .work-card-wrapper:hover .work-card-visual video {
-      opacity: 1 !important;
-    }
-
-    /* Subtle lift hover effect for CTA buttons */
-    .btn-primary, .btn-secondary {
-      transform: translateY(0);
-      transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast) !important;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px var(--accent-glow) !important;
-    }
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-    }
-    
-    @media (max-width: 767px) {
-      .showroom-wrapper {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-      .showroom-visual {
-        height: 180px;
-      }
-      .showroom-info {
-        padding: 24px;
-      }
-    }
-  </style>
 </head>
 <body class="theme-dark">
 
-  <!-- Central Ambient Background Layer -->
-  <canvas id="particles-canvas" style="display: none;"></canvas>
+  <!-- Fixed Hero Cinematic Video Backdrop -->
+  <video class="fixed-video-bg" autoplay muted loop playsinline preload="auto" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_135830_bb6491d1-9b66-4aec-9722-13b4dfe3fb46.mp4"></video>
+
+  <!-- Premium Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-content">
+      <div class="loader-wordmark">MV CREATIVES</div>
+      <div class="loader-line-container">
+        <div class="loader-line"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Global Navigation Header -->
-  <header class="site-header" id="main-header">
+  <header class="site-header header-entrance" id="main-header">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
       
@@ -155,28 +63,34 @@
     
     <!-- 01 HERO: Full-Screen Cinematic Backdrop -->
     <section class="hero-wrapper" id="hero-section">
-      <video class="hero-video-bg" autoplay muted loop playsinline preload="auto" src="./videos/hero-bg.mp4"></video>
-      <div class="hero-overlay"></div>
-
-      <div class="container hero-content" style="transition: transform 0.1s ease-out; will-change: transform;">
-        <div style="max-width: 900px;">
-          <p class="eyebrow-label" style="font-family: var(--font-mono); color: var(--accent-primary); margin-bottom: 24px; font-size: 14px;">[ Premium Digital Product Studio ]</p>
-          <h1 style="font-size: clamp(36px, 5.5vw, 76px); margin-bottom: 32px; text-transform: uppercase; line-height: 1.05; letter-spacing: -0.04em;">
-            <span class="reveal-line"><span class="reveal-inner revealed">CREATIVE DIGITAL EXPERIENCES</span></span>
-            <span class="reveal-line"><span class="reveal-inner revealed">FOR BRANDS THAT</span></span>
-            <span class="reveal-line"><span class="reveal-inner revealed">WANT TO STAND OUT.</span></span>
+      <div class="container hero-content">
+        <div class="hero-text-block">
+          <p class="eyebrow-label hero-subtext-reveal" style="font-family: var(--font-mono); color: var(--accent-primary); margin-bottom: 16px; font-size: 14px;">[ Premium Digital Product Studio ]</p>
+          
+          <h1 class="hero-headline-container">
+            <span class="word-reveal" style="animation-delay: 0.15s;">DIGITAL</span>
+            <span class="word-reveal" style="animation-delay: 0.23s;">EXPERIENCES</span>
+            <span class="word-reveal" style="animation-delay: 0.31s;">FOR</span>
+            <span class="word-reveal" style="animation-delay: 0.39s;">BRANDS</span>
+            <span class="word-reveal" style="animation-delay: 0.47s;">THAT</span>
+            <span class="word-reveal" style="animation-delay: 0.55s;">REFUSE</span>
+            <span class="word-reveal" style="animation-delay: 0.63s;">TO</span>
+            <span class="word-reveal" style="animation-delay: 0.71s;">LOOK</span>
+            <span class="word-reveal" style="animation-delay: 0.79s;">ORDINARY.</span>
           </h1>
-          <p style="font-size: clamp(16px, 2.2vw, 20px); color: var(--text-secondary); margin-bottom: 48px; max-width: 700px; line-height: 1.6;">
+          
+          <p class="hero-subtext-reveal" style="font-size: clamp(16px, 2.2vw, 20px); color: var(--text-secondary); margin-bottom: 40px; line-height: 1.6;">
             MV Creatives designs websites, product interfaces, and brand systems for modern businesses across healthcare, SaaS, ecommerce, real estate, and digital brands.
           </p>
-          <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          
+          <div class="hero-ctas-reveal" style="display: flex; gap: 20px; flex-wrap: wrap;">
             <a href="https://calendly.com/mahamvohracontra/30min" target="_blank" class="btn-glass btn-glass-primary" id="hero-primary-cta">Book a Discovery Call</a>
-            <a href="./work.html" class="btn-glass" id="hero-secondary-cta">View Portfolio</a>
+            <a href="#work-section" class="btn-glass" id="hero-secondary-cta">View Portfolio</a>
           </div>
         </div>
       </div>
 
-      <div class="scroll-indicator">
+      <div class="scroll-indicator hero-subtext-reveal">
         <div class="mouse">
           <div class="wheel"></div>
         </div>
@@ -185,7 +99,7 @@
     </section>
 
     <!-- 02 SELECTED WORK: Offset Storytelling Grid -->
-    <section class="section-padding selected-work-section" id="work-section">
+    <section class="section-padding selected-work-section" id="work-section" style="background: var(--bg-primary); position: relative; z-index: 2;">
       <div class="container">
         <div style="margin-bottom: 80px;">
           <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 02 // SELECTED WORK ]</span>
@@ -198,16 +112,25 @@
           <div style="grid-column: 1 / span 7;" class="reveal-on-scroll">
             <a href="https://www.kineticdata.com" target="_blank" class="work-card-wrapper">
               <div class="mockup-container" style="background: linear-gradient(135deg, #0a061c 0%, #171138 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Platform UI Design">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+                <div class="layered-composition">
+                  <div class="browser-frame" style="width: 80%; transform: translateX(-20px);">
+                    <div class="browser-header">
+                      <div class="browser-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                      </div>
+                      <div class="browser-address">app.kineticdata.com</div>
+                    </div>
+                    <div class="browser-content" style="height: 240px;">
+                      <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Platform UI Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
                     </div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="phone-mockup pos-bottom-right" style="transform: translateY(-10px);">
+                    <div class="phone-speaker"></div>
+                    <div class="phone-screen">
+                      <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -230,16 +153,25 @@
           <div style="grid-column: 8 / span 5; margin-top: 120px;" class="reveal-on-scroll stagger-1">
             <a href="https://www.hellorelish.com" target="_blank" class="work-card-wrapper">
               <div class="mockup-container" style="background: linear-gradient(135deg, #071917 0%, #102e2a 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_relish.png" alt="Relish Medical Portal UI Design">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                <div class="layered-composition">
+                  <div class="browser-frame" style="width: 80%; transform: translateX(20px);">
+                    <div class="browser-header">
+                      <div class="browser-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                      </div>
+                      <div class="browser-address">hellorelish.com</div>
+                    </div>
+                    <div class="browser-content" style="height: 240px;">
+                      <img src="./screenshot_relish.png" alt="Relish Medical Portal UI Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
                     </div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="phone-mockup pos-bottom-left" style="transform: translateY(-10px);">
+                    <div class="phone-speaker"></div>
+                    <div class="phone-screen">
+                      <img src="./screenshot_relish.png" alt="Relish Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -258,52 +190,29 @@
             </a>
           </div>
 
-          <!-- Card 3: Star Marina (Software) -->
-          <div style="grid-column: 2 / span 5;" class="reveal-on-scroll">
-            <a href="https://star-marina.com" target="_blank" class="work-card-wrapper">
-              <div class="mockup-container" style="background: linear-gradient(135deg, #091221 0%, #152640 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_star_marina.png" alt="Star Marina Platform Design">
-                      <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
-                    </div>
-                  </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
-                  </div>
-                </div>
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
-                <div>
-                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">Software</span>
-                  <h3 style="font-size: 24px; margin-top: 4px; font-weight: 700;">Star Marina</h3>
-                  <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
-                    Berth booking platforms & maritime logistics fleet interfaces.
-                  </p>
-                </div>
-                <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
-                  <span style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary); font-weight: 700;">View Project →</span>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Card 4: Ground Zero (Real Estate) -->
-          <div style="grid-column: 8 / span 5; margin-top: 60px;" class="reveal-on-scroll stagger-1">
+          <!-- Card 3: Ground Zero (Real Estate) -->
+          <div style="grid-column: 1 / span 5; margin-top: -60px;" class="reveal-on-scroll">
             <a href="https://groundzerooc.com" target="_blank" class="work-card-wrapper">
               <div class="mockup-container" style="background: linear-gradient(135deg, #1b170c 0%, #302b1c 100%); padding: 60px 24px;">
-                <div class="macbook-mockup">
-                  <div class="macbook-screen">
-                    <div class="macbook-webcam"></div>
-                    <div class="macbook-viewport">
-                      <img src="./screenshot_ground_zero.png" alt="Ground Zero Platform Design">
-                      <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+                <div class="layered-composition">
+                  <div class="browser-frame" style="width: 80%; transform: translateX(-20px);">
+                    <div class="browser-header">
+                      <div class="browser-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                      </div>
+                      <div class="browser-address">groundzerooc.com</div>
+                    </div>
+                    <div class="browser-content" style="height: 240px;">
+                      <img src="./screenshot_ground_zero.png" alt="Ground Zero Platform Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
                     </div>
                   </div>
-                  <div class="macbook-base">
-                    <div class="macbook-notch"></div>
+                  <div class="phone-mockup pos-bottom-right" style="transform: translateY(-10px);">
+                    <div class="phone-speaker"></div>
+                    <div class="phone-screen">
+                      <img src="./screenshot_ground_zero.png" alt="Ground Zero Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -322,34 +231,78 @@
             </a>
           </div>
 
+          <!-- Card 4: Star Marina (Software / Marine) -->
+          <div style="grid-column: 6 / span 7; margin-top: 60px;" class="reveal-on-scroll stagger-1">
+            <a href="https://star-marina.com" target="_blank" class="work-card-wrapper">
+              <div class="mockup-container" style="background: linear-gradient(135deg, #091221 0%, #152640 100%); padding: 60px 24px;">
+                <div class="layered-composition">
+                  <div class="browser-frame" style="width: 80%; transform: translateX(20px);">
+                    <div class="browser-header">
+                      <div class="browser-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                      </div>
+                      <div class="browser-address">star-marina.com</div>
+                    </div>
+                    <div class="browser-content" style="height: 240px;">
+                      <img src="./screenshot_star_marina.png" alt="Star Marina Platform Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                    </div>
+                  </div>
+                  <div class="phone-mockup pos-bottom-left" style="transform: translateY(-10px);">
+                    <div class="phone-speaker"></div>
+                    <div class="phone-screen">
+                      <img src="./screenshot_star_marina.png" alt="Star Marina Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
+                <div>
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">Software / Marine</span>
+                  <h3 style="font-size: 24px; margin-top: 4px; font-weight: 700;">Star Marina</h3>
+                  <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                    Berth booking platforms & maritime logistics fleet interfaces.
+                  </p>
+                </div>
+                <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
+                  <span style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary); font-weight: 700;">View Project →</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 80px; text-align: center;">
+          <a href="./work.html" class="btn-primary">Explore Full Archive (22 Projects)</a>
         </div>
       </div>
     </section>
 
     <!-- 03 INDUSTRIES: Visual-First Categories -->
-    <section class="section-padding" style="border-top: 1px solid var(--border-light); background-color: var(--bg-secondary);" id="industries-section">
+    <section class="section-padding" style="border-top: 1px solid var(--border-light); background-color: var(--bg-secondary); position: relative; z-index: 2;" id="industries-section">
       <div class="container">
-        <div style="margin-bottom: 60px;">
+        <div style="margin-bottom: 48px;">
           <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 03 // SECTOR ALIGNMENT ]</span>
-          <h2 style="font-size: clamp(32px, 4vw, 48px); margin-top: 16px;">Industries We Build For</h2>
+          <h2 style="font-size: clamp(28px, 4vw, 40px); margin-top: 12px;">Industries We Build For</h2>
         </div>
-        
-        <div class="grid-12" style="row-gap: 32px;">
-          <div style="grid-column: span 3; font-family: var(--font-mono); font-size: 18px; border-left: 2px solid var(--accent-primary); padding-left: 16px;">SaaS & Platforms</div>
-          <div style="grid-column: span 3; font-family: var(--font-mono); font-size: 18px; border-left: 2px solid var(--accent-primary); padding-left: 16px;">Healthcare</div>
-          <div style="grid-column: span 3; font-family: var(--font-mono); font-size: 18px; border-left: 2px solid var(--accent-primary); padding-left: 16px;">E-commerce</div>
-          <div style="grid-column: span 3; font-family: var(--font-mono); font-size: 18px; border-left: 2px solid var(--accent-primary); padding-left: 16px;">Real Estate</div>
-          <div style="grid-column: span 3; font-family: var(--font-mono); font-size: 18px; border-left: 2px solid var(--accent-primary); padding-left: 16px;">Construction</div>
-          <div style="grid-column: span 3; font-family: var(--font-mono); font-size: 18px; border-left: 2px solid var(--accent-primary); padding-left: 16px;">Marketing & Agency</div>
-          <div style="grid-column: span 3; font-family: var(--font-mono); font-size: 18px; border-left: 2px solid var(--accent-primary); padding-left: 16px;">Sports</div>
-          <div style="grid-column: span 3; font-family: var(--font-mono); font-size: 18px; border-left: 2px solid var(--accent-primary); padding-left: 16px;">Non-Profit</div>
-          <div style="grid-column: span 3; font-family: var(--font-mono); font-size: 18px; border-left: 2px solid var(--accent-primary); padding-left: 16px;">Software</div>
+        <div class="industries-tags-grid">
+          <span class="industry-tag">SaaS & Platforms</span>
+          <span class="industry-tag">Healthcare</span>
+          <span class="industry-tag">E-commerce</span>
+          <span class="industry-tag">Real Estate</span>
+          <span class="industry-tag">Construction</span>
+          <span class="industry-tag">Marketing</span>
+          <span class="industry-tag">Sports</span>
+          <span class="industry-tag">Non-Profit</span>
+          <span class="industry-tag">Software</span>
         </div>
       </div>
     </section>
 
     <!-- 04 CAPABILITIES: Mapped Portfolio Index -->
-    <section class="section-padding" style="border-top: 1px solid var(--border-light);" id="capabilities-section">
+    <section class="section-padding" style="border-top: 1px solid var(--border-light); background: var(--bg-primary); position: relative; z-index: 2;" id="capabilities-section">
       <div class="container">
         <div style="margin-bottom: 60px;">
           <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 04 // CAPABILITIES ]</span>
@@ -365,7 +318,7 @@
               <span class="capability-icon">[+]</span>
             </button>
             <div class="capability-content" id="brand-systems">
-              <p style="margin-bottom: 16px; font-size: 16px;">We architect distinctive visual identities, typographic style sheets, and system wordmarks that define premium brands.</p>
+              <p style="margin-bottom: 16px; font-size: 16px;">Distinctive visual systems, wordmarks, and typography guidelines defining premium digital brands.</p>
               <p style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary);">Real Mapped Projects: Ground Zero, John Murphy, AMU Agency, Digital Marauders, BAMI.</p>
             </div>
           </div>
@@ -377,7 +330,7 @@
               <span class="capability-icon">[+]</span>
             </button>
             <div class="capability-content" id="web-ecommerce">
-              <p style="margin-bottom: 16px; font-size: 16px;">High-conversion transaction systems built using clean layouts, responsive frameworks, and clear product presentation.</p>
+              <p style="margin-bottom: 16px; font-size: 16px;">High-conversion checkout layouts and responsive product catalogs optimized for direct transaction systems.</p>
               <p style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary);">Real Mapped Projects: Herbal Goodness, Wabi Baby, Monolith Construction, DADU Construction.</p>
             </div>
           </div>
@@ -389,7 +342,7 @@
               <span class="capability-icon">[+]</span>
             </button>
             <div class="capability-content" id="saas-platforms">
-              <p style="margin-bottom: 16px; font-size: 16px;">Complex application setups, layout token structures, SaaS dashboards, and data-dense interfaces designed to scale.</p>
+              <p style="margin-bottom: 16px; font-size: 16px;">Modular system architectures, layout tokens, and data-dense dashboards engineered to scale.</p>
               <p style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary);">Real Mapped Projects: Kinetic Data, Focus App, Lynk Quiz, Esports Boost, Alan Margolin.</p>
             </div>
           </div>
@@ -401,7 +354,7 @@
               <span class="capability-icon">[+]</span>
             </button>
             <div class="capability-content" id="healthcare-enterprise">
-              <p style="margin-bottom: 16px; font-size: 16px;">Secure, compliant medical layouts, dashboard telemetry schemas, and custom internal systems.</p>
+              <p style="margin-bottom: 16px; font-size: 16px;">Secure clinician dashboard views, medical database scheduling, and HIPAA-compliant portals.</p>
               <p style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary);">Real Mapped Projects: Relish, Tiber Health, Vera Grov, The IV Company, YSI.</p>
             </div>
           </div>
@@ -411,7 +364,7 @@
     </section>
 
     <!-- 05 PROCESS: Real Layout Storytelling -->
-    <section class="section-padding" style="border-top: 1px solid var(--border-light); background-color: var(--bg-secondary);" id="process-section">
+    <section class="section-padding" style="border-top: 1px solid var(--border-light); background-color: var(--bg-secondary); position: relative; z-index: 2;" id="process-section">
       <div class="container">
         <div style="margin-bottom: 60px;">
           <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 05 // SYSTEM METHOD ]</span>
@@ -423,19 +376,19 @@
           <div class="process-step-card" style="grid-column: span 4;">
             <div class="process-step-num">01 // DISCOVER</div>
             <h3>Requirements Mapping</h3>
-            <p style="margin-top: 12px; font-size: 14px;">We map user pathways and identify technical constraints before placing layouts.</p>
+            <p style="margin-top: 12px; font-size: 14px;">We audit workflows and lock grid specifications before laying out components.</p>
           </div>
 
           <div class="process-step-card" style="grid-column: span 4;">
             <div class="process-step-num">02 // DESIGN</div>
             <h3>System Architectures</h3>
-            <p style="margin-top: 12px; font-size: 14px;">We build typography scale tokens and grids to guarantee UI scalability.</p>
+            <p style="margin-top: 12px; font-size: 14px;">We establish unified design tokens, typography scales, and responsive columns.</p>
           </div>
 
           <div class="process-step-card" style="grid-column: span 4;">
             <div class="process-step-num">03 // VALIDATE</div>
             <h3>Technical Verification</h3>
-            <p style="margin-top: 12px; font-size: 14px;">We test layout responsiveness and verify visual design token alignments.</p>
+            <p style="margin-top: 12px; font-size: 14px;">We test responsive performance and visual token alignments across major engines.</p>
           </div>
 
         </div>
@@ -443,104 +396,28 @@
     </section>
 
     <!-- 06 WHY MV: Real Value Drivers -->
-    <section class="section-padding" style="border-top: 1px solid var(--border-light);" id="why-mv-section">
+    <section class="section-padding" style="border-top: 1px solid var(--border-light); background: var(--bg-primary); position: relative; z-index: 2;" id="why-mv-section">
       <div class="container">
         <div class="grid-12" style="align-items: center;">
           <div style="grid-column: 1 / span 6;">
             <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 06 // CONVICTION ]</span>
             <h2 style="font-size: clamp(32px, 4.5vw, 52px); margin-top: 16px; margin-bottom: 24px;">Refusing to Compromise</h2>
             <p style="margin-bottom: 24px;">
-              Premium digital interfaces are built by designers who write code. We align visual layout details directly with your commercial goals.
+              Premium interfaces require direct design-to-code execution. We align visual layout details with commercial outcomes.
             </p>
           </div>
           <div style="grid-column: 8 / span 5; border-left: 2px solid var(--accent-primary); padding-left: 32px;">
             <h4 style="font-size: 20px; margin-bottom: 8px;">Design as a Multiplier</h4>
-            <p style="font-size: 14px; margin-bottom: 24px;">We map layout spacing and visual hierarchy to measurable user retention metrics.</p>
+            <p style="font-size: 14px; margin-bottom: 24px;">We map interface hierarchy to user conversion and retention metrics.</p>
             <h4 style="font-size: 20px; margin-bottom: 8px;">Unified Engineering</h4>
-            <p style="font-size: 14px;">Our developer-designer delivery model preserves visual layouts exactly as approved in Figma.</p>
+            <p style="font-size: 14px;">Our developers write clean code to deliver visual layouts exactly as approved.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 07 PORTFOLIO SHOWCASE: Premium Showroom of Real Work -->
-    <section class="section-padding" style="border-top: 1px solid var(--border-light); background: #050505;" id="portfolio-showcase-section">
-      <div class="container" style="margin-bottom: 60px;">
-        <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 07 // PORTFOLIO SHOWROOM ]</span>
-        <h2 style="font-size: clamp(32px, 4vw, 48px); margin-top: 16px; text-transform: uppercase;">Selected Showroom</h2>
-      </div>
-
-      <div class="container" style="display: flex; flex-direction: column; gap: 48px;">
-        
-        <!-- Showroom Item 1: Focus App -->
-        <div class="showroom-card reveal-on-scroll">
-          <a href="https://www.figma.com/design/Mw6CO5cJ4etj5NvW5v5fps/Focus-App---Client-view-" target="_blank" class="showroom-wrapper">
-            <div class="showroom-visual" style="background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);">
-              <span class="monogram">FA</span>
-            </div>
-            <div class="showroom-info">
-              <span class="category">SaaS</span>
-              <h3>Focus App</h3>
-              <p>Task automation interface design & focused workflow environments.</p>
-              <span class="view-link">View Project →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Showroom Item 2: Ground Zero -->
-        <div class="showroom-card reveal-on-scroll">
-          <a href="https://groundzerooc.com" target="_blank" class="showroom-wrapper">
-            <div class="showroom-visual" style="background: #000;">
-              <img src="./screenshot_ground_zero.png" alt="Ground Zero UI" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
-            </div>
-            <div class="showroom-info">
-              <span class="category">Real Estate</span>
-              <h3>Ground Zero</h3>
-              <p>Premium real estate brand styling & listing interactive map viewports.</p>
-              <span class="view-link">View Project →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Showroom Item 3: Wabi Baby -->
-        <div class="showroom-card reveal-on-scroll">
-          <a href="https://www.wabibaby.com" target="_blank" class="showroom-wrapper">
-            <div class="showroom-visual" style="background: #000;">
-              <img src="./screenshot_wabi_baby.png" alt="Wabi Baby UI" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
-            </div>
-            <div class="showroom-info">
-              <span class="category">Ecommerce</span>
-              <h3>Wabi Baby</h3>
-              <p>D2C infant retail product catalogs & responsive shop layout designs.</p>
-              <span class="view-link">View Project →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Showroom Item 4: Nextpoint Courts -->
-        <div class="showroom-card reveal-on-scroll">
-          <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="showroom-wrapper">
-            <div class="showroom-visual" style="background: linear-gradient(135deg, #701a75 0%, #2e1065 100%);">
-              <span class="monogram">NC</span>
-            </div>
-            <div class="showroom-info">
-              <span class="category">Sports</span>
-              <h3>Nextpoint Courts</h3>
-              <p>Athletic booking layouts & membership administration systems.</p>
-              <span class="view-link">View Project →</span>
-            </div>
-          </a>
-        </div>
-
-      </div>
-
-      <div class="container" style="margin-top: 60px; text-align: center;">
-        <a href="./work.html" class="btn-primary">Explore Full Archive (22 Projects)</a>
-      </div>
-    </section>
-
-    <!-- 08 CONTACT CTA: Final Conversion -->
-    <section class="final-video-cta" id="final-cta">
+    <!-- 07 CONTACT CTA & UNIFIED FOOTER -->
+    <section class="final-video-cta" id="final-cta" style="position: relative; z-index: 2;">
       <video class="final-video-cta__bg" autoplay loop muted playsinline preload="auto" src="./videos/cta-bg.mp4"></video>
       <div class="final-video-cta__fade final-video-cta__fade--top"></div>
       <div class="final-video-cta__fade final-video-cta__fade--bottom"></div>
@@ -551,17 +428,29 @@
 
         <div class="final-video-cta__actions">
           <a href="https://calendly.com/mahamvohracontra/30min" target="_blank" class="btn btn-primary">Book a Discovery Call</a>
-          <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="link-trust liquid-glass">Hire on Contra →</a>
+          <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="btn btn-secondary" style="border: 1px solid rgba(255,255,255,0.1); padding: 14px 28px; border-radius: 6px;">Hire on Contra →</a>
         </div>
 
         <footer class="final-footer">
-          <p>© 2026 MV Creatives. All rights reserved.</p>
-          <nav>
+          <div class="footer-brand">
+            <span class="logo">MV CREATIVES</span>
+            <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+          </div>
+          <div class="footer-nav">
+            <span class="footer-title">Navigation</span>
             <a href="./index.html">Home</a>
             <a href="./work.html">Work</a>
             <a href="./studio.html">Studio</a>
             <a href="./contact.html">Contact</a>
-          </nav>
+          </div>
+          <div class="footer-links">
+            <span class="footer-title">Channels</span>
+            <a href="https://calendly.com/mahamvohracontra/30min" target="_blank">Book Calendly Call</a>
+            <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank">Hire on Contra</a>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2026 MV Creatives. All rights reserved.</p>
+          </div>
         </footer>
       </div>
     </section>

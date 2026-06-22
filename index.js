@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. PORTFOLIO HOVER MEDIA CONTROLS
   // ==========================================================================
   (function initPortfolioHoverReels() {
-    const cards = document.querySelectorAll('.work-card-wrapper, .work-card');
+    const cards = document.querySelectorAll('.work-card-wrapper, .work-card, .stacked-card');
     cards.forEach(card => {
       const video = card.querySelector('video');
       if (!video) return;
@@ -303,9 +303,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showStep(stepNum) {
       steps.forEach(step => {
-        step.classList.remove('active');
         if (Number(step.getAttribute('data-step')) === stepNum) {
+          step.style.display = 'block';
+          // Force reflow for opacity & translate transition
+          step.offsetHeight;
           step.classList.add('active');
+        } else {
+          step.classList.remove('active');
+          step.style.display = 'none';
         }
       });
 
@@ -374,76 +379,95 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // ==========================================================================
-  // 11. HORIZONTAL STORYTELLING SCROLLER (CASE STUDY)
-  // ==========================================================================
-  (function initHorizontalScroll() {
-    const scroller = document.getElementById('case-study-scroller');
-    if (!scroller) return;
-
-    const sticky = scroller.querySelector('.horizontal-scroll-sticky');
-    const slidesContainer = scroller.querySelector('.horizontal-scroll-slides');
-    if (!sticky || !slidesContainer) return;
-
-    function handleScroll() {
-      const rect = scroller.getBoundingClientRect();
-      const scrollHeight = scroller.scrollHeight;
-      const stickyHeight = sticky.clientHeight;
-      const totalScrollable = scrollHeight - stickyHeight;
-
-      if (rect.top <= 0 && rect.bottom >= stickyHeight) {
-        const progress = -rect.top / totalScrollable; // 0 to 1
-        const maxTranslate = slidesContainer.scrollWidth - window.innerWidth;
-        const translateX = progress * maxTranslate;
-        slidesContainer.style.transform = `translate3d(-${translateX}px, 0, 0)`;
-      } else if (rect.top > 0) {
-        slidesContainer.style.transform = `translate3d(0, 0, 0)`;
-      } else if (rect.bottom < stickyHeight) {
-        const maxTranslate = slidesContainer.scrollWidth - window.innerWidth;
-        slidesContainer.style.transform = `translate3d(-${maxTranslate}px, 0, 0)`;
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll);
-    handleScroll();
-  })();
-
-  // ==========================================================================
-  // 12. HERO MOUSE DEPTH PARALLAX
+  // 11. HERO MOUSE DEPTH PARALLAX
   // ==========================================================================
   (function initHeroMouseDepth() {
     const hero = document.getElementById('hero-section');
     if (!hero) return;
 
     const content = hero.querySelector('.hero-content');
-    const overlay = hero.querySelector('.hero-overlay');
     if (!content) return;
 
     document.addEventListener('mousemove', (e) => {
       const x = (window.innerWidth / 2 - e.clientX) / 60;
       const y = (window.innerHeight / 2 - e.clientY) / 60;
-
       content.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-      if (overlay) {
-        overlay.style.transform = `translate3d(${-x * 0.4}px, ${-y * 0.4}px, 0)`;
-      }
     });
   })();
 
   // ==========================================================================
-  // 13. PREMIUM LOADING CURTAIN
+  // 12. PREMIUM FIRST-LOAD PAGE LOADER
   // ==========================================================================
   (function initLoadingCurtain() {
-    const curtain = document.createElement('div');
-    curtain.className = 'loading-curtain';
-    curtain.innerHTML = '<div class="loading-logo">MV CREATIVES</div>';
-    document.body.appendChild(curtain);
+    const loader = document.getElementById('page-loader');
+    if (!loader) {
+      document.body.classList.add('loader-finished');
+      return;
+    }
 
+    // Complete loading line sequence and fade out within 2.2 seconds max
     setTimeout(() => {
-      curtain.classList.add('loaded');
+      loader.classList.add('fade-out');
+      document.body.classList.add('loader-finished');
       setTimeout(() => {
-        curtain.remove();
-      }, 800);
-    }, 1400);
+        loader.remove();
+      }, 500);
+    }, 1700);
+  })();
+
+  // ==========================================================================
+  // 13. STACKED PORTFOLIO SCROLLER (WORK PAGE)
+  // ==========================================================================
+  (function initStackedCards() {
+    const cards = document.querySelectorAll('.stacked-card');
+    if (!cards.length) return;
+
+    function updateCardStacking() {
+      const isDesktop = window.innerWidth >= 1024;
+      if (!isDesktop) {
+        cards.forEach(card => {
+          card.style.transform = 'none';
+          card.style.opacity = '1';
+        });
+        return;
+      }
+
+      const stickyTop = 96;
+
+      cards.forEach((card, index) => {
+        const nextCard = cards[index + 1];
+        if (!nextCard) {
+          card.style.transform = 'scale(1) translateY(0)';
+          card.style.opacity = '1';
+          return;
+        }
+
+        const rectNext = nextCard.getBoundingClientRect();
+        const cardHeight = card.getBoundingClientRect().height;
+
+        const coverStart = stickyTop + cardHeight;
+        const coverEnd = stickyTop;
+
+        if (rectNext.top < coverStart) {
+          const progress = Math.min(Math.max((coverStart - rectNext.top) / (coverStart - coverEnd), 0), 1);
+          // Scale down previous card slightly
+          const scale = 1 - (progress * 0.03);
+          const translateY = -progress * 15;
+          const opacity = 1 - (progress * 0.2);
+
+          card.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+          card.style.opacity = opacity;
+        } else {
+          card.style.transform = 'scale(1) translateY(0)';
+          card.style.opacity = '1';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateCardStacking);
+    });
+    window.addEventListener('resize', updateCardStacking);
+    updateCardStacking();
   })();
 });
