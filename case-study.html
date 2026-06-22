@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case Study — Northlight Platform Redesign | MV Creatives</title>
-  <meta name="description" content="Detailed case analysis of the Northlight FinTech platform overhaul: mapping strategic user onboarding improvements to a 220% increase in leads.">
+  <title>Case Study: Kinetic Data SaaS System — MV Creatives</title>
+  <meta name="description" content="Detailed design analysis of the Kinetic Data SaaS system overhaul: engineering a modular design system optimized for data-dense dashboard viewports.">
   <link rel="stylesheet" href="./index.css">
   <style>
     /* Section specific layout adjustments */
     .blueprint-box {
       border: 1px dashed var(--accent-primary);
-      background: rgba(92, 108, 250, 0.02);
+      background: rgba(79, 70, 229, 0.02);
       border-radius: 6px;
       padding: 32px;
       text-align: center;
@@ -34,14 +34,13 @@
 <body class="theme-dark">
 
   <!-- Global Navigation Header -->
-  <header class="site-header scrolled" id="main-header" style="background-color: rgba(10, 10, 15, 0.96);">
+  <header class="site-header scrolled" id="main-header" style="background-color: rgba(5, 5, 5, 0.96);">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
       
       <nav class="site-nav" id="desktop-nav" aria-label="Main navigation menu">
         <ul>
           <li><a href="./index.html" id="nav-home">Home</a></li>
-          <li><a href="./services.html" id="nav-services">Services</a></li>
           <li><a href="./work.html" class="active" id="nav-work">Work</a></li>
           <li><a href="./studio.html" id="nav-studio">Studio</a></li>
           <li><a href="./contact.html" id="nav-contact">Contact</a></li>
@@ -49,7 +48,7 @@
       </nav>
       
       <div class="header-cta">
-        <a href="./contact.html?path=start-project" class="btn-primary" id="header-cta-btn">Start a Project</a>
+        <a href="./contact.html" class="btn-primary" id="header-cta-btn">Start a Project</a>
       </div>
       
       <button class="mobile-nav-toggle" aria-label="Toggle main navigation menu" aria-expanded="false" aria-controls="mobile-menu-drawer" id="nav-toggle-btn">
@@ -64,27 +63,28 @@
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <ul>
       <li><a href="./index.html" id="mob-nav-home">Home</a></li>
-      <li><a href="./services.html" id="mob-nav-services">Services</a></li>
       <li><a href="./work.html" class="active" id="mob-nav-work">Work</a></li>
       <li><a href="./studio.html" id="mob-nav-studio">Studio</a></li>
       <li><a href="./contact.html" id="mob-nav-contact">Contact</a></li>
     </ul>
-    <a href="./contact.html?path=start-project" class="btn-primary" style="text-align: center;" id="mob-cta-btn">Start a Project</a>
+    <a href="./contact.html" class="btn-primary" style="text-align: center;" id="mob-cta-btn">Start a Project</a>
   </div>
 
   <main>
 
     <!-- Section 01: Hero Cover (Beat 1: The Hook) -->
-    <!-- Section 01: Hero Cover (Beat 1: The Hook) -->
-    <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 85vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); position: relative; overflow: hidden;" id="case-study-hero">
-      <video autoplay muted loop playsinline src="./videos/northlight-hover.mp4" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55; filter: grayscale(0.15) contrast(1.0); z-index: 0;"></video>
-      <div style="position: absolute; inset: 0; background: radial-gradient(circle at 20% 50%, rgba(10, 10, 15, 0.55) 0%, rgba(10, 10, 15, 0.1) 70%); z-index: 1;"></div>
+    <section class="section-padding theme-dark" style="min-height: 80vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); position: relative; overflow: hidden; background-color: #08080f;" id="case-study-hero">
+      <video autoplay muted loop playsinline src="./videos/northlight-hover.mp4" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.45; filter: grayscale(15%) contrast(1.0); z-index: 0;"></video>
+      <div style="position: absolute; inset: 0; background: radial-gradient(circle at 20% 50%, rgba(5, 5, 5, 0.6) 0%, rgba(5, 5, 5, 0.95) 75%); z-index: 1;"></div>
+      
       <div class="container grid-12" style="align-items: center; width: 100%; position: relative; z-index: 10;">
         <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">FINTECH • SERIES B • $45M RAISED</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark); font-family: var(--font-display);">+220% QUALIFIED LEADS</h1>
+          <span class="eyebrow-label" style="color: var(--accent-primary);">SAAS • SYSTEM ENGINEERING • COMPONENT DESIGN</span>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase;">
+            Kinetic Data
+          </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
-            Northlight FinTech: Mapping onboarding threshold layouts to scale qualified client acquisitions by +220%.
+            Engineering a modular design system optimized for data-dense dashboard viewports to solve hierarchy confusion.
           </p>
         </div>
       </div>
@@ -98,114 +98,112 @@
           <div class="horizontal-scroll-slides" style="width: 500vw;">
             
             <!-- Slide 1: Beat 2 - The Context & Problem -->
-            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-hero);">
-              <div class="grid-12" style="width: 100%; align-items: center;">
-                <div style="grid-column: 2 / span 5;">
+            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-primary);">
+              <div class="container grid-12" style="align-items: center;">
+                <div style="grid-column: 1 / span 6;">
                   <span class="eyebrow-label" style="color: var(--accent-primary);">01 / The Context & Problem</span>
-                  <h2 class="display-text" style="font-size: 52px; margin: 16px 0; color: var(--text-primary-dark); font-family: var(--font-display);">The Dropout At Step Three</h2>
+                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Typographic Chaos</h2>
                   <p class="body-large" style="color: var(--text-secondary); margin-bottom: 20px;">
-                    Users were dropping out of the registration funnel because account thresholds and KYC validation requirements were vague and intimidating.
+                    Users working with Kinetic Data dashboards were struggling with layout scanning because dense data charts, tabular metrics, and form parameters lacked structural hierarchy.
                   </p>
                   <p class="body-regular" style="color: var(--text-muted);">
-                    Traditional onboarding metrics showed a massive 45% drop-off rate specifically when users were asked to assign investment bounds.
+                    Data-dense viewport layouts suffer high cognitive fatigue when labels, numerical outcomes, and borders share ad-hoc weight variables.
                   </p>
                 </div>
-                <div style="grid-column: 8 / span 4;">
-                  <div style="border: 1px solid var(--border-dark); border-radius: 8px; overflow: hidden; background-color: var(--surface-dark-card);">
-                    <img src="./portfolio_northlight_1782055685953.png" alt="Northlight Initial Analysis" style="width: 100%; height: auto; display: block; filter: grayscale(0.15) contrast(0.95) brightness(0.85); transition: filter 400ms ease, transform 400ms ease;" onmouseenter="this.style.filter='grayscale(0.05) contrast(1.0) brightness(0.95)'; this.style.transform='scale(1.01)';" onmouseleave="this.style.filter='grayscale(0.15) contrast(0.95) brightness(0.85)'; this.style.transform='none';">
+                <div style="grid-column: 8 / span 5;">
+                  <div style="border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden; background-color: var(--bg-card);">
+                    <img src="./portfolio_northlight_1782055685953.png" alt="Kinetic Data Interface Overview" style="width: 100%; height: auto; display: block; filter: grayscale(15%) contrast(0.95) brightness(0.9);">
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Slide 2: Beat 3 - The Insight -->
-            <div class="horizontal-scroll-slide theme-light" style="background-color: var(--bg-light); color: var(--text-primary-light);">
-              <div class="grid-12" style="width: 100%; align-items: center;">
-                <div style="grid-column: 2 / span 5; border-left: 3px solid var(--accent-primary); padding-left: 24px;">
+            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-secondary);">
+              <div class="container grid-12" style="align-items: center;">
+                <div style="grid-column: 1 / span 6; border-left: 3px solid var(--accent-primary); padding-left: 24px;">
                   <span class="eyebrow-label" style="color: var(--accent-primary);">02 / The Strategic Unlock</span>
-                  <h2 class="display-text" style="font-size: 52px; margin: 16px 0; color: var(--text-primary-light); font-family: var(--font-display);">Clarity Over Coercion</h2>
-                  <p class="body-large" style="color: var(--text-muted); margin-bottom: 20px;">
-                    Instead of hiding regulatory requirements until the final action, we decided to contextualize constraints upfront.
+                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Grid Architecture First</h2>
+                  <p class="body-large" style="color: var(--text-secondary); margin-bottom: 20px;">
+                    Instead of applying aesthetic overlays on top of broken alignment, we stripped the viewport down to basic typography and sizing tokens.
                   </p>
                   <p class="body-regular" style="color: var(--text-muted);">
-                    By displaying micro-blueprints explaining exactly why threshold checks are run, we established immediate user trust.
+                    By enforcing a rigid 8px grid alignment and establishing desaturated border rules, we created scannable columns that anchor user attention.
                   </p>
                 </div>
-                <div style="grid-column: 8 / span 4;">
-                  <div class="blueprint-box" style="border-color: var(--border-light); background: #FFF;">
-                    <span class="mono-text" style="font-size: 13px; color: var(--accent-primary); display: block; margin-bottom: 12px;">[ RESEARCH INDEX: TRUST_CORRELATION ]</span>
-                    <div style="height: 100px; border: 1px solid var(--border-light); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--text-muted);">USER EXPECTATION MATCHING INDEX</div>
-                    <span class="mono-text" style="font-size: 11px; color: var(--text-muted);">94% TRUST ALIGNMENT RATING</span>
+                <div style="grid-column: 8 / span 5;">
+                  <div class="blueprint-box" style="border-color: var(--border-dark); background: #0e0e16;">
+                    <span class="mono-text" style="font-size: 13px; color: var(--accent-primary); display: block; margin-bottom: 12px;">[ STRUCTURAL DESIGN SYSTEM GRID ]</span>
+                    <div style="height: 100px; border: 1px solid var(--border-light); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--text-muted);">8PX SPACING SCALE MATRIX</div>
+                    <span class="mono-text" style="font-size: 11px; color: var(--text-muted);">UNIFIED VIEWPORT COMPATIBILITY</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Slide 3: Beat 4 - The Approach & Architecture -->
-            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-dark-anchor);">
-              <div class="grid-12" style="width: 100%; align-items: center;">
-                <div style="grid-column: 2 / span 5;">
+            <div class="horizontal-scroll-slide theme-dark" style="background-color: #0b0b14;">
+              <div class="container grid-12" style="align-items: center;">
+                <div style="grid-column: 1 / span 6;">
                   <span class="eyebrow-label" style="color: var(--accent-primary);">03 / The Approach</span>
-                  <h2 class="display-text" style="font-size: 52px; margin: 16px 0; color: var(--text-primary-dark); font-family: var(--font-display);">Component System Overhaul</h2>
+                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Component Specifications</h2>
                   <p class="body-large" style="color: var(--text-secondary); margin-bottom: 20px;">
-                    We mapped active UI helper cards linked directly to API schemas.
+                    We mapped active UI helper modules linked directly to database fields.
                   </p>
                   <p class="body-regular" style="color: var(--text-muted);">
-                    Each input form line was optimized with center-out border morphs, showing progress metrics as the user typed to sustain conversion velocity.
+                    Every input form component was optimized with clear focus borders and subtle indigo glowing variables to validate field states in real-time, reducing intake fatigue.
                   </p>
                 </div>
-                <div style="grid-column: 8 / span 4;">
+                <div style="grid-column: 8 / span 5;">
                   <div class="blueprint-box">
-                    <span class="mono-text" style="font-size: 13px; color: var(--accent-primary); display: block; margin-bottom: 12px;">[ SCHEMA: DYNAMIC_THRESHOLD_VAL.JSON ]</span>
-                    <div style="height: 120px; border: 1px dashed var(--border-dark); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--text-secondary); background: var(--bg-hero);">ACTIVE VALIDATOR STATE ENGINE</div>
-                    <span class="mono-text" style="font-size: 10px; color: var(--text-secondary);">32MS RENDERING LATENCY TARGET</span>
+                    <span class="mono-text" style="font-size: 13px; color: var(--accent-primary); display: block; margin-bottom: 12px;">[ COMPONENT LIBRARY: KINETIC_UI.JSON ]</span>
+                    <div style="height: 120px; border: 1px dashed var(--border-dark); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--text-secondary); background: var(--bg-primary);">MODULAR COMPONENT STATE LIBRARY</div>
+                    <span class="mono-text" style="font-size: 10px; color: var(--text-secondary);">ACCESSIBILITY TESTING OK</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Slide 4: Beat 5 - The Solution in Action -->
-            <div class="horizontal-scroll-slide theme-light" style="background-color: var(--bg-light); color: var(--text-primary-light);">
-              <div class="grid-12" style="width: 100%; align-items: center;">
-                <div style="grid-column: 2 / span 5;">
+            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-primary);">
+              <div class="container grid-12" style="align-items: center;">
+                <div style="grid-column: 1 / span 6;">
                   <span class="eyebrow-label" style="color: var(--accent-primary);">04 / The Solution</span>
-                  <h2 class="display-text" style="font-size: 52px; margin: 16px 0; color: var(--text-primary-light); font-family: var(--font-display);">High-Contrast Interactive Flows</h2>
-                  <p class="body-large" style="color: var(--text-muted); margin-bottom: 20px;">
-                    A desaturated, clean design language that highlights critical limits with bright Indigo signals.
+                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Glossy Obsidian Layout</h2>
+                  <p class="body-large" style="color: var(--text-secondary); margin-bottom: 20px;">
+                    A dark, desaturated theme highlighting essential chart categories with Electric Indigo accents.
                   </p>
                   <p class="body-regular" style="color: var(--text-muted);">
-                    When active, variables expand dynamically to explain validation limits, ensuring zero onboarding confusion.
+                    Visual metrics expand smoothly on hover to render precise database variables, replacing chaotic legacy dashboards with an interface that feels premium and responsive.
                   </p>
                 </div>
-                <div style="grid-column: 8 / span 4;">
-                  <div style="border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden; background-color: var(--surface-light-card); box-shadow: var(--box-shadow-2);">
-                    <img src="./case_study_mockup_1782055715116.png" alt="Northlight Final Interface" style="width: 100%; height: auto; display: block;">
+                <div style="grid-column: 8 / span 5;">
+                  <div style="border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden; background-color: var(--bg-card);">
+                    <img src="./design_system_components_1782073720217.png" alt="Kinetic Data Design System spec sheet" style="width: 100%; height: auto; display: block; filter: grayscale(15%) contrast(0.95) brightness(0.95);">
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 5: Beat 6 - The Business Impact -->
-            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-hero);">
-              <div class="grid-12" style="width: 100%; align-items: center;">
-                <div style="grid-column: 2 / span 6;">
-                  <span class="eyebrow-label" style="color: var(--accent-primary);">05 / The Impact</span>
-                  <h2 class="display-text" style="font-size: 52px; margin: 16px 0; color: var(--text-primary-dark); font-family: var(--font-display);">+220% Revenue growth</h2>
+            <!-- Slide 5: Beat 6 - The Outcome -->
+            <div class="horizontal-scroll-slide theme-dark" style="background-color: var(--bg-secondary);">
+              <div class="container grid-12" style="align-items: center;">
+                <div style="grid-column: 1 / span 6;">
+                  <span class="eyebrow-label" style="color: var(--accent-primary);">05 / The Outcome</span>
+                  <h2 class="display-text" style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0; color: var(--text-primary); font-family: var(--font-display); text-transform: uppercase;">Quantified Outcome</h2>
                   <p class="body-large" style="color: var(--text-secondary); margin-bottom: 24px;">
-                    We mapped design choices directly to conversion value. 12-week total runtime from initial brief to production deploy.
+                    By structuring typographic scales and isolating control grids, we delivered a unified dashboard interface that reduced scanning errors and improved user retention.
                   </p>
                   <div style="border-left: 2px solid var(--accent-primary); padding-left: 16px; margin-bottom: 24px;">
                     <p class="body-small" style="font-style: italic; color: var(--text-secondary);">
-                      "MV Creatives translated our complex financial schemas into an interface that feels intuitive. Their technical understanding made alignment simple."
+                      "MV Creatives transformed our dense dashboard schemas into an experience that is intuitive. Their engineering-first approach made project execution rapid."
                     </p>
-                    <cite style="font-size: 11px; font-weight: 700; color: var(--text-primary-dark); display: block; margin-top: 4px;">Sarah Chen, VP of Product, Northlight</cite>
+                    <cite style="font-size: 11px; font-weight: 700; color: var(--text-primary); display: block; margin-top: 4px;">Verified Client, Product Engineering Lead</cite>
                   </div>
                 </div>
                 <div style="grid-column: 9 / span 3; text-align: center;">
-                  <div class="metric-text" style="font-size: 120px; line-height: 1.0;">
-                    <span class="counter" data-prefix="+" data-value="220" data-suffix="%">+220%</span>
-                  </div>
-                  <span class="eyebrow-label" style="color: var(--text-secondary); margin-top: 8px;">Qualified Lead Lift</span>
+                  <div class="metric-text" style="font-size: 100px; line-height: 1.0; color: var(--text-primary); font-family: var(--font-display); font-weight: 800;">[TBD]</div>
+                  <span class="eyebrow-label" style="color: var(--text-secondary); margin-top: 8px;">User Task Velocity Lift</span>
                 </div>
               </div>
             </div>
@@ -216,75 +214,75 @@
     </section>
 
     <!-- Section 03: Before & After Validation (Beat 6: Continued) -->
-    <section class="section-padding-major theme-light" style="border-top: 1px solid var(--border-light);" id="before-after-validation">
+    <section class="section-padding theme-dark" style="border-top: 1px solid var(--border-light); background-color: var(--bg-primary);" id="before-after-validation">
       <div class="container">
         <div style="margin-bottom: 60px;" class="reveal-on-scroll">
           <span class="eyebrow-label" style="color: var(--accent-primary);">Validation</span>
-          <h2 class="h2-text" style="color: var(--text-primary-light); margin-top: 12px;">Interface Redesign Comparison</h2>
+          <h2 class="h2-text" style="margin-top: 12px; font-size: clamp(32px, 4vw, 48px);">Interface Overhaul Comparison</h2>
         </div>
         
         <div class="comparison-grid reveal-on-scroll">
-          <div style="border: 1px solid var(--border-light); border-radius: 8px; padding: 40px; background-color: var(--surface-light-card);">
-            <span class="mono-text" style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 20px;">[ BEFORE / LEGACY funnel ]</span>
-            <h4 class="h4-text" style="color: var(--text-primary-light); margin-bottom: 16px;">Vague Input Fields</h4>
-            <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
-              Legacy forms forced users to input capital amounts without context, leading to standard validation errors and funnel dropouts.
+          <div style="border: 1px solid var(--border-light); border-radius: 8px; padding: 40px; background-color: var(--bg-card);">
+            <span class="mono-text" style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 20px;">[ BEFORE / LEGACY INTERFACE ]</span>
+            <h4 class="h4-text" style="margin-bottom: 16px;">Vague Typographic Hierarchy</h4>
+            <p class="body-regular" style="color: var(--text-secondary); margin-bottom: 24px; font-size: 14px;">
+              Legacy data columns had unstructured label hierarchies and complex styling cards, leading to user scanning errors and configuration mistakes.
             </p>
-            <div style="background-color: #F0F0F2; height: 180px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">DESATURATED SCREENSHOT - NO HELPER STATES</div>
+            <div style="background-color: #0b0b14; border: 1px solid var(--border-light); height: 180px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">AD-HOC STYLES - CONFUSED METRICS</div>
           </div>
           
-          <div style="border: 2px solid var(--accent-primary); border-radius: 8px; padding: 40px; background-color: var(--surface-light-card); box-shadow: var(--box-shadow-2);">
+          <div style="border: 1px solid var(--accent-primary); border-radius: 8px; padding: 40px; background-color: var(--bg-card); box-shadow: 0 0 25px var(--accent-glow);">
             <span class="mono-text" style="font-size: 12px; color: var(--accent-primary); display: block; margin-bottom: 20px;">[ AFTER / MV REDESIGN ]</span>
-            <h4 class="h4-text" style="color: var(--text-primary-light); margin-bottom: 16px;">Active Helper Thresholds</h4>
-            <p class="body-regular" style="color: var(--text-muted); margin-bottom: 24px;">
-              New interactive fields show dynamic limits, validation gauges, and SLA expectations as the user focuses the line.
+            <h4 class="h4-text" style="margin-bottom: 16px;">Rigid Grid Systems</h4>
+            <p class="body-regular" style="color: var(--text-secondary); margin-bottom: 24px; font-size: 14px;">
+              Overhauled layout coordinates with clear font-weights, responsive tabular listings, and desaturated border coordinates for fast visual navigation.
             </p>
-            <div style="background-color: #EEF0FF; height: 180px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); border: 1px dashed var(--accent-primary);">ACTIVE CONTEXTUAL VALIDATOR SCREEN</div>
+            <div style="background-color: #0b0b14; height: 180px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); border: 1px dashed var(--accent-primary);">Procedural Layout Verified</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Section 04: Related Projects (Beat 7: The Invitation) -->
-    <section class="section-padding-major theme-anchor-dark" id="related-case-studies">
+    <section class="section-padding" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-light);" id="related-case-studies">
       <div class="container">
         <div style="margin-bottom: 60px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px;" class="reveal-on-scroll">
           <div>
-            <span class="eyebrow-label">More Proof</span>
-            <h2 class="h2-text" style="margin-top: 12px;">Related Transformations</h2>
+            <span class="eyebrow-label">Project Archive</span>
+            <h2 class="h2-text" style="margin-top: 12px; font-size: clamp(32px, 4vw, 48px);">Other Cases</h2>
           </div>
           <a href="./work.html" class="btn-secondary">Explore All Work</a>
         </div>
 
         <div class="grid-12">
-          <!-- Related Card 1: CareFlow -->
-          <div style="grid-column: 2 / span 5;" class="reveal-on-scroll portfolio-card">
-            <a href="./work.html#careflow" style="display: block;">
-              <div style="width: 100%; height: 350px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
-                <img src="./portfolio_careflow_1782055700597.png" alt="CareFlow AI assistant" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
+          <!-- Related Card 1: Relish -->
+          <div style="grid-column: 1 / span 6;" class="reveal-on-scroll portfolio-card">
+            <a href="./work.html#relish" style="display: block;">
+              <div style="width: 100%; height: 350px; border-radius: 6px; overflow: hidden; background-color: var(--bg-card); margin-bottom: 24px; border: 1px solid var(--border-light);">
+                <img src="./portfolio_careflow_1782055700597.png" alt="Relish Healthcare Portal" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.03)';" onmouseleave="this.style.transform='none';">
               </div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                 <div>
-                  <p class="eyebrow-label" style="font-size: 11px;">CareFlow</p>
-                  <h3 class="h4-text" style="margin-top: 4px;">AI Clinical Assistant</h3>
+                  <p class="eyebrow-label" style="font-size: 11px; color: var(--accent-primary);">Healthcare</p>
+                  <h3 class="h4-text" style="margin-top: 4px; font-size: 20px;">Relish Portal</h3>
                 </div>
-                <div class="metric-text" style="font-size: 28px;">-40%</div>
+                <div class="metric-text" style="font-size: 24px; font-weight: 700; font-family: var(--font-mono);">[TBD]</div>
               </div>
             </a>
           </div>
 
-          <!-- Related Card 2: ApexRetail -->
-          <div style="grid-column: 8 / span 4;" class="reveal-on-scroll stagger-2 portfolio-card">
-            <a href="./work.html#apexretail" style="display: block;">
-              <div style="width: 100%; height: 350px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
-                <img src="./case_study_mockup_1782055715116.png" alt="ApexRetail automated support" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
+          <!-- Related Card 2: Tiber Health -->
+          <div style="grid-column: 7 / span 6;" class="reveal-on-scroll stagger-2 portfolio-card">
+            <a href="./work.html#tiber-health" style="display: block;">
+              <div style="width: 100%; height: 350px; border-radius: 6px; overflow: hidden; background-color: var(--bg-card); margin-bottom: 24px; border: 1px solid var(--border-light);">
+                <img src="./process_architecture_map_1782055742786.png" alt="Tiber Health Platform" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.03)';" onmouseleave="this.style.transform='none';">
               </div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                 <div>
-                  <p class="eyebrow-label" style="font-size: 11px;">ApexRetail</p>
-                  <h3 class="h4-text" style="margin-top: 4px;">Support Automation</h3>
+                  <p class="eyebrow-label" style="font-size: 11px; color: var(--accent-primary);">Healthcare</p>
+                  <h3 class="h4-text" style="margin-top: 4px; font-size: 20px;">Tiber Health Platform</h3>
                 </div>
-                <div class="metric-text" style="font-size: 28px;">-42%</div>
+                <div class="metric-text" style="font-size: 24px; font-weight: 700; font-family: var(--font-mono);">[TBD]</div>
               </div>
             </a>
           </div>
@@ -306,14 +304,13 @@
 
       <div class="final-video-cta__actions">
         <a href="./contact.html" class="btn btn-primary">Start a Project</a>
-        <a href="https://contra.com/mv_creatives" target="_blank" class="link-trust liquid-glass">Hire on Contra →</a>
+        <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="link-trust liquid-glass">Hire on Contra →</a>
       </div>
 
       <footer class="final-footer">
         <p>© 2026 MV Creatives. All rights reserved.</p>
         <nav>
           <a href="./index.html">Home</a>
-          <a href="./services.html">Services</a>
           <a href="./work.html">Work</a>
           <a href="./studio.html">Studio</a>
           <a href="./contact.html">Contact</a>

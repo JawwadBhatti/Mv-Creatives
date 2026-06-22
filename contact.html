@@ -3,63 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — MV Creatives | Start a Project or Contra Contract</title>
-  <meta name="description" content="Reach out to initiate a product redesign, schedule a platform consultation, or route contracts via Contra. Responses within 24 hours.">
+  <title>Contact — MV Creatives | Start a Project Brief</title>
+  <meta name="description" content="Initiate a project brief or book a Discovery Call directly with MV Creatives creative lead. Responses within 24 hours.">
   <link rel="stylesheet" href="./index.css">
   <style>
-    /* Specific Contact selector tabs */
-    .tab-btn {
-      background-color: var(--surface-dark-card);
-      border: 1px solid var(--border-dark);
+    /* Specific Brief Builder styles for contact page */
+    .contact-layout-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 48px 24px;
+      align-items: flex-start;
+    }
+    
+    @media (max-width: 1023px) {
+      .contact-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    /* Brief Builder Wrapper */
+    .brief-builder-container {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 48px;
+      width: 100%;
+    }
+    
+    @media (max-width: 767px) {
+      .brief-builder-container {
+        padding: 24px;
+      }
+    }
+
+    .brief-step {
+      display: none;
+    }
+    .brief-step.active {
+      display: block;
+    }
+
+    .brief-step h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    .brief-step p {
+      font-size: 14px;
       color: var(--text-secondary);
-      font-family: var(--font-body);
-      font-size: 15px;
-      font-weight: 600;
-      padding: 24px;
-      border-radius: 6px;
-      cursor: pointer;
-      text-align: left;
-      transition: all var(--transition-default);
+      margin-bottom: 24px;
+    }
+
+    .builder-navigation {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      border-top: 1px solid var(--border-light);
+      padding-top: 24px;
     }
-    
-    .tab-btn.active {
-      border-color: var(--accent-primary);
-      color: var(--text-primary-dark);
-      box-shadow: 0 0 25px rgba(92,108,250,0.15);
+
+    /* Form specific styles */
+    .range-slider-container {
+      margin-top: 32px;
+      position: relative;
     }
-    
-    .tab-btn:hover:not(.active) {
-      border-color: rgba(255,255,255,0.15);
-      color: var(--text-primary-dark);
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
     }
-    
-    .tab-btn-title {
-      font-family: var(--font-display);
-      font-size: 18px;
+    .budget-result {
+      font-size: 20px;
       font-weight: 700;
+      color: var(--accent-primary);
+      margin-top: 16px;
+      font-family: var(--font-mono);
     }
-    
-    .tab-btn-desc {
-      font-size: 12px;
-      font-weight: 400;
+
+    /* Direct channels block */
+    .direct-channels-box {
+      background-color: #0b0b14;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 40px;
+    }
+    .direct-channels-box h3 {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+    .channel-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-light);
       color: var(--text-secondary);
+      transition: color var(--transition-fast);
+    }
+    .channel-link:last-of-type {
+      border-bottom: none;
+    }
+    .channel-link:hover {
+      color: var(--text-primary);
+    }
+    .channel-link span.name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .channel-link span.action {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent-primary);
     }
   </style>
 </head>
 <body class="theme-dark">
 
   <!-- Global Navigation Header -->
-  <header class="site-header scrolled" id="main-header" style="background-color: rgba(10, 10, 15, 0.96);">
+  <header class="site-header scrolled" id="main-header" style="background-color: rgba(5, 5, 5, 0.96);">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
       
       <nav class="site-nav" id="desktop-nav" aria-label="Main navigation menu">
         <ul>
           <li><a href="./index.html" id="nav-home">Home</a></li>
-          <li><a href="./services.html" id="nav-services">Services</a></li>
           <li><a href="./work.html" id="nav-work">Work</a></li>
           <li><a href="./studio.html" id="nav-studio">Studio</a></li>
           <li><a href="./contact.html" class="active" id="nav-contact">Contact</a></li>
@@ -67,7 +139,7 @@
       </nav>
       
       <div class="header-cta">
-        <a href="./contact.html?path=start-project" class="btn-primary" id="header-cta-btn">Start a Project</a>
+        <a href="./contact.html" class="btn-primary" id="header-cta-btn">Start a Project</a>
       </div>
       
       <button class="mobile-nav-toggle" aria-label="Toggle main navigation menu" aria-expanded="false" aria-controls="mobile-menu-drawer" id="nav-toggle-btn">
@@ -82,182 +154,149 @@
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <ul>
       <li><a href="./index.html" id="mob-nav-home">Home</a></li>
-      <li><a href="./services.html" id="mob-nav-services">Services</a></li>
       <li><a href="./work.html" id="mob-nav-work">Work</a></li>
       <li><a href="./studio.html" id="mob-nav-studio">Studio</a></li>
       <li><a href="./contact.html" class="active" id="mob-nav-contact">Contact</a></li>
     </ul>
-    <a href="./contact.html?path=start-project" class="btn-primary" style="text-align: center;" id="mob-cta-btn">Start a Project</a>
+    <a href="./contact.html" class="btn-primary" style="text-align: center;" id="mob-cta-btn">Start a Project</a>
   </div>
 
   <main>
 
     <!-- Section 01: Hero -->
-    <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 50vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark);" id="contact-hero">
+    <section class="section-padding theme-dark" style="min-height: 40vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); background-color: #08080f;" id="contact-hero">
       <div class="container grid-12" style="align-items: center; width: 100%;">
         <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
-          <span class="eyebrow-label">Conversion Hub</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary-dark); font-family: var(--font-display);">
-            <span class="reveal-line"><span class="reveal-inner">DIGITAL PRODUCTS</span></span>
-            <span class="reveal-line"><span class="reveal-inner">BUILT FOR THE</span></span>
-            <span class="reveal-line"><span class="reveal-inner">UNCOMPROMISING.</span></span>
+          <span class="eyebrow-label" style="color: var(--accent-primary);">Get In Touch</span>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase;">
+            Start Your Brief
           </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
-            Tell us where you’re headed. We’ll review your project and respond within 24 hours.
+            Qualify your project through our step-by-step brief builder, or book a direct discovery consultation below.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Section 02: Multi-Path Tab Selector -->
-    <section style="background-color: var(--bg-hero); padding: 60px 0 20px 0;" id="tabs-section">
-      <div class="container grid-12">
-        <button class="tab-btn active" data-path="start-project" style="grid-column: 2 / span 3;" id="tab-start-project" aria-expanded="true">
-          <span class="tab-btn-title">Start a Project</span>
-          <span class="tab-btn-desc">Fill our smart qualification form for review</span>
-        </button>
-        <button class="tab-btn" data-path="view-work" style="grid-column: 5 / span 3;" id="tab-view-work" aria-expanded="false">
-          <span class="tab-btn-title">View Our Work</span>
-          <span class="tab-btn-desc">Browse through case studies before submitting</span>
-        </button>
-        <button class="tab-btn" data-path="hire-contra" style="grid-column: 8 / span 3;" id="tab-hire-contra" aria-expanded="false">
-          <span class="tab-btn-title">Hire on Contra</span>
-          <span class="tab-btn-desc">Initiate immediate freelance contract scopes</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- Section 03: Smart Form & Details -->
-    <section class="section-padding-standard theme-light" id="conversion-form-block">
-      <div class="container grid-12" style="align-items: flex-start;">
+    <!-- Section 02: Brief Builder and Direct Channels -->
+    <section class="section-padding" style="background-color: var(--bg-primary);">
+      <div class="container">
         
-        <!-- Tab Content Path 1: Smart Form -->
-        <div style="grid-column: 2 / span 6; display: block;" class="form-block">
-          <div class="form-wrapper">
+        <div class="contact-layout-grid">
+          
+          <!-- Column 1: Multi-Step Brief Builder -->
+          <div style="grid-column: 1 / span 7;">
             
-            <form id="qualification-form" aria-label="Project qualification questionnaire">
+            <div class="brief-builder-container" id="brief-builder">
               
-              <!-- Step 1: Getting Acquainted -->
-              <div class="conversational-step active" data-step="0">
-                <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 40px;">First, let's get acquainted.</h3>
+              <!-- Step 1: Project Type -->
+              <div class="brief-step active" data-step="1">
+                <span class="eyebrow-label">[ Step 1 of 5 ]</span>
+                <h3 style="margin-top: 12px;">What are we building together?</h3>
+                <p>Select the primary capability your project aligns with.</p>
                 
-                <div class="form-group">
-                  <input type="text" id="form-name" class="form-input" required>
-                  <label for="form-name" class="form-label">Full Name *</label>
-                  <div class="focus-line"></div>
-                  <div class="error-message" id="error-name">Please enter your name so we can address you.</div>
-                </div>
-
-                <div class="form-group">
-                  <input type="email" id="form-email" class="form-input" required>
-                  <label for="form-email" class="form-label">Email Address *</label>
-                  <div class="focus-line"></div>
-                  <div class="error-message" id="error-email">Please enter a valid email address so we can reply.</div>
-                </div>
-
-                <div class="step-navigation">
-                  <div style="flex-grow: 1;"></div>
-                  <button type="button" class="step-nav-btn step-nav-next">Next Step</button>
+                <div class="chip-group">
+                  <button type="button" class="chip-btn chip-type" data-value="SaaS & Software">SaaS & Software</button>
+                  <button type="button" class="chip-btn chip-type" data-value="Healthcare Portal">Healthcare Portal</button>
+                  <button type="button" class="chip-btn chip-type" data-value="Websites & E-commerce">Websites & E-commerce</button>
+                  <button type="button" class="chip-btn chip-type" data-value="Brand Experience">Brand Experience</button>
                 </div>
               </div>
 
-              <!-- Step 2: What are we building together? -->
-              <div class="conversational-step" data-step="1">
-                <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 40px;">What are we building together?</h3>
+              <!-- Step 2: Budget Range -->
+              <div class="brief-step" data-step="2">
+                <span class="eyebrow-label">[ Step 2 of 5 ]</span>
+                <h3 style="margin-top: 12px;">What is your target budget?</h3>
+                <p>Slide to define your investment range for milestone deliverables.</p>
                 
-                <div class="form-group">
-                  <!-- Hidden select which is mapped by JavaScript -->
-                  <select id="form-project-type" class="form-input" required style="display: none;">
-                    <option value="" disabled selected aria-hidden="true"></option>
-                    <option value="design-branding">Design & Branding</option>
-                    <option value="websites-ecommerce">Websites & Ecommerce</option>
-                    <option value="software-saas">Software & SaaS</option>
-                    <option value="ai-enterprise">AI & Enterprise Solutions</option>
-                  </select>
-                  
-                  <div class="intake-pills" role="radiogroup" aria-label="Select capability vertical">
-                    <button type="button" class="intake-pill" data-value="design-branding">[ 01 // DESIGN & BRANDING ]</button>
-                    <button type="button" class="intake-pill" data-value="websites-ecommerce">[ 02 // WEBSITES & ECOMMERCE ]</button>
-                    <button type="button" class="intake-pill" data-value="software-saas">[ 03 // SOFTWARE & SAAS ]</button>
-                    <button type="button" class="intake-pill" data-value="ai-enterprise">[ 04 // AI & ENTERPRISE ]</button>
+                <div class="range-slider-container">
+                  <input type="range" id="budget-range" class="range-slider" min="1" max="3" value="2" step="1">
+                  <div class="slider-labels">
+                    <span>$10k - $25k</span>
+                    <span>$25k - $50k</span>
+                    <span>$50k+</span>
                   </div>
-                  
-                  <div class="error-message" id="error-project-type" style="margin-top: 16px;">Please select one of our capabilities.</div>
-                </div>
-
-                <div class="form-group" style="margin-top: 40px;">
-                  <input type="text" id="form-company" class="form-input">
-                  <label for="form-company" class="form-label">Company Name (Optional)</label>
-                  <div class="focus-line"></div>
-                </div>
-
-                <div class="step-navigation">
-                  <button type="button" class="step-nav-btn step-nav-prev">Back</button>
-                  <button type="button" class="step-nav-btn step-nav-next">Next Step</button>
+                  <div class="budget-result">
+                    Selected Budget: <span id="budget-value-display">$25k - $50k</span>
+                  </div>
                 </div>
               </div>
 
-              <!-- Step 3: Tell us where you're headed -->
-              <div class="conversational-step" data-step="2">
-                <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 40px;">Tell us where you’re headed.</h3>
+              <!-- Step 3: Timeline -->
+              <div class="brief-step" data-step="3">
+                <span class="eyebrow-label">[ Step 3 of 5 ]</span>
+                <h3 style="margin-top: 12px;">What is your target timeline?</h3>
+                <p>Select when you'd like the project phase to launch.</p>
                 
-                <div class="form-group">
-                  <textarea id="form-brief" class="form-input" rows="4" required style="resize: none;"></textarea>
-                  <label for="form-brief" class="form-label">Project Brief *</label>
-                  <div class="focus-line"></div>
-                  <div class="error-message" id="error-brief">Please write a brief summary of your requirements.</div>
-                </div>
-
-                <div class="step-navigation">
-                  <button type="button" class="step-nav-btn step-nav-prev">Back</button>
-                  <button type="button" class="step-nav-btn step-nav-next" style="background-color: var(--accent-primary);">Start a Project</button>
+                <div class="chip-group">
+                  <button type="button" class="chip-btn chip-timeline" data-value="Under 1 month">Under 1 Month</button>
+                  <button type="button" class="chip-btn chip-timeline" data-value="1 - 3 months">1 - 3 Months</button>
+                  <button type="button" class="chip-btn chip-timeline" data-value="3+ months">3+ Months</button>
                 </div>
               </div>
 
-              <!-- Hidden actual submit button for JS submission -->
-              <button type="submit" id="form-submit-btn" style="display: none;"></button>
-            </form>
-          </div>
+              <!-- Step 4: Goals description -->
+              <div class="brief-step" data-step="4">
+                <span class="eyebrow-label">[ Step 4 of 5 ]</span>
+                <h3 style="margin-top: 12px;">What are the project goals?</h3>
+                <p>Briefly describe the key outcomes you want to achieve.</p>
+                
+                <textarea id="builder-goals-text" class="text-area-brief" placeholder="E.g. We want to design a new SaaS portal to reduce client intake dropoff..."></textarea>
+              </div>
 
-          <!-- Form Success State -->
-          <div class="success-wrapper" tabindex="-1" style="display: none; opacity: 0; transition: opacity 400ms ease; padding: 60px 40px; text-align: center; border: 1px solid var(--border-light); border-radius: 8px; background-color: var(--surface-light-card);">
-            <div style="width: 60px; height: 60px; border-radius: 50%; background-color: var(--accent-primary); color: #FFF; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <!-- Step 5: Review & Submit -->
+              <div class="brief-step" data-step="5">
+                <span class="eyebrow-label">[ Step 5 of 5 ]</span>
+                <h3 style="margin-top: 12px;">Review & Book Slot</h3>
+                <p>We've compiled your project brief parameters. Clicking submit will redirect you to Calendly to lock in your Discovery consultation.</p>
+                
+                <div style="background-color: #0b0b14; border: 1px solid var(--border-light); padding: 24px; border-radius: 6px; font-family: var(--font-mono); font-size: 13px;">
+                  <span style="color: var(--accent-primary); font-weight: 700;">PROPOSED PROJECT PROFILE READY</span>
+                  <p style="margin: 12px 0 0 0; font-size: 12px; color: var(--text-secondary);">
+                    Your details will be pre-filled on our scheduling calendar.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Form Navigation Buttons -->
+              <div class="builder-navigation">
+                <button type="button" class="btn-secondary" id="builder-prev-btn" style="display: none;">Back</button>
+                <div style="flex-grow: 1;"></div>
+                <button type="button" class="btn-primary" id="builder-next-btn">Next Step</button>
+                <button type="button" class="btn-primary" id="builder-submit-btn" style="display: none;">Submit & Book</button>
+              </div>
+
             </div>
-            <h3 class="h3-text" style="color: var(--text-primary-light); margin-bottom: 12px;">Inquiry Sent Successfully</h3>
-            <p class="body-regular" style="color: var(--text-muted);">
-              Thank you. Our design engineers will review your project brief and get back to you within 24 hours.
-            </p>
-          </div>
-        </div>
 
-        <!-- Tab Content Path 2 & 3: Direct Redirect Screen -->
-        <div style="grid-column: 2 / span 6; display: none; text-align: center; padding: 80px 40px; border: 1px solid var(--border-light); border-radius: 8px; background-color: var(--surface-light-card);" class="redirect-block">
-          <h3 class="h3-text redirect-title" style="color: var(--text-primary-light); margin-bottom: 32px;">Browse our latest client projects</h3>
-          <a href="#" class="btn-primary redirect-btn" id="redirect-cta-button">View Our Work</a>
-        </div>
-
-        <!-- Right Side: Trust Info -->
-        <div style="grid-column: 9 / span 3; border-left: 1px solid var(--border-light); padding-left: 40px;" class="reveal-on-scroll stagger-2">
-          <div style="margin-bottom: 40px;">
-            <span class="eyebrow-label" style="color: var(--text-secondary); font-size: 11px;">Alternate Option</span>
-            <h4 class="h5-text" style="color: var(--text-primary-light); margin: 12px 0 8px 0;">Hire on Contra</h4>
-            <p class="body-small" style="color: var(--text-muted); margin-bottom: 16px;">
-              For rapid contract setup and escrow-backed milestone agreements, you can book us directly on Contra.
-            </p>
-            <a href="https://contra.com/mv_creatives" target="_blank" class="link-trust" style="color: var(--accent-primary);">
-              <span>Hire on Contra</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
-            </a>
           </div>
 
-          <div>
-            <span class="eyebrow-label" style="color: var(--text-secondary); font-size: 11px;">Response SLA</span>
-            <h4 class="h5-text" style="color: var(--text-primary-light); margin: 12px 0 8px 0;">24-Hour Guarantee</h4>
-            <p class="body-small" style="color: var(--text-muted);">
-              All platform qualification inquiries receive an engineer response within 24 business hours.
-            </p>
+          <!-- Column 2: Direct Channels -->
+          <div style="grid-column: 8 / span 5; width: 100%;">
+            
+            <div class="direct-channels-box">
+              <h3>Direct Channels</h3>
+              
+              <a href="https://calendly.com/mahamvohracontra/30min" target="_blank" class="channel-link">
+                <span class="name">Calendly Discovery</span>
+                <span class="action">Book Call ↗</span>
+              </a>
+              
+              <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="channel-link">
+                <span class="name">Contra Contracts</span>
+                <span class="action">Hire on Contra ↗</span>
+              </a>
+
+              <div style="margin-top: 40px; border-top: 1px solid var(--border-light); padding-top: 32px;">
+                <span class="eyebrow-label" style="font-size: 11px;">Response SLA</span>
+                <h4 style="font-size: 16px; margin: 12px 0 8px 0; font-weight: 700;">24-Hour Review Guarantee</h4>
+                <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                  All project briefs and scheduling notifications are routed directly to creative leads. We review and respond within 24 business hours.
+                </p>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
       </div>
@@ -266,11 +305,10 @@
   </main>
 
   <!-- Global Footer -->
-  <footer class="final-footer container" style="margin-top: 100px; padding-bottom: 40px; margin-bottom: 0;">
+  <footer class="final-footer container" style="margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--border-light);">
     <p>© 2026 MV Creatives. All rights reserved.</p>
     <nav>
       <a href="./index.html">Home</a>
-      <a href="./services.html">Services</a>
       <a href="./work.html">Work</a>
       <a href="./studio.html">Studio</a>
       <a href="./contact.html">Contact</a>
