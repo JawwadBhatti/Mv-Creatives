@@ -1,6 +1,6 @@
-# Walkthrough — Production Quality & Consistency Pass
+# Walkthrough — Production Quality, Testimonials & Positioning Pass
 
-We have resolved all critical production consistency and visual quality issues across the MV Creatives platform.
+We have resolved all critical production consistency and positioning issues across the MV Creatives platform.
 
 ---
 
@@ -31,18 +31,23 @@ We have resolved all critical production consistency and visual quality issues a
 - Improved the introductory paragraph copy on `contact.html`:
   > "Tell us where you’re headed. We’ll review your project and respond within 24 hours."
 
----
+## 7. Testimonials Cleanup
+- Removed the secondary quote cards for Marcus Vance and Elena Rostova from the homepage [index.html](file:///c:/Users/HP/Desktop/MV%20Creatives/index.html) to keep only the approved client testimonial by Sarah Chen.
 
-## 7. Changed Files List
-- [index.html](file:///c:/Users/HP/Desktop/MV%20Creatives/index.html) — Updated counter fallback metrics.
-- [index.js](file:///c:/Users/HP/Desktop/MV%20Creatives/index.js) — Tuned IntersectionObserver threshold for mobile viewport counts.
-- [case-study.html](file:///c:/Users/HP/Desktop/MV%20Creatives/case-study.html) — Changed Qualified Lead Lift fallback to `+220%`.
-- [contact.html](file:///c:/Users/HP/Desktop/MV%20Creatives/contact.html) — Updated introductory header copy.
-- [studio.html](file:///c:/Users/HP/Desktop/MV%20Creatives/studio.html) — Removed fake team profiles, centered Sarah Chen, and made it responsive.
-- [work.html](file:///c:/Users/HP/Desktop/MV%20Creatives/work.html) — Moved Northlight category to Software & SaaS, updated category text, and set static counter fallbacks.
+## 8. Studio Repositioning Pass
+- Toned down the "AI agency" and "AI-first" wording across the homepage, services, and studio pages.
+- Repositioned the studio as a **product design, engineering, and digital experience studio** in page titles, meta descriptions, capabilities headers, and the "Why MV" differentiator cards.
 
 ---
 
-## 8. Live Site URL
+## 9. Changed Files List
+- [index.html](file:///c:/Users/HP/Desktop/MV%20Creatives/index.html) — Removed Marcus/Elena testimonials, repositioned hero description/subheadline, updated capabilities intro and third differentiator to "Experience Design".
+- [services.html](file:///c:/Users/HP/Desktop/MV%20Creatives/services.html) — Updated title tag and capabilities introduction copy.
+- [studio.html](file:///c:/Users/HP/Desktop/MV%20Creatives/studio.html) — Updated meta description copy.
+- [specs/walkthrough.md](file:///c:/Users/HP/Desktop/MV%20Creatives/specs/walkthrough.md) — Updated walkthrough.
+
+---
+
+## 10. Live Site URL
 The site is deployed and live at:
 [https://jawwadbhatti.github.io/Mv-Creatives/](https://jawwadbhatti.github.io/Mv-Creatives/)
