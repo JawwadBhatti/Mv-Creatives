@@ -9,6 +9,14 @@
 </head>
 <body class="theme-dark">
 
+  <!-- Cinematic Background Layer (Scroll-Controlled Video & Coordinates) -->
+  <div id="scroll-video-container">
+    <canvas id="video-canvas"></canvas>
+    <video id="video-fallback" muted playsinline preload="auto" src="./videos/hero-bg.mp4" style="display: none;"></video>
+    <div class="video-overlay"></div>
+  </div>
+  <canvas id="particles-canvas"></canvas>
+
   <!-- Global Navigation Header -->
   <header class="site-header" id="main-header">
     <div class="container header-container">
@@ -174,54 +182,55 @@
     </section>
 
     <!-- Section 04: Featured Work (Desire Zone - Part 1) -->
-    <section class="section-padding-major theme-anchor-dark" id="featured-work-section">
-      <div class="container">
-        <div style="margin-bottom: 80px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px;" class="reveal-on-scroll">
-          <div>
-            <span class="eyebrow-label">Case Studies</span>
-            <h2 class="h2-text" style="margin-top: 12px;">What possible looks like</h2>
-          </div>
-          <a href="./work.html" class="btn-secondary" id="work-link-secondary">View Our Work</a>
-        </div>
-
-        <div class="grid-12">
-          <!-- Asymmetric Card 1 -->
-          <div style="grid-column: 2 / span 5; z-index: 10;" class="reveal-on-scroll portfolio-card">
-            <a href="./case-study.html" style="display: block;">
-              <div style="width: 100%; height: 500px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
-                <img src="./portfolio_northlight_1782055685953.png" alt="Northlight Platform Redesign" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                <div>
-                  <p class="eyebrow-label" style="font-size: 11px;">Northlight</p>
-                  <h3 class="h4-text" style="margin-top: 4px;">Fintech Platform Redesign</h3>
-                </div>
-                <div class="metric-text" style="font-size: 32px;">+220%</div>
-              </div>
-            </a>
+    <section id="featured-work-trigger" class="theme-anchor-dark">
+      <div id="featured-work-sticky">
+        <div class="container">
+          <div style="margin-bottom: 60px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px;" class="featured-header">
+            <div>
+              <span class="eyebrow-label">Case Studies</span>
+              <h2 class="h2-text" style="margin-top: 12px;">What possible looks like</h2>
+            </div>
+            <a href="./work.html" class="btn-secondary" id="work-link-secondary">View Our Work</a>
           </div>
 
-          <!-- Asymmetric Card 2 (Offset by 80px down) -->
-          <div style="grid-column: 8 / span 5; transform: translateY(80px); z-index: 10;" class="reveal-on-scroll stagger-2 portfolio-card">
-            <a href="./work.html#careflow" style="display: block;">
-              <div style="width: 100%; height: 420px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark);">
-                <img src="./portfolio_careflow_1782055700597.png" alt="CareFlow AI Clinical Assistant" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                <div>
-                  <p class="eyebrow-label" style="font-size: 11px;">CareFlow</p>
-                  <h3 class="h4-text" style="margin-top: 4px;">AI-Native Assistant</h3>
+          <div class="grid-12" id="featured-cards-grid">
+            <!-- Asymmetric Card 1 -->
+            <div style="grid-column: 2 / span 5; z-index: 10;" class="portfolio-card" id="feat-card-1">
+              <a href="./case-study.html" style="display: block;">
+                <div class="card-media-container" style="width: 100%; height: 480px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark); position: relative;">
+                  <img src="./portfolio_northlight_1782055685953.png" alt="Northlight Platform Redesign" class="card-static-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);">
+                  <video src="./videos/northlight-hover.mp4" loop muted playsinline class="card-hover-video" style="opacity: 0; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity var(--transition-default); pointer-events: none;"></video>
                 </div>
-                <div class="metric-text" style="font-size: 32px;">-40%</div>
-              </div>
-            </a>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                  <div>
+                    <p class="eyebrow-label" style="font-size: 11px;">Northlight</p>
+                    <h3 class="h4-text" style="margin-top: 4px;">Fintech Platform Redesign</h3>
+                  </div>
+                  <div class="metric-text" style="font-size: 32px;">+220%</div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Asymmetric Card 2 -->
+            <div style="grid-column: 8 / span 5; transform: translateY(60px); z-index: 10;" class="portfolio-card" id="feat-card-2">
+              <a href="./work.html#careflow" style="display: block;">
+                <div class="card-media-container" style="width: 100%; height: 400px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark); position: relative;">
+                  <img src="./portfolio_careflow_1782055700597.png" alt="CareFlow AI Clinical Assistant" class="card-static-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);">
+                  <video src="./videos/careflow-hover.mp4" loop muted playsinline class="card-hover-video" style="opacity: 0; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity var(--transition-default); pointer-events: none;"></video>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                  <div>
+                    <p class="eyebrow-label" style="font-size: 11px;">CareFlow</p>
+                    <h3 class="h4-text" style="margin-top: 4px;">AI-Native Assistant</h3>
+                  </div>
+                  <div class="metric-text" style="font-size: 32px;">-40%</div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Adjuster section for offset featured work -->
-    <div style="height: 120px;" class="theme-anchor-dark"></div>
 
     <!-- Section 05: Process (Authority Zone - Part 2) -->
     <section class="section-padding-major theme-light" style="border-top: 1px solid var(--border-light);" id="process-section">

@@ -624,5 +624,365 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ==========================================================================
+  // VELDARA-INSPIRED SCROLL VIDEO BACKGROUND
+  // ==========================================================================
+  const videoContainer = document.getElementById('scroll-video-container');
+  const videoCanvas = document.getElementById('video-canvas');
+  const videoEl = document.getElementById('video-fallback');
+
+  if (videoContainer && videoCanvas && videoEl && !isTouchDevice && window.innerWidth >= 1024) {
+    const videoCtx = videoCanvas.getContext('2d');
+    let frames = [];
+    let framesReady = false;
+    let lastFrameIndex = -1;
+    let videoSeeking = false;
+
+    // Resize canvas to match high-DPI displays
+    function resizeVideoCanvas() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const rect = videoCanvas.getBoundingClientRect();
+      videoCanvas.width = rect.width * dpr;
+      videoCanvas.height = rect.height * dpr;
+      lastFrameIndex = -1; // Force redraw on resize
+    }
+    resizeVideoCanvas();
+    window.addEventListener('resize', resizeVideoCanvas);
+
+    // Pre-extract video frames as bitmaps for buttery smooth scroll scrub
+    async function extractVideoFrames() {
+      try {
+        const response = await fetch(videoEl.src, { mode: 'cors' });
+        const blob = await response.blob();
+        const objectUrl = URL.createObjectURL(blob);
+
+        const tempVideo = document.createElement('video');
+        tempVideo.muted = true;
+        tempVideo.playsInline = true;
+        tempVideo.preload = 'auto';
+        tempVideo.src = objectUrl;
+
+        await new Promise((resolve, reject) => {
+          tempVideo.onloadedmetadata = () => resolve();
+          tempVideo.onerror = () => reject();
+          setTimeout(() => reject(), 12000);
+        });
+
+        // Determine frames to extract based on video duration and standard framerate
+        const fps = 24;
+        const duration = tempVideo.duration;
+        const frameCount = Math.max(30, Math.min(90, Math.round(duration * fps)));
+        const scale = Math.min(1, 1280 / tempVideo.videoWidth);
+        const scaledWidth = Math.round(tempVideo.videoWidth * scale);
+        const scaledHeight = Math.round(tempVideo.videoHeight * scale);
+
+        for (let i = 0; i < frameCount; i++) {
+          const time = (i / (frameCount - 1)) * (duration - 0.05);
+          tempVideo.currentTime = time;
+          await new Promise((resolve) => {
+            const onSeeked = () => {
+              tempVideo.removeEventListener('seeked', onSeeked);
+              resolve();
+            };
+            tempVideo.addEventListener('seeked', onSeeked);
+            setTimeout(resolve, 1500); // safety fallback
+          });
+          const bitmap = await createImageBitmap(tempVideo, { resizeWidth: scaledWidth, resizeHeight: scaledHeight });
+          frames.push(bitmap);
+        }
+
+        if (frames.length > 0) {
+          framesReady = true;
+          videoEl.style.display = 'none'; // hide the fallback video
+        }
+        URL.revokeObjectURL(objectUrl);
+      } catch (err) {
+        console.warn('Scroll video frame pre-extraction failed, using direct currentTime seeking fallback:', err);
+        videoEl.style.display = 'block'; // show fallback video element
+      }
+    }
+
+    // Scroll progress mapper: syncs page scroll range to video frames
+    function getScrollProgress() {
+      const start = 0;
+      const end = window.innerHeight * 2.2; // scrub video across upper sections of the page
+      const scrollY = window.scrollY;
+      if (scrollY <= start) return 0;
+      if (scrollY >= end) return 1;
+      return (scrollY - start) / (end - start);
+    }
+
+    function drawVideoFrame(frame) {
+      const cw = videoCanvas.width;
+      const ch = videoCanvas.height;
+      const scale = Math.max(cw / frame.width, ch / frame.height);
+      const dw = frame.width * scale;
+      const dh = frame.height * scale;
+      videoCtx.drawImage(frame, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+    }
+
+    function videoTick() {
+      const progress = getScrollProgress();
+      
+      if (framesReady && frames.length > 0) {
+        const index = Math.round(progress * (frames.length - 1));
+        if (index !== lastFrameIndex) {
+          lastFrameIndex = index;
+          if (frames[index]) {
+            drawVideoFrame(frames[index]);
+          }
+        }
+      } else if (videoEl.duration && isFinite(videoEl.duration) && videoEl.readyState >= 1) {
+        // Fallback: Seek direct video currentTime
+        const targetTime = progress * videoEl.duration;
+        if (!videoSeeking && Math.abs(videoEl.currentTime - targetTime) > 0.04) {
+          videoSeeking = true;
+          videoEl.currentTime = targetTime;
+        }
+      }
+      requestAnimationFrame(videoTick);
+    }
+
+    videoEl.addEventListener('seeked', () => { videoSeeking = false; });
+    videoEl.addEventListener('stalled', () => { videoSeeking = false; });
+    
+    // Start tick and download
+    requestAnimationFrame(videoTick);
+    extractVideoFrames();
+  }
+
+  // Parallax + opacity fade effect on Hero Content on scroll
+  const heroContent = document.querySelector('#hero-section .container');
+  if (heroContent && !isTouchDevice && window.innerWidth >= 1024) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+      if (scrollY < vh) {
+        const opacity = Math.max(0, 1 - scrollY / (vh * 0.45));
+        const translateY = scrollY * 0.35;
+        heroContent.style.opacity = opacity;
+        heroContent.style.transform = `translate3d(0, ${translateY}px, 0)`;
+      }
+    }, { passive: true });
+  }
+
+  // ==========================================================================
+  // ARCHITECTURAL COORDINATES PARTICLE CANVAS SYSTEM
+  // ==========================================================================
+  const particlesCanvas = document.getElementById('particles-canvas');
+  if (particlesCanvas && !isTouchDevice && window.innerWidth >= 1024) {
+    const pCtx = particlesCanvas.getContext('2d');
+    let particles = [];
+    let pMouse = { x: null, y: null, active: false };
+
+    function resizeParticlesCanvas() {
+      particlesCanvas.width = window.innerWidth;
+      particlesCanvas.height = window.innerHeight;
+      initParticles();
+    }
+
+    function initParticles() {
+      particles = [];
+      const density = 14000; // pixels per particle
+      const count = Math.floor((particlesCanvas.width * particlesCanvas.height) / density);
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * particlesCanvas.width,
+          y: Math.random() * particlesCanvas.height,
+          vx: (Math.random() - 0.5) * 0.15, // extremely slow architectural drift
+          vy: (Math.random() - 0.5) * 0.15,
+          size: Math.random() * 1.5 + 0.5,
+          opacity: Math.random() * 0.4 + 0.1,
+          type: Math.random() > 0.4 ? 'crosshair' : 'node' // crosshairs or node points
+        });
+      }
+    }
+
+    // Capture cursor proximity
+    window.addEventListener('mousemove', (e) => {
+      pMouse.x = e.clientX;
+      pMouse.y = e.clientY;
+      pMouse.active = true;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      pMouse.active = false;
+    });
+
+    function drawArchitecturalParticles() {
+      pCtx.clearRect(0, 0, particlesCanvas.width, particlesCanvas.height);
+      
+      // Draw grid blueprint background line accents (ultra-faint structural layout lines)
+      pCtx.strokeStyle = 'rgba(92, 108, 250, 0.015)';
+      pCtx.lineWidth = 0.5;
+      const gap = 80;
+      for (let x = 0; x < particlesCanvas.width; x += gap) {
+        pCtx.beginPath();
+        pCtx.moveTo(x, 0);
+        pCtx.lineTo(x, particlesCanvas.height);
+        pCtx.stroke();
+      }
+      for (let y = 0; y < particlesCanvas.height; y += gap) {
+        pCtx.beginPath();
+        pCtx.moveTo(0, y);
+        pCtx.lineTo(particlesCanvas.width, y);
+        pCtx.stroke();
+      }
+
+      particles.forEach((p, idx) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Wrap boundaries
+        if (p.x < 0) p.x = particlesCanvas.width;
+        if (p.x > particlesCanvas.width) p.x = 0;
+        if (p.y < 0) p.y = particlesCanvas.height;
+        if (p.y > particlesCanvas.height) p.y = 0;
+
+        // Proximity attraction to cursor
+        if (pMouse.active) {
+          const dx = pMouse.x - p.x;
+          const dy = pMouse.y - p.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 160) {
+            p.x += dx * 0.008; // slow magnetic alignment pull
+            p.y += dy * 0.008;
+
+            // Draw thin structural coordinate projection lines to mouse
+            pCtx.beginPath();
+            pCtx.setLineDash([2, 5]); // dashed blueprint lines
+            pCtx.moveTo(p.x, p.y);
+            pCtx.lineTo(pMouse.x, pMouse.y);
+            pCtx.strokeStyle = `rgba(92, 108, 250, ${(1 - dist/160) * 0.12})`;
+            pCtx.stroke();
+            pCtx.setLineDash([]);
+          }
+        }
+
+        // Draw individual particle elements
+        pCtx.strokeStyle = `rgba(136, 136, 164, ${p.opacity})`;
+        pCtx.fillStyle = `rgba(92, 108, 250, ${p.opacity})`;
+        pCtx.lineWidth = 0.5;
+
+        if (p.type === 'crosshair') {
+          // Draw thin crosshairs (+)
+          pCtx.beginPath();
+          pCtx.moveTo(p.x - 4, p.y);
+          pCtx.lineTo(p.x + 4, p.y);
+          pCtx.moveTo(p.x, p.y - 4);
+          pCtx.lineTo(p.x, p.y + 4);
+          pCtx.stroke();
+        } else {
+          // Draw blueprint nodes (small tiny square/circle with empty core)
+          pCtx.beginPath();
+          pCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          pCtx.fill();
+        }
+
+        // Connect nearby nodes within 90px with thin structural lines
+        for (let j = idx + 1; j < particles.length; j++) {
+          const other = particles[j];
+          const dx = p.x - other.x;
+          const dy = p.y - other.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 90) {
+            pCtx.beginPath();
+            pCtx.moveTo(p.x, p.y);
+            pCtx.lineTo(other.x, other.y);
+            pCtx.strokeStyle = `rgba(92, 108, 250, ${(1 - dist/90) * 0.05})`;
+            pCtx.lineWidth = 0.5;
+            pCtx.stroke();
+          }
+        }
+      });
+
+      requestAnimationFrame(drawArchitecturalParticles);
+    }
+
+    resizeParticlesCanvas();
+    window.addEventListener('resize', resizeParticlesCanvas);
+    requestAnimationFrame(drawArchitecturalParticles);
+  }
+
+  // ==========================================================================
+  // STICKY FEATURED WORK STORIES WITH GRADIENT WIPES
+  // ==========================================================================
+  const workTrigger = document.getElementById('featured-work-trigger');
+  const workSticky = document.getElementById('featured-work-sticky');
+  const cardsGridContainer = document.getElementById('featured-cards-grid');
+
+  if (workTrigger && workSticky && cardsGridContainer && !isTouchDevice && window.innerWidth >= 1024) {
+    function tickFeaturedWorkScroll() {
+      const rect = workTrigger.getBoundingClientRect();
+      const triggerHeight = workTrigger.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      // Calculate progress of scroll through the trigger zone
+      const travel = triggerHeight - windowHeight;
+      let progress = -rect.top / travel;
+      progress = Math.max(0, Math.min(1, progress));
+
+      // Map progress to linear gradient mask reveal percentage
+      // starts at 0% and wipes across the container to 100%
+      const revealPct = progress * 135; // extra padding to ensure full reveal
+      cardsGridContainer.style.webkitMaskImage = `linear-gradient(to right, black ${revealPct - 25}%, transparent ${revealPct}%)`;
+      cardsGridContainer.style.maskImage = `linear-gradient(to right, black ${revealPct - 25}%, transparent ${revealPct}%)`;
+
+      // Apply subtle spatial translations on scroll to cards for asymmetric parallax depth
+      const card1 = document.getElementById('feat-card-1');
+      const card2 = document.getElementById('feat-card-2');
+      if (card1 && card2) {
+        // Card 1 shifts up slightly slower, Card 2 is offset and moves at a different speed
+        const t1 = (progress - 0.5) * -40;
+        const t2 = 60 + (progress - 0.5) * 50; // offset starts at translateY(60px)
+        card1.style.transform = `translate3d(0, ${t1}px, 0)`;
+        card2.style.transform = `translate3d(0, ${t2}px, 0)`;
+      }
+
+      requestAnimationFrame(tickFeaturedWorkScroll);
+    }
+    requestAnimationFrame(tickFeaturedWorkScroll);
+  }
+
+  // ==========================================================================
+  // PORTFOLIO CARD HOVER VIDEO REEL CONTROLS
+  // ==========================================================================
+  const hoverReelCards = document.querySelectorAll('.portfolio-card');
+  hoverReelCards.forEach(card => {
+    const video = card.querySelector('.card-hover-video');
+    const image = card.querySelector('.card-static-img');
+    
+    if (video) {
+      // Play on mouseenter, hide image, show video
+      card.addEventListener('mouseenter', () => {
+        video.style.opacity = '1';
+        if (image) image.style.transform = 'scale(1.03)';
+        video.play().catch(err => console.log('Autoplay blocked or video not ready:', err));
+      });
+
+      // Pause on mouseleave, show image, hide video
+      card.addEventListener('mouseleave', () => {
+        video.style.opacity = '0';
+        if (image) image.style.transform = 'none';
+        video.pause();
+      });
+      
+      // Support mobile single-tap interaction
+      card.addEventListener('touchstart', (e) => {
+        // Toggle play state on tap if mobile
+        if (video.paused) {
+          e.preventDefault(); // prevent immediate click redirect
+          // Stop all other running hover videos first
+          document.querySelectorAll('.card-hover-video').forEach(vid => {
+            vid.style.opacity = '0';
+            vid.pause();
+          });
+          video.style.opacity = '1';
+          video.play();
+        }
+      }, { passive: false });
+    }
+  });
+
 });
 
