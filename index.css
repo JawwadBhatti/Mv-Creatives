@@ -932,3 +932,289 @@ a {
   border-top: 1px solid var(--border-light);
   padding-top: 80px;
 }
+
+/* ==========================================================================
+   SECTION 12: DEVICE MOCKUPS & IMMERSIVE PRESENTATIONS
+   ========================================================================== */
+
+/* Premium Device Mockup Containers */
+.mockup-container {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.6s var(--ease-entrance), border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* MacBook Mockup styling */
+.macbook-mockup {
+  width: 85%;
+  position: relative;
+  margin: 0 auto;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 30px 0;
+}
+
+.macbook-screen {
+  position: relative;
+  background: #000;
+  border: 10px solid #141416;
+  border-bottom: 14px solid #141416;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.macbook-webcam {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #242426;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.macbook-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.macbook-viewport img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.macbook-viewport video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.macbook-base {
+  position: relative;
+  height: 8px;
+  background: linear-gradient(to bottom, #d1d5db 0%, #9ca3af 100%);
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin: 0 -8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.macbook-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 3px 3px;
+}
+
+/* Hover effects */
+.work-card-wrapper:hover .mockup-container,
+.portfolio-card:hover .mockup-container {
+  transform: translateY(-8px);
+  border-color: rgba(79, 70, 229, 0.3);
+  box-shadow: 0 25px 60px rgba(79, 70, 229, 0.15);
+}
+
+.work-card-wrapper:hover .macbook-mockup,
+.portfolio-card:hover .macbook-mockup {
+  transform: rotateX(4deg) scale(1.02);
+}
+
+.work-card-wrapper:hover .macbook-viewport img,
+.portfolio-card:hover .macbook-viewport img {
+  transform: scale(1.02);
+}
+
+.work-card-wrapper:hover .macbook-viewport video,
+.portfolio-card:hover .macbook-viewport video {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .mockup-container {
+    padding: 24px 12px !important;
+  }
+  .macbook-screen {
+    border-width: 6px;
+    border-bottom-width: 8px;
+    border-radius: 8px 8px 0 0;
+  }
+  .macbook-base {
+    height: 6px;
+    margin: 0 -6px;
+  }
+}
+
+/* ==========================================================================
+   SECTION 13: STABLE CINEMATIC FOOTER & CTA
+   ========================================================================== */
+
+.final-video-cta {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 0 60px 0;
+  background: #000;
+  border-top: 1px solid var(--border-light);
+}
+
+.final-video-cta__bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.35;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.final-video-cta__fade {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.final-video-cta__fade--top {
+  top: 0;
+  background: linear-gradient(to bottom, #050505 0%, transparent 100%);
+}
+
+.final-video-cta__fade--bottom {
+  bottom: 0;
+  background: linear-gradient(to top, #050505 0%, transparent 100%);
+}
+
+.final-video-cta__content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.final-video-cta__content h2 {
+  font-size: clamp(36px, 5.5vw, 64px);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+.final-video-cta__content p {
+  color: var(--text-secondary);
+  font-size: clamp(16px, 2.2vw, 20px);
+  margin-bottom: 48px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.final-video-cta__actions {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 120px;
+}
+
+.final-footer {
+  width: 100%;
+  border-top: 1px solid var(--border-light);
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.final-footer p {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.final-footer nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.final-footer nav a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.final-footer nav a:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 767px) {
+  .final-video-cta {
+    min-height: auto;
+    padding: 80px 0 40px 0;
+  }
+  .final-video-cta__actions {
+    margin-bottom: 80px;
+  }
+  .final-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .final-footer nav {
+    justify-content: center;
+    gap: 20px;
+  }
+}
