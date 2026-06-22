@@ -627,155 +627,52 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   // 10. SCROLL-CONTROLLED CINEMATIC BACKGROUND VIDEO
   // ==========================================================================
-  (function initScrollVideo() {
-    const container = document.getElementById("scroll-video-container");
-    const canvas = document.getElementById("video-canvas");
-    const videoEl = document.getElementById("video-fallback");
-
-    if (!container || !canvas || !videoEl) return;
+  (function initScrollControlledVideo() {
+    const videoBg = document.getElementById("video-bg");
+    if (!videoBg) return;
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
-    const isMobile = window.innerWidth < 768;
-
-    if (prefersReducedMotion || isTouch || isMobile) {
-      canvas.style.display = "none";
-      videoEl.style.display = "block";
-      videoEl.pause();
+    if (prefersReducedMotion) {
+      videoBg.playbackRate = 1.0;
+      videoBg.play().catch(() => {});
       return;
     }
 
-    const ctx = canvas.getContext("2d");
-    let frames = [];
-    let framesReady = false;
-    let lastFrameIndex = -1;
-    let videoSeeking = false;
+    videoBg.play().catch(() => {});
 
-    function resizeCanvas() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const rect = canvas.getBoundingClientRect();
-      const w = Math.round(rect.width * dpr);
-      const h = Math.round(rect.height * dpr);
+    let lastScrollY = window.scrollY;
+    let lastTime = performance.now();
+    let targetPlaybackRate = 1.0;
+    let currentPlaybackRate = 1.0;
 
-      if (canvas.width !== w || canvas.height !== h) {
-        canvas.width = w;
-        canvas.height = h;
-        lastFrameIndex = -1;
-      }
-    }
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+      const currentTime = performance.now();
+      const dt = Math.max(1, currentTime - lastTime);
+      const dy = Math.abs(currentScrollY - lastScrollY);
 
-    async function extractFrames() {
+      const velocity = dy / dt;
+      targetPlaybackRate = 1.0 + Math.min(1.5, velocity * 0.45);
+
+      lastScrollY = currentScrollY;
+      lastTime = currentTime;
+    }, { passive: true });
+
+    function updatePlaybackRate() {
+      currentPlaybackRate += (targetPlaybackRate - currentPlaybackRate) * 0.08;
+      targetPlaybackRate += (1.0 - targetPlaybackRate) * 0.05;
+
+      const clampedRate = Math.max(0.5, Math.min(2.5, currentPlaybackRate));
       try {
-        const response = await fetch(videoEl.getAttribute("src"));
-        const blob = await response.blob();
-        const objectUrl = URL.createObjectURL(blob);
+        videoBg.playbackRate = clampedRate;
+      } catch (e) {}
 
-        const video = document.createElement("video");
-        video.muted = true;
-        video.playsInline = true;
-        video.preload = "auto";
-        video.src = objectUrl;
-
-        await new Promise((resolve, reject) => {
-          video.onloadedmetadata = resolve;
-          video.onerror = reject;
-          setTimeout(reject, 12000);
-        });
-
-        const scale = Math.min(1, 1280 / video.videoWidth);
-        const scaledWidth = Math.round(video.videoWidth * scale);
-        const scaledHeight = Math.round(video.videoHeight * scale);
-        const frameCount = Math.max(30, Math.min(90, Math.round(video.duration * 18)));
-
-        for (let i = 0; i < frameCount; i++) {
-          const time = (i / (frameCount - 1)) * Math.max(0.1, video.duration - 0.05);
-          video.currentTime = time;
-
-          await new Promise((resolve, reject) => {
-            const onSeeked = () => {
-              video.removeEventListener("seeked", onSeeked);
-              resolve();
-            };
-            video.addEventListener("seeked", onSeeked);
-            setTimeout(() => {
-              video.removeEventListener("seeked", onSeeked);
-              reject();
-            }, 2500);
-          });
-
-          const bitmap = await createImageBitmap(video, {
-            resizeWidth: scaledWidth,
-            resizeHeight: scaledHeight
-          });
-
-          frames.push(bitmap);
-        }
-
-        if (frames.length > 0) {
-          framesReady = true;
-          canvas.style.visibility = "visible";
-          videoEl.style.display = "none";
-        }
-
-        URL.revokeObjectURL(objectUrl);
-      } catch (error) {
-        canvas.style.display = "none";
-        videoEl.style.display = "block";
-        videoEl.muted = true;
-        videoEl.playsInline = true;
-        videoEl.loop = true;
-        videoEl.play().catch(() => {});
-      }
+      requestAnimationFrame(updatePlaybackRate);
     }
 
-    function getProgress() {
-      const vh = window.innerHeight;
-      const max = Math.min(vh * 2.5, document.documentElement.scrollHeight - vh);
-      if (max <= 0) return 0;
-      return Math.max(0, Math.min(1, window.scrollY / max));
-    }
-
-    function drawFrame(frame) {
-      const cw = canvas.width;
-      const ch = canvas.height;
-      const s = Math.max(cw / frame.width, ch / frame.height);
-      const dw = frame.width * s;
-      const dh = frame.height * s;
-
-      ctx.clearRect(0, 0, cw, ch);
-      ctx.drawImage(frame, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
-    }
-
-    function tick() {
-      const progress = getProgress();
-
-      if (framesReady && frames.length > 0) {
-        const idx = Math.round(progress * (frames.length - 1));
-        if (idx !== lastFrameIndex) {
-          lastFrameIndex = idx;
-          if (frames[idx]) drawFrame(frames[idx]);
-        }
-      } else if (videoEl.duration && videoEl.readyState >= 1) {
-        const target = progress * videoEl.duration;
-        if (!videoSeeking && Math.abs(videoEl.currentTime - target) > 0.01) {
-          videoSeeking = true;
-          videoEl.currentTime = target;
-        }
-      }
-
-      requestAnimationFrame(tick);
-    }
-
-    videoEl.addEventListener("seeked", () => {
-      videoSeeking = false;
-    });
-
-    canvas.style.visibility = "hidden";
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-    extractFrames();
-    requestAnimationFrame(tick);
+    requestAnimationFrame(updatePlaybackRate);
   })();
+
 
   // ==========================================================================
   // 11. ARCHITECTURAL PARTICLE / CROSSHAIR LAYER
@@ -924,7 +821,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!video) return;
 
       card.addEventListener("mouseenter", () => {
-        video.style.opacity = "0.78";
+        video.style.opacity = "0.95";
         video.currentTime = 0;
         video.play().catch(() => {});
       });
@@ -943,7 +840,7 @@ document.addEventListener('DOMContentLoaded', () => {
             v.style.opacity = "0";
             v.pause();
           });
-          video.style.opacity = "0.78";
+          video.style.opacity = "0.95";
           video.play().catch(() => {});
         }
       }, { passive: false });

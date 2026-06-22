@@ -11,8 +11,7 @@
 
   <!-- Cinematic Background Layer (Scroll-Controlled Video & Coordinates) -->
   <div id="scroll-video-container">
-    <canvas id="video-canvas"></canvas>
-    <video id="video-fallback" muted playsinline preload="auto" src="./videos/hero-bg.mp4" style="display: none;"></video>
+    <video id="video-bg" autoplay muted loop playsinline preload="auto" src="./videos/hero-bg.mp4"></video>
     <div class="video-overlay"></div>
   </div>
   <canvas id="particles-canvas"></canvas>
@@ -136,7 +135,7 @@
                   </div>
                 </div>
                 <div class="capability-view-visual">
-                  <img src="./capability_design_room.png" alt="Design System Room Mockup" class="capability-room-img">
+                  <video autoplay muted loop playsinline class="capability-room-img" src="./videos/cta-bg.mp4"></video>
                 </div>
               </div>
             </div>
@@ -154,7 +153,7 @@
                   </div>
                 </div>
                 <div class="capability-view-visual">
-                  <img src="./design_system_components_1782073720217.png" alt="Ecommerce Product Mockup" class="capability-room-img">
+                  <video autoplay muted loop playsinline class="capability-room-img" src="./videos/northlight-hover.mp4"></video>
                 </div>
               </div>
             </div>
@@ -172,7 +171,7 @@
                   </div>
                 </div>
                 <div class="capability-view-visual">
-                  <img src="./desktop_work_dark_1782074095354.png" alt="SaaS Software Layout Mockup" class="capability-room-img">
+                  <video autoplay muted loop playsinline class="capability-room-img" src="./videos/careflow-hover.mp4"></video>
                 </div>
               </div>
             </div>
@@ -190,7 +189,7 @@
                   </div>
                 </div>
                 <div class="capability-view-visual">
-                  <img src="./capability_ai_room.png" alt="AI Enterprise Solutions Mockup" class="capability-room-img">
+                  <video autoplay muted loop playsinline class="capability-room-img" src="./videos/test-sd.mp4"></video>
                 </div>
               </div>
             </div>
@@ -318,7 +317,7 @@
         </div>
 
         <div style="grid-column: 9 / span 4;" class="reveal-on-scroll stagger-2">
-          <img src="./process_architecture_map_1782055742786.png" alt="Technical Process Architecture Map" style="width: 100%; height: auto; border-radius: 8px; box-shadow: var(--box-shadow-2);">
+          <video autoplay muted loop playsinline src="./videos/test-sd.mp4" style="width: 100%; height: auto; border-radius: 8px; box-shadow: var(--box-shadow-2); filter: grayscale(15%) contrast(0.95) brightness(0.85); transition: filter var(--transition-default), transform var(--transition-default);"></video>
         </div>
       </div>
     </section>
@@ -483,7 +482,7 @@
         </div>
 
         <div style="width: 100%; border-radius: 8px; overflow: hidden; box-shadow: var(--box-shadow-2);" class="reveal-on-scroll">
-          <img src="./case_study_mockup_1782055715116.png" alt="Northlight Platform Redesign Laptop Mockup" style="width: 100%; height: auto; display: block;">
+          <video autoplay muted loop playsinline src="./videos/northlight-hover.mp4" style="width: 100%; height: auto; display: block; filter: grayscale(15%) contrast(0.95) brightness(0.85); transition: filter var(--transition-default), transform var(--transition-default);"></video>
         </div>
       </div>
     </section>
@@ -505,7 +504,7 @@
           <!-- Portrait circle -->
           <div style="display: flex; flex-direction: column; align-items: center;">
             <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-primary); margin-bottom: 16px; transition: transform var(--transition-fast);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
-              <img src="./sarah_chen_portrait_1782055729555.png" alt="Sarah Chen Portrait" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.3); transition: filter var(--transition-fast);" onmouseenter="this.style.filter='grayscale(0.05)';" onmouseleave="this.style.filter='grayscale(0.3)';">
+              <img src="./sarah_chen_portrait_1782055729555.png" alt="Sarah Chen Portrait" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.15); transition: filter var(--transition-fast);" onmouseenter="this.style.filter='grayscale(0.05)';" onmouseleave="this.style.filter='grayscale(0.15)';">
             </div>
             <cite style="font-style: normal; font-weight: 700; color: var(--text-primary-dark);">Sarah Chen</cite>
             <span style="font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px;">VP of Product, Northlight</span>

@@ -1064,7 +1064,7 @@ footer.site-footer {
   height: 240px;
   object-fit: cover;
   display: block;
-  filter: grayscale(30%) contrast(0.95) brightness(0.85);
+  filter: grayscale(15%) contrast(0.95) brightness(0.85);
   transition: filter 0.4s var(--ease-entrance), transform 0.4s var(--ease-entrance);
 }
 
@@ -1326,7 +1326,7 @@ footer.site-footer {
   inset: 0;
   width: 100%;
   height: 100vh;
-  z-index: -3;
+  z-index: -2;
   background: #060608;
   overflow: hidden;
   pointer-events: none;
@@ -1340,17 +1340,15 @@ footer.site-footer {
   height: 100%;
   object-fit: cover;
   display: block;
-  opacity: 0.30;
-  filter: grayscale(1) contrast(1.05);
+  opacity: 0.55; /* Set video opacity between 0.45 and 0.65 */
+  filter: grayscale(15%) contrast(1.05); /* Grayscale max 10-20% */
 }
 
 #scroll-video-container .video-overlay,
 .video-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(6,6,8,0.85), rgba(6,6,8,0.45), rgba(6,6,8,0.9)),
-    rgba(6,6,8,0.52);
+  background: radial-gradient(circle at 20% 50%, rgba(6, 6, 8, 0.55) 0%, rgba(6, 6, 8, 0.1) 70%);
   pointer-events: none;
   z-index: 1;
 }
@@ -1370,7 +1368,7 @@ footer.site-footer {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -2;
+  z-index: -1;
   opacity: 0.24;
 }
 
@@ -1401,7 +1399,7 @@ footer.site-footer {
 
 /* Grayscale state to color reveal for portfolio card on hover */
 .card-media-container img.card-static-img {
-  filter: grayscale(30%) contrast(0.95) brightness(0.85); /* Grayscale 30% default */
+  filter: grayscale(15%) contrast(0.95) brightness(0.85); /* Grayscale 15% default */
   transition: transform 0.6s var(--ease-entrance), filter 0.6s var(--ease-entrance);
 }
 
@@ -1412,7 +1410,7 @@ footer.site-footer {
 
 /* Video hover overlays */
 .card-hover-video {
-  filter: grayscale(30%) contrast(1.0) brightness(0.88);
+  filter: grayscale(15%) contrast(1.0) brightness(0.88);
   transition: opacity 0.5s var(--ease-entrance), filter 0.5s var(--ease-entrance);
 }
 
@@ -1435,7 +1433,7 @@ footer.site-footer {
 #process-section img,
 #case-study-highlight-section img,
 #testimonials-section img {
-  filter: grayscale(30%) contrast(0.95) brightness(0.85) !important;
+  filter: grayscale(15%) contrast(0.95) brightness(0.85) !important;
   transition: filter var(--transition-default), transform var(--transition-default) !important;
 }
 
@@ -1624,18 +1622,18 @@ footer.site-footer {
 
 .work-card__preview {
   opacity: 1;
-  filter: grayscale(30%) contrast(0.95) brightness(0.85);
+  filter: grayscale(15%) contrast(0.95) brightness(0.85);
   transform: scale(1);
 }
 
 .work-card__video {
   opacity: 0;
-  filter: grayscale(30%) contrast(1.0) brightness(0.88);
+  filter: grayscale(15%) contrast(1.0) brightness(0.88);
   transform: scale(1.02);
 }
 
 .work-card:hover .work-card__preview {
-  opacity: 0.80; /* Default previews remain clearly visible */
+  opacity: 0.20; /* Fades down so video is clearly visible */
   filter: grayscale(5%) contrast(1.0) brightness(0.95);
   transform: scale(1.03);
 }
@@ -1648,7 +1646,7 @@ footer.site-footer {
 }
 
 .work-card:hover .work-card__video {
-  opacity: 0.70; /* Hover reels feel like enhancement, not replacement */
+  opacity: 0.95; /* Hover reels are strong and clearly visible */
   filter: grayscale(5%) contrast(1.0) brightness(0.95);
   transform: scale(1);
 }
@@ -1998,6 +1996,46 @@ footer.site-footer {
   #particles-canvas {
     display: none !important;
   }
+}
+
+/* Cinematic Background Visibility & Stacking System */
+#hero-section {
+  background: transparent !important;
+}
+
+#trust-strip-section {
+  background: rgba(10, 10, 15, 0.4) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+#featured-work-trigger {
+  background: transparent !important;
+}
+
+#why-mv-section {
+  background: transparent !important;
+}
+
+#testimonials-section {
+  background: transparent !important;
+}
+
+#hero-section,
+#trust-strip-section,
+#featured-work-trigger,
+#why-mv-section,
+#testimonials-section {
+  position: relative;
+  z-index: 2;
+}
+
+#capabilities-section,
+#process-section,
+#case-study-highlight-section {
+  position: relative;
+  z-index: 3;
+  background-color: var(--bg-light) !important;
 }
 
 
