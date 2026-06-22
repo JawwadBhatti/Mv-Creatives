@@ -998,5 +998,83 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach((counter) => observer.observe(counter));
   })();
 
+  // ==========================================================================
+  // 15. INTERACTIVE COMPETITIVE POSITIONING MATRIX (QUADRANT)
+  // ==========================================================================
+  (function initPositioningMatrix() {
+    const quadrant = document.getElementById('positioning-quadrant');
+    if (!quadrant) return;
+
+    const nodes = quadrant.querySelectorAll('.quadrant-node');
+    const guideX = document.getElementById('guide-x');
+    const guideY = document.getElementById('guide-y');
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Set initial position of nodes to origin (0, 0)
+    nodes.forEach(node => {
+      if (!prefersReducedMotion) {
+        node.style.left = '0%';
+        node.style.bottom = '0%';
+        node.style.opacity = '0';
+      } else {
+        const x = node.getAttribute('data-x');
+        const y = node.getAttribute('data-y');
+        node.style.left = `${x}%`;
+        node.style.bottom = `${y}%`;
+        node.style.opacity = '1';
+      }
+    });
+
+    // Plotting animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!prefersReducedMotion) {
+            nodes.forEach((node, index) => {
+              const x = node.getAttribute('data-x');
+              const y = node.getAttribute('data-y');
+              
+              // Staggered plotting animation
+              setTimeout(() => {
+                node.style.transition = 'left 1.2s cubic-bezier(0.34, 1.56, 0.64, 1), bottom 1.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease';
+                node.style.left = `${x}%`;
+                node.style.bottom = `${y}%`;
+                node.style.opacity = '1';
+              }, index * 200);
+            });
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(quadrant);
+
+    // Guide lines interaction on hover
+    nodes.forEach(node => {
+      node.addEventListener('mouseenter', () => {
+        const x = node.getAttribute('data-x');
+        const y = node.getAttribute('data-y');
+        
+        // Position guides
+        if (guideX) {
+          guideX.style.left = `${x}%`;
+          guideX.style.height = `${y}%`;
+          guideX.style.opacity = '1';
+        }
+        if (guideY) {
+          guideY.style.bottom = `${y}%`;
+          guideY.style.width = `${x}%`;
+          guideY.style.opacity = '1';
+        }
+      });
+
+      node.addEventListener('mouseleave', () => {
+        if (guideX) guideX.style.opacity = '0';
+        if (guideY) guideY.style.opacity = '0';
+      });
+    });
+  })();
+
 });
 

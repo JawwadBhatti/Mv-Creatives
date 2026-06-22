@@ -335,27 +335,95 @@
         </div>
 
         <!-- Competitor matrix block -->
-        <div style="border: 1px solid var(--border-dark); border-radius: 8px; padding: 60px 40px; background-color: var(--bg-hero); text-align: center;" class="reveal-on-scroll">
-          <h4 class="h4-text" style="margin-bottom: 40px;">Competitive Positioning Quadrant</h4>
+        <div class="positioning-quadrant-wrapper reveal-on-scroll">
+          <h4 class="h4-text" style="margin-bottom: 40px; font-family: var(--font-display); font-weight: 700; text-align: center;">Competitive Positioning Matrix</h4>
           
-          <!-- Quad drawing -->
-          <div style="position: relative; max-width: 600px; height: 350px; margin: 0 auto; border-left: 2px solid var(--border-dark); border-bottom: 2px solid var(--border-dark);">
-            <!-- Y-Axis label -->
-            <div style="position: absolute; top: -30px; left: -10px; font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Strategic Depth</div>
-            <!-- X-Axis label -->
-            <div style="position: absolute; bottom: -30px; right: -10px; font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Technical Rigor</div>
-            
-            <!-- Competitors -->
-            <div style="position: absolute; bottom: 30%; left: 20%; color: var(--text-secondary); font-size: 13px;">Traditional Agencies</div>
-            <div style="position: absolute; bottom: 70%; left: 15%; color: var(--text-secondary); font-size: 13px;">Strategic Advisors</div>
-            <div style="position: absolute; bottom: 20%; left: 70%; color: var(--text-secondary); font-size: 13px;">Boutique Dev Shops</div>
-            
-            <!-- MV Creatives Apex Dot -->
-            <div style="position: absolute; bottom: 85%; left: 85%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; z-index: 10;">
-              <div style="width: 14px; height: 14px; border-radius: 50%; background-color: var(--accent-primary); box-shadow: 0 0 25px var(--accent-primary); margin-bottom: 8px;"></div>
-              <div style="font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--text-primary-dark);">MV CREATIVES</div>
+          <div class="quadrant-grid-container" id="positioning-quadrant">
+            <!-- Center Axis Lines -->
+            <div class="quadrant-axis-line horizontal"></div>
+            <div class="quadrant-axis-line vertical"></div>
+
+            <!-- Minor Grid Lines (Blueprint Architecture structure) -->
+            <div class="quadrant-grid-line horizontal" style="top: 25%;"></div>
+            <div class="quadrant-grid-line horizontal" style="top: 75%;"></div>
+            <div class="quadrant-grid-line vertical" style="left: 25%;"></div>
+            <div class="quadrant-grid-line vertical" style="left: 75%;"></div>
+
+            <!-- Axis Labels -->
+            <div class="quadrant-axis-label y-axis">Strategic Depth</div>
+            <div class="quadrant-axis-label x-axis">Technical Rigor</div>
+
+            <!-- Quadrant Sector Titles -->
+            <div class="quadrant-sector-title top-right">Apex Strategy & Engineering</div>
+            <div class="quadrant-sector-title top-left">Advisory & Consultancy</div>
+            <div class="quadrant-sector-title bottom-right">Boutique Engineering Shops</div>
+            <div class="quadrant-sector-title bottom-left">Traditional Agencies</div>
+
+            <!-- Coordinate guides (placed under nodes, toggled via hover) -->
+            <div class="quadrant-node-guide x-guide" id="guide-x"></div>
+            <div class="quadrant-node-guide y-guide" id="guide-y"></div>
+
+            <!-- Nodes (Slide plotted via JS) -->
+            <!-- 1. MV Creatives (Apex Point) -->
+            <div class="quadrant-node mv-creatives" data-x="85" data-y="90">
+              <div class="quadrant-dot"></div>
+              <div class="quadrant-node-label">MV CREATIVES</div>
+              <div class="quadrant-tooltip">
+                <div class="quadrant-tooltip-title">MV Creatives</div>
+                <div class="quadrant-tooltip-desc">Apex engineering and strategic depth. We align every pixel to business outcomes.</div>
+              </div>
+            </div>
+
+            <!-- 2. Strategic Advisors -->
+            <div class="quadrant-node" data-x="22" data-y="78">
+              <div class="quadrant-dot"></div>
+              <div class="quadrant-node-label" style="font-size: 11px; color: var(--text-secondary);">Strategic Advisors</div>
+              <div class="quadrant-tooltip">
+                <div class="quadrant-tooltip-title">Strategic Advisors</div>
+                <div class="quadrant-tooltip-desc">High strategic advisory value, but rely on third-party development teams.</div>
+              </div>
+            </div>
+
+            <!-- 3. Boutique Dev Shops -->
+            <div class="quadrant-node" data-x="82" data-y="28">
+              <div class="quadrant-dot"></div>
+              <div class="quadrant-node-label" style="font-size: 11px; color: var(--text-secondary);">Boutique Dev Shops</div>
+              <div class="quadrant-tooltip">
+                <div class="quadrant-tooltip-title">Boutique Dev Shops</div>
+                <div class="quadrant-tooltip-desc">Highly capable engineering code implementation, but lack brand Strategy.</div>
+              </div>
+            </div>
+
+            <!-- 4. Traditional Agencies -->
+            <div class="quadrant-node" data-x="28" data-y="32">
+              <div class="quadrant-dot"></div>
+              <div class="quadrant-node-label" style="font-size: 11px; color: var(--text-secondary);">Traditional Agencies</div>
+              <div class="quadrant-tooltip">
+                <div class="quadrant-tooltip-title">Traditional Agencies</div>
+                <div class="quadrant-tooltip-desc">Strong visual design execution, but lacking software engineering capability.</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Legend Panel -->
+          <div class="quadrant-legend">
+            <div class="legend-item">
+              <div class="legend-color-dot" style="background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary);"></div>
+              <div>
+                <div class="legend-item-title">MV CREATIVES</div>
+                <div class="legend-item-desc">Pixel-perfect engineering combined with rigorous product strategy.</div>
+              </div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color-dot" style="background: var(--text-secondary);"></div>
+              <div>
+                <div class="legend-item-title">Other Market Players</div>
+                <div class="legend-item-desc">Compromising either on engineering execution or strategic alignment.</div>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -409,7 +477,7 @@
           <!-- Portrait circle -->
           <div style="display: flex; flex-direction: column; align-items: center;">
             <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-primary); margin-bottom: 16px; transition: transform var(--transition-fast);" onmouseenter="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='none';">
-              <img src="./sarah_chen_portrait_1782055729555.png" alt="Sarah Chen Portrait" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter var(--transition-fast);" onmouseenter="this.style.filter='grayscale(0)';" onmouseleave="this.style.filter='grayscale(1)';">
+              <img src="./sarah_chen_portrait_1782055729555.png" alt="Sarah Chen Portrait" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.3); transition: filter var(--transition-fast);" onmouseenter="this.style.filter='grayscale(0.05)';" onmouseleave="this.style.filter='grayscale(0.3)';">
             </div>
             <cite style="font-style: normal; font-weight: 700; color: var(--text-primary-dark);">Sarah Chen</cite>
             <span style="font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px;">VP of Product, Northlight</span>
