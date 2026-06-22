@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MV Creatives — Premium UI/UX & Digital Product Design Studio</title>
-  <meta name="description" content="MV Creatives designs websites, product interfaces, and brand systems for modern companies that care about how they look, feel, and perform. Real work.">
+  <meta name="description" content="MV Creatives designs websites, product interfaces, and brand systems for modern businesses across healthcare, SaaS, ecommerce, real estate, and digital brands.">
   <link rel="stylesheet" href="./index.css">
   <style>
     /* Showroom section styles inspired by Bloomix portfolio */
@@ -72,6 +72,28 @@
     .showroom-card:hover span.view-link {
       transform: translateX(4px);
     }
+
+    /* Editorial card styles to replace stock mockups */
+    .editorial-card-content {
+      position: relative;
+      z-index: 10;
+    }
+    .work-card-wrapper:hover .work-card-visual video {
+      opacity: 1 !important;
+    }
+
+    /* Subtle lift hover effect for CTA buttons */
+    .btn-primary, .btn-secondary {
+      transform: translateY(0);
+      transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast) !important;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px var(--accent-glow) !important;
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
     
     @media (max-width: 767px) {
       .showroom-wrapper {
@@ -137,18 +159,18 @@
       <div class="hero-overlay"></div>
 
       <div class="container hero-content">
-        <div style="max-width: 850px;">
-          <p class="eyebrow-label" style="font-family: var(--font-mono); color: var(--accent-primary); margin-bottom: 24px; font-size: 14px;">[ UI/UX & Design Studio ]</p>
-          <h1 style="font-size: clamp(40px, 6vw, 80px); margin-bottom: 32px; text-transform: uppercase; line-height: 1.05; letter-spacing: -0.04em;">
-            <span class="reveal-line"><span class="reveal-inner revealed">DESIGNING DIGITAL</span></span>
-            <span class="reveal-line"><span class="reveal-inner revealed">EXPERIENCES PEOPLE</span></span>
-            <span class="reveal-line"><span class="reveal-inner revealed">REMEMBER.</span></span>
+        <div style="max-width: 900px;">
+          <p class="eyebrow-label" style="font-family: var(--font-mono); color: var(--accent-primary); margin-bottom: 24px; font-size: 14px;">[ Creative UI/UX Studio ]</p>
+          <h1 style="font-size: clamp(36px, 5.5vw, 76px); margin-bottom: 32px; text-transform: uppercase; line-height: 1.05; letter-spacing: -0.04em;">
+            <span class="reveal-line"><span class="reveal-inner revealed">CREATIVE DIGITAL EXPERIENCES</span></span>
+            <span class="reveal-line"><span class="reveal-inner revealed">FOR BRANDS THAT</span></span>
+            <span class="reveal-line"><span class="reveal-inner revealed">WANT TO STAND OUT.</span></span>
           </h1>
-          <p style="font-size: clamp(16px, 2.2vw, 20px); color: var(--text-secondary); margin-bottom: 48px; max-width: 650px; line-height: 1.6;">
-            MV Creatives designs websites, product interfaces, and brand systems for modern companies that care about how they look, feel, and perform.
+          <p style="font-size: clamp(16px, 2.2vw, 20px); color: var(--text-secondary); margin-bottom: 48px; max-width: 700px; line-height: 1.6;">
+            MV Creatives designs websites, product interfaces, and brand systems for modern businesses across healthcare, SaaS, ecommerce, real estate, and digital brands.
           </p>
           <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-            <a href="./contact.html" class="btn-primary" id="hero-primary-cta">Start with a Brief</a>
+            <a href="https://calendly.com/mahamvohracontra/30min" target="_blank" class="btn-primary" id="hero-primary-cta">Book a Discovery Call</a>
             <a href="./work.html" class="btn-secondary" id="hero-secondary-cta" style="margin-top: 12px;">View Portfolio</a>
           </div>
         </div>
@@ -159,25 +181,29 @@
     <section class="section-padding selected-work-section" id="work-section">
       <div class="container">
         <div style="margin-bottom: 80px;">
-          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 02 // FEATURED WORK ]</span>
-          <h2 style="font-size: clamp(32px, 5vw, 56px); margin-top: 16px; text-transform: uppercase;">Featured Cases</h2>
+          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 02 // SELECTED WORK ]</span>
+          <h2 style="font-size: clamp(32px, 5vw, 56px); margin-top: 16px; text-transform: uppercase;">Featured Projects</h2>
         </div>
 
         <div class="grid-12" style="gap: 80px 24px;">
           
-          <!-- Card 1: Kinetic Data (SaaS) -->
+          <!-- Card 1: Kinetic Data (SaaS & Software) -->
           <div style="grid-column: 1 / span 7;" class="reveal-on-scroll">
             <a href="./case-study.html" class="work-card-wrapper">
-              <div class="work-card-visual" style="height: 480px;">
-                <img src="./portfolio_kinetic_data.png" alt="Kinetic Data SaaS Dashboard preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+              <div class="work-card-visual" style="height: 480px; background: linear-gradient(135deg, #080711 0%, #120e24 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                <video src="./videos/kinetic-hover.mp4" loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s;"></video>
+                <div class="editorial-card-content" style="z-index: 10; text-align: center;">
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); letter-spacing: 0.2em; text-transform: uppercase;">SAAS & SOFTWARE</span>
+                  <h3 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-top: 12px; color: #fff; letter-spacing: -0.03em;">KINETIC DATA</h3>
+                  <div style="width: 40px; height: 1px; background: var(--accent-primary); margin: 20px auto 0 auto;"></div>
+                </div>
               </div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
-                  <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary);">SAAS & SOFTWARE</span>
-                  <h3 style="font-size: 26px; margin-top: 4px; font-weight: 700;">Kinetic Data</h3>
-                  <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary); max-width: 500px;">
-                    Optimizing data-dense dashboard viewports for complex technical database systems.
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">SaaS & Software</span>
+                  <h3 style="font-size: 24px; margin-top: 4px; font-weight: 700;">Kinetic Data</h3>
+                  <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                    Challenge: Complex technical dashboards lacked typographic hierarchy.
                   </p>
                 </div>
                 <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
@@ -190,16 +216,20 @@
           <!-- Card 2: Relish (Healthcare) -->
           <div style="grid-column: 8 / span 5; margin-top: 120px;" class="reveal-on-scroll stagger-1">
             <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="work-card-wrapper">
-              <div class="work-card-visual" style="height: 400px;">
-                <img src="./portfolio_relish.png" alt="Relish Medical Portal UI preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+              <div class="work-card-visual" style="height: 400px; background: linear-gradient(135deg, #040909 0%, #0c1816 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                <video src="./videos/relish-hover.mp4" loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s;"></video>
+                <div class="editorial-card-content" style="z-index: 10; text-align: center;">
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); letter-spacing: 0.2em; text-transform: uppercase;">HEALTHCARE</span>
+                  <h3 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-top: 12px; color: #fff; letter-spacing: -0.03em;">RELISH</h3>
+                  <div style="width: 40px; height: 1px; background: var(--accent-primary); margin: 20px auto 0 auto;"></div>
+                </div>
               </div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
-                  <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary);">HEALTHCARE</span>
-                  <h3 style="font-size: 26px; margin-top: 4px; font-weight: 700;">Relish</h3>
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">Healthcare</span>
+                  <h3 style="font-size: 24px; margin-top: 4px; font-weight: 700;">Relish</h3>
                   <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
-                    Redesigning clinical intake and onboarding flows to minimize patient onboarding friction.
+                    Challenge: Intake processes suffered from onboarding friction.
                   </p>
                 </div>
                 <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
@@ -212,16 +242,20 @@
           <!-- Card 3: Herbal Goodness (Ecommerce) -->
           <div style="grid-column: 2 / span 5;" class="reveal-on-scroll">
             <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="work-card-wrapper">
-              <div class="work-card-visual" style="height: 420px;">
-                <img src="./case_study_mockup_1782055715116.png" alt="Herbal Goodness e-commerce store layout preview">
-                <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
+              <div class="work-card-visual" style="height: 420px; background: linear-gradient(135deg, #0a0614 0%, #150d27 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                <video src="./videos/kinetic-hover.mp4" loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s;"></video>
+                <div class="editorial-card-content" style="z-index: 10; text-align: center;">
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); letter-spacing: 0.2em; text-transform: uppercase;">ECOMMERCE</span>
+                  <h3 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-top: 12px; color: #fff; letter-spacing: -0.03em;">HERBAL GOODNESS</h3>
+                  <div style="width: 40px; height: 1px; background: var(--accent-primary); margin: 20px auto 0 auto;"></div>
+                </div>
               </div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
-                  <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary);">ECOMMERCE</span>
-                  <h3 style="font-size: 26px; margin-top: 4px; font-weight: 700;">Herbal Goodness</h3>
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">Ecommerce</span>
+                  <h3 style="font-size: 24px; margin-top: 4px; font-weight: 700;">Herbal Goodness</h3>
                   <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
-                    Restructuring navigation and shopping paths to elevate product catalog discovery.
+                    Challenge: Catalog structures had high customer dropoff rates.
                   </p>
                 </div>
                 <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
@@ -231,19 +265,23 @@
             </a>
           </div>
 
-          <!-- Card 4: Tiber Health (Healthcare) -->
+          <!-- Card 4: Ground Zero (Real Estate) -->
           <div style="grid-column: 8 / span 5; margin-top: 60px;" class="reveal-on-scroll stagger-1">
             <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="work-card-wrapper">
-              <div class="work-card-visual" style="height: 440px;">
-                <img src="./process_architecture_map_1782055742786.png" alt="Tiber Health platform schema layout preview">
-                <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
+              <div class="work-card-visual" style="height: 440px; background: linear-gradient(135deg, #0c0805 0%, #19120c 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                <video src="./videos/relish-hover.mp4" loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s;"></video>
+                <div class="editorial-card-content" style="z-index: 10; text-align: center;">
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); letter-spacing: 0.2em; text-transform: uppercase;">REAL ESTATE</span>
+                  <h3 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-top: 12px; color: #fff; letter-spacing: -0.03em;">GROUND ZERO</h3>
+                  <div style="width: 40px; height: 1px; background: var(--accent-primary); margin: 20px auto 0 auto;"></div>
+                </div>
               </div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
-                  <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary);">HEALTHCARE & ENTERPRISE</span>
-                  <h3 style="font-size: 26px; margin-top: 4px; font-weight: 700;">Tiber Health</h3>
+                  <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">Real Estate</span>
+                  <h3 style="font-size: 24px; margin-top: 4px; font-weight: 700;">Ground Zero</h3>
                   <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
-                    Structuring clean analytical dashboards for dense clinical and telemetry tracking.
+                    Challenge: Premium real estate platforms lacked cohesive brand identities.
                   </p>
                 </div>
                 <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
@@ -479,7 +517,7 @@
         </p>
         
         <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;">
-          <a href="./contact.html" class="btn-primary">Book a Discovery Call</a>
+          <a href="https://calendly.com/mahamvohracontra/30min" target="_blank" class="btn-primary">Book a Discovery Call</a>
           <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="btn-secondary" style="margin-top: 12px;">Hire via Contra →</a>
         </div>
         

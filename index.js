@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (function initMagneticCTA() {
     if (window.matchMedia('(max-width: 1023px)').matches) return;
 
-    const magnetics = document.querySelectorAll('.btn-primary, .btn-secondary, .filter-pill, .chip-btn');
+    const magnetics = document.querySelectorAll('.filter-pill, .chip-btn');
     magnetics.forEach(el => {
       el.addEventListener('mousemove', (e) => {
         const rect = el.getBoundingClientRect();
