@@ -61,7 +61,7 @@
     <!-- Section 01: Hero (Conviction Zone) -->
     <section class="section-padding-major theme-dark cta-glow-bg" style="min-height: 100vh; display: flex; align-items: center;" id="hero-section">
       <div class="container grid-12" style="align-items: center; width: 100%;">
-        <div style="grid-column: 1 / span 7; z-index: 10;" class="reveal-on-scroll">
+        <div style="grid-column: 1 / span 10; z-index: 10;" class="reveal-on-scroll">
           <p class="eyebrow-label" style="margin-bottom: 16px;">Digital Product Studio</p>
           <h1 class="display-text" style="margin-bottom: 24px; color: var(--text-primary-dark); font-family: var(--font-display);">
             <span class="reveal-line"><span class="reveal-inner">DIGITAL PRODUCTS</span></span>
@@ -74,14 +74,11 @@
           <div class="cta-cluster">
             <a href="./contact.html?path=start-project" class="btn-primary" id="hero-primary-cta">Start a Project</a>
             <a href="./work.html" class="btn-secondary" id="hero-secondary-cta">View Our Work</a>
-            <a href="https://contra.com/mv_creatives" class="link-trust" target="_blank" id="hero-trust-cta">
+            <a href="https://contra.com/mv_creatives" class="link-trust liquid-glass" target="_blank" id="hero-trust-cta">
               <span>Hire on Contra</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
             </a>
           </div>
-        </div>
-        <div style="grid-column: 8 / span 5; display: flex; justify-content: flex-end; overflow: visible;" class="reveal-on-scroll stagger-2">
-          <img src="./hero_abstract_3d_1782055669692.png" alt="MV Creatives Abstract 3D Glass Sculpture" style="max-width: 130%; height: auto; object-fit: contain; transform: translateX(80px); filter: drop-shadow(0 0 50px rgba(92,108,250,0.15));" id="hero-art-image">
         </div>
       </div>
     </section>
@@ -90,12 +87,12 @@
     <section style="border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); padding: 40px 0; background-color: var(--bg-hero);" id="trust-strip-section">
       <div class="ticker-wrap">
         <div class="ticker-content">
-          <span class="ticker-item">+220% REVENUE // 12-WEEK RUNTIME // FINTECH // NORTHLIGHT</span>
-          <span class="ticker-item">-40% FRICTION // 16-WEEK RUNTIME // HEALTHTECH // CAREFLOW</span>
-          <span class="ticker-item">+180% CONVERSION // 8-WEEK RUNTIME // ECOMMERCE // APEXRETAIL</span>
-          <span class="ticker-item">+220% REVENUE // 12-WEEK RUNTIME // FINTECH // NORTHLIGHT</span>
-          <span class="ticker-item">-40% FRICTION // 16-WEEK RUNTIME // HEALTHTECH // CAREFLOW</span>
-          <span class="ticker-item">+180% CONVERSION // 8-WEEK RUNTIME // ECOMMERCE // APEXRETAIL</span>
+          <span class="ticker-item"><span class="counter" data-prefix="+" data-value="220" data-suffix="%">0%</span> REVENUE // <span class="counter" data-value="12" data-suffix="-WEEK">0-WEEK</span> RUNTIME // FINTECH // NORTHLIGHT</span>
+          <span class="ticker-item"><span class="counter" data-prefix="-" data-value="40" data-suffix="%">0%</span> FRICTION // <span class="counter" data-value="16" data-suffix="-WEEK">0-WEEK</span> RUNTIME // HEALTHTECH // CAREFLOW</span>
+          <span class="ticker-item"><span class="counter" data-prefix="+" data-value="180" data-suffix="%">0%</span> CONVERSION // <span class="counter" data-value="8" data-suffix="-WEEK">0-WEEK</span> RUNTIME // ECOMMERCE // APEXRETAIL</span>
+          <span class="ticker-item"><span class="counter" data-prefix="+" data-value="220" data-suffix="%">0%</span> REVENUE // <span class="counter" data-value="12" data-suffix="-WEEK">0-WEEK</span> RUNTIME // FINTECH // NORTHLIGHT</span>
+          <span class="ticker-item"><span class="counter" data-prefix="-" data-value="40" data-suffix="%">0%</span> FRICTION // <span class="counter" data-value="16" data-suffix="-WEEK">0-WEEK</span> RUNTIME // HEALTHTECH // CAREFLOW</span>
+          <span class="ticker-item"><span class="counter" data-prefix="+" data-value="180" data-suffix="%">0%</span> CONVERSION // <span class="counter" data-value="8" data-suffix="-WEEK">0-WEEK</span> RUNTIME // ECOMMERCE // APEXRETAIL</span>
         </div>
       </div>
     </section>
@@ -197,16 +194,16 @@
             <!-- Asymmetric Card 1 -->
             <div style="grid-column: 2 / span 5; z-index: 10;" class="portfolio-card" id="feat-card-1">
               <a href="./case-study.html" style="display: block;">
-                <div class="card-media-container" style="width: 100%; height: 480px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark); position: relative;">
-                  <img src="./portfolio_northlight_1782055685953.png" alt="Northlight Platform Redesign" class="card-static-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);">
-                  <video src="./videos/northlight-hover.mp4" loop muted playsinline class="card-hover-video" style="opacity: 0; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity var(--transition-default); pointer-events: none;"></video>
+                <div class="work-card" style="width: 100%; height: 480px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark); position: relative;">
+                  <img src="./portfolio_northlight_1782055685953.png" alt="Northlight Platform Redesign" class="work-card__preview">
+                  <video src="./videos/northlight-hover.mp4" loop muted playsinline class="work-card__video"></video>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                   <div>
                     <p class="eyebrow-label" style="font-size: 11px;">Northlight</p>
                     <h3 class="h4-text" style="margin-top: 4px;">Fintech Platform Redesign</h3>
                   </div>
-                  <div class="metric-text" style="font-size: 32px;">+220%</div>
+                  <div class="metric-text" style="font-size: 32px;"><span class="counter" data-prefix="+" data-value="220" data-suffix="%">0%</span></div>
                 </div>
               </a>
             </div>
@@ -214,16 +211,16 @@
             <!-- Asymmetric Card 2 -->
             <div style="grid-column: 8 / span 5; transform: translateY(60px); z-index: 10;" class="portfolio-card" id="feat-card-2">
               <a href="./work.html#careflow" style="display: block;">
-                <div class="card-media-container" style="width: 100%; height: 400px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark); position: relative;">
-                  <img src="./portfolio_careflow_1782055700597.png" alt="CareFlow AI Clinical Assistant" class="card-static-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-default);">
-                  <video src="./videos/careflow-hover.mp4" loop muted playsinline class="card-hover-video" style="opacity: 0; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity var(--transition-default); pointer-events: none;"></video>
+                <div class="work-card" style="width: 100%; height: 400px; border-radius: 6px; overflow: hidden; background-color: var(--surface-dark-card); margin-bottom: 24px; border: 1px solid var(--border-dark); position: relative;">
+                  <img src="./portfolio_careflow_1782055700597.png" alt="CareFlow AI Clinical Assistant" class="work-card__preview">
+                  <video src="./videos/careflow-hover.mp4" loop muted playsinline class="work-card__video"></video>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                   <div>
                     <p class="eyebrow-label" style="font-size: 11px;">CareFlow</p>
                     <h3 class="h4-text" style="margin-top: 4px;">AI-Native Assistant</h3>
                   </div>
-                  <div class="metric-text" style="font-size: 32px;">-40%</div>
+                  <div class="metric-text" style="font-size: 32px;"><span class="counter" data-prefix="-" data-value="40" data-suffix="%">0%</span></div>
                 </div>
               </a>
             </div>
@@ -382,7 +379,9 @@
             <a href="./work.html" class="btn-secondary" style="margin-top: 24px;" id="case-highlight-cta">View Our Work</a>
           </div>
           <div style="grid-column: 9 / span 3; text-align: center;" class="reveal-on-scroll stagger-2">
-            <div style="font-size: 120px; font-weight: 700; font-family: var(--font-display); color: var(--accent-primary); line-height: 1.0;">+220%</div>
+            <div style="font-size: 120px; font-weight: 700; font-family: var(--font-display); color: var(--accent-primary); line-height: 1.0;">
+              <span class="counter" data-prefix="+" data-value="220" data-suffix="%">0%</span>
+            </div>
             <div class="eyebrow-label" style="color: var(--text-muted); margin-top: 8px;">Increase in Qualified Leads</div>
           </div>
         </div>
@@ -438,74 +437,35 @@
         </div>
       </div>
     </section>
-
-    <!-- Section 09: Final CTA (Conversion Zone) -->
-    <section class="section-padding-major theme-dark cta-glow-bg" style="border-top: 1px solid var(--border-dark); text-align: center;" id="final-cta-section">
-      <div class="container" style="position: relative; z-index: 10;">
-        <h2 class="display-text" style="margin-bottom: 24px;">Let's make your possible, actual.</h2>
-        <p class="body-large" style="color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Start with a project brief. We’ll review it and respond within 24 hours.
-        </p>
-        
-        <div class="cta-cluster" style="justify-content: center; margin-bottom: 60px;">
-          <a href="./contact.html?path=start-project" class="btn-primary" id="footer-primary-cta">Start a Project</a>
-          <a href="./work.html" class="btn-secondary" id="footer-secondary-cta">View Our Work</a>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span class="eyebrow-label" style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Serving Clients Across US, Australia & Beyond • WE RESPOND WITHIN 24 HOURS</span>
-          <a href="https://contra.com/mv_creatives" class="link-trust" target="_blank" style="font-size: 13px;" id="footer-trust-cta">
-            <span>Hire on Contra</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- Global Footer -->
-  <footer class="site-footer theme-dark">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="./index.html" class="logotype">MV CREATIVES</a>
-          <p class="body-small" style="color: var(--text-secondary); margin-top: 16px;">
-            A digital product studio building brand systems, web interfaces, and AI automation for high-growth firms.
-          </p>
+  <!-- Section 09: Video-Backed Final CTA / Footer -->
+    <section class="final-video-cta" id="final-cta">
+      <video class="final-video-cta__bg" autoplay loop muted playsinline preload="auto" src="./videos/cta-bg.mp4"></video>
+      <div class="final-video-cta__fade final-video-cta__fade--top"></div>
+      <div class="final-video-cta__fade final-video-cta__fade--bottom"></div>
+
+      <div class="final-video-cta__content">
+        <h2>BUILD WHAT OTHERS SAY IS IMPOSSIBLE.</h2>
+        <p>Start with a project brief. We’ll review it and respond within 24 hours.</p>
+
+        <div class="final-video-cta__actions">
+          <a href="./contact.html" class="btn btn-primary">Start a Project</a>
+          <a href="https://contra.com/mv_creatives" target="_blank" class="link-trust liquid-glass">Hire on Contra →</a>
         </div>
-        
-        <div class="footer-navs">
-          <div class="footer-nav-col">
-            <h6>Studio</h6>
-            <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./services.html">Services</a></li>
-              <li><a href="./work.html">Work</a></li>
-              <li><a href="./studio.html">Studio</a></li>
-              <li><a href="./contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-nav-col">
-            <h6>Partnerships</h6>
-            <ul>
-              <li><a href="https://contra.com/mv_creatives" target="_blank">Hire on Contra</a></li>
-              <li><a href="./contact.html?path=start-project">Start a Project</a></li>
-            </ul>
-          </div>
-        </div>
+
+        <footer class="final-footer">
+          <p>© 2026 MV Creatives. All rights reserved.</p>
+          <nav>
+            <a href="./index.html">Home</a>
+            <a href="./services.html">Services</a>
+            <a href="./work.html">Work</a>
+            <a href="./studio.html">Studio</a>
+            <a href="./contact.html">Contact</a>
+          </nav>
+        </footer>
       </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2026 MV Creatives. All rights reserved. Design Intelligence.</p>
-        <div class="social-links">
-          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-          <a href="https://twitter.com" target="_blank">Twitter / X</a>
-          <a href="https://contra.com/mv_creatives" target="_blank">Contra</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
   <script src="./index.js"></script>
 </body>
