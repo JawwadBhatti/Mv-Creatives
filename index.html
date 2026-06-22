@@ -4,74 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MV Creatives — Premium UI/UX & Digital Product Design Studio</title>
-  <meta name="description" content="MV Creatives designs premium digital experiences. We bridge interface design with engineering to build high-performance products. Real work, proven outcomes.">
+  <meta name="description" content="MV Creatives designs websites, product interfaces, and brand systems for modern companies that care about how they look, feel, and perform. Real work.">
   <link rel="stylesheet" href="./index.css">
   <style>
-    /* Portfolio Showcase Horizontal Marquee styling */
-    .showcase-marquee {
-      display: flex;
-      overflow: hidden;
-      user-select: none;
-      padding: 40px 0;
-      background: #08080f;
-      border-top: 1px solid var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-      position: relative;
-    }
-    .showcase-marquee::before, .showcase-marquee::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 150px;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .showcase-marquee::before {
-      left: 0;
-      background: linear-gradient(to right, #050505 0%, rgba(5,5,5,0) 100%);
-    }
-    .showcase-marquee::after {
-      right: 0;
-      background: linear-gradient(to left, #050505 0%, rgba(5,5,5,0) 100%);
-    }
-    .marquee-content {
-      display: flex;
+    /* Showroom section styles inspired by Bloomix portfolio */
+    .showroom-wrapper {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
       gap: 40px;
-      animation: marquee-scroll 45s linear infinite;
-      white-space: nowrap;
-      min-width: 100%;
-    }
-    .marquee-item {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 20px 30px;
       background: var(--bg-card);
       border: 1px solid var(--border-light);
       border-radius: 8px;
-      min-width: 280px;
+      overflow: hidden;
       transition: border-color var(--transition-fast), transform var(--transition-fast);
     }
-    .marquee-item:hover {
+    .showroom-card:hover .showroom-wrapper {
       border-color: var(--accent-primary);
-      transform: translateY(-2px);
+      transform: translateY(-4px);
     }
-    .marquee-item span.category {
+    .showroom-visual {
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: transform var(--transition-default);
+    }
+    .showroom-visual .monogram {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 72px;
+      color: rgba(255, 255, 255, 0.08);
+      letter-spacing: -0.05em;
+    }
+    .showroom-info {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .showroom-info span.category {
       font-family: var(--font-mono);
-      font-size: 10px;
+      font-size: 11px;
       color: var(--accent-primary);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
     }
-    .marquee-item h4 {
-      font-size: 18px;
-      margin-top: 4px;
+    .showroom-info h3 {
+      font-size: clamp(24px, 3vw, 32px);
+      margin-top: 8px;
+      margin-bottom: 12px;
       font-weight: 700;
     }
-    @keyframes marquee-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .showroom-info p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .showroom-info span.view-link {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent-primary);
+      font-weight: 700;
+      transition: transform var(--transition-fast);
+    }
+    .showroom-card:hover span.view-link {
+      transform: translateX(4px);
+    }
+    
+    @media (max-width: 767px) {
+      .showroom-wrapper {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .showroom-visual {
+        height: 180px;
+      }
+      .showroom-info {
+        padding: 24px;
+      }
     }
   </style>
 </head>
@@ -125,15 +137,15 @@
       <div class="hero-overlay"></div>
 
       <div class="container hero-content">
-        <div style="max-width: 800px;">
+        <div style="max-width: 850px;">
           <p class="eyebrow-label" style="font-family: var(--font-mono); color: var(--accent-primary); margin-bottom: 24px; font-size: 14px;">[ UI/UX & Design Studio ]</p>
-          <h1 style="font-size: clamp(40px, 7vw, 84px); margin-bottom: 32px; text-transform: uppercase; line-height: 1.05;">
-            <span class="reveal-line"><span class="reveal-inner revealed">MV CREATIVES</span></span>
-            <span class="reveal-line"><span class="reveal-inner revealed">DESIGNS PREMIUM</span></span>
-            <span class="reveal-line"><span class="reveal-inner revealed">DIGITAL EXPERIENCES.</span></span>
+          <h1 style="font-size: clamp(40px, 6vw, 80px); margin-bottom: 32px; text-transform: uppercase; line-height: 1.05; letter-spacing: -0.04em;">
+            <span class="reveal-line"><span class="reveal-inner revealed">DESIGNING DIGITAL</span></span>
+            <span class="reveal-line"><span class="reveal-inner revealed">EXPERIENCES PEOPLE</span></span>
+            <span class="reveal-line"><span class="reveal-inner revealed">REMEMBER.</span></span>
           </h1>
-          <p style="font-size: clamp(16px, 2.5vw, 20px); color: var(--text-secondary); margin-bottom: 48px; max-width: 600px;">
-            We bridge interface design with engineering to build high-performance products. Real work, real links, consistent design.
+          <p style="font-size: clamp(16px, 2.2vw, 20px); color: var(--text-secondary); margin-bottom: 48px; max-width: 650px; line-height: 1.6;">
+            MV Creatives designs websites, product interfaces, and brand systems for modern companies that care about how they look, feel, and perform.
           </p>
           <div style="display: flex; gap: 24px; flex-wrap: wrap;">
             <a href="./contact.html" class="btn-primary" id="hero-primary-cta">Start with a Brief</a>
@@ -147,8 +159,8 @@
     <section class="section-padding selected-work-section" id="work-section">
       <div class="container">
         <div style="margin-bottom: 80px;">
-          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 02 // SELECTED CASES ]</span>
-          <h2 style="font-size: clamp(32px, 5vw, 56px); margin-top: 16px;">Featured Work</h2>
+          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 02 // FEATURED WORK ]</span>
+          <h2 style="font-size: clamp(32px, 5vw, 56px); margin-top: 16px; text-transform: uppercase;">Featured Cases</h2>
         </div>
 
         <div class="grid-12" style="gap: 80px 24px;">
@@ -160,15 +172,16 @@
                 <img src="./portfolio_kinetic_data.png" alt="Kinetic Data SaaS Dashboard preview">
                 <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
                   <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary);">SAAS & SOFTWARE</span>
-                  <h3 style="font-size: 24px; margin-top: 4px;">Kinetic Data</h3>
-                  <p style="margin-top: 8px; font-size: 14px;"><strong>Challenge:</strong> Complex technical dashboards lacked typographic hierarchy.<br><strong>Solution:</strong> Engineered a modular design system optimized for data-dense rendering.</p>
+                  <h3 style="font-size: 26px; margin-top: 4px; font-weight: 700;">Kinetic Data</h3>
+                  <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary); max-width: 500px;">
+                    Optimizing data-dense dashboard viewports for complex technical database systems.
+                  </p>
                 </div>
-                <div style="text-align: right;">
-                  <span style="font-family: var(--font-mono); font-size: 24px; color: var(--text-primary); font-weight: 700;">[TBD]</span>
-                  <p style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-top: 4px;">Outcome</p>
+                <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
+                  <span style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary); font-weight: 700;">View Project →</span>
                 </div>
               </div>
             </a>
@@ -176,20 +189,21 @@
 
           <!-- Card 2: Relish (Healthcare) -->
           <div style="grid-column: 8 / span 5; margin-top: 120px;" class="reveal-on-scroll stagger-1">
-            <a href="./work.html" class="work-card-wrapper">
+            <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="work-card-wrapper">
               <div class="work-card-visual" style="height: 400px;">
                 <img src="./portfolio_relish.png" alt="Relish Medical Portal UI preview">
                 <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
                   <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary);">HEALTHCARE</span>
-                  <h3 style="font-size: 24px; margin-top: 4px;">Relish</h3>
-                  <p style="margin-top: 8px; font-size: 14px;"><strong>Challenge:</strong> Intake processes suffered from patient onboarding friction.<br><strong>Solution:</strong> Redesigned healthcare portal flows focusing on clear layout structure.</p>
+                  <h3 style="font-size: 26px; margin-top: 4px; font-weight: 700;">Relish</h3>
+                  <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                    Redesigning clinical intake and onboarding flows to minimize patient onboarding friction.
+                  </p>
                 </div>
-                <div style="text-align: right;">
-                  <span style="font-family: var(--font-mono); font-size: 24px; color: var(--text-primary); font-weight: 700;">[TBD]</span>
-                  <p style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-top: 4px;">Outcome</p>
+                <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
+                  <span style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary); font-weight: 700;">View Project →</span>
                 </div>
               </div>
             </a>
@@ -197,20 +211,21 @@
 
           <!-- Card 3: Herbal Goodness (Ecommerce) -->
           <div style="grid-column: 2 / span 5;" class="reveal-on-scroll">
-            <a href="./work.html" class="work-card-wrapper">
+            <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="work-card-wrapper">
               <div class="work-card-visual" style="height: 420px;">
                 <img src="./case_study_mockup_1782055715116.png" alt="Herbal Goodness e-commerce store layout preview">
                 <video src="./videos/kinetic-hover.mp4" loop muted playsinline></video>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
                   <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary);">ECOMMERCE</span>
-                  <h3 style="font-size: 24px; margin-top: 4px;">Herbal Goodness</h3>
-                  <p style="margin-top: 8px; font-size: 14px;"><strong>Challenge:</strong> Catalog structures had high customer dropoff rates.<br><strong>Solution:</strong> Restructured store layouts to prioritize visual-first product discovery.</p>
+                  <h3 style="font-size: 26px; margin-top: 4px; font-weight: 700;">Herbal Goodness</h3>
+                  <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                    Restructuring navigation and shopping paths to elevate product catalog discovery.
+                  </p>
                 </div>
-                <div style="text-align: right;">
-                  <span style="font-family: var(--font-mono); font-size: 24px; color: var(--text-primary); font-weight: 700;">[TBD]</span>
-                  <p style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-top: 4px;">Outcome</p>
+                <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
+                  <span style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary); font-weight: 700;">View Project →</span>
                 </div>
               </div>
             </a>
@@ -218,20 +233,21 @@
 
           <!-- Card 4: Tiber Health (Healthcare) -->
           <div style="grid-column: 8 / span 5; margin-top: 60px;" class="reveal-on-scroll stagger-1">
-            <a href="./work.html" class="work-card-wrapper">
+            <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="work-card-wrapper">
               <div class="work-card-visual" style="height: 440px;">
                 <img src="./process_architecture_map_1782055742786.png" alt="Tiber Health platform schema layout preview">
                 <video src="./videos/relish-hover.mp4" loop muted playsinline></video>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
                   <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary);">HEALTHCARE & ENTERPRISE</span>
-                  <h3 style="font-size: 24px; margin-top: 4px;">Tiber Health</h3>
-                  <p style="margin-top: 8px; font-size: 14px;"><strong>Challenge:</strong> Clinical telemetry systems lacked unified desktop viewports.<br><strong>Solution:</strong> Engineered analytical dashboard systems displaying dense health data.</p>
+                  <h3 style="font-size: 26px; margin-top: 4px; font-weight: 700;">Tiber Health</h3>
+                  <p style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                    Structuring clean analytical dashboards for dense clinical and telemetry tracking.
+                  </p>
                 </div>
-                <div style="text-align: right;">
-                  <span style="font-family: var(--font-mono); font-size: 24px; color: var(--text-primary); font-weight: 700;">[TBD]</span>
-                  <p style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-top: 4px;">Outcome</p>
+                <div style="text-align: right; margin-top: 16px; white-space: nowrap;">
+                  <span style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary); font-weight: 700;">View Project →</span>
                 </div>
               </div>
             </a>
@@ -378,49 +394,79 @@
       </div>
     </section>
 
-    <!-- 07 PORTFOLIO SHOWCASE: Sliding Marquee of Real Work -->
-    <section class="section-padding" style="border-top: 1px solid var(--border-light); background: #050505; overflow: hidden;" id="portfolio-showcase-section">
-      <div class="container" style="margin-bottom: 40px;">
-        <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 07 // PORTFOLIO INDEX ]</span>
-        <h2 style="font-size: clamp(32px, 4vw, 48px); margin-top: 16px;">Our Creative Footprint</h2>
+    <!-- 07 PORTFOLIO SHOWCASE: Premium Showroom of Real Work -->
+    <section class="section-padding" style="border-top: 1px solid var(--border-light); background: #050505;" id="portfolio-showcase-section">
+      <div class="container" style="margin-bottom: 60px;">
+        <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 07 // PORTFOLIO SHOWROOM ]</span>
+        <h2 style="font-size: clamp(32px, 4vw, 48px); margin-top: 16px; text-transform: uppercase;">Selected Showroom</h2>
       </div>
 
-      <div class="showcase-marquee">
-        <div class="marquee-content">
-          <!-- Slide items (repeated for continuous scroll effect) -->
-          <div class="marquee-item"><span class="category">SaaS</span><h4>Focus App</h4></div>
-          <div class="marquee-item"><span class="category">Software</span><h4>Lynk Quiz</h4></div>
-          <div class="marquee-item"><span class="category">Healthcare</span><h4>Vera Grov</h4></div>
-          <div class="marquee-item"><span class="category">Healthcare</span><h4>The IV Company</h4></div>
-          <div class="marquee-item"><span class="category">Real Estate</span><h4>Ground Zero</h4></div>
-          <div class="marquee-item"><span class="category">Real Estate</span><h4>Lender Search</h4></div>
-          <div class="marquee-item"><span class="category">Ecommerce</span><h4>Wabi Baby</h4></div>
-          <div class="marquee-item"><span class="category">Construction</span><h4>DADU Construction</h4></div>
-          <div class="marquee-item"><span class="category">Marketing</span><h4>John Murphy</h4></div>
-          <div class="marquee-item"><span class="category">Marketing</span><h4>Digital Marauders</h4></div>
-          <div class="marquee-item"><span class="category">Sports</span><h4>Nextpoint Courts</h4></div>
-          <div class="marquee-item"><span class="category">Marine</span><h4>Star Marina</h4></div>
-          <div class="marquee-item"><span class="category">Non-Profit</span><h4>YSI</h4></div>
-          <div class="marquee-item"><span class="category">Engineering</span><h4>Alan Margolin</h4></div>
-          <div class="marquee-item"><span class="category">Gaming</span><h4>Esports Boost</h4></div>
-          
-          <!-- Repeat list for loop -->
-          <div class="marquee-item"><span class="category">SaaS</span><h4>Focus App</h4></div>
-          <div class="marquee-item"><span class="category">Software</span><h4>Lynk Quiz</h4></div>
-          <div class="marquee-item"><span class="category">Healthcare</span><h4>Vera Grov</h4></div>
-          <div class="marquee-item"><span class="category">Healthcare</span><h4>The IV Company</h4></div>
-          <div class="marquee-item"><span class="category">Real Estate</span><h4>Ground Zero</h4></div>
-          <div class="marquee-item"><span class="category">Real Estate</span><h4>Lender Search</h4></div>
-          <div class="marquee-item"><span class="category">Ecommerce</span><h4>Wabi Baby</h4></div>
-          <div class="marquee-item"><span class="category">Construction</span><h4>DADU Construction</h4></div>
-          <div class="marquee-item"><span class="category">Marketing</span><h4>John Murphy</h4></div>
-          <div class="marquee-item"><span class="category">Marketing</span><h4>Digital Marauders</h4></div>
-          <div class="marquee-item"><span class="category">Sports</span><h4>Nextpoint Courts</h4></div>
-          <div class="marquee-item"><span class="category">Marine</span><h4>Star Marina</h4></div>
-          <div class="marquee-item"><span class="category">Non-Profit</span><h4>YSI</h4></div>
-          <div class="marquee-item"><span class="category">Engineering</span><h4>Alan Margolin</h4></div>
-          <div class="marquee-item"><span class="category">Gaming</span><h4>Esports Boost</h4></div>
+      <div class="container" style="display: flex; flex-direction: column; gap: 48px;">
+        
+        <!-- Showroom Item 1: Focus App -->
+        <div class="showroom-card reveal-on-scroll">
+          <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="showroom-wrapper">
+            <div class="showroom-visual" style="background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);">
+              <span class="monogram">FA</span>
+            </div>
+            <div class="showroom-info">
+              <span class="category">SaaS</span>
+              <h3>Focus App</h3>
+              <p>Task automation interface design & focused workflow environments.</p>
+              <span class="view-link">View Project →</span>
+            </div>
+          </a>
         </div>
+
+        <!-- Showroom Item 2: Ground Zero -->
+        <div class="showroom-card reveal-on-scroll">
+          <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="showroom-wrapper">
+            <div class="showroom-visual" style="background: linear-gradient(135deg, #451a03 0%, #1c1917 100%);">
+              <span class="monogram">GZ</span>
+            </div>
+            <div class="showroom-info">
+              <span class="category">Real Estate</span>
+              <h3>Ground Zero</h3>
+              <p>Premium real estate brand styling & listing interactive map viewports.</p>
+              <span class="view-link">View Project →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Showroom Item 3: Wabi Baby -->
+        <div class="showroom-card reveal-on-scroll">
+          <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="showroom-wrapper">
+            <div class="showroom-visual" style="background: linear-gradient(135deg, #3b0764 0%, #120024 100%);">
+              <span class="monogram">WB</span>
+            </div>
+            <div class="showroom-info">
+              <span class="category">Ecommerce</span>
+              <h3>Wabi Baby</h3>
+              <p>D2C infant retail product catalogs & responsive shop layout designs.</p>
+              <span class="view-link">View Project →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Showroom Item 4: Nextpoint Courts -->
+        <div class="showroom-card reveal-on-scroll">
+          <a href="https://www.figma.com/design/INJXBaM0pTz0l2FMqtHEhz/UI-UX-Portfolio" target="_blank" class="showroom-wrapper">
+            <div class="showroom-visual" style="background: linear-gradient(135deg, #701a75 0%, #2e1065 100%);">
+              <span class="monogram">NC</span>
+            </div>
+            <div class="showroom-info">
+              <span class="category">Sports</span>
+              <h3>Nextpoint Courts</h3>
+              <p>Athletic booking layouts & membership administration systems.</p>
+              <span class="view-link">View Project →</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="container" style="margin-top: 60px; text-align: center;">
+        <a href="./work.html" class="btn-primary">Explore Full Archive (22 Projects)</a>
       </div>
     </section>
 
