@@ -132,6 +132,21 @@
 </head>
 <body class="theme-dark">
 
+  <!-- Premium Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-content">
+      <!-- MV Logo SVG Symbol -->
+      <svg class="loader-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80">
+        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="#4F46E5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="logo-path" />
+        <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="logo-path-inner" />
+      </svg>
+      <div class="loader-wordmark">MV CREATIVES</div>
+      <div class="loader-line-container">
+        <div class="loader-line"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Global Navigation Header -->
   <header class="site-header scrolled" id="main-header" style="background-color: rgba(5, 5, 5, 0.96);">
     <div class="container header-container">
@@ -213,22 +228,22 @@
                 </div>
               </div>
 
-              <!-- Step 2: Budget Range -->
+              <!-- Step 2: Project Scope -->
               <div class="brief-step" data-step="2">
                 <span class="eyebrow-label">[ Step 2 of 5 ]</span>
-                <h3 style="margin-top: 12px;">Budget Range</h3>
-                <p>Slide to define your investment range for milestone deliverables.</p>
+                <h3 style="margin-top: 12px;">Project Scope</h3>
+                <p>Select all services that apply to your project needs.</p>
                 
-                <div class="range-slider-container">
-                  <input type="range" id="budget-range" class="range-slider" min="1" max="3" value="2" step="1">
-                  <div class="slider-labels">
-                    <span>$10k - $25k</span>
-                    <span>$25k - $50k</span>
-                    <span>$50k+</span>
-                  </div>
-                  <div class="budget-result">
-                    Selected Budget: <span id="budget-value-display">$25k - $50k</span>
-                  </div>
+                <div class="chip-group" id="scope-chips" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+                  <button type="button" class="chip-btn chip-scope" data-value="Website Design">Website Design</button>
+                  <button type="button" class="chip-btn chip-scope" data-value="SaaS Product Design">SaaS Product Design</button>
+                  <button type="button" class="chip-btn chip-scope" data-value="Mobile App Design">Mobile App Design</button>
+                  <button type="button" class="chip-btn chip-scope" data-value="Design System">Design System</button>
+                  <button type="button" class="chip-btn chip-scope" data-value="Brand Identity">Brand Identity</button>
+                  <button type="button" class="chip-btn chip-scope" data-value="Webflow">Webflow</button>
+                  <button type="button" class="chip-btn chip-scope" data-value="Framer">Framer</button>
+                  <button type="button" class="chip-btn chip-scope" data-value="WordPress">WordPress</button>
+                  <button type="button" class="chip-btn chip-scope" data-value="Other">Other</button>
                 </div>
               </div>
 

@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Data Store
     const selectedBriefData = {
       projectType: '',
-      budget: '$25k - $50k',
+      scope: [],
       timeline: '',
       goals: ''
     };
@@ -277,19 +277,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Step 2 Budget Slider
-    const budgetSlider = document.getElementById('budget-range');
-    const budgetVal = document.getElementById('budget-value-display');
-    if (budgetSlider && budgetVal) {
-      budgetSlider.addEventListener('input', () => {
-        const val = budgetSlider.value;
-        let txt = '$10k - $25k';
-        if (val === '2') txt = '$25k - $50k';
-        if (val === '3') txt = '$50k+';
-        budgetVal.textContent = txt;
-        selectedBriefData.budget = txt;
+    // Step 2 Project Scope Chips (Multi-Select)
+    const scopeChips = builder.querySelectorAll('.chip-scope');
+    scopeChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chip.classList.toggle('active');
+        const val = chip.getAttribute('data-value');
+        if (chip.classList.contains('active')) {
+          if (!selectedBriefData.scope.includes(val)) {
+            selectedBriefData.scope.push(val);
+          }
+        } else {
+          selectedBriefData.scope = selectedBriefData.scope.filter(s => s !== val);
+        }
       });
-    }
+    });
 
     // Step 3 Timeline Chips
     const timelineChips = builder.querySelectorAll('.chip-timeline');
@@ -356,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.addEventListener('click', () => {
         // Build final qualification query parameters and redirect to Calendly schedule link
         const calendlyUrl = `https://calendly.com/mahamvohracontra/30min?a1=${encodeURIComponent(
-          `Type: ${selectedBriefData.projectType} // Budget: ${selectedBriefData.budget} // Timeline: ${selectedBriefData.timeline} // Goals: ${selectedBriefData.goals}`
+          `Type: ${selectedBriefData.projectType} // Scope: ${selectedBriefData.scope.join(', ')} // Timeline: ${selectedBriefData.timeline} // Goals: ${selectedBriefData.goals}`
         )}`;
         window.open(calendlyUrl, '_blank');
       });
