@@ -2266,3 +2266,16 @@ img[loading="eager"] {
   text-shadow: none !important;
   box-shadow: none !important;
 }
+
+/* Flagship Showcase Mockup hover animation */
+.flagship-mockup-hover {
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease !important;
+}
+.flagship-mockup-hover:hover {
+  border-color: rgba(184, 167, 255, 0.25) !important;
+  box-shadow: 0 50px 100px rgba(184, 167, 255, 0.15) !important;
+  transform: translateY(-4px);
+}
+.flagship-mockup-hover:hover img {
+  transform: scale(1.015) !important;
+}
