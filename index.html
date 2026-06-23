@@ -5,12 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MV Creatives — Premium UI/UX & Digital Product Design Studio</title>
   <meta name="description" content="MV Creatives designs websites, product interfaces, and brand systems for modern businesses across healthcare, SaaS, ecommerce, real estate, and digital brands.">
+  
+  <!-- Font preconnect & loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Preload critical first-scroll & hero assets -->
+  <link rel="preload" as="image" href="./videos/hero-poster.webp">
+  <link rel="preload" as="image" href="./screenshot_kinetic_data.webp">
+  <link rel="preload" as="image" href="./screenshot_relish.webp">
+  <link rel="preload" as="image" href="./screenshot_ground_zero.webp">
+  <link rel="preload" as="image" href="./screenshot_star_marina.webp">
+
   <link rel="stylesheet" href="./index.css">
 </head>
 <body class="theme-dark">
 
   <!-- Fixed Hero Cinematic Video Backdrop -->
-  <video class="fixed-video-bg" autoplay muted loop playsinline preload="auto" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_135830_bb6491d1-9b66-4aec-9722-13b4dfe3fb46.mp4"></video>
+  <video class="fixed-video-bg" autoplay muted loop playsinline preload="metadata" poster="./videos/hero-poster.webp" src="./videos/hero-bg.mp4"></video>
 
   <!-- Premium Page Loader -->
   <div id="page-loader" class="page-loader">
@@ -123,13 +136,13 @@
                       <div class="browser-address">app.kineticdata.com</div>
                     </div>
                     <div class="browser-content" style="height: 240px;">
-                      <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Platform UI Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                      <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data Platform UI Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high" >
                     </div>
                   </div>
                   <div class="phone-mockup pos-bottom-right" style="transform: translateY(-10px);">
                     <div class="phone-speaker"></div>
                     <div class="phone-screen">
-                      <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                      <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high" >
                     </div>
                   </div>
                 </div>
@@ -164,13 +177,13 @@
                       <div class="browser-address">hellorelish.com</div>
                     </div>
                     <div class="browser-content" style="height: 240px;">
-                      <img src="./screenshot_relish.png" alt="Relish Medical Portal UI Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                      <img src="./screenshot_relish.webp" alt="Relish Medical Portal UI Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_relish-480w.webp 480w, ./screenshot_relish-768w.webp 768w, ./screenshot_relish.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
                     </div>
                   </div>
                   <div class="phone-mockup pos-bottom-left" style="transform: translateY(-10px);">
                     <div class="phone-speaker"></div>
                     <div class="phone-screen">
-                      <img src="./screenshot_relish.png" alt="Relish Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                      <img src="./screenshot_relish.webp" alt="Relish Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" srcset="./screenshot_relish-480w.webp 480w, ./screenshot_relish-768w.webp 768w, ./screenshot_relish.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
                     </div>
                   </div>
                 </div>
@@ -205,13 +218,13 @@
                       <div class="browser-address">groundzerooc.com</div>
                     </div>
                     <div class="browser-content" style="height: 240px;">
-                      <img src="./screenshot_ground_zero.png" alt="Ground Zero Platform Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                      <img src="./screenshot_ground_zero.webp" alt="Ground Zero Platform Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_ground_zero-480w.webp 480w, ./screenshot_ground_zero-768w.webp 768w, ./screenshot_ground_zero.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
                     </div>
                   </div>
                   <div class="phone-mockup pos-bottom-right" style="transform: translateY(-10px);">
                     <div class="phone-speaker"></div>
                     <div class="phone-screen">
-                      <img src="./screenshot_ground_zero.png" alt="Ground Zero Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                      <img src="./screenshot_ground_zero.webp" alt="Ground Zero Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" srcset="./screenshot_ground_zero-480w.webp 480w, ./screenshot_ground_zero-768w.webp 768w, ./screenshot_ground_zero.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
                     </div>
                   </div>
                 </div>
@@ -246,13 +259,13 @@
                       <div class="browser-address">star-marina.com</div>
                     </div>
                     <div class="browser-content" style="height: 240px;">
-                      <img src="./screenshot_star_marina.png" alt="Star Marina Platform Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                      <img src="./screenshot_star_marina.webp" alt="Star Marina Platform Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_star_marina-480w.webp 480w, ./screenshot_star_marina-768w.webp 768w, ./screenshot_star_marina.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
                     </div>
                   </div>
                   <div class="phone-mockup pos-bottom-left" style="transform: translateY(-10px);">
                     <div class="phone-speaker"></div>
                     <div class="phone-screen">
-                      <img src="./screenshot_star_marina.png" alt="Star Marina Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                      <img src="./screenshot_star_marina.webp" alt="Star Marina Mobile" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" srcset="./screenshot_star_marina-480w.webp 480w, ./screenshot_star_marina-768w.webp 768w, ./screenshot_star_marina.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
                     </div>
                   </div>
                 </div>
@@ -457,6 +470,6 @@
 
   </main>
 
-  <script src="./index.js"></script>
+  <script src="./index.js" defer></script>
 </body>
 </html>

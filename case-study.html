@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case Study: Kinetic Data SaaS System — MV Creatives</title>
   <meta name="description" content="Detailed design analysis of the Kinetic Data SaaS system overhaul: engineering a modular design system optimized for data-dense dashboard viewports.">
+  
+  <!-- Font preconnect & loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./index.css">
   <style>
     /* Specific Case Study Layout Config */
@@ -177,7 +183,7 @@
 
     <!-- 01 Hero Cover -->
     <section class="case-study-hero">
-      <img class="case-study-hero__bg" src="./screenshot_kinetic_data.png" alt="Kinetic Data Dashboard Background">
+      <img class="case-study-hero__bg" src="./screenshot_kinetic_data.webp" alt="Kinetic Data Dashboard Background" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high" >
       <div class="case-study-hero__overlay"></div>
       
       <div class="container" style="position: relative; z-index: 2; width: 100%;">
@@ -276,13 +282,13 @@
                   <div class="browser-address">app.kineticdata.com/analytics</div>
                 </div>
                 <div class="browser-content" style="height: 300px;">
-                  <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Dashboard redesign view" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                  <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data Dashboard redesign view" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
                 </div>
               </div>
               <div class="phone-mockup pos-bottom-right" style="transform: translateY(-20px);">
                 <div class="phone-speaker"></div>
                 <div class="phone-screen">
-                  <img src="./screenshot_kinetic_data.png" alt="Kinetic Data Mobile view">
+                  <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data Mobile view" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
                 </div>
               </div>
             </div>
@@ -374,6 +380,6 @@
     </div>
   </section>
 
-  <script src="./index.js"></script>
+  <script src="./index.js" defer></script>
 </body>
 </html>

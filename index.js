@@ -42,8 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. CUSTOM GLASS CURSOR FOLLOWER
   // ==========================================================================
   (function initCustomCursor() {
-    // Only initialize on desktop hover devices
+    // Only initialize on desktop hover devices and if motion is not reduced
     if (window.matchMedia('(max-width: 1023px)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-    });
+    }, { passive: true });
 
     // Smooth cursor follow with requestAnimationFrame (lag lerp physics)
     function updateCursor() {
@@ -90,15 +91,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
     if (!header) return;
 
+    let ticking = false;
     function handleScroll() {
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
   })();
 
@@ -362,18 +370,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   (function initMagneticCTA() {
     if (window.matchMedia('(max-width: 1023px)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const magnetics = document.querySelectorAll('.filter-pill, .chip-btn');
     magnetics.forEach(el => {
+      let ticking = false;
+      let mouseEvent = null;
+
       el.addEventListener('mousemove', (e) => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-      });
+        mouseEvent = e;
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            if (mouseEvent) {
+              const rect = el.getBoundingClientRect();
+              const x = mouseEvent.clientX - rect.left - rect.width / 2;
+              const y = mouseEvent.clientY - rect.top - rect.height / 2;
+              el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
 
       el.addEventListener('mouseleave', () => {
-        el.style.transform = 'translate(0, 0)';
+        mouseEvent = null;
+        window.requestAnimationFrame(() => {
+          el.style.transform = 'translate(0, 0)';
+        });
       });
     });
   })();
@@ -382,17 +406,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // 11. HERO MOUSE DEPTH PARALLAX
   // ==========================================================================
   (function initHeroMouseDepth() {
+    if (window.matchMedia('(max-width: 1023px)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const hero = document.getElementById('hero-section');
     if (!hero) return;
 
     const content = hero.querySelector('.hero-content');
     if (!content) return;
 
+    let mouseX = 0, mouseY = 0;
+    let ticking = false;
+
     document.addEventListener('mousemove', (e) => {
-      const x = (window.innerWidth / 2 - e.clientX) / 60;
-      const y = (window.innerHeight / 2 - e.clientY) / 60;
-      content.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    });
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const x = (window.innerWidth / 2 - mouseX) / 60;
+          const y = (window.innerHeight / 2 - mouseY) / 60;
+          content.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
   })();
 
   // ==========================================================================
@@ -464,10 +502,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    let stackedTicking = false;
     window.addEventListener('scroll', () => {
-      requestAnimationFrame(updateCardStacking);
-    });
-    window.addEventListener('resize', updateCardStacking);
+      if (!stackedTicking) {
+        window.requestAnimationFrame(() => {
+          updateCardStacking();
+          stackedTicking = false;
+        });
+        stackedTicking = true;
+      }
+    }, { passive: true });
+    window.addEventListener('resize', updateCardStacking, { passive: true });
     updateCardStacking();
+  })();
+
+  // ==========================================================================
+  // 14. IMAGE FADE-IN AFTER LOAD
+  // ==========================================================================
+  (function initImageFadeIn() {
+    const lazyImages = document.querySelectorAll('img');
+    lazyImages.forEach(img => {
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+        });
+        img.addEventListener('error', () => {
+          img.classList.add('load-error');
+        });
+      }
+    });
   })();
 });

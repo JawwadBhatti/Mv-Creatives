@@ -6,7 +6,7 @@
 /* --------------------------------------------------------------------------
    SECTION 1: DESIGN SYSTEM TOKENS & CSS VARIABLES
    -------------------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
 
 :root {
   /* Colors */
@@ -371,7 +371,7 @@ a {
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
 .filter-pill.active, .filter-pill:hover {
@@ -423,7 +423,7 @@ a {
   padding: 12px 24px;
   border-radius: 6px;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .chip-btn.active, .chip-btn:hover {
@@ -469,7 +469,7 @@ a {
   padding: 14px 28px;
   border-radius: 6px;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .btn-primary:hover {
@@ -1665,7 +1665,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 8px;
   color: var(--text-secondary);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .industry-tag:hover {
@@ -1766,3 +1766,57 @@ a {
     gap: 12px;
   }
 }
+
+/* ==========================================================================
+   14. PERFORMANCE OPTIMIZATION PASS: LAZY IMAGE FADE-IN & SHIMMER SKELETON
+   ========================================================================== */
+img {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+img.loaded {
+  opacity: 1;
+}
+
+/* Skeleton loader with subtle shimmer */
+.browser-content, .phone-screen, .macbook-viewport, .case-study-hero {
+  background: #0e0e11 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.browser-content::before, .phone-screen::before, .macbook-viewport::before, .case-study-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* When image is loaded, hide shimmer */
+.browser-content:has(img.loaded)::before,
+.phone-screen:has(img.loaded)::before,
+.macbook-viewport:has(img.loaded)::before,
+.case-study-hero:has(img.loaded)::before {
+  display: none !important;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
