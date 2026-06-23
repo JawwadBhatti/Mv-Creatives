@@ -1075,6 +1075,76 @@ a {
   }
 }
 
+/* Phone Mockup styling */
+.phone-mockup {
+  width: 45%;
+  max-width: 180px;
+  position: relative;
+  margin: 0 auto;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.phone-screen {
+  position: relative;
+  background: #000;
+  border: 10px solid #141416;
+  border-radius: 36px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  aspect-ratio: 9 / 19.5;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-dynamic-island {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 12px;
+  background: #000;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.phone-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.phone-viewport img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Phone Hover effects */
+.work-card-wrapper:hover .phone-mockup,
+.portfolio-card:hover .phone-mockup {
+  transform: rotateY(6deg) rotateX(3deg) scale(1.03);
+}
+
+.work-card-wrapper:hover .phone-viewport img,
+.portfolio-card:hover .phone-viewport img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 767px) {
+  .phone-screen {
+    border-width: 6px;
+    border-radius: 24px;
+  }
+}
+
+
 /* ==========================================================================
    SECTION 13: STABLE CINEMATIC FOOTER & CTA
    ========================================================================== */
