@@ -1945,6 +1945,7 @@ img[loading="eager"] {
   transition: none !important;
 }
 
+
 .browser-content:has(img[loading="eager"])::before,
 .phone-screen:has(img[loading="eager"])::before,
 .macbook-viewport:has(img[loading="eager"])::before,
@@ -1952,4 +1953,35 @@ img[loading="eager"] {
   display: none !important;
   animation: none !important;
 }
+
+/* Scroll Reveal System */
+.reveal-section,
+.reveal-card,
+.reveal-line,
+.reveal-on-scroll {
+  opacity: 0 !important;
+  transform: translateY(48px) !important;
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  will-change: transform, opacity;
+}
+
+.reveal-section.revealed,
+.reveal-card.revealed,
+.reveal-line.revealed,
+.reveal-on-scroll.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section,
+  .reveal-card,
+  .reveal-line,
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 

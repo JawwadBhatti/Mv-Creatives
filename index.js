@@ -39,50 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // ==========================================================================
-  // 2. CUSTOM GLASS CURSOR FOLLOWER
+  // 2. CUSTOM CURSOR REMOVED (FINAL UX POLISH PASS)
   // ==========================================================================
-  (function initCustomCursor() {
-    // Only initialize on desktop hover devices and if motion is not reduced
-    if (window.matchMedia('(max-width: 1023px)').matches) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    body.appendChild(cursor);
-
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    }, { passive: true });
-
-    // Smooth cursor follow with requestAnimationFrame (lag lerp physics)
-    function updateCursor() {
-      const dx = mouseX - cursorX;
-      const dy = mouseY - cursorY;
-      cursorX += dx * 0.15;
-      cursorY += dy * 0.15;
-      cursor.style.left = `${cursorX}px`;
-      cursor.style.top = `${cursorY}px`;
-      requestAnimationFrame(updateCursor);
-    }
-    updateCursor();
-
-    // Toggle active hover state on interactive items
-    const interactives = 'a, button, select, input, textarea, .chip-btn, .filter-pill, .capability-trigger';
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest(interactives)) {
-        cursor.classList.add('hover');
-      }
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest(interactives)) {
-        cursor.classList.remove('hover');
-      }
-    });
-  })();
 
   // ==========================================================================
   // 3. HEADER SCROLL EFFECT
@@ -133,23 +92,50 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // ==========================================================================
-  // 5. TEXT REVEAL ANIMATIONS
+  // 5. PREMIUM SCROLL REVEAL SYSTEM
   // ==========================================================================
-  (function initTextReveals() {
-    const revealInners = document.querySelectorAll('.reveal-inner');
-    if (!revealInners.length) return;
+  (function initScrollReveal() {
+    // Respect user reduced motion preferences
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal-section, .reveal-card, .reveal-line, .reveal-on-scroll, .reveal-inner').forEach(el => {
+        el.classList.add('revealed');
+      });
+      return;
+    }
+
+    const revealItems = document.querySelectorAll('.reveal-section, .reveal-card, .reveal-line, .reveal-on-scroll, .reveal-inner');
+    if (!revealItems.length) return;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
+          const el = entry.target;
+          
+          // Handle stagger delays for reveal-card or reveal-line inside a container
+          if (el.classList.contains('reveal-card') || el.classList.contains('reveal-line')) {
+            const parent = el.parentElement;
+            if (parent) {
+              const cards = Array.from(parent.querySelectorAll('.reveal-card, .reveal-line'));
+              const index = cards.indexOf(el);
+              if (index !== -1) {
+                const delay = Math.min(index * 80, 400); // 80ms stagger, max 400ms
+                el.style.transitionDelay = `${delay}ms`;
+              }
+            }
+          }
+
+          el.classList.add('revealed');
+          observer.unobserve(el);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, {
+      threshold: 0.05,
+      rootMargin: '0px 0px -40px 0px'
+    });
 
-    revealInners.forEach(el => observer.observe(el));
+    revealItems.forEach(item => observer.observe(item));
   })();
+
 
   // ==========================================================================
   // 6. PORTFOLIO HOVER MEDIA CONTROLS
@@ -257,14 +243,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const steps = builder.querySelectorAll('.brief-step');
     const prevBtn = document.getElementById('builder-prev-btn');
     const nextBtn = document.getElementById('builder-next-btn');
-    const submitBtn = document.getElementById('builder-submit-btn');
+    const bookBtn = document.getElementById('builder-book-btn');
 
     // Data Store
     const selectedBriefData = {
       projectType: '',
-      scope: [],
+      projectStage: '',
       timeline: '',
-      goals: ''
+      name: '',
+      email: '',
+      company: '',
+      message: ''
     };
 
     // Step 1 Selection Chips
@@ -277,19 +266,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Step 2 Project Scope Chips (Multi-Select)
-    const scopeChips = builder.querySelectorAll('.chip-scope');
-    scopeChips.forEach(chip => {
+    // Step 2 Stage Chips
+    const stageChips = builder.querySelectorAll('.chip-stage');
+    stageChips.forEach(chip => {
       chip.addEventListener('click', () => {
-        chip.classList.toggle('active');
-        const val = chip.getAttribute('data-value');
-        if (chip.classList.contains('active')) {
-          if (!selectedBriefData.scope.includes(val)) {
-            selectedBriefData.scope.push(val);
-          }
-        } else {
-          selectedBriefData.scope = selectedBriefData.scope.filter(s => s !== val);
-        }
+        stageChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        selectedBriefData.projectStage = chip.getAttribute('data-value');
       });
     });
 
@@ -303,13 +286,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Step 4 Goals Text
-    const goalsInput = document.getElementById('builder-goals-text');
-    if (goalsInput) {
-      goalsInput.addEventListener('input', () => {
-        selectedBriefData.goals = goalsInput.value;
-      });
+    // Step 4 Text Inputs
+    const nameInput = document.getElementById('builder-name');
+    const emailInput = document.getElementById('builder-email');
+    const companyInput = document.getElementById('builder-company');
+    const messageInput = document.getElementById('builder-message');
+
+    function syncStep4Data() {
+      if (nameInput) selectedBriefData.name = nameInput.value;
+      if (emailInput) selectedBriefData.email = emailInput.value;
+      if (companyInput) selectedBriefData.company = companyInput.value;
+      if (messageInput) selectedBriefData.message = messageInput.value;
     }
+
+    if (nameInput) nameInput.addEventListener('input', syncStep4Data);
+    if (emailInput) emailInput.addEventListener('input', syncStep4Data);
+    if (companyInput) companyInput.addEventListener('input', syncStep4Data);
+    if (messageInput) messageInput.addEventListener('input', syncStep4Data);
 
     function showStep(stepNum) {
       steps.forEach(step => {
@@ -324,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Show/Hide buttons based on step index
+      // Show/Hide navigation buttons
       if (stepNum === 1) {
         prevBtn.style.display = 'none';
       } else {
@@ -333,16 +326,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (stepNum === totalSteps) {
         nextBtn.style.display = 'none';
-        submitBtn.style.display = 'inline-flex';
       } else {
         nextBtn.style.display = 'inline-flex';
-        submitBtn.style.display = 'none';
       }
     }
 
-    if (nextBtn && prevBtn && submitBtn) {
+    if (nextBtn && prevBtn) {
       nextBtn.addEventListener('click', () => {
         if (currentStep < totalSteps) {
+          if (currentStep === 4) {
+            syncStep4Data();
+          }
           currentStep++;
           showStep(currentStep);
         }
@@ -354,12 +348,13 @@ document.addEventListener('DOMContentLoaded', () => {
           showStep(currentStep);
         }
       });
+    }
 
-      submitBtn.addEventListener('click', () => {
-        // Build final qualification query parameters and redirect to Calendly schedule link
-        const calendlyUrl = `https://calendly.com/mahamvohracontra/30min?a1=${encodeURIComponent(
-          `Type: ${selectedBriefData.projectType} // Scope: ${selectedBriefData.scope.join(', ')} // Timeline: ${selectedBriefData.timeline} // Goals: ${selectedBriefData.goals}`
-        )}`;
+    if (bookBtn) {
+      bookBtn.addEventListener('click', () => {
+        syncStep4Data();
+        const briefSummary = `Type: ${selectedBriefData.projectType} // Stage: ${selectedBriefData.projectStage} // Timeline: ${selectedBriefData.timeline} // Contact: ${selectedBriefData.name} <${selectedBriefData.email}> (${selectedBriefData.company}) // Message: ${selectedBriefData.message}`;
+        const calendlyUrl = `https://calendly.com/mahamvohracontra/30min?a1=${encodeURIComponent(briefSummary)}&name=${encodeURIComponent(selectedBriefData.name)}&email=${encodeURIComponent(selectedBriefData.email)}`;
         window.open(calendlyUrl, '_blank');
       });
     }
@@ -368,72 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // ==========================================================================
-  // 10. MAGNETIC BUTTON PHYSICS
+  // 10. MAGNETIC BUTTON & DEPTH PARALLAX REMOVED (UX POLISH)
   // ==========================================================================
-  (function initMagneticCTA() {
-    if (window.matchMedia('(max-width: 1023px)').matches) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const magnetics = document.querySelectorAll('.filter-pill, .chip-btn');
-    magnetics.forEach(el => {
-      let ticking = false;
-      let mouseEvent = null;
-
-      el.addEventListener('mousemove', (e) => {
-        mouseEvent = e;
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            if (mouseEvent) {
-              const rect = el.getBoundingClientRect();
-              const x = mouseEvent.clientX - rect.left - rect.width / 2;
-              const y = mouseEvent.clientY - rect.top - rect.height / 2;
-              el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-            }
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }, { passive: true });
-
-      el.addEventListener('mouseleave', () => {
-        mouseEvent = null;
-        window.requestAnimationFrame(() => {
-          el.style.transform = 'translate(0, 0)';
-        });
-      });
-    });
-  })();
-
-  // ==========================================================================
-  // 11. HERO MOUSE DEPTH PARALLAX
-  // ==========================================================================
-  (function initHeroMouseDepth() {
-    if (window.matchMedia('(max-width: 1023px)').matches) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const hero = document.getElementById('hero-section');
-    if (!hero) return;
-
-    const content = hero.querySelector('.hero-content');
-    if (!content) return;
-
-    let mouseX = 0, mouseY = 0;
-    let ticking = false;
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const x = (window.innerWidth / 2 - mouseX) / 60;
-          const y = (window.innerHeight / 2 - mouseY) / 60;
-          content.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  })();
 
   // ==========================================================================
   // 12. PREMIUM FIRST-LOAD PAGE LOADER
