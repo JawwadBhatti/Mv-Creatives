@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case Study: Kinetic Data SaaS System — MV Creatives</title>
-  <meta name="description" content="Detailed design analysis of the Kinetic Data SaaS system overhaul: engineering a modular design system optimized for data-dense dashboard viewports.">
+  <title>Case Study: Bloomix Digital Platform — MV Creatives</title>
+  <meta name="description" content="Detailed case study of Bloomix: designing a unified design system, multi-product dashboard hub, and ecosystem architecture.">
   
   <!-- Font preconnect & loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./index.css">
   <style>
     /* Specific Case Study Layout Config */
     .case-study-hero {
       position: relative;
-      min-height: 70vh;
+      min-height: 75vh;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -29,14 +29,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.3;
-      filter: grayscale(20%) contrast(1.1);
+      opacity: 0.25;
+      filter: grayscale(10%) contrast(1.1);
       z-index: 0;
     }
     .case-study-hero__overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(5, 5, 5, 0.7) 0%, rgba(5, 5, 5, 0.98) 80%);
+      background: radial-gradient(circle at 20% 50%, rgba(5, 5, 5, 0.75) 0%, rgba(5, 5, 5, 0.98) 80%);
       z-index: 1;
     }
     
@@ -50,7 +50,7 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 60px;
-      margin-bottom: 80px;
+      margin-bottom: 100px;
     }
     .overview-meta-item {
       margin-bottom: 24px;
@@ -83,12 +83,8 @@
       font-size: 18px;
       line-height: 1.7;
       color: var(--text-secondary);
-      max-width: 800px;
+      max-width: 850px;
       margin-bottom: 24px;
-    }
-    .editorial-section p.sub-detail {
-      font-size: 15px;
-      color: var(--text-muted);
     }
     
     .visual-system-grid {
@@ -122,6 +118,58 @@
     .next-project-card:hover h3 {
       color: var(--accent-hover);
     }
+
+    /* Ecosystem Diagram Styles */
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .ecosystem-card {
+      background: #090911;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      position: relative;
+      transition: border-color 0.3s ease;
+    }
+    .ecosystem-card::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 12px;
+      background: var(--border-light);
+    }
+    .ecosystem-card:hover {
+      border-color: var(--accent-primary);
+    }
+    .ecosystem-card h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-family: 'Outfit', sans-serif;
+    }
+    .ecosystem-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .ecosystem-center {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(99, 102, 241, 0.03) 100%);
+      border: 1px solid var(--accent-primary);
+      padding: 32px;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 24px;
+    }
     
     @media (max-width: 767px) {
       .overview-grid {
@@ -136,6 +184,9 @@
         align-items: flex-start;
         gap: 32px;
         padding: 32px;
+      }
+      .ecosystem-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -185,17 +236,17 @@
 
     <!-- 01 Hero Cover -->
     <section class="case-study-hero">
-      <img class="case-study-hero__bg" src="./screenshot_kinetic_data.webp" alt="Kinetic Data Dashboard Background" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high" >
+      <img class="case-study-hero__bg" src="./screenshot_bloomix.webp" alt="Bloomix Flagship Background" srcset="./screenshot_bloomix-480w.webp 480w, ./screenshot_bloomix-768w.webp 768w, ./screenshot_bloomix.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high">
       <div class="case-study-hero__overlay"></div>
       
       <div class="container" style="position: relative; z-index: 2; width: 100%;">
         <div style="max-width: 800px;">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">SAAS • SYSTEM ENGINEERING • COMPONENT DESIGN</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 1.05;">
-            Kinetic Data
+          <span class="eyebrow-label" style="color: var(--accent-primary);">FLAGSHIP SYSTEM SHOWCASE • PRODUCT DESIGN</span>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: 'Outfit', var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 1.05;">
+            Bloomix Platform
           </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px; font-size: 20px; line-height: 1.6;">
-            Engineering a modular design system optimized for data-dense dashboard viewports to solve visual hierarchy confusion.
+            Engineering a unified product hub, multi-product interface system, and responsive workflows.
           </p>
         </div>
       </div>
@@ -211,128 +262,157 @@
             <span class="eyebrow-label" style="color: var(--accent-primary);">[ 01 // OVERVIEW ]</span>
             <h2 style="font-size: 24px; margin-top: 12px; margin-bottom: 20px; text-transform: uppercase;">The Engagement</h2>
             <p style="font-size: 16px; line-height: 1.7; color: var(--text-secondary);">
-              Kinetic Data required a scalable, component-based design system to clean up their dashboard applications. The existing dashboards were slow to develop and confusing for enterprise customers to navigate due to inconsistent spacing, text weight, and interactive states.
+              Bloomix is designed as a multi-product digital hub. The project involved developing a scalable design system, unifying navigation states, and modeling consistent variables across several integrated business utilities.
             </p>
           </div>
           <div style="border-left: 1px solid var(--border-light); padding-left: 40px;">
             <div class="overview-meta-item">
               <span class="label">Client</span>
-              <span class="value">Kinetic Data</span>
+              <span class="value">Bloomix</span>
             </div>
             <div class="overview-meta-item">
               <span class="label">Industry</span>
-              <span class="value">SaaS & Enterprise Software</span>
+              <span class="value">SaaS & Enterprise Utilities</span>
             </div>
             <div class="overview-meta-item">
               <span class="label">Services</span>
-              <span class="value">UI/UX Design, Design Systems, Frontend Code Spec</span>
+              <span class="value">UI/UX Design, Design Systems, Responsive Viewports</span>
             </div>
           </div>
         </div>
 
-        <!-- 03 Design Challenge -->
+        <!-- 03 Design Goal -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 02 // CHALLENGE ]</span>
-          <h2>The Hierarchy Trap</h2>
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 02 // DESIGN GOAL ]</span>
+          <h2>The Design Goal</h2>
           <p>
-            Enterprise dashboards fail when they try to highlight everything at once. Users working with Kinetic Data dashboards were struggling with layout scanning because dense metrics, complex tabular data, and input parameters lacked clear visual anchors.
-          </p>
-          <p class="sub-detail">
-            Data-dense viewport layouts suffer high cognitive fatigue when labels, numerical outcomes, and borders share ad-hoc weight variables without a standardized spacing grid.
+            The core challenge was visual and logical fragmentation. Because several distinct applications were used across the enterprise ecosystem, users had to adjust to varying spacing, visual tokens, and sidebar menus. The goal was to build a unified design system that feels seamless.
           </p>
         </div>
 
-        <!-- 04 Visual System -->
+        <!-- 04 Platform Structure / Ecosystem Architecture -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 03 // VISUAL SYSTEM ]</span>
-          <h2>Standardized Grid Tokens</h2>
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 03 // ECOSYSTEM ARCHITECTURE ]</span>
+          <h2>Platform Structure</h2>
           <p>
-            We stripped the viewport coordinates down to basic typography and sizing variables, establishing a rigid 8px layout spacing matrix and a curated dark obsidian palette highlighted by glossy indigo accents.
+            We mapped the ecosystem out into six distinct modules, all communicating with the central core Bloomix database. This structure ensures users retain active focus as they transition between SaaS utilities.
+          </p>
+          
+          <div class="ecosystem-center">
+            <h3 style="font-size: 22px; margin-bottom: 8px; color: var(--text-primary);">Unified Bloomix Platform</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); max-width: 500px; margin: 0 auto;">Central authentication, shared design tokens, and core database architecture.</p>
+          </div>
+
+          <div class="ecosystem-grid">
+            <div class="ecosystem-card">
+              <h4>StyleFlow</h4>
+              <p>Creative stylesheet editor & formatting utility.</p>
+            </div>
+            <div class="ecosystem-card">
+              <h4>HireWait</h4>
+              <p>Applicant pipelines & candidate profile lists.</p>
+            </div>
+            <div class="ecosystem-card">
+              <h4>Resident Connect</h4>
+              <p>Community board & scheduling matrix.</p>
+            </div>
+            <div class="ecosystem-card">
+              <h4>Saheli Health</h4>
+              <p>Telehealth scheduling & physician logs.</p>
+            </div>
+            <div class="ecosystem-card">
+              <h4>POS</h4>
+              <p>Retail sales logs & customer transactions.</p>
+            </div>
+            <div class="ecosystem-card">
+              <h4>Payroll</h4>
+              <p>Compensation tables & monthly payouts.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 Product Modules -->
+        <div class="editorial-section">
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 04 // PRODUCT MODULES ]</span>
+          <h2>Product Modules</h2>
+          <p>
+            Each sub-application is constructed around component modules. Rather than treating each tool as a custom codebase, we built a shared stylesheet framework containing unified button styles, modal borders, and input boxes.
+          </p>
+        </div>
+
+        <!-- 06 Visual System -->
+        <div class="editorial-section">
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 05 // VISUAL SYSTEM ]</span>
+          <h2>Visual Identity</h2>
+          <p>
+            The typography guidelines rely on Outfit for display headings to emphasize visual distinction, while Inter serves body copy layout.
           </p>
           
           <div class="visual-system-grid">
             <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
-              <span class="eyebrow-label" style="font-size: 11px;">[ TYPOGRAPHY SCALE ]</span>
-              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px;">Plus Jakarta Sans</h4>
+              <span class="eyebrow-label" style="font-size: 11px;">[ DISPLAY FONT ]</span>
+              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; font-family: 'Outfit', sans-serif;">Outfit Sans</h4>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
-                Used for primary display categories and headers to project a confident, modern visual style. Secondary text relies on Inter for high readability.
+                Used for platform headers, product titles, and menu headings. Provides geometric visual balance.
               </p>
             </div>
             <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
-              <span class="eyebrow-label" style="font-size: 11px;">[ ACCENT MATRIX ]</span>
-              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; color: var(--accent-hover);">Electric Indigo (#4F46E5)</h4>
+              <span class="eyebrow-label" style="font-size: 11px;">[ ACCENTS ]</span>
+              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; color: var(--accent-hover);">Obsidian & Glossy Indigo</h4>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
-                Leveraged only for active focus states, navigation highlights, and core interactive CTA anchors to guide user attention.
+                Dark base colors mapped against electric indigo accents represent active focus highlights.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- 05 Screens / Mockups -->
+        <!-- 07 UX/UI Showcase & Responsive Screens -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 04 // SCREENS & INTERFACES ]</span>
-          <h2>The Redesigned Viewports</h2>
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 06 // UX/UI SHOWCASE ]</span>
+          <h2>Responsive Screens</h2>
           <p>
-            Every dashboard element was rebuilt from modular components, using smooth layout boundaries to separate active parameters from tabular database results.
+            Every viewport was designed to scale smoothly from 4k monitors down to small phone screens, keeping dashboards legible at all dimensions.
           </p>
           
-          <div class="mockup-container" style="background: linear-gradient(135deg, #0a061c 0%, #171138 100%); padding: 80px 24px; margin-top: 40px;">
-            <div class="layered-composition" style="min-height: 380px;">
-              <div class="browser-frame" style="width: 80%; transform: translateX(-20px);">
+          <div class="mockup-container" style="background: linear-gradient(135deg, #090615 0%, #150f29 100%); padding: 80px 24px; margin-top: 40px;">
+            <div class="layered-composition" style="min-height: 400px;">
+              <div class="browser-frame" style="width: 75%; transform: translateX(-20px);">
                 <div class="browser-header">
                   <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                  <div class="browser-address">app.kineticdata.com/analytics</div>
+                  <div class="browser-address">bloomix.io/dashboard</div>
                 </div>
                 <div class="browser-content" style="height: 300px;">
-                  <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data Dashboard redesign view" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
+                  <img src="./screenshot_bloomix.webp" alt="Bloomix Redesigned Viewport" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
                 </div>
               </div>
               <div class="phone-mockup pos-bottom-right" style="transform: translateY(-20px);">
                 <div class="phone-speaker"></div>
                 <div class="phone-screen">
-                  <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data Mobile view" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
+                  <img src="./screenshot_bloomix.webp" alt="Bloomix Mobile Viewport" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 06 Process -->
+        <!-- 08 Design Decisions -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 05 // THE PROCESS ]</span>
-          <h2>Modular Implementation</h2>
+          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 07 // DESIGN DECISIONS ]</span>
+          <h2>Design Decisions</h2>
           <p>
-            Our partnership focused on design-to-code integrity. Rather than simply delivering static design cards, we modeled active states, focus glows, and layouts inside code.
+            By designing the system inside Figma variables and matching them directly to vanilla CSS stylesheet rules, the handoff process was entirely seamless. This eliminated layout translation friction and ensured layout coordinates matched the approved designs.
           </p>
-          
-          <div class="grid-12" style="gap: 24px; margin-top: 40px;">
-            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: 8px;">
-              <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">01 / AUDIT</span>
-              <h4 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Spacing Mapping</h4>
-              <p style="font-size: 13px; margin: 0;">We isolated ad-hoc styling overrides and mapped them to global spacing constants.</p>
-            </div>
-            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: 8px;">
-              <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">02 / DEFINE</span>
-              <h4 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Token Matrix</h4>
-              <p style="font-size: 13px; margin: 0;">We built global typography scales, interactive focus boundaries, and border radius variables.</p>
-            </div>
-            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: 8px;">
-              <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">03 / DEPLOY</span>
-              <h4 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Component Specs</h4>
-              <p style="font-size: 13px; margin: 0;">We verified responsive styling configurations across multiple viewport widths.</p>
-            </div>
-          </div>
         </div>
 
-        <!-- 07 Next Project CTA -->
+        <!-- 09 Next Project CTA -->
         <div style="margin-top: 100px;">
           <span class="eyebrow-label" style="color: var(--text-muted);">[ UP NEXT ]</span>
           
-          <a href="./work.html#relish" class="next-project-card" style="margin-top: 16px;">
+          <a href="./case-study.html" class="next-project-card" style="margin-top: 16px;">
             <div>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">Healthcare Portal</span>
-              <h3>Relish Healthcare</h3>
-              <p style="font-size: 15px; margin: 8px 0 0 0; color: var(--text-secondary);">Patient intake flows and portal optimization.</p>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">SaaS & Software</span>
+              <h3>Kinetic Data Dashboard</h3>
+              <p style="font-size: 15px; margin: 8px 0 0 0; color: var(--text-secondary);">Design system architecture and metric analytics dashboards.</p>
             </div>
             <span style="font-size: 32px; font-family: var(--font-mono); color: var(--accent-primary);">Next Project →</span>
           </a>

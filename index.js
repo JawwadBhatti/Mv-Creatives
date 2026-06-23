@@ -443,14 +443,15 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Hide loader immediately after DOMContentLoaded (with a tiny 100ms delay for visual smoothness)
+    // Ensure loader runs for exactly 750ms to showcase animations, then exits smoothly by 900ms.
     setTimeout(() => {
       loader.classList.add('fade-out');
       document.body.classList.add('loader-finished');
-      setTimeout(() => {
-        loader.remove();
-      }, 300); // 300ms fade out transition
-    }, 100);
+    }, 750);
+
+    setTimeout(() => {
+      loader.remove();
+    }, 900);
   })();
 
   // ==========================================================================
