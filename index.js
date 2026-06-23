@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // ==========================================================================
-  // 4. MOBILE DRAWER TOGGLE
+  // 4. MOBILE DRAWER TOGGLE & ACCORDION
   // ==========================================================================
   (function initMobileDrawer() {
     const toggleBtn = document.getElementById('nav-toggle-btn');
@@ -82,13 +82,34 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close drawer on menu click
+    // Close drawer on menu click (except for accordion trigger)
     drawer.querySelectorAll('a').forEach(link => {
+      if (link.classList.contains('accordion-trigger')) return;
       link.addEventListener('click', () => {
         drawer.classList.remove('active');
         toggleBtn.setAttribute('aria-expanded', false);
       });
     });
+
+    // Mobile Accordion Toggle for Services
+    const accordionTrigger = drawer.querySelector('.accordion-trigger');
+    const accordionPanel = drawer.querySelector('.mob-accordion-panel');
+    
+    if (accordionTrigger && accordionPanel) {
+      accordionTrigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const isActive = accordionPanel.classList.toggle('active');
+        accordionTrigger.classList.toggle('active');
+        
+        if (isActive) {
+          accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px';
+        } else {
+          accordionPanel.style.maxHeight = '0';
+        }
+      });
+    }
   })();
 
   // ==========================================================================

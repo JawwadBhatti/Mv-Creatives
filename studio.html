@@ -266,7 +266,96 @@
         <ul>
           <li><a href="./index.html" id="nav-home">Home</a></li>
           <li><a href="./work.html" id="nav-work">Work</a></li>
-          <li><a href="./services.html" id="nav-services">Services</a></li>
+          <li class="has-megamenu">
+            <a href="./services.html" id="nav-services">Services <span class="nav-arrow">▼</span></a>
+            <div class="megamenu-panel">
+              <div class="megamenu-grid">
+                <!-- Column 1: Design -->
+                <div class="megamenu-col">
+                  <span class="megamenu-heading">Design</span>
+                  <ul class="megamenu-links">
+                    <li>
+                      <a href="./services.html#uiux">
+                        <span class="link-title">UI/UX Design</span>
+                        <span class="link-desc">High-fidelity interface systems</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./services.html#saas">
+                        <span class="link-title">SaaS Product Design</span>
+                        <span class="link-desc">Data-dense dashboards & workflows</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./services.html#mobile-app">
+                        <span class="link-title">Mobile App Design</span>
+                        <span class="link-desc">Responsive native viewport patterns</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./services.html#design-systems">
+                        <span class="link-title">Design Systems</span>
+                        <span class="link-desc">Scalable token & component libraries</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./services.html#ux-strategy">
+                        <span class="link-title">UX Strategy</span>
+                        <span class="link-desc">Product requirements & mapping</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Column 2: Web -->
+                <div class="megamenu-col">
+                  <span class="megamenu-heading">Web</span>
+                  <ul class="megamenu-links">
+                    <li><a href="./services.html#website-design">Website Design</a></li>
+                    <li><a href="./services.html#landing-pages">Landing Pages</a></li>
+                    <li><a href="./services.html#webflow">Webflow Development</a></li>
+                    <li><a href="./services.html#framer">Framer Development</a></li>
+                    <li><a href="./services.html#wordpress">WordPress Development</a></li>
+                  </ul>
+                </div>
+                <!-- Column 3: Product -->
+                <div class="megamenu-col">
+                  <span class="megamenu-heading">Product</span>
+                  <ul class="megamenu-links">
+                    <li><a href="./services.html#discovery">Product Discovery</a></li>
+                    <li><a href="./services.html#architecture">Information Architecture</a></li>
+                    <li><a href="./services.html#research">User Research</a></li>
+                    <li><a href="./services.html#prototypes">Prototyping</a></li>
+                    <li><a href="./services.html#audits">Product Audits</a></li>
+                  </ul>
+                </div>
+                <!-- Column 4: Brand -->
+                <div class="megamenu-col">
+                  <span class="megamenu-heading">Brand</span>
+                  <ul class="megamenu-links">
+                    <li><a href="./services.html#branding">Brand Identity</a></li>
+                    <li><a href="./services.html#visual-systems">Visual Systems</a></li>
+                    <li><a href="./services.html#marketing-assets">Marketing Assets</a></li>
+                    <li><a href="./services.html#creative-direction">Creative Direction</a></li>
+                  </ul>
+                </div>
+                <!-- Featured Card -->
+                <div class="megamenu-featured">
+                  <div class="featured-card">
+                    <div class="featured-img-container">
+                      <img src="./screenshot_bloomix.webp" alt="Bloomix Flagship Mockup" />
+                    </div>
+                    <div class="featured-card-content">
+                      <span class="featured-tag">Flagship Project</span>
+                      <h4 class="featured-title">Bloomix</h4>
+                      <span class="featured-subtitle">Multi-Product Ecosystem</span>
+                      <p class="featured-desc">Unified product hub connecting multiple enterprise platforms through a shared design system.</p>
+                      <a href="./case-study-bloomix.html" class="featured-btn">View Case Study →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
           <li><a href="./studio.html" class="active" id="nav-studio">Studio</a></li>
           <li><a href="./contact.html" id="nav-contact">Contact</a></li>
         </ul>
@@ -289,7 +378,18 @@
     <ul>
       <li><a href="./index.html" id="mob-nav-home">Home</a></li>
       <li><a href="./work.html" id="mob-nav-work">Work</a></li>
-      <li><a href="./services.html" id="mob-nav-services">Services</a></li>
+      <li class="mob-has-accordion">
+        <a href="javascript:void(0);" id="mob-nav-services" class="accordion-trigger">Services <span class="mob-arrow">▼</span></a>
+        <div class="mob-accordion-panel">
+          <a href="./services.html#uiux">UI/UX Design</a>
+          <a href="./services.html#saas">SaaS Product Design</a>
+          <a href="./services.html#mobile-app">Mobile App Design</a>
+          <a href="./services.html#website-design">Website Design</a>
+          <a href="./services.html#webflow">Webflow Development</a>
+          <a href="./services.html#design-systems">Design Systems</a>
+          <a href="./services.html#branding">Brand Identity</a>
+        </div>
+      </li>
       <li><a href="./studio.html" class="active" id="mob-nav-studio">Studio</a></li>
       <li><a href="./contact.html" id="mob-nav-contact">Contact</a></li>
     </ul>
