@@ -30,10 +30,10 @@
       background-color: var(--accent-primary);
       border-color: var(--accent-primary);
       color: #FFF;
-      box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
     }
     .filter-pill:hover:not(.active) {
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(17, 17, 17, 0.2);
       color: var(--text-primary);
     }
     
@@ -111,10 +111,10 @@
     }
   </style>
 </head>
-<body class="theme-dark">
+<body>
 
   <!-- Global Navigation Header -->
-  <header class="site-header scrolled" id="main-header" style="background-color: rgba(5, 5, 5, 0.96);">
+  <header class="site-header scrolled" id="main-header" >
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
       
@@ -155,7 +155,7 @@
   <main>
 
     <!-- Section 01: Hero -->
-    <section class="section-padding theme-dark reveal-section" style="min-height: 40vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); background-color: var(--bg-primary);" id="work-hero">
+    <section class="section-padding reveal-section" style="min-height: 40vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); background-color: var(--bg-primary);" id="work-hero">
       <div class="container grid-12" style="align-items: center; width: 100%;">
         <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
           <span class="eyebrow-label">Portfolio Archive</span>
@@ -170,7 +170,7 @@
     </section>
 
     <!-- Section 02: Sticky Filter Bar -->
-    <div style="position: sticky; top: 72px; z-index: 50; border-bottom: 1px solid var(--border-dark); padding: 16px 0; background-color: rgba(5,5,5,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);" id="sticky-filter-bar">
+    <div style="position: sticky; top: 72px; z-index: 50; border-bottom: 1px solid var(--border-dark); padding: 16px 0; background-color: rgba(250, 247, 240, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);" id="sticky-filter-bar">
       <div class="container" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center;" role="tablist" aria-label="Portfolio Category Filter">
         <button class="filter-pill active" data-filter="all" id="pill-all" role="tab" aria-selected="true">All</button>
         <button class="filter-pill" data-filter="saas" id="pill-saas" role="tab" aria-selected="false">SaaS</button>

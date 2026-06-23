@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.capability-trigger').forEach(t => {
           t.setAttribute('aria-expanded', 'false');
           const icon = t.querySelector('.capability-icon');
-          if (icon) icon.textContent = '[+]';
+          if (icon) icon.textContent = '+';
         });
 
         // Toggle selected accordion
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
           content.style.maxHeight = `${content.scrollHeight + 40}px`;
           trigger.setAttribute('aria-expanded', 'true');
           const icon = trigger.querySelector('.capability-icon');
-          if (icon) icon.textContent = '[-]';
+          if (icon) icon.textContent = '—';
         }
       });
     });
