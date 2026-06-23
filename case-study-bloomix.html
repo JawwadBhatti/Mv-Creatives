@@ -59,7 +59,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--text-muted);
-      text-transform: uppercase;
+      
       letter-spacing: 0.05em;
       display: block;
       margin-bottom: 6px;
@@ -75,7 +75,7 @@
     }
     .editorial-section h2 {
       font-size: clamp(28px, 4vw, 44px);
-      text-transform: uppercase;
+      
       margin-bottom: 32px;
       letter-spacing: -0.02em;
     }
@@ -198,7 +198,7 @@
     <div class="loader-content">
       <!-- MV Logo SVG Symbol -->
       <svg class="loader-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80">
-        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="#4F46E5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="logo-path" />
+        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="logo-path" />
         <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="logo-path-inner" />
       </svg>
       <div class="loader-wordmark">MV CREATIVES</div>
@@ -256,8 +256,8 @@
       
       <div class="container" style="position: relative; z-index: 2; width: 100%;">
         <div style="max-width: 800px;">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">FLAGSHIP SYSTEM SHOWCASE • PRODUCT DESIGN</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: 'Outfit', var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 1.05;">
+          <span class="eyebrow-label">FLAGSHIP SYSTEM SHOWCASE • PRODUCT DESIGN</span>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: 'Outfit', var(--font-display); font-size: clamp(36px, 5vw, 64px);  line-height: 1.05;">
             Bloomix Platform
           </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px; font-size: 20px; line-height: 1.6;">
@@ -274,8 +274,8 @@
         <!-- 02 Project Overview -->
         <div class="overview-grid">
           <div>
-            <span class="eyebrow-label" style="color: var(--accent-primary);">[ 01 // OVERVIEW ]</span>
-            <h2 style="font-size: 24px; margin-top: 12px; margin-bottom: 20px; text-transform: uppercase;">The Engagement</h2>
+            <span class="eyebrow-label">Overview</span>
+            <h2 style="font-size: 24px; margin-top: 12px; margin-bottom: 20px; ">The Engagement</h2>
             <p style="font-size: 16px; line-height: 1.7; color: var(--text-secondary);">
               Bloomix is designed as a multi-product digital hub. The project involved developing a scalable design system, unifying navigation states, and modeling consistent variables across several integrated business utilities.
             </p>
@@ -298,7 +298,7 @@
 
         <!-- 03 Design Goal -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 02 // DESIGN GOAL ]</span>
+          <span class="eyebrow-label">Design Goal</span>
           <h2>The Design Goal</h2>
           <p>
             The core challenge was visual and logical fragmentation. Because several distinct applications were used across the enterprise ecosystem, users had to adjust to varying spacing, visual tokens, and sidebar menus. The goal was to build a unified design system that feels seamless.
@@ -307,7 +307,7 @@
 
         <!-- 04 Platform Structure / Ecosystem Architecture -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 03 // ECOSYSTEM ARCHITECTURE ]</span>
+          <span class="eyebrow-label">Ecosystem Architecture</span>
           <h2>Platform Structure</h2>
           <p>
             We mapped the ecosystem out into six distinct modules, all communicating with the central core Bloomix database. This structure ensures users retain active focus as they transition between SaaS utilities.
@@ -348,7 +348,7 @@
 
         <!-- 05 Product Modules -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 04 // PRODUCT MODULES ]</span>
+          <span class="eyebrow-label">Product Modules</span>
           <h2>Product Modules</h2>
           <p>
             Each sub-application is constructed around component modules. Rather than treating each tool as a custom codebase, we built a shared stylesheet framework containing unified button styles, modal borders, and input boxes.
@@ -357,7 +357,7 @@
 
         <!-- 06 Visual System -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 05 // VISUAL SYSTEM ]</span>
+          <span class="eyebrow-label">Visual System</span>
           <h2>Visual Identity</h2>
           <p>
             The typography guidelines rely on Outfit for display headings to emphasize visual distinction, while Inter serves body copy layout.
@@ -365,14 +365,14 @@
           
           <div class="visual-system-grid">
             <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
-              <span class="eyebrow-label" style="font-size: 11px;">[ DISPLAY FONT ]</span>
+              <span class="eyebrow-label">Display Font</span>
               <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; font-family: 'Outfit', sans-serif;">Outfit Sans</h4>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
                 Used for platform headers, product titles, and menu headings. Provides geometric visual balance.
               </p>
             </div>
             <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
-              <span class="eyebrow-label" style="font-size: 11px;">[ ACCENTS ]</span>
+              <span class="eyebrow-label">Accents</span>
               <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; color: var(--accent-hover);">Obsidian & Glossy Indigo</h4>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
                 Dark base colors mapped against electric indigo accents represent active focus highlights.
@@ -383,7 +383,7 @@
 
         <!-- 07 UX/UI Showcase & Responsive Screens -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 06 // UX/UI SHOWCASE ]</span>
+          <span class="eyebrow-label">UX/UI Showcase</span>
           <h2>Responsive Screens</h2>
           <p>
             Every viewport was designed to scale smoothly from 4k monitors down to small phone screens, keeping dashboards legible at all dimensions.
@@ -404,7 +404,7 @@
 
         <!-- 08 Design Decisions -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 07 // DESIGN DECISIONS ]</span>
+          <span class="eyebrow-label">Design Decisions</span>
           <h2>Design Decisions</h2>
           <p>
             By designing the system inside Figma variables and matching them directly to vanilla CSS stylesheet rules, the handoff process was entirely seamless. This eliminated layout translation friction and ensured layout coordinates matched the approved designs.
@@ -413,11 +413,11 @@
 
         <!-- 09 Next Project CTA -->
         <div style="margin-top: 100px;">
-          <span class="eyebrow-label" style="color: var(--text-muted);">[ UP NEXT ]</span>
+          <span class="eyebrow-label">Up Next</span>
           
           <a href="./case-study.html" class="next-project-card" style="margin-top: 16px;">
             <div>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">SaaS & Software</span>
+              <span class="eyebrow-label">SaaS & Software</span>
               <h3>Kinetic Data Dashboard</h3>
               <p style="font-size: 15px; margin: 8px 0 0 0; color: var(--text-secondary);">Design system architecture and metric analytics dashboards.</p>
             </div>
@@ -437,7 +437,7 @@
     <div class="final-video-cta__fade final-video-cta__fade--bottom"></div>
 
     <div class="final-video-cta__content">
-      <h2>BUILD WHAT OTHERS SAY IS IMPOSSIBLE.</h2>
+      <h2>Build what others say is impossible.</h2>
       <p>Start with a project brief. We’ll review it and respond within 24 hours.</p>
 
       <div class="final-video-cta__actions">

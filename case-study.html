@@ -59,7 +59,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--text-muted);
-      text-transform: uppercase;
+      
       letter-spacing: 0.05em;
       display: block;
       margin-bottom: 6px;
@@ -75,7 +75,7 @@
     }
     .editorial-section h2 {
       font-size: clamp(28px, 4vw, 44px);
-      text-transform: uppercase;
+      
       margin-bottom: 32px;
       letter-spacing: -0.02em;
     }
@@ -147,7 +147,7 @@
     <div class="loader-content">
       <!-- MV Logo SVG Symbol -->
       <svg class="loader-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80">
-        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="#4F46E5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="logo-path" />
+        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="logo-path" />
         <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="logo-path-inner" />
       </svg>
       <div class="loader-wordmark">MV CREATIVES</div>
@@ -205,8 +205,8 @@
       
       <div class="container" style="position: relative; z-index: 2; width: 100%;">
         <div style="max-width: 800px;">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">SAAS • SYSTEM ENGINEERING • COMPONENT DESIGN</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 1.05;">
+          <span class="eyebrow-label">SAAS • SYSTEM ENGINEERING • COMPONENT DESIGN</span>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px);  line-height: 1.05;">
             Kinetic Data
           </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px; font-size: 20px; line-height: 1.6;">
@@ -223,8 +223,8 @@
         <!-- 02 Project Overview -->
         <div class="overview-grid">
           <div>
-            <span class="eyebrow-label" style="color: var(--accent-primary);">[ 01 // OVERVIEW ]</span>
-            <h2 style="font-size: 24px; margin-top: 12px; margin-bottom: 20px; text-transform: uppercase;">The Engagement</h2>
+            <span class="eyebrow-label">Overview</span>
+            <h2 style="font-size: 24px; margin-top: 12px; margin-bottom: 20px; ">The Engagement</h2>
             <p style="font-size: 16px; line-height: 1.7; color: var(--text-secondary);">
               Kinetic Data required a scalable, component-based design system to clean up their dashboard applications. The existing dashboards were slow to develop and confusing for enterprise customers to navigate due to inconsistent spacing, text weight, and interactive states.
             </p>
@@ -247,7 +247,7 @@
 
         <!-- 03 Design Challenge -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 02 // CHALLENGE ]</span>
+          <span class="eyebrow-label">Challenge</span>
           <h2>The Hierarchy Trap</h2>
           <p>
             Enterprise dashboards fail when they try to highlight everything at once. Users working with Kinetic Data dashboards were struggling with layout scanning because dense metrics, complex tabular data, and input parameters lacked clear visual anchors.
@@ -259,7 +259,7 @@
 
         <!-- 04 Visual System -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 03 // VISUAL SYSTEM ]</span>
+          <span class="eyebrow-label">Visual System</span>
           <h2>Standardized Grid Tokens</h2>
           <p>
             We stripped the viewport coordinates down to basic typography and sizing variables, establishing a rigid 8px layout spacing matrix and a curated dark obsidian palette highlighted by glossy indigo accents.
@@ -267,14 +267,14 @@
           
           <div class="visual-system-grid">
             <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
-              <span class="eyebrow-label" style="font-size: 11px;">[ TYPOGRAPHY SCALE ]</span>
+              <span class="eyebrow-label">Typography Scale</span>
               <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px;">Plus Jakarta Sans</h4>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
                 Used for primary display categories and headers to project a confident, modern visual style. Secondary text relies on Inter for high readability.
               </p>
             </div>
             <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
-              <span class="eyebrow-label" style="font-size: 11px;">[ ACCENT MATRIX ]</span>
+              <span class="eyebrow-label">Accent Matrix</span>
               <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; color: var(--accent-hover);">Electric Indigo (#4F46E5)</h4>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
                 Leveraged only for active focus states, navigation highlights, and core interactive CTA anchors to guide user attention.
@@ -285,7 +285,7 @@
 
         <!-- 05 Screens / Mockups -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 04 // SCREENS & INTERFACES ]</span>
+          <span class="eyebrow-label">Screens & Interfaces</span>
           <h2>The Redesigned Viewports</h2>
           <p>
             Every dashboard element was rebuilt from modular components, using smooth layout boundaries to separate active parameters from tabular database results.
@@ -306,7 +306,7 @@
 
         <!-- 06 Process -->
         <div class="editorial-section">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">[ 05 // THE PROCESS ]</span>
+          <span class="eyebrow-label">The Process</span>
           <h2>Modular Implementation</h2>
           <p>
             Our partnership focused on design-to-code integrity. Rather than simply delivering static design cards, we modeled active states, focus glows, and layouts inside code.
@@ -333,11 +333,11 @@
 
         <!-- 07 Next Project CTA -->
         <div style="margin-top: 100px;">
-          <span class="eyebrow-label" style="color: var(--text-muted);">[ UP NEXT ]</span>
+          <span class="eyebrow-label">Up Next</span>
           
           <a href="./work.html#relish" class="next-project-card" style="margin-top: 16px;">
             <div>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-primary); text-transform: uppercase;">Healthcare Portal</span>
+              <span class="eyebrow-label">Healthcare Portal</span>
               <h3>Relish Healthcare</h3>
               <p style="font-size: 15px; margin: 8px 0 0 0; color: var(--text-secondary);">Patient intake flows and portal optimization.</p>
             </div>
@@ -357,7 +357,7 @@
     <div class="final-video-cta__fade final-video-cta__fade--bottom"></div>
 
     <div class="final-video-cta__content">
-      <h2>BUILD WHAT OTHERS SAY IS IMPOSSIBLE.</h2>
+      <h2>Build what others say is impossible.</h2>
       <p>Start with a project brief. We’ll review it and respond within 24 hours.</p>
 
       <div class="final-video-cta__actions">

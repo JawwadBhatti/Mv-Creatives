@@ -51,7 +51,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--accent-primary);
-      text-transform: uppercase;
+      
       letter-spacing: 0.05em;
     }
     .work-card-text .title-block h3 {
@@ -155,11 +155,11 @@
   <main>
 
     <!-- Section 01: Hero -->
-    <section class="section-padding theme-dark reveal-section" style="min-height: 40vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); background-color: #08080f;" id="work-hero">
+    <section class="section-padding theme-dark reveal-section" style="min-height: 40vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); background-color: var(--bg-primary);" id="work-hero">
       <div class="container grid-12" style="align-items: center; width: 100%;">
         <div style="grid-column: 2 / span 9;" class="reveal-on-scroll">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">Portfolio Archive</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase;">
+          <span class="eyebrow-label">Portfolio Archive</span>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); ">
             Selected Work
           </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
@@ -191,8 +191,8 @@
         
         <!-- SECTION 01: Featured Work -->
         <div style="margin-bottom: 60px;">
-          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 01 // FEATURED WORK ]</span>
-          <h2 style="font-size: clamp(32px, 5vw, 56px); margin-top: 16px; text-transform: uppercase;">Featured Work</h2>
+          <span class="eyebrow-label">Featured Work</span>
+          <h2 style="font-size: clamp(32px, 5vw, 56px); margin-top: 16px; ">Featured Work</h2>
         </div>
         
         <div class="stacked-cards-container" id="featured-grid" style="margin-bottom: 120px;">
@@ -204,7 +204,7 @@
             </div>
             <div class="stacked-card-info">
               <div>
-                <span class="category-label">[ Flagship Featured Project ]</span>
+                <span class="eyebrow-label">Flagship Featured Project</span>
                 <h3 class="card-title">Bloomix Platform</h3>
                 <p class="card-desc">Unified product hub and multi-product interface system designed to explore SaaS dashboard patterns, responsive workflows, and unified brand variables.</p>
               </div>
@@ -219,7 +219,7 @@
             </div>
             <div class="stacked-card-info">
               <div>
-                <span class="category-label">SaaS & Software</span>
+                <span class="eyebrow-label">SaaS & Software</span>
                 <h3 class="card-title">Kinetic Data</h3>
                 <p class="card-desc">Design system architecture & high-performance data-dense dashboards.</p>
               </div>
@@ -234,7 +234,7 @@
             </div>
             <div class="stacked-card-info">
               <div>
-                <span class="category-label">Healthcare</span>
+                <span class="eyebrow-label">Healthcare</span>
                 <h3 class="card-title">Relish</h3>
                 <p class="card-desc">Patient intake flow optimization & medical portal interface design.</p>
               </div>
@@ -256,7 +256,7 @@
             </div>
             <div class="stacked-card-info">
               <div>
-                <span class="category-label">Real Estate</span>
+                <span class="eyebrow-label">Real Estate</span>
                 <h3 class="card-title">Ground Zero</h3>
                 <p class="card-desc">Premium real estate brand styling & listing interactive map viewports.</p>
               </div>
@@ -271,7 +271,7 @@
             </div>
             <div class="stacked-card-info">
               <div>
-                <span class="category-label">Marine & Software</span>
+                <span class="eyebrow-label">Marine & Software</span>
                 <h3 class="card-title">Star Marina</h3>
                 <p class="card-desc">Berth booking platforms & maritime logistics fleet interfaces.</p>
               </div>
@@ -286,7 +286,7 @@
             </div>
             <div class="stacked-card-info">
               <div>
-                <span class="category-label">Healthcare & Enterprise</span>
+                <span class="eyebrow-label">Healthcare & Enterprise</span>
                 <h3 class="card-title">Tiber Health</h3>
                 <p class="card-desc">Telemetry data analytics visual frameworks & physician viewports.</p>
               </div>
@@ -301,7 +301,7 @@
             </div>
             <div class="stacked-card-info">
               <div>
-                <span class="category-label">Ecommerce</span>
+                <span class="eyebrow-label">Ecommerce</span>
                 <h3 class="card-title">Herbal Goodness</h3>
                 <p class="card-desc">Product discovery pathways & high-conversion checkout layouts.</p>
               </div>
@@ -316,7 +316,7 @@
             </div>
             <div class="stacked-card-info">
               <div>
-                <span class="category-label">Healthcare</span>
+                <span class="eyebrow-label">Healthcare</span>
                 <h3 class="card-title">The IV Company</h3>
                 <p class="card-desc">Infusion therapy scheduling & client wellness tracking apps.</p>
               </div>
@@ -330,7 +330,7 @@
             </div>
             <div class="stacked-card-info">
               <div>
-                <span class="category-label">Ecommerce</span>
+                <span class="eyebrow-label">Ecommerce</span>
                 <h3 class="card-title">Wabi Baby</h3>
                 <p class="card-desc">D2C infant retail product catalogs & responsive shop layout designs.</p>
               </div>
@@ -342,8 +342,8 @@
 
         <!-- SECTION 02: Project Archive -->
         <div class="archive-title-container">
-          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 13px;">[ 02 // PROJECT ARCHIVE ]</span>
-          <h2 style="font-size: clamp(32px, 4vw, 48px); margin-top: 16px; text-transform: uppercase;">Project Archive</h2>
+          <span class="eyebrow-label">Project Archive</span>
+          <h2 style="font-size: clamp(32px, 4vw, 48px); margin-top: 16px; ">Project Archive</h2>
         </div>
 
         <div class="work-grid-view" id="archive-grid">
@@ -670,7 +670,7 @@
     <div class="final-video-cta__fade final-video-cta__fade--bottom"></div>
 
     <div class="final-video-cta__content">
-      <h2>BUILD WHAT OTHERS SAY IS IMPOSSIBLE.</h2>
+      <h2>Build what others say is impossible.</h2>
       <p>Start with a project brief. We’ll review it and respond within 24 hours.</p>
 
       <div class="final-video-cta__actions">

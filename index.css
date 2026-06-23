@@ -1,6 +1,6 @@
 /* ==========================================================================
    MV CREATIVES CENTRAL DESIGN SYSTEM STYLESHEET v2.0
-   Unified Obsidian Dark System (#050505)
+   Unified Obsidian Dark System (var(--bg-primary))
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -10,22 +10,22 @@
 
 :root {
   /* Colors */
-  --bg-primary: #050505;
-  --bg-secondary: #0D0D14;
-  --bg-card: #0E0E16;
-  --border-light: rgba(255, 255, 255, 0.04);
-  --border-dark: rgba(255, 255, 255, 0.08);
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --accent-primary: #4F46E5; /* Electric Indigo */
-  --accent-hover: #6366F1;
-  --accent-glow: rgba(79, 70, 229, 0.15);
+  --bg-primary: #080808;
+  --bg-secondary: #111111;
+  --bg-card: #151515;
+  --border-light: rgba(245, 242, 234, 0.04);
+  --border-dark: rgba(245, 242, 234, 0.08);
+  --text-primary: #F5F2EA;
+  --text-secondary: rgba(245, 242, 234, 0.68);
+  --text-muted: rgba(245, 242, 234, 0.45);
+  --accent-primary: #B8A7FF; /* Muted Violet */
+  --accent-hover: #D6C7A1; /* Warm Champagne */
+  --accent-glow: rgba(184, 167, 255, 0.1);
 
   /* Typography */
   --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-mono: 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Animations */
   --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
@@ -143,7 +143,7 @@ a {
 }
 
 .site-header.scrolled {
-  background-color: rgba(5, 5, 5, 0.85);
+  background-color: rgba(8, 8, 8, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
@@ -215,7 +215,7 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(5, 5, 5, 0.4) 0%, rgba(5, 5, 5, 0.95) 75%);
+  background: radial-gradient(circle at 30% 50%, rgba(8, 8, 8, 0.4) 0%, rgba(8, 8, 8, 0.95) 75%);
   z-index: 2;
 }
 
@@ -378,7 +378,7 @@ a {
   border-color: var(--accent-primary);
   color: var(--text-primary);
   background-color: var(--accent-glow);
-  box-shadow: 0 0 15px var(--accent-glow);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .masonry-grid-item {
@@ -461,20 +461,23 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-primary);
-  border: 1px solid var(--accent-primary);
-  color: var(--text-primary);
+  background-color: #151515;
+  border: 1px solid rgba(245, 242, 234, 0.15);
+  color: #F5F2EA;
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 600;
   padding: 14px 28px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform 0.3s var(--ease-entrance), border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-primary);
-  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
+  background-color: #1c1c1c;
+  border-color: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .btn-secondary {
@@ -709,10 +712,10 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(245, 242, 234, 0.03);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(245, 242, 234, 0.08);
   color: var(--text-primary);
   font-family: var(--font-body);
   font-weight: 600;
@@ -723,17 +726,17 @@ a {
   transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 .btn-glass:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(245, 242, 234, 0.08);
   border-color: var(--accent-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 .btn-glass-primary {
-  background: rgba(79, 70, 229, 0.15);
-  border-color: rgba(79, 70, 229, 0.4);
+  background: rgba(184, 167, 255, 0.1);
+  border-color: rgba(184, 167, 255, 0.25);
 }
 .btn-glass-primary:hover {
-  background: rgba(79, 70, 229, 0.35);
+  background: rgba(184, 167, 255, 0.2);
   border-color: var(--accent-primary);
 }
 
@@ -801,8 +804,8 @@ a {
 .work-card-wrapper:hover .browser-frame,
 .portfolio-card:hover .work-visual-box {
   transform: translateY(-8px) scale(1.01);
-  border-color: rgba(79, 70, 229, 0.3);
-  box-shadow: 0 30px 60px rgba(79, 70, 229, 0.15);
+  border-color: var(--accent-hover);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
 .work-card-wrapper:hover .browser-content img,
 .portfolio-card:hover .work-visual-box img {
@@ -891,7 +894,7 @@ a {
 .case-study-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.95) 100%);
+  background: linear-gradient(to bottom, rgba(8,8,8,0.4) 0%, rgba(8,8,8,0.95) 100%);
   z-index: 1;
 }
 
@@ -899,7 +902,7 @@ a {
 .loading-curtain {
   position: fixed;
   inset: 0;
-  background: #050508;
+  background: var(--bg-primary);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -1046,8 +1049,8 @@ a {
 .work-card-wrapper:hover .mockup-container,
 .portfolio-card:hover .mockup-container {
   transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
-  border-color: rgba(79, 70, 229, 0.45);
-  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(79, 70, 229, 0.25);
+  border-color: var(--accent-hover);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9);
 }
 
 .work-card-wrapper:hover .macbook-mockup,
@@ -1202,12 +1205,12 @@ a {
 
 .final-video-cta__fade--top {
   top: 0;
-  background: linear-gradient(to bottom, #050505 0%, transparent 100%);
+  background: linear-gradient(to bottom, var(--bg-primary) 0%, transparent 100%);
 }
 
 .final-video-cta__fade--bottom {
   bottom: 0;
-  background: linear-gradient(to top, #050505 0%, transparent 100%);
+  background: linear-gradient(to top, var(--bg-primary) 0%, transparent 100%);
 }
 
 .final-video-cta__content {
@@ -1330,7 +1333,7 @@ a {
 .page-loader {
   position: fixed;
   inset: 0;
-  background: #050505;
+  background: var(--bg-primary);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -1396,7 +1399,7 @@ a {
 .loader-line {
   width: 0%;
   height: 100%;
-  background: #4F46E5; /* Indigo Loading Line */
+  background: var(--accent-primary); /* Loading Line */
   animation: growLine 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
 
@@ -1429,7 +1432,7 @@ a {
 /* Localized readability gradient */
 .hero-text-block {
   max-width: 900px;
-  background: radial-gradient(circle at left center, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.55) 60%, transparent 100%);
+  background: radial-gradient(circle at left center, rgba(8, 8, 8, 0.9) 0%, rgba(8, 8, 8, 0.55) 60%, transparent 100%);
   padding: 48px;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.03);
@@ -1440,7 +1443,7 @@ a {
 @media (max-width: 767px) {
   .hero-text-block {
     padding: 24px;
-    background: rgba(5, 5, 5, 0.85);
+    background: rgba(8, 8, 8, 0.85);
   }
 }
 
@@ -1588,12 +1591,12 @@ a {
 
 .mockup-container:hover .browser-frame {
   transform: translateX(-25px) translateY(-5px) scale(1.01);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85);
 }
 
 .mockup-container:hover .phone-mockup {
   transform: translateY(-20px) scale(1.04) rotate(2deg);
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9), 0 0 30px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.95);
 }
 
 /* Stacked Cards Layout for Work Page */
@@ -1999,4 +2002,19 @@ img[loading="eager"] {
   }
 }
 
-
+/* Editorial Eyebrow styling helper */
+.eyebrow-label {
+  font-family: var(--font-body) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: rgba(245, 242, 234, 0.55) !important;
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  margin-bottom: 12px !important;
+  display: inline-block !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}

@@ -133,7 +133,7 @@
     }
 
     .direct-channels-box {
-      background-color: #0b0b14;
+      background-color: var(--bg-secondary);
       border: 1px solid var(--border-light);
       border-radius: 8px;
       padding: 40px;
@@ -177,7 +177,7 @@
     <div class="loader-content">
       <!-- MV Logo SVG Symbol -->
       <svg class="loader-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80">
-        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="#4F46E5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="logo-path" />
+        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="logo-path" />
         <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="logo-path-inner" />
       </svg>
       <div class="loader-wordmark">MV CREATIVES</div>
@@ -229,11 +229,11 @@
   <main>
 
     <!-- Section 01: Hero -->
-    <section class="section-padding theme-dark reveal-section" style="min-height: 40vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); background-color: #08080f;" id="contact-hero">
+    <section class="section-padding theme-dark reveal-section" style="min-height: 40vh; display: flex; align-items: center; border-bottom: 1px solid var(--border-dark); background-color: var(--bg-primary);" id="contact-hero">
       <div class="container grid-12" style="align-items: center; width: 100%;">
         <div style="grid-column: 2 / span 9;">
-          <span class="eyebrow-label" style="color: var(--accent-primary);">Get In Touch</span>
-          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); text-transform: uppercase;">
+          <span class="eyebrow-label">Get In Touch</span>
+          <h1 class="display-text" style="margin-top: 16px; margin-bottom: 24px; color: var(--text-primary); font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); ">
             Tell us what you’re building.
           </h1>
           <p class="body-large" style="color: var(--text-secondary); max-width: 650px;">
@@ -256,7 +256,7 @@
               
               <!-- Step 1: Project Type -->
               <div class="brief-step active" data-step="1">
-                <span class="eyebrow-label">[ Step 1 of 5 ]</span>
+                <span class="eyebrow-label">Step 1 of 5</span>
                 <h3 style="margin-top: 12px;">Project Type</h3>
                 <p>Select the option that best fits your design needs.</p>
                 
@@ -274,7 +274,7 @@
 
               <!-- Step 2: Project Stage -->
               <div class="brief-step" data-step="2">
-                <span class="eyebrow-label">[ Step 2 of 5 ]</span>
+                <span class="eyebrow-label">Step 2 of 5</span>
                 <h3 style="margin-top: 12px;">Project Stage</h3>
                 <p>Where are you currently at in the project cycle?</p>
                 
@@ -290,7 +290,7 @@
 
               <!-- Step 3: Timeline -->
               <div class="brief-step" data-step="3">
-                <span class="eyebrow-label">[ Step 3 of 5 ]</span>
+                <span class="eyebrow-label">Step 3 of 5</span>
                 <h3 style="margin-top: 12px;">Timeline</h3>
                 <p>When does this project need to launch or be completed?</p>
                 
@@ -304,7 +304,7 @@
 
               <!-- Step 4: Project Details -->
               <div class="brief-step" data-step="4">
-                <span class="eyebrow-label">[ Step 4 of 5 ]</span>
+                <span class="eyebrow-label">Step 4 of 5</span>
                 <h3 style="margin-top: 12px;">Project Details</h3>
                 <p>Provide contact info and a brief description of your goals.</p>
                 
@@ -318,11 +318,11 @@
 
               <!-- Step 5: Next Step -->
               <div class="brief-step" data-step="5">
-                <span class="eyebrow-label">[ Step 5 of 5 ]</span>
+                <span class="eyebrow-label">Step 5 of 5</span>
                 <h3 style="margin-top: 12px;">Proposed Action</h3>
                 <p>Your brief parameters have been compiled. Select your preferred next step to proceed.</p>
                 
-                <div style="background-color: #0b0b14; border: 1px solid var(--border-light); padding: 24px; border-radius: 6px; font-family: var(--font-mono); font-size: 13px; margin-bottom: 32px;">
+                <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-light); padding: 24px; border-radius: 6px; font-family: var(--font-mono); font-size: 13px; margin-bottom: 32px;">
                   <span style="color: var(--accent-primary); font-weight: 700;">PROJECT BRIEF COMPILED</span>
                   <p style="margin: 12px 0 0 0; font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
                     Your details are structured. We will load these into our discussion.
@@ -368,7 +368,7 @@
               </a>
 
               <div style="margin-top: 40px; border-top: 1px solid var(--border-light); padding-top: 32px;">
-                <span class="eyebrow-label" style="font-size: 11px;">Response SLA</span>
+                <span class="eyebrow-label">Response SLA</span>
                 <h4 style="font-size: 16px; margin: 12px 0 8px 0; font-weight: 700;">24-Hour Review Guarantee</h4>
                 <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
                   All project briefs and scheduling notifications are routed directly to creative leads. We review and respond within 24 business hours.
