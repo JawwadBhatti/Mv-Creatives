@@ -10,17 +10,17 @@
 
 :root {
   /* Colors */
-  --bg-primary: #080808;
-  --bg-secondary: #111111;
-  --bg-card: #151515;
-  --border-light: rgba(245, 242, 234, 0.04);
-  --border-dark: rgba(245, 242, 234, 0.08);
-  --text-primary: #F5F2EA;
-  --text-secondary: rgba(245, 242, 234, 0.68);
-  --text-muted: rgba(245, 242, 234, 0.45);
+  --bg-primary: #050505;
+  --bg-secondary: #080808;
+  --bg-card: #101014;
+  --border-light: rgba(245, 245, 240, 0.04);
+  --border-dark: rgba(245, 245, 240, 0.08);
+  --text-primary: #F5F5F0;
+  --text-secondary: rgba(245, 245, 240, 0.68);
+  --text-muted: rgba(245, 245, 240, 0.45);
   --accent-primary: #B8A7FF; /* Muted Violet */
   --accent-hover: #D6C7A1; /* Warm Champagne */
-  --accent-glow: rgba(184, 167, 255, 0.1);
+  --accent-glow: rgba(184, 167, 255, 0.05);
 
   /* Typography */
   --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -143,7 +143,7 @@ a {
 }
 
 .site-header.scrolled {
-  background-color: rgba(8, 8, 8, 0.85);
+  background-color: rgba(5, 5, 5, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
@@ -240,7 +240,7 @@ a {
 .work-card-visual {
   position: relative;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border-light);
   background-color: var(--bg-card);
@@ -333,7 +333,7 @@ a {
   background-color: var(--bg-card);
   border: 1px solid var(--border-light);
   padding: 40px;
-  border-radius: 8px;
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
   transition: border-color var(--transition-fast);
@@ -461,23 +461,23 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #151515;
-  border: 1px solid rgba(245, 242, 234, 0.15);
-  color: #F5F2EA;
+  background-color: #141418;
+  border: 1px solid rgba(245, 245, 240, 0.08);
+  color: #F5F5F0;
   font-family: var(--font-body);
   font-weight: 600;
   padding: 14px 28px;
-  border-radius: 6px;
+  border-radius: 8px; /* Refined rounded style */
   cursor: pointer;
   transition: transform 0.3s var(--ease-entrance), border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  background-color: #1c1c1c;
-  border-color: var(--accent-primary);
+  background-color: #1c1c22;
+  border-color: var(--accent-hover);
   color: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .btn-secondary {
@@ -744,7 +744,7 @@ a {
 .browser-frame {
   width: 100%;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-light);
   background: #06060c;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   overflow: hidden;
