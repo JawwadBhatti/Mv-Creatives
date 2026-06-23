@@ -20,6 +20,19 @@
       background-color: var(--bg-primary);
       border-bottom: none;
     }
+    .service-visual-proof {
+      width: 100%;
+    }
+    @media (max-width: 1023px) {
+      .service-card {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+        padding: 32px !important;
+      }
+      .service-visual-proof {
+        order: 2;
+      }
+    }
     
     .service-card {
       background-color: var(--bg-card);
@@ -110,7 +123,7 @@
   </div>
 
   <!-- Global Navigation Header -->
-  <header class="site-header scrolled" id="main-header" style="background-color: rgba(5, 5, 5, 0.96);">
+  <header class="site-header scrolled" id="main-header">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
@@ -375,41 +388,67 @@
           <div id="research" style="scroll-margin-top: 100px;"></div>
           <div id="prototypes" style="scroll-margin-top: 100px;"></div>
           <div id="audits" style="scroll-margin-top: 100px;"></div>
-          <div class="service-card reveal-card">
-            <span class="service-num">Product</span>
-            <h3>UI/UX & SaaS Product Design</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
-              We design responsive product screens, polished interfaces, and user-focused layouts. Every screen is optimized for interface clarity, visual consistency, and a seamless user experience.
-            </p>
-            
-            <div class="service-deliverables">
-              <h4>Deliverables</h4>
-              <ul class="deliverables-list">
-                <li>Interactive high-fidelity prototypes</li>
-                <li>Responsive layouts & grids</li>
-                <li>Clean user flows and paths</li>
-                <li>Figma component libraries</li>
-              </ul>
+          <div class="service-card reveal-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;">
+            <div>
+              <span class="service-num">Product</span>
+              <h3>UI/UX & SaaS Product Design</h3>
+              <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
+                We design responsive product screens, polished interfaces, and user-focused layouts. Every screen is optimized for interface clarity, visual consistency, and a seamless user experience.
+              </p>
+              
+              <div class="service-deliverables">
+                <h4>Deliverables</h4>
+                <ul class="deliverables-list">
+                  <li>Interactive high-fidelity prototypes</li>
+                  <li>Responsive layouts & grids</li>
+                  <li>Clean user flows and paths</li>
+                  <li>Figma component libraries</li>
+                </ul>
+              </div>
+            </div>
+            <div class="service-visual-proof">
+              <div class="browser-frame" style="width: 100%;">
+                <div class="browser-header">
+                  <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                  <div class="browser-address">kinetic.io/dashboard</div>
+                </div>
+                <div class="browser-content" style="height: 240px; overflow: hidden; position: relative;">
+                  <img src="./screenshot_kinetic_data.webp" alt="SaaS Interface Preview" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Card 2: Design Systems -->
           <div id="design-systems" style="scroll-margin-top: 100px;"></div>
-          <div class="service-card reveal-card">
-            <span class="service-num">Scalability</span>
-            <h3>Responsive Design Systems</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
-              We create comprehensive visual systems that coordinate colors, typographic hierarchies, and button states into unified platforms. Perfect for expanding teams that require a single source of design truth.
-            </p>
-            
-            <div class="service-deliverables">
-              <h4>Deliverables</h4>
-              <ul class="deliverables-list">
-                <li>Harmonious dark color systems</li>
-                <li>Standardized typography spacing grids</li>
-                <li>Figma component libraries</li>
-                <li>Polished design handoff guides</li>
-              </ul>
+          <div class="service-card reveal-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;">
+            <div>
+              <span class="service-num">Scalability</span>
+              <h3>Responsive Design Systems</h3>
+              <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
+                We create comprehensive visual systems that coordinate colors, typographic hierarchies, and button states into unified platforms. Perfect for expanding teams that require a single source of design truth.
+              </p>
+              
+              <div class="service-deliverables">
+                <h4>Deliverables</h4>
+                <ul class="deliverables-list">
+                  <li>Harmonious dark color systems</li>
+                  <li>Standardized typography spacing grids</li>
+                  <li>Figma component libraries</li>
+                  <li>Polished design handoff guides</li>
+                </ul>
+              </div>
+            </div>
+            <div class="service-visual-proof">
+              <div class="browser-frame" style="width: 100%;">
+                <div class="browser-header">
+                  <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                  <div class="browser-address">lynk.design/components</div>
+                </div>
+                <div class="browser-content" style="height: 240px; overflow: hidden; position: relative;">
+                  <img src="./screenshot_lynk_quiz.webp" alt="Component Example Preview" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
+                </div>
+              </div>
             </div>
           </div>
 
@@ -419,21 +458,34 @@
           <div id="webflow" style="scroll-margin-top: 100px;"></div>
           <div id="framer" style="scroll-margin-top: 100px;"></div>
           <div id="wordpress" style="scroll-margin-top: 100px;"></div>
-          <div class="service-card reveal-card">
-            <span class="service-num">Engineering</span>
-            <h3>Premium Webflow, Framer & HTML/CSS/JS</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
-              We translate design components into clean, responsive frontend viewports. By coding lightweight assets, we guarantee high performance, smooth scroll-driven transitions, and fast initial load speeds.
-            </p>
-            
-            <div class="service-deliverables">
-              <h4>Deliverables</h4>
-              <ul class="deliverables-list">
-                <li>Semantic HTML5 layout structures</li>
-                <li>Responsive layouts and templates</li>
-                <li>Subtle micro-interactions</li>
-                <li>Responsive multi-device scaling</li>
-              </ul>
+          <div class="service-card reveal-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;">
+            <div>
+              <span class="service-num">Engineering</span>
+              <h3>Premium Webflow, Framer & HTML/CSS/JS</h3>
+              <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
+                We translate design components into clean, responsive frontend viewports. By coding lightweight assets, we guarantee high performance, smooth scroll-driven transitions, and fast initial load speeds.
+              </p>
+              
+              <div class="service-deliverables">
+                <h4>Deliverables</h4>
+                <ul class="deliverables-list">
+                  <li>Semantic HTML5 layout structures</li>
+                  <li>Responsive layouts and templates</li>
+                  <li>Subtle micro-interactions</li>
+                  <li>Responsive multi-device scaling</li>
+                </ul>
+              </div>
+            </div>
+            <div class="service-visual-proof">
+              <div class="browser-frame" style="width: 100%;">
+                <div class="browser-header">
+                  <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                  <div class="browser-address">groundzero.app</div>
+                </div>
+                <div class="browser-content" style="height: 240px; overflow: hidden; position: relative;">
+                  <img src="./screenshot_ground_zero.webp" alt="Mockup Snippet Website Preview" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
+                </div>
+              </div>
             </div>
           </div>
 
@@ -442,21 +494,34 @@
           <div id="visual-systems" style="scroll-margin-top: 100px;"></div>
           <div id="marketing-assets" style="scroll-margin-top: 100px;"></div>
           <div id="creative-direction" style="scroll-margin-top: 100px;"></div>
-          <div class="service-card reveal-card">
-            <span class="service-num">Brand</span>
-            <h3>Brand Experience Design</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
-              We define the visual tone for modern digital brands. From typographic wordmarks to interactive brand collateral, we establish distinct styling guidelines that help products stand out in dense markets.
-            </p>
-            
-            <div class="service-deliverables">
-              <h4>Deliverables</h4>
-              <ul class="deliverables-list">
-                <li>Typographic wordmark guidelines</li>
-                <li>Consistent brand color systems</li>
-                <li>Digital and physical asset templates</li>
-                <li>Brand guidelines documentation</li>
-              </ul>
+          <div class="service-card reveal-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;">
+            <div>
+              <span class="service-num">Brand</span>
+              <h3>Brand Experience Design</h3>
+              <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
+                We define the visual tone for modern digital brands. From typographic wordmarks to interactive brand collateral, we establish distinct styling guidelines that help products stand out in dense markets.
+              </p>
+              
+              <div class="service-deliverables">
+                <h4>Deliverables</h4>
+                <ul class="deliverables-list">
+                  <li>Typographic wordmark guidelines</li>
+                  <li>Consistent brand color systems</li>
+                  <li>Digital and physical asset templates</li>
+                  <li>Brand guidelines documentation</li>
+                </ul>
+              </div>
+            </div>
+            <div class="service-visual-proof">
+              <div class="browser-frame" style="width: 100%;">
+                <div class="browser-header">
+                  <div class="browser-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                  <div class="browser-address">relish.health/brand</div>
+                </div>
+                <div class="browser-content" style="height: 240px; overflow: hidden; position: relative;">
+                  <img src="./screenshot_relish.webp" alt="Product Screenshot Brand Preview" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
+                </div>
+              </div>
             </div>
           </div>
 
@@ -505,8 +570,6 @@
               </svg>
               <span class="logo" style="margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
             </div>
-            <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
-          </div>
             <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
           </div>
         <div class="footer-nav">

@@ -258,7 +258,7 @@
   </div>
 
   <!-- Global Navigation Header -->
-  <header class="site-header scrolled" id="main-header" style="background-color: rgba(5, 5, 5, 0.96);">
+  <header class="site-header scrolled" id="main-header">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
@@ -426,32 +426,48 @@
       </div>
     </section>
 
-    <!-- 02 Creative Lead Section -->
-    <section class="editorial-section reveal-section">
+    <!-- 02 Creative Lead Section (Dedicated Founder Presence) -->
+    <section class="editorial-section reveal-section" style="border-bottom: 1px solid var(--border-light); background-color: #08080B;">
       <div class="container">
-        <div class="editorial-grid-2">
-          <div>
-            <span class="eyebrow-label">Leadership</span>
-            <h2 class="lead-name">Maham Vohra</h2>
-            <div class="lead-title">Creative Lead & Founder</div>
+        <div class="editorial-grid-2" style="align-items: center;">
+          
+          <!-- Founder Portrait Box -->
+          <div class="founder-portrait-container" style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); background-color: #101014; aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 45px rgba(0,0,0,0.4); max-width: 440px; margin: 0 auto; width: 100%;">
+            <div style="text-align: center; padding: 32px; z-index: 5;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80" style="margin-bottom: 24px; fill: none; stroke: var(--accent-primary); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;">
+                <path d="M20 21C20 18.2386 22.2386 16 25 16H75C77.7614 16 80 18.2386 80 21V79C80 81.7614 77.7614 84 75 84H25C22.2386 84 20 81.7614 20 79V21Z" />
+                <circle cx="50" cy="42" r="14" />
+                <path d="M28 78C28 65.5 38 56.5 50 56.5C62 56.5 72 65.5 72 78" />
+              </svg>
+              <div style="font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.12em;">Maham Vohra</div>
+              <div style="font-size: 13px; color: var(--text-muted); margin-top: 6px; font-family: var(--font-mono);">Creative Lead & Founder</div>
+            </div>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(8,8,11,0.98) 100%);"></div>
           </div>
-          <div class="editorial-body">
-            <div class="lead-profile-box" style="border-left: 2px solid var(--accent-hover); padding-left: 32px;">
-              <p style="font-size: 22px; line-height: 1.6; color: var(--text-primary); font-weight: 600; margin-bottom: 24px;">
-                Maham directs visual systems, responsive design systems, and polished product screens.
+          
+          <!-- Founder Text Details -->
+          <div>
+            <span class="eyebrow-label" style="color: var(--accent-hover); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Founder & Creative Lead</span>
+            <h2 style="font-size: clamp(36px, 5vw, 56px); font-weight: 800; line-height: 1.1; margin-top: 16px; margin-bottom: 8px; letter-spacing: -0.03em;">Maham Vohra</h2>
+            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px;">Creative Lead & Founder</div>
+            
+            <div class="editorial-body">
+              <p style="font-size: 20px; line-height: 1.6; color: var(--text-primary); font-weight: 600; margin-bottom: 24px; border-left: 2px solid var(--accent-hover); padding-left: 24px;">
+                "I partner directly with founders to translate product complexity into interface clarity, combining senior design execution with clean, component-driven layouts built to scale."
               </p>
               <p style="font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px;">
-                Bypassing standard agency layers, she collaborates directly with founders and product teams. This direct communication ensures design details translate cleanly from Figma layouts straight into practical handoff and development.
+                By removing account management layers, I collaborate directly with product and engineering teams. This ensures design intentions are preserved all the way from initial layout logic into the codebase.
               </p>
-              <p style="font-style: italic; color: var(--text-muted); font-size: 16px; margin-bottom: 32px; line-height: 1.7;">
-                "A premium interface is built on visual consistency, clean typography, and user-focused layouts. Every element must serve a clear purpose."
+              <p style="font-style: italic; color: var(--text-muted); font-size: 15px; margin-bottom: 32px; line-height: 1.7;">
+                "A premium digital product is built on visual consistency, layout rhythm, and absolute functional clarity. We design interfaces that help startups build immediate trust."
               </p>
               <div class="lead-links">
-                <a href="./contact.html" class="btn-primary" style="padding: 12px 24px; font-size: 14px; text-decoration: none;">Start a Project</a>
-                <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="btn-secondary" style="padding: 12px 24px; font-size: 14px; margin-left: 12px;">Hire on Contra</a>
+                <a href="./contact.html" class="btn-primary" style="padding: 12px 24px; font-size: 14px; text-decoration: none; display: inline-block;">Start a Project</a>
+                <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="btn-secondary" style="padding: 12px 24px; font-size: 14px; margin-left: 12px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; text-decoration: none;">Hire on Contra</a>
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -646,8 +662,6 @@
               </svg>
               <span class="logo" style="margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
             </div>
-            <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
-          </div>
             <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
           </div>
         <div class="footer-nav">

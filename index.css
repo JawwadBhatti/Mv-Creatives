@@ -139,13 +139,16 @@ a {
   width: 100%;
   z-index: 1000;
   padding: 24px 0;
-  transition: background-color var(--transition-default), backdrop-filter var(--transition-default);
+  background-color: rgba(5, 5, 5, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background-color var(--transition-default), backdrop-filter var(--transition-default), padding var(--transition-default), border-bottom var(--transition-default);
 }
 
 .site-header.scrolled {
-  background-color: rgba(5, 5, 5, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(5, 5, 5, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-light);
   padding: 16px 0;
 }
@@ -320,7 +323,7 @@ a {
   transition: transform 0.4s ease;
 }
 .megamenu-featured:hover .featured-img-container img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 .featured-card-content {
   padding: 20px;
@@ -1057,7 +1060,7 @@ a {
 }
 .work-card-wrapper:hover .browser-content img,
 .portfolio-card:hover .work-visual-box img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 /* Scroll Indicator */
@@ -1308,7 +1311,7 @@ a {
 
 .work-card-wrapper:hover .macbook-viewport img,
 .portfolio-card:hover .macbook-viewport img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .work-card-wrapper:hover .mockup-container img,
@@ -1394,12 +1397,12 @@ a {
 /* Phone Hover effects */
 .work-card-wrapper:hover .phone-mockup,
 .portfolio-card:hover .phone-mockup {
-  transform: rotateY(6deg) rotateX(3deg) scale(1.03);
+  transform: rotateY(6deg) rotateX(3deg) scale(1.02);
 }
 
 .work-card-wrapper:hover .phone-viewport img,
 .portfolio-card:hover .phone-viewport img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 @media (max-width: 767px) {
@@ -1681,7 +1684,7 @@ a {
 .hero-text-block {
   max-width: 900px;
   background: radial-gradient(circle at left center, rgba(8, 8, 8, 0.9) 0%, rgba(8, 8, 8, 0.55) 60%, transparent 100%);
-  padding: 48px;
+  padding: 64px;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(8px);
@@ -1701,13 +1704,13 @@ a {
   flex-wrap: wrap;
   gap: 0.25em;
   max-width: 900px;
-  margin: 0 0 24px 0;
+  margin: 0 0 36px 0;
   padding: 0;
 }
 
 .hero-headline-container .word-reveal {
   font-family: var(--font-display);
-  font-size: clamp(34px, 6vw, 96px);
+  font-size: clamp(30px, 5.2vw, 84px);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -1843,7 +1846,7 @@ a {
 }
 
 .mockup-container:hover .phone-mockup {
-  transform: translateY(-20px) scale(1.04) rotate(2deg);
+  transform: translateY(-20px) scale(1.02) rotate(2deg);
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.95);
 }
 
