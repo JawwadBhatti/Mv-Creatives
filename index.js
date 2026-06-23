@@ -443,14 +443,14 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Complete loading line sequence and fade out within 2.2 seconds max
+    // Hide loader immediately after DOMContentLoaded (with a tiny 100ms delay for visual smoothness)
     setTimeout(() => {
       loader.classList.add('fade-out');
       document.body.classList.add('loader-finished');
       setTimeout(() => {
         loader.remove();
-      }, 500);
-    }, 1700);
+      }, 300); // 300ms fade out transition
+    }, 100);
   })();
 
   // ==========================================================================

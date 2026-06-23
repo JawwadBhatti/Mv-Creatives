@@ -1253,7 +1253,7 @@ a {
   justify-content: center;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.5s;
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.3s;
 }
 
 .page-loader.fade-out {
@@ -1367,7 +1367,7 @@ a {
 }
 
 .loader-finished .hero-subtext-reveal {
-  animation: revealSubtext 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+  animation: revealSubtext 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
 }
 
 @keyframes revealSubtext {
@@ -1383,7 +1383,7 @@ a {
 }
 
 .loader-finished .hero-ctas-reveal {
-  animation: revealCTAs 0.65s cubic-bezier(0.22, 1, 0.36, 1) 1.05s forwards;
+  animation: revealCTAs 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
 }
 
 @keyframes revealCTAs {
@@ -1754,6 +1754,22 @@ a {
   margin: 0;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .final-footer {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+    padding: 40px 24px 30px 24px !important;
+  }
+  .footer-brand {
+    grid-column: span 2 !important;
+  }
+  .footer-bottom {
+    grid-column: span 2 !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+}
+
 @media (max-width: 767px) {
   .final-footer {
     grid-template-columns: 1fr;
@@ -1818,5 +1834,19 @@ img.loaded {
   100% {
     left: 150%;
   }
+}
+
+/* Eager Image Optimization - Immediate display without delay */
+img[loading="eager"] {
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+.browser-content:has(img[loading="eager"])::before,
+.phone-screen:has(img[loading="eager"])::before,
+.macbook-viewport:has(img[loading="eager"])::before,
+.case-study-hero:has(img[loading="eager"])::before {
+  display: none !important;
+  animation: none !important;
 }
 
