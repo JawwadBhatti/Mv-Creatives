@@ -112,7 +112,13 @@
   <!-- Global Navigation Header -->
   <header class="site-header scrolled" id="main-header" style="background-color: rgba(5, 5, 5, 0.96);">
     <div class="container header-container">
-      <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
+      <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
+          <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span style="font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; background: linear-gradient(135deg, #FFF 0%, #D1D5DB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MV CREATIVES</span>
+      </a>
       
       <nav class="site-nav" id="desktop-nav" aria-label="Main navigation menu">
         <ul>
@@ -227,11 +233,18 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
+    <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 10px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
+        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span style="font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
+    </div>
     <ul>
       <li><a href="./index.html" id="mob-nav-home">Home</a></li>
       <li><a href="./work.html" id="mob-nav-work">Work</a></li>
       <li class="mob-has-accordion">
-        <a href="javascript:void(0);" id="mob-nav-services" class="accordion-trigger class="active"">Services <span class="mob-arrow">▼</span></a>
+        <a href="javascript:void(0);" id="mob-nav-services" class="accordion-trigger">Services <span class="mob-arrow">▼</span></a>
         <div class="mob-accordion-panel">
           <a href="./services.html#uiux">UI/UX Design</a>
           <a href="./services.html#saas">SaaS Product Design</a>
@@ -265,8 +278,89 @@
       </div>
     </section>
 
+    <!-- Section: Services Grid -->
+    <section class="services-grid-section reveal-section" style="background-color: var(--bg-secondary); padding-bottom: 80px; border-bottom: 1px solid var(--border-light);">
+      <div class="container">
+        <div class="services-list-grid">
+          
+          <!-- Card 1 -->
+          <a href="#uiux" class="mini-service-card">
+            <div>
+              <h3>UI/UX Design</h3>
+              <p>High-fidelity interface designs built around clear user journeys and polished layouts.</p>
+            </div>
+            <span class="learn-more">Learn More &rarr;</span>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="#saas" class="mini-service-card">
+            <div>
+              <h3>Product Design</h3>
+              <p>End-to-end platform experiences connecting several business tools into a unified interface.</p>
+            </div>
+            <span class="learn-more">Learn More &rarr;</span>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="#design-systems" class="mini-service-card">
+            <div>
+              <h3>Design Systems</h3>
+              <p>Visual consistency and style guidelines built to scale across products and teams.</p>
+            </div>
+            <span class="learn-more">Learn More &rarr;</span>
+          </a>
+
+          <!-- Card 4 -->
+          <a href="#website-design" class="mini-service-card">
+            <div>
+              <h3>Website Design</h3>
+              <p>Stunning, responsive websites built with modern visuals and editorial layouts.</p>
+            </div>
+            <span class="learn-more">Learn More &rarr;</span>
+          </a>
+
+          <!-- Card 5 -->
+          <a href="#mobile-app" class="mini-service-card">
+            <div>
+              <h3>Mobile Applications</h3>
+              <p>Intuitive mobile interface systems optimized for responsive native viewports.</p>
+            </div>
+            <span class="learn-more">Learn More &rarr;</span>
+          </a>
+
+          <!-- Card 6 -->
+          <a href="#branding" class="mini-service-card">
+            <div>
+              <h3>Brand Systems</h3>
+              <p>Thoughtful brand systems, logotypes, and typography guidelines for growing startups.</p>
+            </div>
+            <span class="learn-more">Learn More &rarr;</span>
+          </a>
+
+          <!-- Card 7 -->
+          <a href="#creative-direction" class="mini-service-card">
+            <div>
+              <h3>Creative Direction</h3>
+              <p>Curation of visual direction, photography guidance, and high-end brand presentation.</p>
+            </div>
+            <span class="learn-more">Learn More &rarr;</span>
+          </a>
+
+          <!-- Card 8 -->
+          <a href="#landing-pages" class="mini-service-card">
+            <div>
+              <h3>Development Support</h3>
+              <p>Seamless handoff and support for Webflow, Framer, and custom engineering builds.</p>
+            </div>
+            <span class="learn-more">Learn More &rarr;</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Section 02: Services Cards Grid -->
-    <section class="reveal-section" style="background-color: var(--bg-primary); padding-top: 0; padding-bottom: 80px;">
+    <section class="reveal-section" style="background-color: #111116; padding-top: 0; padding-bottom: 80px;">
       <div class="container">
         
         <div style="display: flex; flex-direction: column; gap: 80px;">
@@ -402,10 +496,41 @@
       </div>
     </section>
 
+  <footer class="final-footer" style="background-color: #050505; position: relative; z-index: 10; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="footer-brand">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
+                <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="logo" style="margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
+            </div>
+            <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+          </div>
+            <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+          </div>
+        <div class="footer-nav">
+          <span class="footer-title">Navigation</span>
+          <a href="./index.html">Home</a>
+          <a href="./work.html">Work</a>
+          <a href="./services.html">Services</a>
+          <a href="./studio.html">Studio</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div class="footer-links">
+          <span class="footer-title">Channels</span>
+          <a href="./contact.html">Start a Project</a>
+          <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank">Hire on Contra</a>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 MV Creatives. All rights reserved.</p>
+        </div>
+      </footer>
+
   </main>
 
   <!-- Stable Unified Footer -->
-  <section class="final-video-cta" id="final-cta" style="position: relative; z-index: 2;">
+  <section class="final-video-cta" id="final-cta" style="background: #10131B; box-shadow: inset 0 0 120px rgba(59, 130, 246, 0.15); position: relative; z-index: 2;">
     <video class="final-video-cta__bg" autoplay loop muted playsinline preload="auto" src="./videos/cta-bg.mp4"></video>
     <div class="final-video-cta__fade final-video-cta__fade--top"></div>
     <div class="final-video-cta__fade final-video-cta__fade--bottom"></div>
@@ -419,28 +544,7 @@
         <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="btn btn-secondary" style="border: 1px solid rgba(255,255,255,0.1); padding: 14px 28px; border-radius: 6px;">Hire on Contra →</a>
       </div>
 
-      <footer class="final-footer">
-        <div class="footer-brand">
-          <span class="logo">MV CREATIVES</span>
-          <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
-        </div>
-        <div class="footer-nav">
-          <span class="footer-title">Navigation</span>
-          <a href="./index.html">Home</a>
-          <a href="./work.html">Work</a>
-          <a href="./services.html">Services</a>
-          <a href="./studio.html">Studio</a>
-          <a href="./contact.html">Contact</a>
-        </div>
-        <div class="footer-links">
-          <span class="footer-title">Channels</span>
-          <a href="https://calendly.com/mahamvohracontra/30min" target="_blank">Book Calendly Call</a>
-          <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank">Hire on Contra</a>
-        </div>
-        <div class="footer-bottom">
-          <p>© 2026 MV Creatives. All rights reserved.</p>
-        </div>
-      </footer>
+      
     </div>
   </section>
 

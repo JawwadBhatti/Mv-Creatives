@@ -211,7 +211,13 @@
   <!-- Global Navigation Header -->
   <header class="site-header scrolled" id="main-header" style="background-color: rgba(5, 5, 5, 0.96);">
     <div class="container header-container">
-      <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
+      <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
+          <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span style="font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; background: linear-gradient(135deg, #FFF 0%, #D1D5DB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MV CREATIVES</span>
+      </a>
       
       <nav class="site-nav" id="desktop-nav" aria-label="Main navigation menu">
         <ul>
@@ -326,6 +332,13 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
+    <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 10px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
+        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span style="font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
+    </div>
     <ul>
       <li><a href="./index.html" id="mob-nav-home">Home</a></li>
       <li><a href="./work.html" class="active" id="mob-nav-work">Work</a></li>
@@ -368,7 +381,7 @@
     </section>
 
     <!-- Content Sections Wrapper -->
-    <section class="section-padding" style="background: var(--bg-primary);">
+    <section class="section-padding" style="background: #08080B; border-top: 1px solid var(--border-light);">
       <div class="case-study-container">
         
         <!-- 02 Project Overview -->
@@ -528,6 +541,37 @@
       </div>
     </section>
 
+  <footer class="final-footer" style="background-color: #050505; position: relative; z-index: 10; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="footer-brand">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
+                <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="logo" style="margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
+            </div>
+            <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+          </div>
+            <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+          </div>
+        <div class="footer-nav">
+          <span class="footer-title">Navigation</span>
+          <a href="./index.html">Home</a>
+          <a href="./work.html">Work</a>
+          <a href="./services.html">Services</a>
+          <a href="./studio.html">Studio</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div class="footer-links">
+          <span class="footer-title">Channels</span>
+          <a href="./contact.html">Start a Project</a>
+          <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank">Hire on Contra</a>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 MV Creatives. All rights reserved.</p>
+        </div>
+      </footer>
+
   </main>
 
   <!-- Section: Video-Backed Final CTA / Footer -->
@@ -545,28 +589,7 @@
         <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="btn btn-secondary" style="border: 1px solid rgba(255,255,255,0.1); padding: 14px 28px; border-radius: 6px;">Hire on Contra →</a>
       </div>
 
-      <footer class="final-footer">
-        <div class="footer-brand">
-          <span class="logo">MV CREATIVES</span>
-          <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
-        </div>
-        <div class="footer-nav">
-          <span class="footer-title">Navigation</span>
-          <a href="./index.html">Home</a>
-          <a href="./work.html">Work</a>
-          <a href="./services.html">Services</a>
-          <a href="./studio.html">Studio</a>
-          <a href="./contact.html">Contact</a>
-        </div>
-        <div class="footer-links">
-          <span class="footer-title">Channels</span>
-          <a href="https://calendly.com/mahamvohracontra/30min" target="_blank">Book Calendly Call</a>
-          <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank">Hire on Contra</a>
-        </div>
-        <div class="footer-bottom">
-          <p>© 2026 MV Creatives. All rights reserved.</p>
-        </div>
-      </footer>
+      
     </div>
   </section>
 

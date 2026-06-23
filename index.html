@@ -43,7 +43,13 @@
   <!-- Global Navigation Header -->
   <header class="site-header header-entrance" id="main-header">
     <div class="container header-container">
-      <a href="./index.html" class="logotype" id="nav-logo">MV CREATIVES</a>
+      <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
+          <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span style="font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; background: linear-gradient(135deg, #FFF 0%, #D1D5DB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MV CREATIVES</span>
+      </a>
       
       <nav class="site-nav" id="desktop-nav" aria-label="Main navigation menu">
         <ul>
@@ -145,7 +151,7 @@
       </nav>
       
       <div class="header-cta">
-        <a href="https://calendly.com/mahamvohracontra/30min" target="_blank" class="btn-primary" id="header-cta-btn">Book Call</a>
+        <a href="./contact.html" class="btn-primary" id="header-cta-btn">Start a Project</a>
       </div>
       
       <button class="mobile-nav-toggle" aria-label="Toggle main navigation menu" aria-expanded="false" aria-controls="mobile-menu-drawer" id="nav-toggle-btn">
@@ -158,6 +164,13 @@
 
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
+    <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 10px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
+        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span style="font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
+    </div>
     <ul>
       <li><a href="./index.html" class="active" id="mob-nav-home">Home</a></li>
       <li><a href="./work.html" id="mob-nav-work">Work</a></li>
@@ -176,7 +189,7 @@
       <li><a href="./studio.html" id="mob-nav-studio">Studio</a></li>
       <li><a href="./contact.html" id="mob-nav-contact">Contact</a></li>
     </ul>
-    <a href="https://calendly.com/mahamvohracontra/30min" target="_blank" class="btn-primary" style="text-align: center; width: 80%;" id="mob-cta-btn">Book Call</a>
+    <a href="./contact.html" class="btn-primary" style="text-align: center;" id="mob-cta-btn">Start a Project</a>
   </div>
 
   <main>
@@ -204,7 +217,7 @@
           </p>
           
           <div class="hero-ctas-reveal" style="display: flex; gap: 20px; flex-wrap: wrap;">
-            <a href="https://calendly.com/mahamvohracontra/30min" target="_blank" class="btn-glass btn-glass-primary" id="hero-primary-cta">Book a Discovery Call</a>
+            <a href="./contact.html" class="btn-glass btn-glass-primary" id="hero-primary-cta">Start a Project</a>
             <a href="#work-section" class="btn-glass" id="hero-secondary-cta">View Portfolio</a>
           </div>
         </div>
@@ -219,37 +232,65 @@
     </section>
 
     <!-- 02 FLAGSHIP SHOWCASE: Bloomix Full-Width Section -->
-    <section class="section-padding reveal-section" id="flagship-section" style="background: linear-gradient(180deg, rgba(8, 8, 8, 0.95) 0%, rgba(16, 16, 20, 0.98) 100%); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); position: relative; z-index: 2;">
-      <div class="container" style="max-width: 1400px;">
-        <div style="margin-bottom: 48px;">
-          <span class="eyebrow-label" style="color: var(--accent-hover); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Flagship Project</span>
-          <h2 style="font-size: clamp(36px, 6vw, 72px); font-weight: 800; line-height: 1.05; margin-top: 16px; margin-bottom: 24px; letter-spacing: -0.03em;">Bloomix Unified Solutions Hub</h2>
-          <p style="font-size: clamp(18px, 2.5vw, 22px); color: var(--text-secondary); line-height: 1.6; max-width: 950px; margin: 0;">
+    <section class="section-padding reveal-section" id="flagship-section" style="background: #08080B; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); position: relative; z-index: 2;">
+      <div class="container" style="max-width: 1520px; padding: 0 40px;">
+        <div style="margin-bottom: 60px; max-width: 1000px;">
+          <h2 style="font-size: clamp(38px, 6vw, 80px); font-weight: 800; line-height: 1.05; margin-bottom: 24px; letter-spacing: -0.035em;">Bloomix Unified Solutions Hub</h2>
+          <p style="font-size: clamp(18px, 2.6vw, 24px); color: var(--text-secondary); line-height: 1.5; margin: 0; font-weight: 400;">
             A multi-product platform experience designed to bring several business tools into one clear, connected interface.
           </p>
-          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
-            <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; color: var(--text-secondary); font-weight: 500;">Product Design</span>
-            <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; color: var(--text-secondary); font-weight: 500;">SaaS Interface</span>
-            <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; color: var(--text-secondary); font-weight: 500;">Design System</span>
-            <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; color: var(--text-secondary); font-weight: 500;">Responsive Experience</span>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px;">
+            <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; color: var(--text-secondary); font-weight: 500;">Product Design</span>
+            <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; color: var(--text-secondary); font-weight: 500;">SaaS Interface</span>
+            <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; color: var(--text-secondary); font-weight: 500;">Design System</span>
+            <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; color: var(--text-secondary); font-weight: 500;">Responsive Experience</span>
           </div>
         </div>
 
         <a href="./case-study-bloomix.html" style="display: block; text-decoration: none;">
-          <div class="mockup-container flagship-mockup-hover" style="background: linear-gradient(135deg, #090615 0%, #150f29 100%); padding: 80px 48px; display: flex; align-items: center; justify-content: center; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 40px 100px rgba(0,0,0,0.95); transition: all var(--transition-default);">
-            <img src="./screenshot_bloomix.webp" alt="Bloomix Flagship Platform Layout" style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 12px; box-shadow: 0 30px 70px rgba(0,0,0,0.8); transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);" srcset="./screenshot_bloomix-480w.webp 480w, ./screenshot_bloomix-768w.webp 768w, ./screenshot_bloomix.webp 1024w" sizes="90vw" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high">
+          <div class="mockup-container flagship-mockup-hover" style="background: linear-gradient(135deg, #090615 0%, #150f29 100%); padding: 100px 60px; display: flex; align-items: center; justify-content: center; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 45px 110px rgba(0,0,0,0.95); transition: all var(--transition-default);">
+            <img src="./screenshot_bloomix.webp" alt="Bloomix Flagship Platform Layout" style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 12px; box-shadow: 0 35px 80px rgba(0,0,0,0.85); transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);" srcset="./screenshot_bloomix-480w.webp 480w, ./screenshot_bloomix-768w.webp 768w, ./screenshot_bloomix.webp 1024w" sizes="90vw" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high">
           </div>
         </a>
 
         <div style="margin-top: 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
           <a href="./case-study-bloomix.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 16px; font-weight: 700; border-radius: 8px;">View Bloomix Case Study</a>
-          <span style="font-family: var(--font-body); font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: 0.05em;">Flagship Project Showcase</span>
+          <span style="font-family: var(--font-body); font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: 0.05em;">Connected Digital Products</span>
         </div>
       </div>
     </section>
 
+
+    <!-- INDUSTRIES: Visual-First Categories -->
+    <section class="section-padding reveal-section" style="border-top: 1px solid var(--border-light); background: #08080B; position: relative; z-index: 2;" id="industries-section">
+      <div class="container">
+        <div class="grid-12" style="align-items: center; gap: 40px 24px;">
+          <div style="grid-column: 1 / span 6;">
+            <span class="eyebrow-label" style="color: var(--accent-hover); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Industries</span>
+            <h2 style="font-size: clamp(32px, 4.5vw, 52px); margin-top: 16px; margin-bottom: 24px; line-height: 1.1; font-weight: 800; letter-spacing: -0.035em;">Industries We Design For</h2>
+            <p style="font-size: 18px; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+              We work across software, healthcare, education, commerce, nonprofit, and operational platforms.
+            </p>
+          </div>
+          <div style="grid-column: 8 / span 5;">
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 24px; border-radius: 100px; font-size: 15px; color: var(--text-primary); font-weight: 600;">SaaS</span>
+              <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 24px; border-radius: 100px; font-size: 15px; color: var(--text-primary); font-weight: 600;">Healthcare</span>
+              <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 24px; border-radius: 100px; font-size: 15px; color: var(--text-primary); font-weight: 600;">Education</span>
+              <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 24px; border-radius: 100px; font-size: 15px; color: var(--text-primary); font-weight: 600;">E-Commerce</span>
+              <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 24px; border-radius: 100px; font-size: 15px; color: var(--text-primary); font-weight: 600;">Nonprofit</span>
+              <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 24px; border-radius: 100px; font-size: 15px; color: var(--text-primary); font-weight: 600;">Real Estate</span>
+              <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 24px; border-radius: 100px; font-size: 15px; color: var(--text-primary); font-weight: 600;">Operations</span>
+              <span style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 24px; border-radius: 100px; font-size: 15px; color: var(--text-primary); font-weight: 600;">Enterprise</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <!-- 03 SELECTED PROJECTS: Offset Grid -->
-    <section class="section-padding selected-work-section reveal-section" id="work-section" style="background: rgba(5, 5, 5, 0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; z-index: 2;">
+    <section class="section-padding selected-work-section reveal-section" id="work-section" style="background: #0D0D10; position: relative; z-index: 2;">
       <div class="container">
         <div style="margin-bottom: 80px; max-width: 800px;">
           <span class="eyebrow-label" style="color: var(--accent-hover); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Selected Projects</span>
@@ -341,29 +382,10 @@
       </div>
     </section>
 
-    <!-- 03 INDUSTRIES: Visual-First Categories -->
-    <section class="section-padding reveal-section" style="border-top: 1px solid var(--border-light); background: rgba(12, 12, 20, 0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; z-index: 2;" id="industries-section">
-      <div class="container">
-        <div style="margin-bottom: 48px;">
-          <span class="eyebrow-label">Industries</span>
-          <h2 style="font-size: clamp(28px, 4vw, 40px); margin-top: 12px;">Industries We Build For</h2>
-        </div>
-        <div class="industries-tags-grid">
-          <span class="industry-tag">SaaS & Platforms</span>
-          <span class="industry-tag">Healthcare</span>
-          <span class="industry-tag">E-commerce</span>
-          <span class="industry-tag">Real Estate</span>
-          <span class="industry-tag">Construction</span>
-          <span class="industry-tag">Marketing</span>
-          <span class="industry-tag">Sports</span>
-          <span class="industry-tag">Non-Profit</span>
-          <span class="industry-tag">Software</span>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- 04 CAPABILITIES: Mapped Portfolio Index -->
-    <section class="section-padding reveal-section" style="border-top: 1px solid var(--border-light); background: rgba(5, 5, 5, 0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; z-index: 2;" id="capabilities-section">
+    <section class="section-padding reveal-section" style="border-top: 1px solid var(--border-light); background: #111116; position: relative; z-index: 2;" id="capabilities-section">
       <div class="container">
         <div style="margin-bottom: 60px; max-width: 800px;">
           <span class="eyebrow-label" style="color: var(--accent-hover); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Capabilities</span>
@@ -430,7 +452,7 @@
     </section>
 
     <!-- 05 PROCESS: Real Layout Storytelling -->
-    <section class="section-padding reveal-section" style="border-top: 1px solid var(--border-light); background: rgba(12, 12, 20, 0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; z-index: 2;" id="process-section">
+    <section class="section-padding reveal-section" style="border-top: 1px solid var(--border-light); background: #08080B; position: relative; z-index: 2;" id="process-section">
       <div class="container">
         <div style="margin-bottom: 60px;">
           <span class="eyebrow-label">Process</span>
@@ -462,7 +484,7 @@
     </section>
 
     <!-- 06 WHY MV: Real Value Drivers -->
-    <section class="section-padding reveal-section" style="border-top: 1px solid var(--border-light); background: rgba(5, 5, 5, 0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; z-index: 2;" id="why-mv-section">
+    <section class="section-padding reveal-section" style="border-top: 1px solid var(--border-light); background: #08080B; position: relative; z-index: 2;" id="why-mv-section">
       <div class="container">
         <div class="grid-12" style="align-items: center;">
           <div style="grid-column: 1 / span 7;">
@@ -483,7 +505,7 @@
     </section>
 
     <!-- 07 CONTACT CTA & UNIFIED FOOTER -->
-    <section class="final-video-cta" id="final-cta" style="position: relative; z-index: 2;">
+    <section class="final-video-cta" id="final-cta" style="background: #10131B; box-shadow: inset 0 0 120px rgba(59, 130, 246, 0.15); position: relative; z-index: 2;">
       <video class="final-video-cta__bg" autoplay loop muted playsinline preload="auto" src="./videos/cta-bg.mp4"></video>
       <div class="final-video-cta__fade final-video-cta__fade--top"></div>
       <div class="final-video-cta__fade final-video-cta__fade--bottom"></div>
@@ -493,13 +515,27 @@
         <p>Start with a project brief. We’ll review it and respond within 24 hours.</p>
 
         <div class="final-video-cta__actions">
-          <a href="https://calendly.com/mahamvohracontra/30min" target="_blank" class="btn btn-primary">Book a Discovery Call</a>
+          <a href="./contact.html" class="btn btn-primary">Start a Project</a>
           <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank" class="btn btn-secondary" style="border: 1px solid rgba(255,255,255,0.1); padding: 14px 28px; border-radius: 6px;">Hire on Contra →</a>
         </div>
 
-        <footer class="final-footer">
+        
+      </div>
+    </section>
+
+  <footer class="final-footer" style="background-color: #050505; position: relative; z-index: 10; border-top: 1px solid rgba(255, 255, 255, 0.08);">
           <div class="footer-brand">
-            <span class="logo">MV CREATIVES</span>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
+                <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="logo" style="margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
+            </div>
+            <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+          </div>
+            <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
+          </div>
             <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
           </div>
           <div class="footer-nav">
@@ -512,15 +548,13 @@
           </div>
           <div class="footer-links">
             <span class="footer-title">Channels</span>
-            <a href="https://calendly.com/mahamvohracontra/30min" target="_blank">Book Calendly Call</a>
+            <a href="./contact.html">Start a Project</a>
             <a href="https://contra.com/maham_vohra_?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=maham_vohra_" target="_blank">Hire on Contra</a>
           </div>
           <div class="footer-bottom">
             <p>© 2026 MV Creatives. All rights reserved.</p>
           </div>
         </footer>
-      </div>
-    </section>
 
   </main>
 
