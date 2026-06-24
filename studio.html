@@ -11,11 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 
+    <!-- Favicon Monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M20 20 L40 80 L50 50 L60 80 L80 20%22 fill=%22none%22 stroke=%22%23B8A7FF%22 stroke-width=%2210%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/><path d=%22M40 20 L50 50 L60 20%22 fill=%22none%22 stroke=%22white%22 stroke-width=%228%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
   <link rel="stylesheet" href="./index.css">
   <style>
     /* Premium Editorial Studio Page Styling */
     .studio-hero {
-      padding: 180px 0 100px 0;
+      padding: 130px 0 70px 0;
       border-bottom: 1px solid var(--border-light);
       background-color: var(--bg-primary);
     }
@@ -40,7 +42,7 @@
     }
 
     .editorial-section {
-      padding: 120px 0;
+      padding: 90px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       background: #08080B;
     }
@@ -260,11 +262,13 @@
   <!-- Global Navigation Header -->
   <header class="site-header scrolled" id="main-header">
     <div class="container header-container">
-      <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
-          <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
+      <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
+            <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
         <span style="font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; background: linear-gradient(135deg, #FFF 0%, #D1D5DB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MV CREATIVES</span>
       </a>
       
@@ -381,11 +385,13 @@
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
-    <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 10px;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
-        <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
+    <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 12px;">
+      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
+          <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
       <span style="font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
     </div>
     <ul>
@@ -431,18 +437,14 @@
       <div class="container">
         <div class="editorial-grid-2" style="align-items: center;">
           
-          <!-- Founder Portrait Box -->
+          <!-- Founder Portrait Box (Premium Headshot) -->
           <div class="founder-portrait-container" style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); background-color: #101014; aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 45px rgba(0,0,0,0.4); max-width: 440px; margin: 0 auto; width: 100%;">
-            <div style="text-align: center; padding: 32px; z-index: 5;">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80" style="margin-bottom: 24px; fill: none; stroke: var(--accent-primary); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;">
-                <path d="M20 21C20 18.2386 22.2386 16 25 16H75C77.7614 16 80 18.2386 80 21V79C80 81.7614 77.7614 84 75 84H25C22.2386 84 20 81.7614 20 79V21Z" />
-                <circle cx="50" cy="42" r="14" />
-                <path d="M28 78C28 65.5 38 56.5 50 56.5C62 56.5 72 65.5 72 78" />
-              </svg>
-              <div style="font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.12em;">Maham Vohra</div>
-              <div style="font-size: 13px; color: var(--text-muted); margin-top: 6px; font-family: var(--font-mono);">Creative Lead & Founder</div>
+            <img src="./maham_vohra_portrait.png" alt="Maham Vohra — Founder & Creative Lead" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1) brightness(0.95); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(8,8,11,0.95) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; bottom: 24px; left: 24px; z-index: 5; text-align: left; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px;">Maham Vohra</div>
+              <div style="font-size: 12px; color: var(--accent-primary); font-family: var(--font-mono); font-weight: 600; letter-spacing: 0.05em;">Founder & Creative Lead</div>
             </div>
-            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(8,8,11,0.98) 100%);"></div>
           </div>
           
           <!-- Founder Text Details -->
@@ -655,11 +657,13 @@
 
   <footer class="final-footer" style="background-color: #050505; position: relative; z-index: 10; border-top: 1px solid rgba(255, 255, 255, 0.08);">
         <div class="footer-brand">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" style="display: block;">
-                <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
+                  <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
               <span class="logo" style="margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--text-primary);">MV CREATIVES</span>
             </div>
             <span class="tagline">Premium UI/UX and Brand Experience design studio for digital products.</span>
