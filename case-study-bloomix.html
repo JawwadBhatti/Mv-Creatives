@@ -100,7 +100,7 @@
     .next-project-card {
       background: var(--bg-card);
       border: 1px solid var(--border-light);
-      border-radius: 16px;
+      border-radius: var(--radius-lg);
       padding: 60px;
       display: flex;
       justify-content: space-between;
@@ -131,7 +131,7 @@
     .ecosystem-card {
       background: #090911;
       border: 1px solid var(--border-light);
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       padding: 24px;
       text-align: center;
       position: relative;
@@ -166,7 +166,7 @@
       background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(99, 102, 241, 0.03) 100%);
       border: 1px solid var(--accent-primary);
       padding: 32px;
-      border-radius: 12px;
+      border-radius: var(--radius-md);
       text-align: center;
       position: relative;
       font-family: 'Outfit', sans-serif;
@@ -214,7 +214,7 @@
   <header class="site-header scrolled" id="main-header">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
             <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -337,7 +337,7 @@
   <!-- Mobile Drawer Menu -->
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 12px;">
-      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
           <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -483,16 +483,16 @@
           </p>
           
           <div class="visual-system-grid">
-            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
+            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: var(--radius-sm); background: var(--bg-card);">
               <span class="eyebrow-label">Display Font</span>
-              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; font-family: 'Outfit', sans-serif;">Outfit Sans</h4>
+              <h3 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; font-family: 'Outfit', sans-serif;">Outfit Sans</h3>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
                 Used for platform headers, product titles, and menu headings. Provides geometric visual balance.
               </p>
             </div>
-            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
+            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: var(--radius-sm); background: var(--bg-card);">
               <span class="eyebrow-label">Accents</span>
-              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; color: var(--accent-hover);">Obsidian & Glossy Indigo</h4>
+              <h3 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; color: var(--accent-hover);">Obsidian & Glossy Indigo</h3>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
                 Dark base colors mapped against electric indigo accents represent active focus highlights.
               </p>
@@ -550,7 +550,7 @@
   <footer class="final-footer" style="background-color: #050505; position: relative; z-index: 10; border-top: 1px solid rgba(255, 255, 255, 0.08);">
         <div class="footer-brand">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
                   <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />

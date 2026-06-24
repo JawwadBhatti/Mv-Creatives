@@ -32,6 +32,11 @@
   --ease-feedback: cubic-bezier(0.25, 1, 0.5, 1);
   --transition-default: 400ms var(--ease-entrance);
   --transition-fast: 200ms var(--ease-feedback);
+
+  /* Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 }
 
 /* --------------------------------------------------------------------------
@@ -207,7 +212,7 @@ a {
   max-width: calc(100vw - 80px);
   background-color: #101014;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
   z-index: 1000;
@@ -296,7 +301,7 @@ a {
 .megamenu-featured {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -491,7 +496,7 @@ a {
 .work-card-visual {
   position: relative;
   width: 100%;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--border-light);
   background-color: var(--bg-card);
@@ -584,7 +589,7 @@ a {
   background-color: var(--bg-card);
   border: 1px solid var(--border-light);
   padding: 40px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   position: relative;
   overflow: hidden;
   transition: border-color var(--transition-fast);
@@ -644,7 +649,7 @@ a {
 .brief-builder-container {
   background-color: var(--bg-card);
   border: 1px solid var(--border-light);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   padding: 48px;
 }
 
@@ -718,7 +723,7 @@ a {
   font-family: var(--font-body);
   font-weight: 600;
   padding: 14px 28px;
-  border-radius: 8px; /* Refined rounded style */
+  border-radius: var(--radius-sm); /* Refined rounded style */
   cursor: pointer;
   transition: transform 0.3s var(--ease-entrance), border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -971,7 +976,7 @@ a {
   font-family: var(--font-body);
   font-weight: 600;
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-size: 14px;
   cursor: pointer;
   transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
@@ -994,7 +999,7 @@ a {
 /* Premium Browser Mockup Frame */
 .browser-frame {
   width: 100%;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--border-light);
   background: #06060c;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
@@ -1036,7 +1041,7 @@ a {
   color: var(--text-muted);
   background: rgba(0, 0, 0, 0.3);
   padding: 1px 12px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.03);
   width: 140px;
   text-align: center;
@@ -1195,7 +1200,7 @@ a {
 .mockup-container {
   position: relative;
   width: 100%;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
@@ -1221,7 +1226,7 @@ a {
   background: #000;
   border: 10px solid #141416;
   border-bottom: 14px solid #141416;
-  border-radius: 12px 12px 0 0;
+  border-radius: var(--radius-md) 12px 0 0;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   aspect-ratio: 16 / 10;
   overflow: hidden;
@@ -1335,7 +1340,7 @@ a {
   .macbook-screen {
     border-width: 6px;
     border-bottom-width: 8px;
-    border-radius: 8px 8px 0 0;
+    border-radius: var(--radius-sm) 8px 0 0;
   }
   .macbook-base {
     height: 6px;
@@ -2035,7 +2040,7 @@ a {
   padding: 12px 24px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   color: var(--text-secondary);
   transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
@@ -2296,7 +2301,7 @@ img[loading="eager"] {
 .mini-service-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-light);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   padding: 32px;
   transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
   display: flex;
@@ -2313,7 +2318,7 @@ img[loading="eager"] {
   transform: translateY(-4px);
 }
 
-.mini-service-card h3 {
+.mini-service-card h2 {
   font-size: 20px;
   font-weight: 700;
   margin-top: 0;

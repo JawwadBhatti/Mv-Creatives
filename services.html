@@ -39,7 +39,7 @@
     .service-card {
       background-color: var(--bg-card);
       border: 1px solid var(--border-light);
-      border-radius: 16px;
+      border-radius: var(--radius-lg);
       padding: 48px;
       transition: border-color var(--transition-fast), transform var(--transition-default), box-shadow var(--transition-default);
     }
@@ -50,7 +50,7 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
     }
     
-    .service-card h3 {
+    .service-card h2 {
       font-size: 28px;
       margin-top: 16px;
       margin-bottom: 20px;
@@ -71,7 +71,7 @@
       border-top: 1px solid var(--border-light);
     }
 
-    .service-deliverables h4 {
+    .service-deliverables h3 {
       font-size: 14px;
       font-family: var(--font-mono);
       color: var(--text-muted);
@@ -128,7 +128,7 @@
   <header class="site-header scrolled" id="main-header">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
             <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -251,7 +251,7 @@
   <!-- Mobile Drawer Menu -->
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 12px;">
-      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
           <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -305,7 +305,7 @@
           <!-- Card 1 -->
           <a href="#uiux" class="mini-service-card">
             <div>
-              <h3>UI/UX Design</h3>
+              <h2>UI/UX Design</h2>
               <p>High-fidelity interface designs built around clear user journeys and polished layouts.</p>
             </div>
             <span class="learn-more">Learn More &rarr;</span>
@@ -314,7 +314,7 @@
           <!-- Card 2 -->
           <a href="#saas" class="mini-service-card">
             <div>
-              <h3>Product Design</h3>
+              <h2>Product Design</h2>
               <p>End-to-end platform experiences connecting several business tools into a unified interface.</p>
             </div>
             <span class="learn-more">Learn More &rarr;</span>
@@ -323,7 +323,7 @@
           <!-- Card 3 -->
           <a href="#design-systems" class="mini-service-card">
             <div>
-              <h3>Design Systems</h3>
+              <h2>Design Systems</h2>
               <p>Visual consistency and style guidelines built to scale across products and teams.</p>
             </div>
             <span class="learn-more">Learn More &rarr;</span>
@@ -332,7 +332,7 @@
           <!-- Card 4 -->
           <a href="#website-design" class="mini-service-card">
             <div>
-              <h3>Website Design</h3>
+              <h2>Website Design</h2>
               <p>Stunning, responsive websites built with modern visuals and editorial layouts.</p>
             </div>
             <span class="learn-more">Learn More &rarr;</span>
@@ -341,7 +341,7 @@
           <!-- Card 5 -->
           <a href="#mobile-app" class="mini-service-card">
             <div>
-              <h3>Mobile Applications</h3>
+              <h2>Mobile Applications</h2>
               <p>Intuitive mobile interface systems optimized for responsive native viewports.</p>
             </div>
             <span class="learn-more">Learn More &rarr;</span>
@@ -350,7 +350,7 @@
           <!-- Card 6 -->
           <a href="#branding" class="mini-service-card">
             <div>
-              <h3>Brand Systems</h3>
+              <h2>Brand Systems</h2>
               <p>Thoughtful brand systems, logotypes, and typography guidelines for growing startups.</p>
             </div>
             <span class="learn-more">Learn More &rarr;</span>
@@ -359,7 +359,7 @@
           <!-- Card 7 -->
           <a href="#creative-direction" class="mini-service-card">
             <div>
-              <h3>Creative Direction</h3>
+              <h2>Creative Direction</h2>
               <p>Curation of visual direction, photography guidance, and high-end brand presentation.</p>
             </div>
             <span class="learn-more">Learn More &rarr;</span>
@@ -368,7 +368,7 @@
           <!-- Card 8 -->
           <a href="#landing-pages" class="mini-service-card">
             <div>
-              <h3>Development Support</h3>
+              <h2>Development Support</h2>
               <p>Seamless handoff and support for Webflow, Framer, and custom engineering builds.</p>
             </div>
             <span class="learn-more">Learn More &rarr;</span>
@@ -397,13 +397,13 @@
           <div class="service-card reveal-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;">
             <div>
               <span class="service-num">Product</span>
-              <h3>UI/UX & SaaS Product Design</h3>
+              <h2>UI/UX & SaaS Product Design</h2>
               <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
                 We design responsive product screens, polished interfaces, and user-focused layouts. Every screen is optimized for interface clarity, visual consistency, and a seamless user experience.
               </p>
               
               <div class="service-deliverables">
-                <h4>Deliverables</h4>
+                <h3>Deliverables</h3>
                 <ul class="deliverables-list">
                   <li>Interactive high-fidelity prototypes</li>
                   <li>Responsive layouts & grids</li>
@@ -419,7 +419,7 @@
                   <div class="browser-address">kinetic.io/dashboard</div>
                 </div>
                 <div class="browser-content" style="height: 240px; overflow: hidden; position: relative;">
-                  <img src="./screenshot_kinetic_data.webp" alt="SaaS Interface Preview" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
+                  <img src="./screenshot_kinetic_data.webp" alt="SaaS Interface Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
                 </div>
               </div>
             </div>
@@ -430,13 +430,13 @@
           <div class="service-card reveal-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;">
             <div>
               <span class="service-num">Scalability</span>
-              <h3>Responsive Design Systems</h3>
+              <h2>Responsive Design Systems</h2>
               <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
                 We create comprehensive visual systems that coordinate colors, typographic hierarchies, and button states into unified platforms. Perfect for expanding teams that require a single source of design truth.
               </p>
               
               <div class="service-deliverables">
-                <h4>Deliverables</h4>
+                <h3>Deliverables</h3>
                 <ul class="deliverables-list">
                   <li>Harmonious dark color systems</li>
                   <li>Standardized typography spacing grids</li>
@@ -452,7 +452,7 @@
                   <div class="browser-address">lynk.design/components</div>
                 </div>
                 <div class="browser-content" style="height: 240px; overflow: hidden; position: relative;">
-                  <img src="./screenshot_lynk_quiz.webp" alt="Component Example Preview" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
+                  <img src="./screenshot_lynk_quiz.webp" alt="Component Example Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
                 </div>
               </div>
             </div>
@@ -467,13 +467,13 @@
           <div class="service-card reveal-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;">
             <div>
               <span class="service-num">Engineering</span>
-              <h3>Premium Webflow, Framer & HTML/CSS/JS</h3>
+              <h2>Premium Webflow, Framer & HTML/CSS/JS</h2>
               <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
                 We translate design components into clean, responsive frontend viewports. By coding lightweight assets, we guarantee high performance, smooth scroll-driven transitions, and fast initial load speeds.
               </p>
               
               <div class="service-deliverables">
-                <h4>Deliverables</h4>
+                <h3>Deliverables</h3>
                 <ul class="deliverables-list">
                   <li>Semantic HTML5 layout structures</li>
                   <li>Responsive layouts and templates</li>
@@ -489,7 +489,7 @@
                   <div class="browser-address">groundzero.app</div>
                 </div>
                 <div class="browser-content" style="height: 240px; overflow: hidden; position: relative;">
-                  <img src="./screenshot_ground_zero.webp" alt="Mockup Snippet Website Preview" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
+                  <img src="./screenshot_ground_zero.webp" alt="Mockup Snippet Website Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
                 </div>
               </div>
             </div>
@@ -503,13 +503,13 @@
           <div class="service-card reveal-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;">
             <div>
               <span class="service-num">Brand</span>
-              <h3>Brand Experience Design</h3>
+              <h2>Brand Experience Design</h2>
               <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
                 We define the visual tone for modern digital brands. From typographic wordmarks to interactive brand collateral, we establish distinct styling guidelines that help products stand out in dense markets.
               </p>
               
               <div class="service-deliverables">
-                <h4>Deliverables</h4>
+                <h3>Deliverables</h3>
                 <ul class="deliverables-list">
                   <li>Typographic wordmark guidelines</li>
                   <li>Consistent brand color systems</li>
@@ -525,7 +525,7 @@
                   <div class="browser-address">relish.health/brand</div>
                 </div>
                 <div class="browser-content" style="height: 240px; overflow: hidden; position: relative;">
-                  <img src="./screenshot_relish.webp" alt="Product Screenshot Brand Preview" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
+                  <img src="./screenshot_relish.webp" alt="Product Screenshot Brand Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
                 </div>
               </div>
             </div>
@@ -570,7 +570,7 @@
   <footer class="final-footer" style="background-color: #050505; position: relative; z-index: 10; border-top: 1px solid rgba(255, 255, 255, 0.08);">
         <div class="footer-brand">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
                   <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />

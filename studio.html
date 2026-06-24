@@ -263,7 +263,7 @@
   <header class="site-header scrolled" id="main-header">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
             <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -386,7 +386,7 @@
   <!-- Mobile Drawer Menu -->
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 12px;">
-      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
           <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -438,7 +438,7 @@
         <div class="editorial-grid-2" style="align-items: center;">
           
           <!-- Founder Portrait Box (Premium Headshot) -->
-          <div class="founder-portrait-container" style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); background-color: #101014; aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 45px rgba(0,0,0,0.4); max-width: 440px; margin: 0 auto; width: 100%;">
+          <div class="founder-portrait-container" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); background-color: #101014; aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 45px rgba(0,0,0,0.4); max-width: 440px; margin: 0 auto; width: 100%;">
             <img src="./maham_vohra_portrait.png" alt="Maham Vohra — Founder & Creative Lead" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1) brightness(0.95); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="zoom-effect">
             <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(8,8,11,0.95) 100%); pointer-events: none;"></div>
             <div style="position: absolute; bottom: 24px; left: 24px; z-index: 5; text-align: left; pointer-events: none;">
@@ -526,7 +526,7 @@
           <div>
             <div style="display: flex; flex-direction: column; gap: 24px;">
               
-              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: 12px; transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
+              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: var(--radius-md); transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span style="font-size: 11px; font-weight: 700; color: var(--accent-hover); text-transform: uppercase; letter-spacing: 0.1em;">Phase 01</span>
                   <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Discovery</span>
@@ -536,7 +536,7 @@
                 <div style="font-size: 13px; color: var(--accent-primary); font-weight: 500;">Deliverables: Spacing Grid Definitions, Interactive Audits, Scope Mapping</div>
               </div>
 
-              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: 12px; transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
+              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: var(--radius-md); transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span style="font-size: 11px; font-weight: 700; color: var(--accent-hover); text-transform: uppercase; letter-spacing: 0.1em;">Phase 02</span>
                   <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">UX Direction</span>
@@ -546,7 +546,7 @@
                 <div style="font-size: 13px; color: var(--accent-primary); font-weight: 500;">Deliverables: User Flows, Interactive Low-Fidelity Wireframes, Navigation Maps</div>
               </div>
 
-              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: 12px; transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
+              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: var(--radius-md); transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span style="font-size: 11px; font-weight: 700; color: var(--accent-hover); text-transform: uppercase; letter-spacing: 0.1em;">Phase 03</span>
                   <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Visual System</span>
@@ -556,7 +556,7 @@
                 <div style="font-size: 13px; color: var(--accent-primary); font-weight: 500;">Deliverables: UI Color Palettes, Typography Sheets, Core Layout Variables</div>
               </div>
 
-              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: 12px; transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
+              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: var(--radius-md); transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span style="font-size: 11px; font-weight: 700; color: var(--accent-hover); text-transform: uppercase; letter-spacing: 0.1em;">Phase 04</span>
                   <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Prototype</span>
@@ -566,7 +566,7 @@
                 <div style="font-size: 13px; color: var(--accent-primary); font-weight: 500;">Deliverables: Component Libraries, Clickable Prototypes, State Diagrams</div>
               </div>
 
-              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: 12px; transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
+              <div class="reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 32px; border-radius: var(--radius-md); transition: border-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span style="font-size: 11px; font-weight: 700; color: var(--accent-hover); text-transform: uppercase; letter-spacing: 0.1em;">Phase 05</span>
                   <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Handoff</span>
@@ -623,15 +623,15 @@
               Sectors we construct interfaces, platforms, and digital brand experiences for:
             </p>
             <div class="industries-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; margin-top: 24px;">
-              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">SaaS</div>
-              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Healthcare</div>
-              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Ecommerce</div>
-              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Real Estate</div>
-              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Construction</div>
-              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Marketing</div>
-              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Non-Profit</div>
-              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Sports</div>
-              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Wellness</div>
+              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: var(--radius-sm); text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">SaaS</div>
+              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: var(--radius-sm); text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Healthcare</div>
+              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: var(--radius-sm); text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Ecommerce</div>
+              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: var(--radius-sm); text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Real Estate</div>
+              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: var(--radius-sm); text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Construction</div>
+              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: var(--radius-sm); text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Marketing</div>
+              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: var(--radius-sm); text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Non-Profit</div>
+              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: var(--radius-sm); text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Sports</div>
+              <div class="industry-card reveal-card" style="background: var(--bg-card); border: 1px solid var(--border-light); padding: 20px; border-radius: var(--radius-sm); text-align: center; font-weight: 600; color: var(--text-primary); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none';">Wellness</div>
             </div>
           </div>
         </div>
@@ -658,7 +658,7 @@
   <footer class="final-footer" style="background-color: #050505; position: relative; z-index: 10; border-top: 1px solid rgba(255, 255, 255, 0.08);">
         <div class="footer-brand">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
                   <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />

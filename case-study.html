@@ -104,7 +104,7 @@
     .next-project-card {
       background: var(--bg-card);
       border: 1px solid var(--border-light);
-      border-radius: 16px;
+      border-radius: var(--radius-lg);
       padding: 60px;
       display: flex;
       justify-content: space-between;
@@ -163,7 +163,7 @@
   <header class="site-header scrolled" id="main-header">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
             <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -286,7 +286,7 @@
   <!-- Mobile Drawer Menu -->
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 12px;">
-      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
           <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -385,16 +385,16 @@
           </p>
           
           <div class="visual-system-grid">
-            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
+            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: var(--radius-sm); background: var(--bg-card);">
               <span class="eyebrow-label">Typography Scale</span>
-              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px;">Plus Jakarta Sans</h4>
+              <h3 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px;">Plus Jakarta Sans</h3>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
                 Used for primary display categories and headers to project a confident, modern visual style. Secondary text relies on Inter for high readability.
               </p>
             </div>
-            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: 8px; background: var(--bg-card);">
+            <div style="border: 1px solid var(--border-light); padding: 32px; border-radius: var(--radius-sm); background: var(--bg-card);">
               <span class="eyebrow-label">Accent Matrix</span>
-              <h4 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; color: var(--accent-hover);">Electric Indigo (#4F46E5)</h4>
+              <h3 style="margin-top: 12px; margin-bottom: 8px; font-size: 20px; color: var(--accent-hover);">Electric Indigo (#4F46E5)</h3>
               <p style="font-size: 14px; margin: 0; color: var(--text-muted);">
                 Leveraged only for active focus states, navigation highlights, and core interactive CTA anchors to guide user attention.
               </p>
@@ -417,7 +417,7 @@
                 <div class="browser-address">app.kineticdata.com/analytics</div>
               </div>
               <div class="browser-content" style="height: 380px;">
-                <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data Platform redesign view" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
+                <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data SaaS workflow dashboard interface" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
               </div>
             </div>
           </div>
@@ -432,19 +432,19 @@
           </p>
           
           <div class="grid-12" style="gap: 24px; margin-top: 40px;">
-            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: 8px;">
+            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: var(--radius-sm);">
               <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">01 / AUDIT</span>
-              <h4 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Spacing Mapping</h4>
+              <h3 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Spacing Mapping</h3>
               <p style="font-size: 13px; margin: 0;">We isolated ad-hoc styling overrides and mapped them to global spacing constants.</p>
             </div>
-            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: 8px;">
+            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: var(--radius-sm);">
               <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">02 / DEFINE</span>
-              <h4 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Token Matrix</h4>
+              <h3 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Token Matrix</h3>
               <p style="font-size: 13px; margin: 0;">We built global typography scales, interactive focus boundaries, and border radius variables.</p>
             </div>
-            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: 8px;">
+            <div style="grid-column: span 4; border: 1px solid var(--border-light); padding: 24px; border-radius: var(--radius-sm);">
               <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">03 / DEPLOY</span>
-              <h4 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Component Specs</h4>
+              <h3 style="font-size: 18px; margin-top: 8px; margin-bottom: 8px;">Component Specs</h3>
               <p style="font-size: 13px; margin: 0;">We verified responsive layout spec configurations across multiple viewport widths.</p>
             </div>
           </div>
@@ -470,7 +470,7 @@
   <footer class="final-footer" style="background-color: #050505; position: relative; z-index: 10; border-top: 1px solid rgba(255, 255, 255, 0.08);">
         <div class="footer-brand">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
                   <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />

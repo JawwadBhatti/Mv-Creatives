@@ -46,7 +46,7 @@
   <header class="site-header header-entrance" id="main-header">
     <div class="container header-container">
       <a href="./index.html" class="logotype" id="nav-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+        <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
             <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -169,7 +169,7 @@
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-drawer" id="mobile-menu-drawer" aria-label="Mobile navigation panel">
     <div style="position: absolute; top: 30px; left: 24px; display: flex; align-items: center; gap: 12px;">
-      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+      <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
           <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -257,12 +257,12 @@
 
         <a href="./case-study-bloomix.html" style="display: block; text-decoration: none;">
           <div class="mockup-container flagship-mockup-hover" style="background: linear-gradient(135deg, #090615 0%, #150f29 100%); padding: 100px 60px; display: flex; align-items: center; justify-content: center; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 45px 110px rgba(0,0,0,0.95); transition: all var(--transition-default);">
-            <img src="./screenshot_bloomix.webp" alt="Bloomix Flagship Platform Layout" style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 12px; box-shadow: 0 35px 80px rgba(0,0,0,0.85); transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);" srcset="./screenshot_bloomix-480w.webp 480w, ./screenshot_bloomix-768w.webp 768w, ./screenshot_bloomix.webp 1024w" sizes="90vw" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high">
+            <img src="./screenshot_bloomix.webp" alt="Bloomix multi-product platform design system" style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: var(--radius-md); box-shadow: 0 35px 80px rgba(0,0,0,0.85); transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);" srcset="./screenshot_bloomix-480w.webp 480w, ./screenshot_bloomix-768w.webp 768w, ./screenshot_bloomix.webp 1024w" sizes="90vw" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high">
           </div>
         </a>
 
         <div style="margin-top: 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
-          <a href="./case-study-bloomix.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 16px; font-weight: 700; border-radius: 8px;">View Bloomix Case Study</a>
+          <a href="./case-study-bloomix.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 16px; font-weight: 700; border-radius: var(--radius-sm);">View Bloomix Case Study</a>
           <span style="font-family: var(--font-body); font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: 0.05em;">Connected Digital Products</span>
         </div>
       </div>
@@ -280,7 +280,7 @@
         
         <div class="grid-12" style="gap: 32px;">
           <!-- Testimonial 1 -->
-          <div class="testimonial-card" style="grid-column: span 4; background-color: #101014; border: 1px solid var(--border-light); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-primary)';" onmouseout="this.style.borderColor='var(--border-light)';">
+          <div class="testimonial-card" style="grid-column: span 4; background-color: #101014; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 40px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-primary)';" onmouseout="this.style.borderColor='var(--border-light)';">
             <p style="font-size: 18px; line-height: 1.6; color: var(--text-primary); font-style: italic; font-weight: 500; margin-bottom: 32px;">
               "MV Creatives brought clarity to a complex product ecosystem."
             </p>
@@ -293,7 +293,7 @@
           </div>
 
           <!-- Testimonial 2 -->
-          <div class="testimonial-card" style="grid-column: span 4; background-color: #101014; border: 1px solid var(--border-light); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-primary)';" onmouseout="this.style.borderColor='var(--border-light)';">
+          <div class="testimonial-card" style="grid-column: span 4; background-color: #101014; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 40px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-primary)';" onmouseout="this.style.borderColor='var(--border-light)';">
             <p style="font-size: 18px; line-height: 1.6; color: var(--text-primary); font-style: italic; font-weight: 500; margin-bottom: 32px;">
               "Fast execution, excellent communication, and strong attention to detail."
             </p>
@@ -306,7 +306,7 @@
           </div>
 
           <!-- Testimonial 3 -->
-          <div class="testimonial-card" style="grid-column: span 4; background-color: #101014; border: 1px solid var(--border-light); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-primary)';" onmouseout="this.style.borderColor='var(--border-light)';">
+          <div class="testimonial-card" style="grid-column: span 4; background-color: #101014; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 40px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent-primary)';" onmouseout="this.style.borderColor='var(--border-light)';">
             <p style="font-size: 18px; line-height: 1.6; color: var(--text-primary); font-style: italic; font-weight: 500; margin-bottom: 32px;">
               "One of the most reliable creative partners we have worked with."
             </p>
@@ -367,7 +367,7 @@
           <div style="grid-column: 1 / span 7;" class="reveal-card">
             <a href="./case-study.html" class="work-card-wrapper">
               <div class="mockup-container" style="background: linear-gradient(135deg, #0a061c 0%, #171138 100%); padding: 20px; display: flex; align-items: center; justify-content: center; height: 350px;">
-                <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data Platform UI Design" style="width: 95%; height: auto; max-height: 95%; object-fit: contain; border-radius: 8px; box-shadow: 0 20px 45px rgba(0,0,0,0.6);" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high" >
+                <img src="./screenshot_kinetic_data.webp" alt="Kinetic Data SaaS workflow dashboard interface" style="width: 95%; height: auto; max-height: 95%; object-fit: contain; border-radius: var(--radius-sm); box-shadow: 0 20px 45px rgba(0,0,0,0.6);" srcset="./screenshot_kinetic_data-480w.webp 480w, ./screenshot_kinetic_data-768w.webp 768w, ./screenshot_kinetic_data.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high" >
               </div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
@@ -393,7 +393,7 @@
           <div style="grid-column: 8 / span 5; margin-top: 90px;" class="reveal-card">
             <div class="work-card-wrapper no-link">
               <div class="mockup-container" style="background: linear-gradient(135deg, #071917 0%, #102e2a 100%); padding: 20px; display: flex; align-items: center; justify-content: center; height: 350px;">
-                <img src="./screenshot_relish.webp" alt="Relish Medical Portal UI Design" style="width: 95%; height: auto; max-height: 95%; object-fit: contain; border-radius: 8px; box-shadow: 0 20px 45px rgba(0,0,0,0.6);" srcset="./screenshot_relish-480w.webp 480w, ./screenshot_relish-768w.webp 768w, ./screenshot_relish.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high" >
+                <img src="./screenshot_relish.webp" alt="Relish healthcare product experience design" style="width: 95%; height: auto; max-height: 95%; object-fit: contain; border-radius: var(--radius-sm); box-shadow: 0 20px 45px rgba(0,0,0,0.6);" srcset="./screenshot_relish-480w.webp 480w, ./screenshot_relish-768w.webp 768w, ./screenshot_relish.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high" >
               </div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 20px;">
                 <div>
@@ -426,7 +426,7 @@
                     <div class="browser-address">groundzerooc.com</div>
                   </div>
                   <div class="browser-content" style="height: 280px;">
-                    <img src="./screenshot_ground_zero.webp" alt="Ground Zero Platform Design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_ground_zero-480w.webp 480w, ./screenshot_ground_zero-768w.webp 768w, ./screenshot_ground_zero.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="eager" fetchpriority="high" >
+                    <img src="./screenshot_ground_zero.webp" alt="Ground Zero real estate website experience" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" srcset="./screenshot_ground_zero-480w.webp 480w, ./screenshot_ground_zero-768w.webp 768w, ./screenshot_ground_zero.webp 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 800px" width="1024" height="655" decoding="async" loading="lazy" >
                   </div>
                 </div>
               </div>
@@ -566,9 +566,9 @@
             </p>
           </div>
           <div style="grid-column: 9 / span 4; border-left: 2px solid var(--accent-primary); padding-left: 32px;">
-            <h4 style="font-size: 20px; margin-bottom: 8px;">Product Clarity</h4>
+            <h3 style="font-size: 20px; margin-bottom: 8px;">Product Clarity</h3>
             <p style="font-size: 14px; margin-bottom: 24px; color: var(--text-secondary);">We design to bring order and clean visual hierarchy to complex products.</p>
-            <h4 style="font-size: 20px; margin-bottom: 8px;">Practical Design Handoff</h4>
+            <h3 style="font-size: 20px; margin-bottom: 8px;">Practical Design Handoff</h3>
             <p style="font-size: 14px; color: var(--text-secondary);">We deliver production-ready specs and assets for seamless engineering implementation.</p>
           </div>
         </div>
@@ -597,7 +597,7 @@
   <footer class="final-footer" style="background-color: #050505; position: relative; z-index: 10; border-top: 1px solid rgba(255, 255, 255, 0.08);">
           <div class="footer-brand">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+              <div style="background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" style="display: block;">
                   <path d="M20 20 L40 80 L50 50 L60 80 L80 20" fill="none" stroke="var(--accent-primary)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M40 20 L50 50 L60 20" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
